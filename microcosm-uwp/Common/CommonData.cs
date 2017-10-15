@@ -46,5 +46,9 @@ namespace microcosm.Common
         const int ZODIAC_NUMBER_HAUMEA = 136108;
         const int ZODIAC_NUMBER_ERIS = 136199;
         const int ZODIAC_NUMBER_MAKEMAKE = 136472;
+
+        public static double defaultLat = 35.670587;
+        public static double defaultLng = 139.772003;
+
     }
 }

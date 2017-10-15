@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ConfigData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ephepath>ephe</ephepath>
+  <centric>GEO_CENTRIC</centric>
+  <sidereal>TROPICAL</sidereal>
+  <defaultPlace>東京都中央区</defaultPlace>
+  <lat>35.670587</lat>
+  <lng>139.772003</lng>
+  <defaultTimezone>JST</defaultTimezone>
+  <progression>CPS</progression>
+  <defaultbands>1</defaultbands>
+  <house>PLACIDUS</house>
+  <zodiacOuterWidth>470</zodiacOuterWidth>
+  <zodiacWidth>60</zodiacWidth>
+  <zodiacCenter>250</zodiacCenter>
+  <decimalDisp>DECIMAL</decimalDisp>
+  <dispPattern>1</dispPattern>
+  <color29>NOCHANGE</color29>
+</ConfigData>

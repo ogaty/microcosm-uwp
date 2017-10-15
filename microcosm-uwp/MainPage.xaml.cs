@@ -15,10 +15,13 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.ApplicationModel;
 
-using microcosm.Calc;
 using Windows.Storage;
 using Windows.Storage.Streams;
 using System.Threading.Tasks;
+
+using microcosm.Calc;
+using microcosm.User;
+using microcosm.Config;
 
 // 空白ページの項目テンプレートについては、https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x411 を参照してください
 
@@ -30,6 +33,7 @@ namespace microcosm
     public sealed partial class MainPage : Page
     {
         AstroCalc calc;
+        ConfigData config;
 
         public MainPage()
         {
@@ -158,16 +162,26 @@ namespace microcosm
                 await setting5File.CopyAsync(systemFolder, "setting5.csm", NameCollisionOption.FailIfExists);
             }
 
+            var cfg = await systemFolder.GetFileAsync("config.csm");
+
+            config = ConfigXml.GetConfigFromXml(cfg.Path);
+
+//            UserData udata = UserXml.GetUserDataFromXml(cfg.Path);
+
             return true;
         }
 
         private async void MainInit()
         {
             List<Task<bool>> arrayTask = new List<Task<bool>>();
-            Task<bool> objTask = Task<bool>.Run(CreateSwiss);
-            arrayTask.Add(objTask);
+            Task<bool> swissTask = Task<bool>.Run(CreateSwiss);
+            arrayTask.Add(swissTask);
+            Task<bool> configTask = Task<bool>.Run(CreateConfig);
+            arrayTask.Add(configTask);
 
-            await Task.WhenAll(arrayTask);
+            
+
+//            await Task.WhenAll(arrayTask);
         }
 
         private async void FilePick()
