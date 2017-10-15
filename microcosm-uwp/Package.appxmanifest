@@ -3,8 +3,8 @@
   <Identity Name="d559a2b8-adc4-482d-b5fe-b952c62b6ed3" Publisher="CN=tryto" Version="1.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="d559a2b8-adc4-482d-b5fe-b952c62b6ed3" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>microcosm-uwp</DisplayName>
-    <PublisherDisplayName>tryto</PublisherDisplayName>
+    <DisplayName>microcosm</DisplayName>
+    <PublisherDisplayName>ogaty</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
