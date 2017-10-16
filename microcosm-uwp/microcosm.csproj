@@ -96,9 +96,13 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Calc\AstroCalc.cs" />
+    <Compile Include="Common\AspectInfo.cs" />
     <Compile Include="Common\CommonData.cs" />
+    <Compile Include="Common\Explanation.cs" />
     <Compile Include="Config\ConfigData.cs" />
     <Compile Include="Config\ConfigXml.cs" />
+    <Compile Include="Config\SettingData.cs" />
+    <Compile Include="Config\SettingXml.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

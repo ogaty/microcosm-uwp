@@ -6,6 +6,28 @@ using System.Threading.Tasks;
 
 namespace microcosm.Common
 {
+    public enum OrbKind
+    {
+        SUN_HARD_1ST = 0,
+        SUN_SOFT_1ST = 1,
+        SUN_HARD_2ND = 2,
+        SUN_SOFT_2ND = 3,
+        SUN_HARD_150 = 4,
+        SUN_SOFT_150 = 5,
+        MOON_HARD_1ST = 6,
+        MOON_SOFT_1ST = 7,
+        MOON_HARD_2ND = 8,
+        MOON_SOFT_2ND = 9,
+        MOON_HARD_150 = 10,
+        MOON_SOFT_150 = 11,
+        OTHER_HARD_1ST = 12,
+        OTHER_SOFT_1ST = 13,
+        OTHER_HARD_2ND = 14,
+        OTHER_SOFT_2ND = 15,
+        OTHER_HARD_150 = 16,
+        OTHER_SOFT_150 = 17
+    }
+
     public static class CommonData
     {
         public static int[] target_numbers = {
