@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 
 namespace microcosm.Config
 {
-    public static class ConfigXml
+    public static class ConfigFromXml
     {
         public static ConfigData GetConfigFromXml(string xmlFile)
         {

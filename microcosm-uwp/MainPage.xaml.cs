@@ -34,6 +34,7 @@ namespace microcosm
     {
         AstroCalc calc;
         ConfigData config;
+        SettingData[] setting = new SettingData[10];
 
         public MainPage()
         {
@@ -164,9 +165,16 @@ namespace microcosm
 
             var cfg = await systemFolder.GetFileAsync("config.csm");
 
-            config = ConfigXml.GetConfigFromXml(cfg.Path);
+            config = ConfigFromXml.GetConfigFromXml(cfg.Path);
 
-//            UserData udata = UserXml.GetUserDataFromXml(cfg.Path);
+            //            UserData udata = UserXml.GetUserDataFromXml(cfg.Path);
+
+            for (int i = 0; i < 3; i++)
+            {
+                var set = await systemFolder.GetFileAsync("setting" + i.ToString() + ".csm");
+                setting[i] = SettingFromXml.GetSettingFromXml(set.Path, i);
+            }
+
 
             return true;
         }

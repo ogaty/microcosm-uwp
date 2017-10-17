@@ -100,7 +100,8 @@
     <Compile Include="Common\CommonData.cs" />
     <Compile Include="Common\Explanation.cs" />
     <Compile Include="Config\ConfigData.cs" />
-    <Compile Include="Config\ConfigXml.cs" />
+    <Compile Include="Config\SettingFromXml.cs" />
+    <Compile Include="Config\ConfigFromXml.cs" />
     <Compile Include="Config\SettingData.cs" />
     <Compile Include="Config\SettingXml.cs" />
     <Compile Include="MainPage.xaml.cs">
