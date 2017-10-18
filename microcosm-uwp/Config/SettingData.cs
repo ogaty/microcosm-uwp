@@ -13,6 +13,7 @@ namespace microcosm.Config
     public class SettingData
     {
         public SettingXml xmlData;
+        public SettingXml2 xmlData2;
         public string dispName { get; set; }
 
         public bool[] dispCircle = new bool[] {
@@ -114,6 +115,34 @@ namespace microcosm.Config
             dp11.Add(CommonData.ZODIAC_NUMBER_VESTA, false);
             // セドナ、エリス、ハウメア、マケマケ
             dispPlanet.Add(dp11);
+        }
+
+        private void Convert(SettingXml oldxml)
+        {
+            xmlData2 = new SettingXml2();
+        }
+
+        private double[] ConvertDouble(string[] strings)
+        {
+            double[] ret = new double[strings.Length];
+            for (int i = 0; i < strings.Length; i++)
+            {
+                ret[i] = double.Parse(strings[i]);
+            }
+            return ret;
+        }
+
+
+        private void SetOrbs()
+        {
+            double[] orb_sun_soft_1st = ConvertDouble(xmlData2.orb_sun_soft_1st.Split(','));
+            double[] orb_sun_soft_2nd = ConvertDouble(xmlData2.orb_sun_soft_2nd.Split(','));
+            double[] orb_sun_soft_150 = ConvertDouble(xmlData2.orb_sun_soft_150.Split(','));
+            double[] orb_sun_hard_1st = ConvertDouble(xmlData2.orb_sun_hard_1st.Split(','));
+            double[] orb_sun_hard_2nd = ConvertDouble(xmlData2.orb_sun_hard_2nd.Split(','));
+            double[] orb_sun_hard_150 = ConvertDouble(xmlData2.orb_sun_hard_150.Split(','));
+
+
         }
     }
 }
