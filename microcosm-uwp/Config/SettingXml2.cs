@@ -10,7 +10,7 @@ namespace microcosm.Config
     // 新Version
     // カンマ区切りにすることでフィールド短縮
     // splitして1重～7重まで入れる
-    // xml2でパースエラーしたらxml1かな
+    // xml2で旧新両方動かせるのが理想
     // どっちにしろコンバーターは必要
     public class SettingXml2
     {

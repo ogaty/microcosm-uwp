@@ -104,6 +104,10 @@
     <Compile Include="Config\ConfigFromXml.cs" />
     <Compile Include="Config\SettingData.cs" />
     <Compile Include="Config\SettingXml.cs" />
+    <Compile Include="Config\SettingXml2.cs" />
+    <Compile Include="CopyrightPage.xaml.cs">
+      <DependentUpon>CopyrightPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -206,13 +210,16 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
-    <Content Include="test1.txt" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="CopyrightPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -224,6 +231,9 @@
     </PackageReference>
     <PackageReference Include="SwissEphNet">
       <Version>2.6.0.21</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms">
+      <Version>2.3.4.247</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

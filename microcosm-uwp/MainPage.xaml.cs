@@ -22,6 +22,7 @@ using System.Threading.Tasks;
 using microcosm.Calc;
 using microcosm.User;
 using microcosm.Config;
+using Windows.UI.Core;
 
 // 空白ページの項目テンプレートについては、https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x411 を参照してください
 
@@ -39,6 +40,7 @@ namespace microcosm
         public MainPage()
         {
             this.InitializeComponent();
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
 
             MainInit();
         }
@@ -203,6 +205,11 @@ namespace microcosm
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             FilePick();
+        }
+
+        private void Copyright_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(CopyrightPage));
         }
     }
 }
