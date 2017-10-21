@@ -31,7 +31,9 @@ namespace microcosm.Config
         PLACIDUS = 0,
         KOCH = 1,
         CAMPANUS = 2,
-        EQUAL = 3
+        EQUAL = 3,
+        PORPHYRY = 4,
+        REGIOMONTANUS = 5
     }
     public enum EDecimalDisp
     {

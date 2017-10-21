@@ -112,6 +112,9 @@
     <Compile Include="SettingPage.xaml.cs">
       <DependentUpon>SettingPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SettingConfigPage.xaml.cs">
+      <DependentUpon>SettingConfigPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="User\UserData.cs" />
     <Compile Include="User\UserEvent.cs" />
     <Compile Include="User\UserXml.cs" />
@@ -244,6 +247,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="SettingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SettingConfigPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

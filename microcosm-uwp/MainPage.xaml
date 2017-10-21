@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <Page.BottomAppBar>
-        <CommandBar IsSticky="True" IsOpen="False">
+        <CommandBar IsSticky="True" IsOpen="False" HorizontalContentAlignment="Left">
             <CommandBar.PrimaryCommands>
                 <AppBarButton Label="ファイル" Icon="OpenFile"></AppBarButton>
                 <AppBarButton Label="設定" Icon="Setting" Click="AppBarSettingButton_Click"></AppBarButton>
@@ -22,14 +22,42 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
-            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="5*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Margin="0,60,0,0" Grid.Column="0">
-            <TextBlock Text="abc" Name="NatalName"></TextBlock>
-            <Button Content="Button" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Click"/>
-            
+        <StackPanel Margin="0,40,0,0" Grid.Column="0">
+            <Border Margin="10, 10, 10, 5" BorderBrush="Black" BorderThickness="1">
+                <StackPanel Margin="5, 5, 5, 5">
+                    <TextBlock FontWeight="Bold">ユーザー1</TextBlock>
+                    <TextBlock>現在</TextBlock>
+                    <TextBlock>n年n月n日 n時n分n秒 JST</TextBlock>
+                </StackPanel>
+            </Border>
+            <Border Margin="10, 5, 10, 10" BorderBrush="Black" BorderThickness="1">
+                <StackPanel Margin="5, 5, 5, 5">
+                    <TextBlock FontWeight="Bold">イベント1</TextBlock>
+                    <TextBlock>現在</TextBlock>
+                    <TextBlock>n年n月n日 n時n分n秒 JST</TextBlock>
+                </StackPanel>
+            </Border>
+            <Border Margin="10, 5, 10, 10" BorderBrush="Black" BorderThickness="1">
+                <StackPanel Margin="5, 5, 5, 5">
+                    <TextBlock FontWeight="Bold">ユーザー2</TextBlock>
+                    <TextBlock>現在</TextBlock>
+                    <TextBlock>n年n月n日 n時n分n秒 JST</TextBlock>
+                </StackPanel>
+            </Border>
+            <Border Margin="10, 5, 10, 10" BorderBrush="Black" BorderThickness="1">
+                <StackPanel Margin="5, 5, 5, 5">
+                    <TextBlock FontWeight="Bold">イベント2</TextBlock>
+                    <TextBlock>現在</TextBlock>
+                    <TextBlock>n年n月n日 n時n分n秒 JST</TextBlock>
+                </StackPanel>
+            </Border>
+
+            <Frame x:Name="InfoFrame"></Frame>
         </StackPanel>
     </Grid>
 </Page>

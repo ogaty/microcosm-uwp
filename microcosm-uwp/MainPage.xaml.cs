@@ -209,7 +209,7 @@ namespace microcosm
 
         private void AppBarSettingButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(SettingPage));
+            this.Frame.Navigate(typeof(SettingPage), config);
         }
     }
 }

@@ -1,13 +1,11 @@
 ﻿using microcosm.Config;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -23,31 +21,51 @@ namespace microcosm
     /// <summary>
     /// それ自体で使用できる空白ページまたはフレーム内に移動できる空白ページ。
     /// </summary>
-    public sealed partial class SettingPage : Page
+    public sealed partial class SettingsConfigPage : Page
     {
         ConfigData config;
-        public SettingPage()
+
+        public SettingsConfigPage()
         {
             this.InitializeComponent();
-            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible; ;
-            SystemNavigationManager.GetForCurrentView().BackRequested += (s, a) =>
-            {
-                if (Frame.CanGoBack)
-                {
-                    Frame.GoBack();
-                    a.Handled = true;
-                }
-            };
-
+            SettingInit();
         }
+
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             config = (ConfigData)e.Parameter;
 
             base.OnNavigatedTo(e);
-            this.SettingFrame.Navigate(typeof(SettingsConfigPage), (object)config);
 
         }
+
+        private void SettingInit()
+        {
+            if (config.houseCalc == EHouseCalc.PLACIDUS)
+            {
+                PlacidusRadio.IsChecked = true;
+            } else if (config.houseCalc == EHouseCalc.KOCH)
+            {
+                KochRadio.IsChecked = true;
+            }
+            else if (config.houseCalc == EHouseCalc.CAMPANUS)
+            {
+                CampanusRadio.IsChecked = true;
+            }
+            else if (config.houseCalc == EHouseCalc.EQUAL)
+            {
+                EqualRadio.IsChecked = true;
+            }
+            else if (config.houseCalc == EHouseCalc.PORPHYRY)
+            {
+                PorphyryRadio.IsChecked = true;
+            }
+            else if (config.houseCalc == EHouseCalc.REGIOMONTANUS)
+            {
+                RegiomontanusRadio.IsChecked = true;
+            }
+        }
+
     }
 }
