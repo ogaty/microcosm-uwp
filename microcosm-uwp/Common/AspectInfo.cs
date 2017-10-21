@@ -11,12 +11,19 @@ namespace microcosm.Common
     public enum AspectKind
     {
         CONJUNCTION = 1,
-        OPPOSITION = 2,
+        OPPOSITION = 2, // 180 2
         INCONJUNCT = 3,
         SESQUIQUADRATE = 4,
-        TRINE = 5,
-        SQUARE = 6,
-        SEXTILE = 7
+        TRINE = 5, // 3
+        SQUARE = 6, // 4
+        SEXTILE = 7, // 60 6
+        SEMISEXTILE = 8, // 30 12
+        SEMIQINTILE = 9, // 36 10
+        NOVILE = 9, // 40 9
+        SEMISQUARE = 10, // 45 8
+        SEPTILE = 11, // 51.42 7
+        QUINTILE = 12, // 72 5
+        BIQUINTILE = 13 // 144 2.5
     };
     public enum SoftHard
     {

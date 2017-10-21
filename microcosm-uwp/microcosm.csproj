@@ -105,13 +105,13 @@
     <Compile Include="Config\SettingData.cs" />
     <Compile Include="Config\SettingXml.cs" />
     <Compile Include="Config\SettingXml2.cs" />
-    <Compile Include="CopyrightPage.xaml.cs">
-      <DependentUpon>CopyrightPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingPage.xaml.cs">
+      <DependentUpon>SettingPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="User\UserData.cs" />
     <Compile Include="User\UserEvent.cs" />
     <Compile Include="User\UserXml.cs" />
@@ -120,6 +120,21 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="Assets\microcosm400x400.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\microcosm400x400.altform-unplated_targetsize-24.png" />
+    <Content Include="Assets\microcosm400x400.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\microcosm400x400.altform-unplated_targetsize-32.png" />
+    <Content Include="Assets\microcosm400x400.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\microcosm400x400.scale-100.png" />
+    <Content Include="Assets\microcosm400x400.scale-125.png" />
+    <Content Include="Assets\microcosm400x400.scale-150.png" />
+    <Content Include="Assets\microcosm400x400.scale-200.png" />
+    <Content Include="Assets\microcosm400x400.scale-400.png" />
+    <Content Include="Assets\microcosm400x400.targetsize-16.png" />
+    <Content Include="Assets\microcosm400x400.targetsize-24.png" />
+    <Content Include="Assets\microcosm400x400.targetsize-256.png" />
+    <Content Include="Assets\microcosm400x400.targetsize-32.png" />
+    <Content Include="Assets\microcosm400x400.targetsize-48.png" />
     <Content Include="Assets\seas_18.se1">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -172,6 +187,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="microcosm-uwp_TemporaryKey.pfx" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-125.png" />
+    <Content Include="Assets\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\Square150x150Logo.scale-400.png" />
     <Content Include="system\config.csm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -193,6 +212,10 @@
     <Content Include="system\setting5.csm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="system\setting6.csm" />
+    <None Include="system\setting7.csm" />
+    <None Include="system\setting8.csm" />
+    <None Include="system\setting9.csm" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\seleapsec.txt">
@@ -216,13 +239,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="CopyrightPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SettingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

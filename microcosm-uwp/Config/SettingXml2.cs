@@ -156,6 +156,20 @@ namespace microcosm.Config
         public bool aspectInconjunct;
         [XmlElement("aspectSesquiquadrate")]
         public bool aspectSesquiquadrate;
+        [XmlElement("aspectSemiSextile")]
+        public bool aspectSemiSextile;
+        [XmlElement("aspectSemiQuintile")]
+        public bool aspectSemiQuintile;
+        [XmlElement("aspectSemiSquare")]
+        public bool aspectSemiSquare;
+        [XmlElement("aspectNovile")]
+        public bool aspectNovile;
+        [XmlElement("aspectSeptile")]
+        public bool aspectSeptile;
+        [XmlElement("aspectQintile")]
+        public bool aspectQintile;
+        [XmlElement("aspectBiQintile")]
+        public bool aspectBiQintile;
 
 
         // 以下旧バージョン

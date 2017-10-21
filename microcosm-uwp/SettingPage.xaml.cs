@@ -22,16 +22,14 @@ namespace microcosm
     /// <summary>
     /// それ自体で使用できる空白ページまたはフレーム内に移動できる空白ページ。
     /// </summary>
-    public sealed partial class CopyrightPage : Page
+    public sealed partial class SettingPage : Page
     {
-        public CopyrightPage()
+        public SettingPage()
         {
             this.InitializeComponent();
-
-            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible; ;
             SystemNavigationManager.GetForCurrentView().BackRequested += (s, a) =>
             {
-                Debug.WriteLine("BackRequested");
                 if (Frame.CanGoBack)
                 {
                     Frame.GoBack();
@@ -39,5 +37,6 @@ namespace microcosm
                 }
             };
         }
+
     }
 }

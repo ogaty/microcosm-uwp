@@ -7,30 +7,29 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        <CommandBar IsSticky="True" IsOpen="True">
-            <CommandBar.Content>
-                microcosm pro 1.0
-            </CommandBar.Content>
+    <Page.BottomAppBar>
+        <CommandBar IsSticky="True" IsOpen="False">
             <CommandBar.PrimaryCommands>
                 <AppBarButton Label="ファイル" Icon="OpenFile"></AppBarButton>
-                <AppBarButton Label="設定" Icon="Setting"></AppBarButton>
-                <AppBarButton x:Name="Copyright" Label="バージョン" Icon="Help" Click="Copyright_Click"></AppBarButton>
+                <AppBarButton Label="設定" Icon="Setting" Click="AppBarSettingButton_Click"></AppBarButton>
             </CommandBar.PrimaryCommands>
             <CommandBar.SecondaryCommands>
 
             </CommandBar.SecondaryCommands>
 
         </CommandBar>
+    </Page.BottomAppBar>
 
-        <StackPanel Margin="0,60,0,0">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Margin="0,60,0,0" Grid.Column="0">
             <TextBlock Text="abc" Name="NatalName"></TextBlock>
             <Button Content="Button" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Click"/>
+            
         </StackPanel>
-
     </Grid>
 </Page>

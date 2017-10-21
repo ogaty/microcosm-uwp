@@ -207,9 +207,9 @@ namespace microcosm
             FilePick();
         }
 
-        private void Copyright_Click(object sender, RoutedEventArgs e)
+        private void AppBarSettingButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(CopyrightPage));
+            this.Frame.Navigate(typeof(SettingPage));
         }
     }
 }

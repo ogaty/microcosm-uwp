@@ -31,6 +31,13 @@ namespace microcosm.Config
         public bool[,] aspectSextile;
         public bool[,] aspectInconjunct;
         public bool[,] aspectSesquiquadrate;
+        public bool[,] aspectSemiSextile;
+        public bool[,] aspectSemiQuintile;
+        public bool[,] aspectSemiSquare;
+        public bool[,] aspectNovile;
+        public bool[,] aspectSeptile;
+        public bool[,] aspectQuintile;
+        public bool[,] aspectBiQuintile;
         // [from, to]
         public bool[,] dispAspect;
 
@@ -443,6 +450,13 @@ namespace microcosm.Config
             dac.Add(AspectKind.SEXTILE, aspectSextile[n, m]);
             dac.Add(AspectKind.INCONJUNCT, aspectInconjunct[n, m]);
             dac.Add(AspectKind.SESQUIQUADRATE, aspectSesquiquadrate[n, m]);
+            dac.Add(AspectKind.SEMISEXTILE, aspectSemiSextile[n, m]);
+            dac.Add(AspectKind.SEMIQINTILE, aspectSemiQuintile[n, m]);
+            dac.Add(AspectKind.SEMISQUARE, aspectSemiSquare[n, m]);
+            dac.Add(AspectKind.NOVILE, aspectNovile[n, m]);
+            dac.Add(AspectKind.SEPTILE, aspectSeptile[n, m]);
+            dac.Add(AspectKind.QUINTILE, aspectQuintile[n, m]);
+            dac.Add(AspectKind.BIQUINTILE, aspectBiQuintile[n, m]);
 
             return dac;
         }
