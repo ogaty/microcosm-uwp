@@ -99,6 +99,7 @@
     <Compile Include="Common\AspectInfo.cs" />
     <Compile Include="Common\CommonData.cs" />
     <Compile Include="Common\Explanation.cs" />
+    <Compile Include="Common\Util.cs" />
     <Compile Include="Config\ConfigData.cs" />
     <Compile Include="Config\SettingFromXml.cs" />
     <Compile Include="Config\ConfigFromXml.cs" />
@@ -118,6 +119,7 @@
     <Compile Include="User\UserData.cs" />
     <Compile Include="User\UserEvent.cs" />
     <Compile Include="User\UserXml.cs" />
+    <Compile Include="ViewModels\MainWindowUserDataViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

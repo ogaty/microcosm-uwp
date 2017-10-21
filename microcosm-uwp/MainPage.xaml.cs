@@ -23,6 +23,7 @@ using microcosm.Calc;
 using microcosm.User;
 using microcosm.Config;
 using Windows.UI.Core;
+using microcosm.ViewModels;
 
 // 空白ページの項目テンプレートについては、https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x411 を参照してください
 
@@ -43,6 +44,7 @@ namespace microcosm
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
 
             MainInit();
+            UserDataView.DataContext = new MainWindowUserDataViewModel();
         }
 
         private async Task<bool> CreateSwiss()
