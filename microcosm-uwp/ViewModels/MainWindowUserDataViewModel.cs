@@ -44,7 +44,7 @@ namespace microcosm.ViewModels
             set
             {
                 _User1DateStr = value;
-                OnPropertyChanged("_User1DateStr");
+                OnPropertyChanged("User1DateStr");
             }
         }
 
