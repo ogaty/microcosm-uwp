@@ -27,7 +27,7 @@ namespace microcosm.Config
                 //                MessageBox.Show("設定ファイル読み込みに失敗しました。再作成します。");
                 setting = new SettingData(no, null);
             }
-            catch (InvalidOperationException)
+            catch (InvalidOperationException e)
             {
                 setting = new SettingData(no, null);
             }

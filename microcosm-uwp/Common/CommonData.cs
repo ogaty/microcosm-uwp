@@ -56,7 +56,7 @@ namespace microcosm.Common
         public const int ZODIAC_NUMBER_LILITH = 13; // 小惑星のリリス(1181)と混同しないこと
         public const int ZODIAC_NUMBER_EARTH = 14;
         public const int ZODIAC_NUMBER_CHIRON = 15;
-        public const int ZODIAC_NUMBER_CELES = 17;
+        public const int ZODIAC_NUMBER_CERES = 17;
         public const int ZODIAC_NUMBER_PARAS = 18;
         public const int ZODIAC_NUMBER_JUNO = 19;
         public const int ZODIAC_NUMBER_VESTA = 20;
@@ -68,6 +68,9 @@ namespace microcosm.Common
         public const int ZODIAC_NUMBER_HAUMEA = 136108;
         public const int ZODIAC_NUMBER_ERIS = 136199;
         public const int ZODIAC_NUMBER_MAKEMAKE = 136472;
+
+        public const int ZODIAC_NUMBER_VT = -1;
+        public const int ZODIAC_NUMBER_POF = -1;
 
         public static double defaultLat = 35.670587;
         public static double defaultLng = 139.772003;

@@ -13,6 +13,168 @@ namespace microcosm.Config
         [XmlElement("dispname")]
         public string dispname;
 
+        [XmlElement("version")]
+        public int version;
+
+        // 第一種アスペクト
+        [XmlElement("orb_sun_soft_1st")]
+        public string orb_sun_soft_1st;
+        [XmlElement("orb_sun_hard_1st")]
+        public string orb_sun_hard_1st;
+        [XmlElement("orb_moon_soft_1st")]
+        public string orb_moon_soft_1st;
+        [XmlElement("orb_moon_hard_1st")]
+        public string orb_moon_hard_1st;
+        [XmlElement("orb_other_soft_1st")]
+        public string orb_other_soft_1st;
+        [XmlElement("orb_other_hard_1st")]
+        public string orb_other_hard_1st;
+        // 第二種、第三種アスペクト
+        [XmlElement("orb_sun_soft_2nd")]
+        public string orb_sun_soft_2nd;
+        [XmlElement("orb_sun_hard_2nd")]
+        public string orb_sun_hard_2nd;
+        [XmlElement("orb_moon_soft_2nd")]
+        public string orb_moon_soft_2nd;
+        [XmlElement("orb_moon_hard_2nd")]
+        public string orb_moon_hard_2nd;
+        [XmlElement("orb_other_soft_2nd")]
+        public string orb_other_soft_2nd;
+        [XmlElement("orb_other_hard_2nd")]
+        public string orb_other_hard_2nd;
+        // 150,135アスペクト
+        [XmlElement("orb_sun_soft_150")]
+        public string orb_sun_soft_150;
+        [XmlElement("orb_sun_hard_150")]
+        public string orb_sun_hard_150;
+        [XmlElement("orb_moon_soft_150")]
+        public string orb_moon_soft_150;
+        [XmlElement("orb_moon_hard_150")]
+        public string orb_moon_hard_150;
+        [XmlElement("orb_other_soft_150")]
+        public string orb_other_soft_150;
+        [XmlElement("orb_other_hard_150")]
+        public string orb_other_hard_150;
+
+        // 天体表示 7個
+        // 11, 22, 33, 44, 55, 66, 77
+        [XmlElement("dispPlanetSun")]
+        public string dispPlanetSun;
+        [XmlElement("dispPlanetMoon")]
+        public string dispPlanetMoon;
+        [XmlElement("dispPlanetMercury")]
+        public string dispPlanetMercury;
+        [XmlElement("dispPlanetVenus")]
+        public string dispPlanetVenus;
+        [XmlElement("dispPlanetMars")]
+        public string dispPlanetMars;
+        [XmlElement("dispPlanetJupiter")]
+        public string dispPlanetJupiter;
+        [XmlElement("dispPlanetSaturn")]
+        public string dispPlanetSaturn;
+        [XmlElement("dispPlanetUranus")]
+        public string dispPlanetUranus;
+        [XmlElement("dispPlanetNeptune")]
+        public string dispPlanetNeptune;
+        [XmlElement("dispPlanetPluto")]
+        public string dispPlanetPluto;
+        [XmlElement("dispPlanetDh")]
+        public string dispPlanetDh;
+        [XmlElement("dispPlanetChiron")]
+        public string dispPlanetChiron;
+        [XmlElement("dispPlanetAsc")]
+        public string dispPlanetAsc;
+        [XmlElement("dispPlanetMc")]
+        public string dispPlanetMc;
+        [XmlElement("dispPlanetEarth")]
+        public string dispPlanetEarth;
+        [XmlElement("dispPlanetLilith")]
+        public string dispPlanetLilith;
+        [XmlElement("dispPlanetCeres")]
+        public string dispPlanetCeres;
+        [XmlElement("dispPlanetParas")]
+        public string dispPlanetParas;
+        [XmlElement("dispPlanetJuno")]
+        public string dispPlanetJuno;
+        [XmlElement("dispPlanetVesta")]
+        public string dispPlanetVesta;
+        [XmlElement("dispPlanetEris")]
+        public string dispPlanetEris;
+        [XmlElement("dispPlanetSedna")]
+        public string dispPlanetSedna;
+        [XmlElement("dispPlanetHaumea")]
+        public string dispPlanetHaumea;
+        [XmlElement("dispPlanetMakemake")]
+        public string dispPlanetMakemake;
+        [XmlElement("dispPlanetVt")]
+        public string dispPlanetVt;
+        [XmlElement("dispPlanetPof")]
+        public string dispPlanetPof;
+
+        // アスペクト表示 28個
+        // 11, 22, 33, 44, 55, 66, 77
+        // 12, 13, 14, 15, 16, 17
+        // 23, 24, 25, 26, 27
+        // 34, 35, 36, 37
+        // 45, 46, 47
+        // 56, 57
+        // 67
+        [XmlElement("aspectSun")]
+        public string aspectSun;
+        [XmlElement("aspectMoon")]
+        public string aspectMoon;
+        [XmlElement("aspectMercury")]
+        public string aspectMercury;
+        [XmlElement("aspectVenus")]
+        public string aspectVenus;
+        [XmlElement("aspectMars")]
+        public string aspectMars;
+        [XmlElement("aspectJupiter")]
+        public string aspectJupiter;
+        [XmlElement("aspectSaturn")]
+        public string aspectSaturn;
+        [XmlElement("aspectUranus")]
+        public string aspectUranus;
+        [XmlElement("aspectNeptune")]
+        public string aspectNeptune;
+        [XmlElement("aspectPluto")]
+        public string aspectPluto;
+        [XmlElement("aspectDh")]
+        public string aspectDh;
+        [XmlElement("aspectChiron")]
+        public string aspectChiron;
+        [XmlElement("aspectAsc")]
+        public string aspectAsc;
+        [XmlElement("aspectMc")]
+        public string aspectMc;
+        [XmlElement("aspectEarth")]
+        public string aspectEarth;
+        [XmlElement("aspectLilith")]
+        public string aspectLilith;
+        [XmlElement("aspectCeres")]
+        public string aspectCeres;
+        [XmlElement("aspectParas")]
+        public string aspectParas;
+        [XmlElement("aspectJuno")]
+        public string aspectJuno;
+        [XmlElement("aspectVesta")]
+        public string aspectVesta;
+        [XmlElement("aspectEris")]
+        public string aspectEris;
+        [XmlElement("aspectSedna")]
+        public string aspectSedna;
+        [XmlElement("aspectHaumea")]
+        public string aspectHaumea;
+        [XmlElement("aspectMakemake")]
+        public string aspectMakemake;
+        [XmlElement("aspectVt")]
+        public string aspectVt;
+        [XmlElement("aspectPof")]
+        public string aspectPof;
+
+
+        // 以下旧バージョン
+
         #region orb 1st
         // 第一種アスペクト、一重～六重円
         [XmlElement("orb_sun_soft_1st_0")]

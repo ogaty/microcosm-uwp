@@ -47,6 +47,10 @@ namespace microcosm
             UserDataView.DataContext = new MainWindowUserDataViewModel();
         }
 
+        /// <summary>
+        /// swissEph関連ファイルの作成
+        /// </summary>
+        /// <returns>true</returns>
         private async Task<bool> CreateSwiss()
         {
             var root = Windows.Storage.ApplicationData.Current.LocalFolder;
@@ -167,13 +171,37 @@ namespace microcosm
                 await setting5File.CopyAsync(systemFolder, "setting5.csm", NameCollisionOption.FailIfExists);
             }
 
+            if (await systemFolder.TryGetItemAsync("setting6.csm") == null)
+            {
+                var setting6File = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/setting6.csm")).AsTask().ConfigureAwait(false);
+                await setting6File.CopyAsync(systemFolder, "setting6.csm", NameCollisionOption.FailIfExists);
+            }
+
+            if (await systemFolder.TryGetItemAsync("setting7.csm") == null)
+            {
+                var setting7File = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/setting7.csm")).AsTask().ConfigureAwait(false);
+                await setting7File.CopyAsync(systemFolder, "setting7.csm", NameCollisionOption.FailIfExists);
+            }
+
+            if (await systemFolder.TryGetItemAsync("setting8.csm") == null)
+            {
+                var setting8File = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/setting8.csm")).AsTask().ConfigureAwait(false);
+                await setting8File.CopyAsync(systemFolder, "setting8.csm", NameCollisionOption.FailIfExists);
+            }
+
+            if (await systemFolder.TryGetItemAsync("setting9.csm") == null)
+            {
+                var setting9File = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/setting9.csm")).AsTask().ConfigureAwait(false);
+                await setting9File.CopyAsync(systemFolder, "setting9.csm", NameCollisionOption.FailIfExists);
+            }
+
             var cfg = await systemFolder.GetFileAsync("config.csm");
 
             config = ConfigFromXml.GetConfigFromXml(cfg.Path);
 
             //            UserData udata = UserXml.GetUserDataFromXml(cfg.Path);
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 10; i++)
             {
                 var set = await systemFolder.GetFileAsync("setting" + i.ToString() + ".csm");
                 setting[i] = SettingFromXml.GetSettingFromXml(set.Path, i);
@@ -183,6 +211,9 @@ namespace microcosm
             return true;
         }
 
+        /// <summary>
+        /// main部初期化
+        /// </summary>
         private async void MainInit()
         {
             List<Task<bool>> arrayTask = new List<Task<bool>>();
@@ -191,11 +222,10 @@ namespace microcosm
             Task<bool> configTask = Task<bool>.Run(CreateConfig);
             arrayTask.Add(configTask);
 
-            
-
-//            await Task.WhenAll(arrayTask);
+            await Task.WhenAll(arrayTask);
         }
 
+        /*
         private async void FilePick()
         {
             var picker = new Windows.Storage.Pickers.FileOpenPicker();
@@ -208,6 +238,7 @@ namespace microcosm
         {
             FilePick();
         }
+        */
 
         private void AppBarSettingButton_Click(object sender, RoutedEventArgs e)
         {

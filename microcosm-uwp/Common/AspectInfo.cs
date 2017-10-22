@@ -19,11 +19,11 @@ namespace microcosm.Common
         SEXTILE = 7, // 60 6
         SEMISEXTILE = 8, // 30 12
         SEMIQINTILE = 9, // 36 10
-        NOVILE = 9, // 40 9
-        SEMISQUARE = 10, // 45 8
-        SEPTILE = 11, // 51.42 7
-        QUINTILE = 12, // 72 5
-        BIQUINTILE = 13 // 144 2.5
+        NOVILE = 10, // 40 9
+        SEMISQUARE = 11, // 45 8
+        SEPTILE = 12, // 51.42 7
+        QUINTILE = 13, // 72 5
+        BIQUINTILE = 14 // 144 2.5
     };
     public enum SoftHard
     {

@@ -69,37 +69,37 @@ namespace microcosm.Config
         // 56, 57
         // 67
         [XmlElement("dispPlanetSun")]
-        public bool dispPlanetSun;
+        public string dispPlanetSun;
         [XmlElement("dispPlanetMoon")]
-        public bool dispPlanetMoon;
+        public string dispPlanetMoon;
         [XmlElement("dispPlanetMercury")]
-        public bool dispPlanetMercury;
+        public string dispPlanetMercury;
         [XmlElement("dispPlanetVenus")]
-        public bool dispPlanetVenus;
+        public string dispPlanetVenus;
         [XmlElement("dispPlanetMars")]
-        public bool dispPlanetMars;
+        public string dispPlanetMars;
         [XmlElement("dispPlanetJupiter")]
-        public bool dispPlanetJupiter;
+        public string dispPlanetJupiter;
         [XmlElement("dispPlanetSaturn")]
-        public bool dispPlanetSaturn;
+        public string dispPlanetSaturn;
         [XmlElement("dispPlanetUranus")]
-        public bool dispPlanetUranus;
+        public string dispPlanetUranus;
         [XmlElement("dispPlanetNeptune")]
-        public bool dispPlanetNeptune;
+        public string dispPlanetNeptune;
         [XmlElement("dispPlanetPluto")]
-        public bool dispPlanetPluto;
+        public string dispPlanetPluto;
         [XmlElement("dispPlanetDh")]
-        public bool dispPlanetDh;
+        public string dispPlanetDh;
         [XmlElement("dispPlanetChiron")]
-        public bool dispPlanetChiron;
+        public string dispPlanetChiron;
         [XmlElement("dispPlanetAsc")]
-        public bool dispPlanetAsc;
+        public string dispPlanetAsc;
         [XmlElement("dispPlanetMc")]
-        public bool dispPlanetMc;
+        public string dispPlanetMc;
         [XmlElement("dispPlanetEarth")]
-        public bool dispPlanetEarth;
+        public string dispPlanetEarth;
         [XmlElement("dispPlanetLilith")]
-        public bool dispPlanetLilith;
+        public string dispPlanetLilith;
 
         // アスペクト表示 28個
         // 11, 22, 33, 44, 55, 66, 77
