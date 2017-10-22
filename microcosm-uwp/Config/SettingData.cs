@@ -50,7 +50,7 @@ namespace microcosm.Config
         public bool[,] aspectBiQuintile;
 
         // [from, to]
-        public bool[,] dispAspect;
+//        public bool[,] dispAspect;
 
         // オーブ
         // ソフト/ハード、1種2種150、太陽/月/その他の組み合わせ 2*3*3=18通り
@@ -135,6 +135,7 @@ namespace microcosm.Config
             // dispAspect[0][2] => N-T
             // dispAspect[1][3] => P-4
             // [0][2] と [2][0]は同じ
+            /*
             dispAspect = new bool[7, 7] {
                 { true, true, true, true, true, true, true },
                 { true, true, true, true, true, true, true },
@@ -144,12 +145,16 @@ namespace microcosm.Config
                 { true, true, true, true, true, true, true },
                 { true, true, true, true, true, true, true }
             };
+            */
 
             if (xmlData.version == 0)
             {
                 Convert();
             }
-            InitSet();
+            else
+            {
+                InitSet();
+            }
         }
 
         /// <summary>
@@ -168,9 +173,222 @@ namespace microcosm.Config
         private void Convert()
         {
             xmlData.version = 2;
-            ConvertOrbs();
-            ConvertDispAspect();
+            ConvertDispPlanet();
+            ConvertDispAspectPlanet();
             ConvertDispAspectCategory();
+            ConvertOrbs();
+        }
+
+        private void ConvertDispPlanet()
+        {
+            Dictionary<int, bool> dp = new Dictionary<int, bool>();
+            bool[] sun = new bool[7];
+            bool[] moon = new bool[7];
+            bool[] mercury = new bool[7];
+            bool[] venus = new bool[7];
+            bool[] mars = new bool[7];
+            bool[] jupiter = new bool[7];
+            bool[] saturn = new bool[7];
+            bool[] uranus = new bool[7];
+            bool[] neptune = new bool[7];
+            bool[] pluto = new bool[7];
+            bool[] dh = new bool[7];
+            bool[] asc = new bool[7];
+            bool[] mc = new bool[7];
+            bool[] chiron = new bool[7];
+            bool[] earth = new bool[7];
+            bool[] lilith = new bool[7];
+            bool[] ceres = new bool[7];
+            bool[] paras = new bool[7];
+            bool[] juno = new bool[7];
+            bool[] vesta = new bool[7];
+            bool[] eris = new bool[7];
+            bool[] sedna = new bool[7];
+            bool[] haumea = new bool[7];
+            bool[] makemake = new bool[7];
+            bool[] vt = new bool[7];
+            bool[] pof = new bool[7];
+
+            sun[0] = xmlData.dispPlanetSun11;
+            sun[1] = xmlData.dispPlanetSun22;
+            sun[2] = xmlData.dispPlanetSun33;
+            sun[3] = false;
+            sun[4] = false;
+            sun[5] = false;
+            sun[6] = false;
+            moon[0] = xmlData.dispPlanetMoon11;
+            moon[1] = xmlData.dispPlanetMoon22;
+            moon[2] = xmlData.dispPlanetMoon33;
+            moon[3] = false;
+            moon[4] = false;
+            moon[5] = false;
+            moon[6] = false;
+            mercury[0] = xmlData.dispPlanetMercury11;
+            mercury[1] = xmlData.dispPlanetMercury22;
+            mercury[2] = xmlData.dispPlanetMercury33;
+            mercury[3] = false;
+            mercury[4] = false;
+            mercury[5] = false;
+            mercury[6] = false;
+            venus[0] = xmlData.dispPlanetVenus11;
+            venus[1] = xmlData.dispPlanetVenus22;
+            venus[2] = xmlData.dispPlanetVenus33;
+            venus[3] = false;
+            venus[4] = false;
+            venus[5] = false;
+            venus[6] = false;
+            mars[0] = xmlData.dispPlanetMars11;
+            mars[1] = xmlData.dispPlanetMars22;
+            mars[2] = xmlData.dispPlanetMars33;
+            mars[3] = false;
+            mars[4] = false;
+            mars[5] = false;
+            mars[6] = false;
+            jupiter[0] = xmlData.dispPlanetJupiter11;
+            jupiter[1] = xmlData.dispPlanetJupiter22;
+            jupiter[2] = xmlData.dispPlanetJupiter33;
+            jupiter[3] = false;
+            jupiter[4] = false;
+            jupiter[5] = false;
+            jupiter[6] = false;
+            saturn[0] = xmlData.dispPlanetSaturn11;
+            saturn[1] = xmlData.dispPlanetSaturn22;
+            saturn[2] = xmlData.dispPlanetSaturn33;
+            saturn[3] = false;
+            saturn[4] = false;
+            saturn[5] = false;
+            saturn[6] = false;
+            uranus[0] = xmlData.dispPlanetUranus11;
+            uranus[1] = xmlData.dispPlanetUranus22;
+            uranus[2] = xmlData.dispPlanetUranus33;
+            uranus[3] = false;
+            uranus[4] = false;
+            uranus[5] = false;
+            uranus[6] = false;
+            neptune[0] = xmlData.dispPlanetNeptune11;
+            neptune[1] = xmlData.dispPlanetNeptune22;
+            neptune[2] = xmlData.dispPlanetNeptune33;
+            neptune[3] = false;
+            neptune[4] = false;
+            neptune[5] = false;
+            neptune[6] = false;
+            pluto[0] = xmlData.dispPlanetPluto11;
+            pluto[1] = xmlData.dispPlanetPluto22;
+            pluto[2] = xmlData.dispPlanetPluto33;
+            pluto[3] = false;
+            pluto[4] = false;
+            pluto[5] = false;
+            pluto[6] = false;
+            dh[0] = xmlData.dispPlanetDh11;
+            dh[1] = xmlData.dispPlanetDh22;
+            dh[2] = xmlData.dispPlanetDh33;
+            dh[3] = false;
+            dh[4] = false;
+            dh[5] = false;
+            dh[6] = false;
+
+            xmlData.dispPlanetSun = ConvertString(sun);
+            xmlData.dispPlanetMoon = ConvertString(moon);
+            xmlData.dispPlanetMercury = ConvertString(mercury);
+            xmlData.dispPlanetVenus = ConvertString(venus);
+            xmlData.dispPlanetMars = ConvertString(mars);
+            xmlData.dispPlanetJupiter = ConvertString(jupiter);
+            xmlData.dispPlanetSaturn = ConvertString(saturn);
+            //todo
+
+            Dictionary<int, bool> planet1 = new Dictionary<int, bool>
+            {
+                { CommonData.ZODIAC_NUMBER_SUN, xmlData.dispPlanetSun11 },
+                { CommonData.ZODIAC_NUMBER_MOON, xmlData.dispPlanetMoon11 },
+                { CommonData.ZODIAC_NUMBER_MERCURY, xmlData.dispPlanetMercury11 },
+                { CommonData.ZODIAC_NUMBER_VENUS, xmlData.dispPlanetVenus11 },
+                { CommonData.ZODIAC_NUMBER_JUPITER, xmlData.dispPlanetJupiter11 },
+                { CommonData.ZODIAC_NUMBER_SATURN, xmlData.dispPlanetSaturn11 },
+                { CommonData.ZODIAC_NUMBER_URANUS, xmlData.dispPlanetUranus11 },
+                { CommonData.ZODIAC_NUMBER_NEPTUNE, xmlData.dispPlanetNeptune11 },
+                { CommonData.ZODIAC_NUMBER_PLUTO, xmlData.dispPlanetPluto11 },
+                { CommonData.ZODIAC_NUMBER_DH_TRUENODE, xmlData.dispPlanetDh11 },
+                { CommonData.ZODIAC_NUMBER_ASC, xmlData.dispPlanetAsc11 },
+                { CommonData.ZODIAC_NUMBER_MC, xmlData.dispPlanetMc11 },
+                { CommonData.ZODIAC_NUMBER_CHIRON, xmlData.dispPlanetChiron11 },
+                { CommonData.ZODIAC_NUMBER_EARTH, xmlData.dispPlanetEarth11 },
+                { CommonData.ZODIAC_NUMBER_LILITH, xmlData.dispPlanetLilith11 },
+                { CommonData.ZODIAC_NUMBER_CERES, false },
+                { CommonData.ZODIAC_NUMBER_PARAS, false },
+                { CommonData.ZODIAC_NUMBER_JUNO, false },
+                { CommonData.ZODIAC_NUMBER_VESTA, false },
+                { CommonData.ZODIAC_NUMBER_ERIS, false },
+                { CommonData.ZODIAC_NUMBER_SEDNA, false },
+                { CommonData.ZODIAC_NUMBER_HAUMEA, false },
+                { CommonData.ZODIAC_NUMBER_MAKEMAKE, false },
+                { CommonData.ZODIAC_NUMBER_VT, false },
+                { CommonData.ZODIAC_NUMBER_POF, false },
+            };
+
+            dispPlanet.Add(planet1);
+
+            Dictionary<int, bool> planet2 = new Dictionary<int, bool>
+            {
+                { CommonData.ZODIAC_NUMBER_SUN, xmlData.dispPlanetSun22 },
+                { CommonData.ZODIAC_NUMBER_MOON, xmlData.dispPlanetMoon22 },
+                { CommonData.ZODIAC_NUMBER_MERCURY, xmlData.dispPlanetMercury22 },
+                { CommonData.ZODIAC_NUMBER_VENUS, xmlData.dispPlanetVenus22 },
+                { CommonData.ZODIAC_NUMBER_JUPITER, xmlData.dispPlanetJupiter22 },
+                { CommonData.ZODIAC_NUMBER_SATURN, xmlData.dispPlanetSaturn22 },
+                { CommonData.ZODIAC_NUMBER_URANUS, xmlData.dispPlanetUranus22 },
+                { CommonData.ZODIAC_NUMBER_NEPTUNE, xmlData.dispPlanetNeptune22 },
+                { CommonData.ZODIAC_NUMBER_PLUTO, xmlData.dispPlanetPluto22 },
+                { CommonData.ZODIAC_NUMBER_DH_TRUENODE, xmlData.dispPlanetDh22 },
+                { CommonData.ZODIAC_NUMBER_ASC, xmlData.dispPlanetAsc22 },
+                { CommonData.ZODIAC_NUMBER_MC, xmlData.dispPlanetMc22 },
+                { CommonData.ZODIAC_NUMBER_CHIRON, xmlData.dispPlanetChiron22 },
+                { CommonData.ZODIAC_NUMBER_EARTH, xmlData.dispPlanetEarth22 },
+                { CommonData.ZODIAC_NUMBER_LILITH, xmlData.dispPlanetLilith22 },
+                { CommonData.ZODIAC_NUMBER_CERES, false },
+                { CommonData.ZODIAC_NUMBER_PARAS, false },
+                { CommonData.ZODIAC_NUMBER_JUNO, false },
+                { CommonData.ZODIAC_NUMBER_VESTA, false },
+                { CommonData.ZODIAC_NUMBER_ERIS, false },
+                { CommonData.ZODIAC_NUMBER_SEDNA, false },
+                { CommonData.ZODIAC_NUMBER_HAUMEA, false },
+                { CommonData.ZODIAC_NUMBER_MAKEMAKE, false },
+                { CommonData.ZODIAC_NUMBER_VT, false },
+                { CommonData.ZODIAC_NUMBER_POF, false },
+            };
+
+            dispPlanet.Add(planet2);
+
+            Dictionary<int, bool> planet3 = new Dictionary<int, bool>
+            {
+                { CommonData.ZODIAC_NUMBER_SUN, xmlData.dispPlanetSun33 },
+                { CommonData.ZODIAC_NUMBER_MOON, xmlData.dispPlanetMoon33 },
+                { CommonData.ZODIAC_NUMBER_MERCURY, xmlData.dispPlanetMercury33 },
+                { CommonData.ZODIAC_NUMBER_VENUS, xmlData.dispPlanetVenus33 },
+                { CommonData.ZODIAC_NUMBER_JUPITER, xmlData.dispPlanetJupiter33 },
+                { CommonData.ZODIAC_NUMBER_SATURN, xmlData.dispPlanetSaturn33 },
+                { CommonData.ZODIAC_NUMBER_URANUS, xmlData.dispPlanetUranus33 },
+                { CommonData.ZODIAC_NUMBER_NEPTUNE, xmlData.dispPlanetNeptune33 },
+                { CommonData.ZODIAC_NUMBER_PLUTO, xmlData.dispPlanetPluto33 },
+                { CommonData.ZODIAC_NUMBER_DH_TRUENODE, xmlData.dispPlanetDh33 },
+                { CommonData.ZODIAC_NUMBER_ASC, xmlData.dispPlanetAsc33 },
+                { CommonData.ZODIAC_NUMBER_MC, xmlData.dispPlanetMc33 },
+                { CommonData.ZODIAC_NUMBER_CHIRON, xmlData.dispPlanetChiron33 },
+                { CommonData.ZODIAC_NUMBER_EARTH, xmlData.dispPlanetEarth33 },
+                { CommonData.ZODIAC_NUMBER_LILITH, xmlData.dispPlanetLilith33 },
+                { CommonData.ZODIAC_NUMBER_CERES, false },
+                { CommonData.ZODIAC_NUMBER_PARAS, false },
+                { CommonData.ZODIAC_NUMBER_JUNO, false },
+                { CommonData.ZODIAC_NUMBER_VESTA, false },
+                { CommonData.ZODIAC_NUMBER_ERIS, false },
+                { CommonData.ZODIAC_NUMBER_SEDNA, false },
+                { CommonData.ZODIAC_NUMBER_HAUMEA, false },
+                { CommonData.ZODIAC_NUMBER_MAKEMAKE, false },
+                { CommonData.ZODIAC_NUMBER_VT, false },
+                { CommonData.ZODIAC_NUMBER_POF, false },
+            };
+
+            dispPlanet.Add(planet3);
+            // todo
         }
 
         #region oldorb
@@ -307,12 +525,36 @@ namespace microcosm.Config
             localorbs[4] = xmlData.orb_other_hard_150_4;
             localorbs[5] = xmlData.orb_other_hard_150_5;
             xmlData.orb_other_hard_150 = ConvertString(localorbs);
+
+            Dictionary<OrbKind, double> o11 = new Dictionary<OrbKind, double>
+            {
+                { OrbKind.SUN_SOFT_1ST, xmlData.orb_sun_soft_1st_0 },
+                { OrbKind.SUN_SOFT_2ND, xmlData.orb_sun_soft_2nd_0},
+                { OrbKind.SUN_HARD_2ND, xmlData.orb_sun_hard_2nd_0},
+                { OrbKind.SUN_SOFT_150, xmlData.orb_sun_soft_150_0},
+                { OrbKind.SUN_HARD_150, xmlData.orb_sun_hard_150_0},
+                { OrbKind.MOON_SOFT_1ST, xmlData.orb_moon_soft_1st_0},
+                { OrbKind.MOON_HARD_1ST, xmlData.orb_moon_hard_1st_0},
+                { OrbKind.MOON_SOFT_2ND, xmlData.orb_moon_soft_2nd_0},
+                { OrbKind.MOON_HARD_2ND, xmlData.orb_moon_hard_2nd_0},
+                { OrbKind.MOON_SOFT_150, xmlData.orb_moon_soft_150_0},
+                { OrbKind.MOON_HARD_150, xmlData.orb_moon_hard_150_0},
+                { OrbKind.OTHER_SOFT_1ST, xmlData.orb_other_soft_1st_0},
+                { OrbKind.OTHER_HARD_1ST, xmlData.orb_other_hard_1st_0},
+                { OrbKind.OTHER_SOFT_2ND, xmlData.orb_other_soft_2nd_0},
+                { OrbKind.OTHER_HARD_2ND, xmlData.orb_other_hard_2nd_0},
+                { OrbKind.OTHER_SOFT_150, xmlData.orb_other_soft_150_0},
+                { OrbKind.OTHER_HARD_150, xmlData.orb_other_hard_150_0}
+            };
+
+            orbs.Add(o11);
+            // todo
         }
 
         #endregion
 
         #region olddispaspect
-        private void ConvertDispAspect()
+        private void ConvertDispAspectPlanet()
         {
             bool[] bools = new bool[28];
             bools[0] = xmlData.aspectSun11;
@@ -664,6 +906,7 @@ namespace microcosm.Config
 
             for (int i = 0; i < 7; i++)
             {
+                // todo dp初期化してないからバグる
                 dp.Add(CommonData.ZODIAC_NUMBER_SUN, sun[i]);
                 dp.Add(CommonData.ZODIAC_NUMBER_MOON, moon[i]);
                 dp.Add(CommonData.ZODIAC_NUMBER_MERCURY, mercury[i]);

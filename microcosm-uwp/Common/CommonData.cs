@@ -69,7 +69,7 @@ namespace microcosm.Common
         public const int ZODIAC_NUMBER_ERIS = 136199;
         public const int ZODIAC_NUMBER_MAKEMAKE = 136472;
 
-        public const int ZODIAC_NUMBER_VT = -1;
+        public const int ZODIAC_NUMBER_VT = 10003;
         public const int ZODIAC_NUMBER_POF = -1;
 
         public static double defaultLat = 35.670587;

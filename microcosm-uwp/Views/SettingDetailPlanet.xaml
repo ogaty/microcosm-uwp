@@ -1,0 +1,112 @@
+﻿<Page
+    x:Class="microcosm.Views.SettingDetailPlanet"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:microcosm.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" Height="400">
+                    <StackPanel Margin="10, 0, 0, 0">
+                        <TextBlock>1</TextBlock>
+                        <TextBlock>太陽</TextBlock>
+                        <TextBlock>月</TextBlock>
+                        <TextBlock>☿</TextBlock>
+                        <TextBlock>♀</TextBlock>
+                        <TextBlock>♂</TextBlock>
+                        <TextBlock>♃</TextBlock>
+                        <TextBlock>♄</TextBlock>
+                        <TextBlock>♅</TextBlock>
+                        <TextBlock>♆</TextBlock>
+                        <TextBlock>♇</TextBlock>
+                        <TextBlock>ASC</TextBlock>
+                        <TextBlock>MC</TextBlock>
+                        <TextBlock>Vt</TextBlock>
+                        <TextBlock>Pof</TextBlock>
+                        <TextBlock>ヘッド</TextBlock>
+                        <TextBlock>リリス</TextBlock>
+                        <TextBlock>地球</TextBlock>
+                        <TextBlock>キロン</TextBlock>
+                        <TextBlock>セレス</TextBlock>
+                        <TextBlock>パラス</TextBlock>
+                        <TextBlock>ジュノー</TextBlock>
+                        <TextBlock>ベスタ</TextBlock>
+                        <TextBlock>エリス</TextBlock>
+                        <TextBlock>セドナ</TextBlock>
+                        <TextBlock>ハウメア</TextBlock>
+                        <TextBlock>マケマケ</TextBlock>
+                    </StackPanel>
+                    <StackPanel Margin="10, 0, 0, 0">
+                        <TextBlock>2</TextBlock>
+                        <TextBlock>太陽</TextBlock>
+                        <TextBlock>月</TextBlock>
+                        <TextBlock>☿</TextBlock>
+                        <TextBlock>♀</TextBlock>
+                        <TextBlock>♂</TextBlock>
+                        <TextBlock>♃</TextBlock>
+                        <TextBlock>♄</TextBlock>
+                        <TextBlock>♅</TextBlock>
+                        <TextBlock>♆</TextBlock>
+                        <TextBlock>♇</TextBlock>
+                        <TextBlock>ASC</TextBlock>
+                        <TextBlock>MC</TextBlock>
+                        <TextBlock>Vt</TextBlock>
+                        <TextBlock>Pof</TextBlock>
+                    </StackPanel>
+                    <StackPanel Margin="10, 0, 0, 0">
+                        <TextBlock></TextBlock>
+                        <TextBlock>ヘッド</TextBlock>
+                        <TextBlock>リリス</TextBlock>
+                        <TextBlock>地球</TextBlock>
+                        <TextBlock>キロン</TextBlock>
+                        <TextBlock>セレス</TextBlock>
+                        <TextBlock>パラス</TextBlock>
+                        <TextBlock>ジュノー</TextBlock>
+                        <TextBlock>ベスタ</TextBlock>
+                        <TextBlock>エリス</TextBlock>
+                        <TextBlock>セドナ</TextBlock>
+                        <TextBlock>ハウメア</TextBlock>
+                        <TextBlock>マケマケ</TextBlock>
+                    </StackPanel>
+                    <StackPanel Margin="10, 0, 0, 0">
+                        <TextBlock>3</TextBlock>
+                        <TextBlock>太陽</TextBlock>
+                        <TextBlock>月</TextBlock>
+                        <TextBlock>☿</TextBlock>
+                        <TextBlock>♀</TextBlock>
+                        <TextBlock>♂</TextBlock>
+                        <TextBlock>♃</TextBlock>
+                        <TextBlock>♄</TextBlock>
+                        <TextBlock>♅</TextBlock>
+                        <TextBlock>♆</TextBlock>
+                        <TextBlock>♇</TextBlock>
+                        <TextBlock>ASC</TextBlock>
+                        <TextBlock>MC</TextBlock>
+                        <TextBlock>Vt</TextBlock>
+                        <TextBlock>Pof</TextBlock>
+                    </StackPanel>
+                    <StackPanel Margin="10, 0, 0, 0">
+                        <TextBlock></TextBlock>
+                        <TextBlock>ヘッド</TextBlock>
+                        <TextBlock>リリス</TextBlock>
+                        <TextBlock>地球</TextBlock>
+                        <TextBlock>キロン</TextBlock>
+                        <TextBlock>セレス</TextBlock>
+                        <TextBlock>パラス</TextBlock>
+                        <TextBlock>ジュノー</TextBlock>
+                        <TextBlock>ベスタ</TextBlock>
+                        <TextBlock>エリス</TextBlock>
+                        <TextBlock>セドナ</TextBlock>
+                        <TextBlock>ハウメア</TextBlock>
+                        <TextBlock>マケマケ</TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+</Page>

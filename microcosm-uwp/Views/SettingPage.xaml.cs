@@ -1,5 +1,4 @@
-﻿using microcosm.Config;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -15,10 +14,12 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using microcosm.Config;
+using Windows.UI;
 
 // 空白ページの項目テンプレートについては、https://go.microsoft.com/fwlink/?LinkId=234238 を参照してください
 
-namespace microcosm
+namespace microcosm.Views
 {
     /// <summary>
     /// それ自体で使用できる空白ページまたはフレーム内に移動できる空白ページ。
@@ -26,6 +27,7 @@ namespace microcosm
     public sealed partial class SettingPage : Page
     {
         ConfigData config;
+        SettingData[] settings;
         public SettingPage()
         {
             this.InitializeComponent();
@@ -48,6 +50,14 @@ namespace microcosm
             base.OnNavigatedTo(e);
             this.SettingFrame.Navigate(typeof(SettingsConfigPage), (object)config);
 
+        }
+
+        private void DisplaySettingMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            CommonSettingMenuBar.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
+            DisplaySettingMenuBar.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 0));
+            VersionMenuBar.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
+            this.SettingFrame.Navigate(typeof(SettingSettingsPage), (object)settings);
         }
     }
 }

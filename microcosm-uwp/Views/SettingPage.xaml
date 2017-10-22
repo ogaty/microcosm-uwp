@@ -1,8 +1,7 @@
 ﻿<Page
-    x:Class="microcosm.SettingPage"
+    x:Class="microcosm.Views.SettingPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:microcosm"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
@@ -16,13 +15,13 @@
         <StackPanel Grid.Column="0">
             <TextBlock Margin="5, 10, 5, 20" FontSize="32">設定</TextBlock>
             <StackPanel x:Name="CommonSettingMenuBar" Background="Yellow">
-                <HyperlinkButton Margin="5, 10, 5, 10" x:Name="CommonSettingMenuItem" Content="共通設定"></HyperlinkButton>
+                <HyperlinkButton Margin="5, 10, 5, 10" x:Name="CommonSettingMenuItem" Content="共通設定" />
             </StackPanel>
             <StackPanel x:Name="DisplaySettingMenuBar" Background="White">
-                <HyperlinkButton Margin="5, 10, 5, 10" x:Name="DisplaySettingMenuItem" Content="表示設定"></HyperlinkButton>
+                <HyperlinkButton Margin="5, 10, 5, 10" x:Name="DisplaySettingMenuItem" Content="表示設定" Click="DisplaySettingMenuItem_Click" />
             </StackPanel>
             <StackPanel x:Name="VersionMenuBar" Background="White">
-                <HyperlinkButton Margin="5, 10, 5, 10" x:Name="VersionMenuItem" Content="バージョン情報"></HyperlinkButton>
+                <HyperlinkButton Margin="5, 10, 5, 10" x:Name="VersionMenuItem" Content="バージョン情報" />
             </StackPanel>
         </StackPanel>
 

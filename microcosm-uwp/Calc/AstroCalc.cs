@@ -10,6 +10,8 @@ using System.Diagnostics;
 using Windows.Storage;
 using Windows.Storage.Streams;
 
+using microcosm.Views;
+
 namespace microcosm.Calc
 {
     public class AstroCalc
