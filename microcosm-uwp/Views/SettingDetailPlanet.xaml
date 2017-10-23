@@ -13,8 +13,8 @@
                 <StackPanel Orientation="Horizontal" Height="400">
                     <StackPanel Margin="10, 0, 0, 0">
                         <TextBlock>1</TextBlock>
-                        <TextBlock>太陽</TextBlock>
-                        <TextBlock>月</TextBlock>
+                        <TextBlock>☉</TextBlock>
+                        <TextBlock>☽</TextBlock>
                         <TextBlock>☿</TextBlock>
                         <TextBlock>♀</TextBlock>
                         <TextBlock>♂</TextBlock>
@@ -29,7 +29,7 @@
                         <TextBlock>Pof</TextBlock>
                         <TextBlock>ヘッド</TextBlock>
                         <TextBlock>リリス</TextBlock>
-                        <TextBlock>地球</TextBlock>
+                        <TextBlock>♁</TextBlock>
                         <TextBlock>キロン</TextBlock>
                         <TextBlock>セレス</TextBlock>
                         <TextBlock>パラス</TextBlock>
@@ -42,8 +42,8 @@
                     </StackPanel>
                     <StackPanel Margin="10, 0, 0, 0">
                         <TextBlock>2</TextBlock>
-                        <TextBlock>太陽</TextBlock>
-                        <TextBlock>月</TextBlock>
+                        <TextBlock>☉</TextBlock>
+                        <TextBlock>☽</TextBlock>
                         <TextBlock>☿</TextBlock>
                         <TextBlock>♀</TextBlock>
                         <TextBlock>♂</TextBlock>
@@ -56,12 +56,9 @@
                         <TextBlock>MC</TextBlock>
                         <TextBlock>Vt</TextBlock>
                         <TextBlock>Pof</TextBlock>
-                    </StackPanel>
-                    <StackPanel Margin="10, 0, 0, 0">
-                        <TextBlock></TextBlock>
                         <TextBlock>ヘッド</TextBlock>
                         <TextBlock>リリス</TextBlock>
-                        <TextBlock>地球</TextBlock>
+                        <TextBlock>♁</TextBlock>
                         <TextBlock>キロン</TextBlock>
                         <TextBlock>セレス</TextBlock>
                         <TextBlock>パラス</TextBlock>
@@ -74,8 +71,8 @@
                     </StackPanel>
                     <StackPanel Margin="10, 0, 0, 0">
                         <TextBlock>3</TextBlock>
-                        <TextBlock>太陽</TextBlock>
-                        <TextBlock>月</TextBlock>
+                        <TextBlock>☉</TextBlock>
+                        <TextBlock>☽</TextBlock>
                         <TextBlock>☿</TextBlock>
                         <TextBlock>♀</TextBlock>
                         <TextBlock>♂</TextBlock>
@@ -88,12 +85,9 @@
                         <TextBlock>MC</TextBlock>
                         <TextBlock>Vt</TextBlock>
                         <TextBlock>Pof</TextBlock>
-                    </StackPanel>
-                    <StackPanel Margin="10, 0, 0, 0">
-                        <TextBlock></TextBlock>
                         <TextBlock>ヘッド</TextBlock>
                         <TextBlock>リリス</TextBlock>
-                        <TextBlock>地球</TextBlock>
+                        <TextBlock>♁</TextBlock>
                         <TextBlock>キロン</TextBlock>
                         <TextBlock>セレス</TextBlock>
                         <TextBlock>パラス</TextBlock>

@@ -16,6 +16,31 @@
             <RadioButton Content="Porphyry" x:Name="PorphyryRadio" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <RadioButton Content="Regiomontanus" x:Name="RegiomontanusRadio" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         </StackPanel>
+        <StackPanel x:Name="Progressions">
+            <RadioButton Content="一度一年法(Primary Progression)" x:Name="PrimaryRadio" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True"  />
+            <RadioButton Content="一日一年法(Secondary Progression)" x:Name="SecondaryRadio" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <RadioButton Content="CPS(Composit Progression)" x:Name="CompositRadio" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </StackPanel>
+        <StackPanel x:Name="DoubleLetter">
+            <RadioButton Content="60進法(29.59°)" x:Name="SixtyRadio" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True"  />
+            <RadioButton Content="100進法(29.99)" x:Name="HandredRadio" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </StackPanel>
+        <StackPanel x:Name="Charts">
+            <RadioButton Content="Simple" x:Name="SimpleRadio" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True"  />
+            <RadioButton Content="Full" x:Name="FullRadio" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </StackPanel>
+        <StackPanel x:Name="Centrics">
+            <RadioButton Content="GeoCentric" x:Name="GeoRadio" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True"  />
+            <RadioButton Content="HelioCentric" x:Name="HelioRadio" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </StackPanel>
+        <StackPanel x:Name="Tropicals">
+            <RadioButton Content="Tropical" x:Name="TropicalRadio" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True"  />
+            <RadioButton Content="SideReal" x:Name="SideRealRadio" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </StackPanel>
+        <StackPanel>
+            <CheckBox x:Name="特定度数を目立たせる">
+            <TextBox />
+        </StackPanel>
         <Grid HorizontalAlignment="Left" Height="100" Margin="273,372,0,0" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
