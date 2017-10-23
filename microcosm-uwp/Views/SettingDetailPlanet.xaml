@@ -10,94 +10,214 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel>
-                <StackPanel Orientation="Horizontal" Height="400">
-                    <StackPanel Margin="10, 0, 0, 0">
-                        <TextBlock>1</TextBlock>
-                        <TextBlock>☉</TextBlock>
-                        <TextBlock>☽</TextBlock>
-                        <TextBlock>☿</TextBlock>
-                        <TextBlock>♀</TextBlock>
-                        <TextBlock>♂</TextBlock>
-                        <TextBlock>♃</TextBlock>
-                        <TextBlock>♄</TextBlock>
-                        <TextBlock>♅</TextBlock>
-                        <TextBlock>♆</TextBlock>
-                        <TextBlock>♇</TextBlock>
-                        <TextBlock>ASC</TextBlock>
-                        <TextBlock>MC</TextBlock>
-                        <TextBlock>Vt</TextBlock>
-                        <TextBlock>Pof</TextBlock>
-                        <TextBlock>ヘッド</TextBlock>
-                        <TextBlock>リリス</TextBlock>
-                        <TextBlock>♁</TextBlock>
-                        <TextBlock>キロン</TextBlock>
-                        <TextBlock>セレス</TextBlock>
-                        <TextBlock>パラス</TextBlock>
-                        <TextBlock>ジュノー</TextBlock>
-                        <TextBlock>ベスタ</TextBlock>
-                        <TextBlock>エリス</TextBlock>
-                        <TextBlock>セドナ</TextBlock>
-                        <TextBlock>ハウメア</TextBlock>
-                        <TextBlock>マケマケ</TextBlock>
+                <StackPanel>
+                    <ToggleButton Content="☉" />
+                </StackPanel>
+                
+                <StackPanel Orientation="Horizontal" Margin="0, 0, 0, 10">
+                    <TextBlock Width="30">1</TextBlock>
+                    <StackPanel x:Name="Sun11">
+                        <TextBlock Width="25">☉</TextBlock>
                     </StackPanel>
-                    <StackPanel Margin="10, 0, 0, 0">
-                        <TextBlock>2</TextBlock>
-                        <TextBlock>☉</TextBlock>
-                        <TextBlock>☽</TextBlock>
-                        <TextBlock>☿</TextBlock>
-                        <TextBlock>♀</TextBlock>
-                        <TextBlock>♂</TextBlock>
-                        <TextBlock>♃</TextBlock>
-                        <TextBlock>♄</TextBlock>
-                        <TextBlock>♅</TextBlock>
-                        <TextBlock>♆</TextBlock>
-                        <TextBlock>♇</TextBlock>
-                        <TextBlock>ASC</TextBlock>
-                        <TextBlock>MC</TextBlock>
-                        <TextBlock>Vt</TextBlock>
-                        <TextBlock>Pof</TextBlock>
-                        <TextBlock>ヘッド</TextBlock>
-                        <TextBlock>リリス</TextBlock>
-                        <TextBlock>♁</TextBlock>
-                        <TextBlock>キロン</TextBlock>
-                        <TextBlock>セレス</TextBlock>
-                        <TextBlock>パラス</TextBlock>
-                        <TextBlock>ジュノー</TextBlock>
-                        <TextBlock>ベスタ</TextBlock>
-                        <TextBlock>エリス</TextBlock>
-                        <TextBlock>セドナ</TextBlock>
-                        <TextBlock>ハウメア</TextBlock>
-                        <TextBlock>マケマケ</TextBlock>
-                    </StackPanel>
-                    <StackPanel Margin="10, 0, 0, 0">
-                        <TextBlock>3</TextBlock>
-                        <TextBlock>☉</TextBlock>
-                        <TextBlock>☽</TextBlock>
-                        <TextBlock>☿</TextBlock>
-                        <TextBlock>♀</TextBlock>
-                        <TextBlock>♂</TextBlock>
-                        <TextBlock>♃</TextBlock>
-                        <TextBlock>♄</TextBlock>
-                        <TextBlock>♅</TextBlock>
-                        <TextBlock>♆</TextBlock>
-                        <TextBlock>♇</TextBlock>
-                        <TextBlock>ASC</TextBlock>
-                        <TextBlock>MC</TextBlock>
-                        <TextBlock>Vt</TextBlock>
-                        <TextBlock>Pof</TextBlock>
-                        <TextBlock>ヘッド</TextBlock>
-                        <TextBlock>リリス</TextBlock>
-                        <TextBlock>♁</TextBlock>
-                        <TextBlock>キロン</TextBlock>
-                        <TextBlock>セレス</TextBlock>
-                        <TextBlock>パラス</TextBlock>
-                        <TextBlock>ジュノー</TextBlock>
-                        <TextBlock>ベスタ</TextBlock>
-                        <TextBlock>エリス</TextBlock>
-                        <TextBlock>セドナ</TextBlock>
-                        <TextBlock>ハウメア</TextBlock>
-                        <TextBlock>マケマケ</TextBlock>
-                    </StackPanel>
+                    <TextBlock Width="25">☽</TextBlock>
+                    <TextBlock Width="25">☿</TextBlock>
+                    <TextBlock Width="25">♀</TextBlock>
+                    <TextBlock Width="25">♂</TextBlock>
+                    <TextBlock Width="25">♃</TextBlock>
+                    <TextBlock Width="25">♄</TextBlock>
+                    <TextBlock Width="25">♅</TextBlock>
+                    <TextBlock Width="25">♆</TextBlock>
+                    <TextBlock Width="25">♇</TextBlock>
+                    <TextBlock Width="40">ASC</TextBlock>
+                    <TextBlock Width="40">MC</TextBlock>
+                    <TextBlock Width="40">Vt</TextBlock>
+                    <TextBlock Width="40">Pof</TextBlock>
+                    <TextBlock Width="25">☊</TextBlock>
+                    <TextBlock Width="25">⚸</TextBlock>
+                    <TextBlock Width="25">♁</TextBlock>
+                    <TextBlock Width="25">⚷</TextBlock>
+                    <TextBlock Width="25">⚳</TextBlock>
+                    <TextBlock Width="25">⚴</TextBlock>
+                    <TextBlock Width="25">⚵</TextBlock>
+                    <TextBlock Width="25">⚶</TextBlock>
+                    <TextBlock Width="40">Er</TextBlock>
+                    <TextBlock Width="40">Se</TextBlock>
+                    <TextBlock Width="40">Ha</TextBlock>
+                    <TextBlock Width="40">Ma</TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0, 0, 0, 10">
+                    <TextBlock Width="30">2</TextBlock>
+                    <TextBlock Width="25">☉</TextBlock>
+                    <TextBlock Width="25">☽</TextBlock>
+                    <TextBlock Width="25">☿</TextBlock>
+                    <TextBlock Width="25">♀</TextBlock>
+                    <TextBlock Width="25">♂</TextBlock>
+                    <TextBlock Width="25">♃</TextBlock>
+                    <TextBlock Width="25">♄</TextBlock>
+                    <TextBlock Width="25">♅</TextBlock>
+                    <TextBlock Width="25">♆</TextBlock>
+                    <TextBlock Width="25">♇</TextBlock>
+                    <TextBlock Width="40">ASC</TextBlock>
+                    <TextBlock Width="40">MC</TextBlock>
+                    <TextBlock Width="40">Vt</TextBlock>
+                    <TextBlock Width="40">Pof</TextBlock>
+                    <TextBlock Width="25">☊</TextBlock>
+                    <TextBlock Width="25">⚸</TextBlock>
+                    <TextBlock Width="25">♁</TextBlock>
+                    <TextBlock Width="25">⚷</TextBlock>
+                    <TextBlock Width="25">⚳</TextBlock>
+                    <TextBlock Width="25">⚴</TextBlock>
+                    <TextBlock Width="25">⚵</TextBlock>
+                    <TextBlock Width="25">⚶</TextBlock>
+                    <TextBlock Width="40">Er</TextBlock>
+                    <TextBlock Width="40">Se</TextBlock>
+                    <TextBlock Width="40">Ha</TextBlock>
+                    <TextBlock Width="40">Ma</TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0, 0, 0, 10">
+                    <TextBlock Width="30">3</TextBlock>
+                    <TextBlock Width="25">☉</TextBlock>
+                    <TextBlock Width="25">☽</TextBlock>
+                    <TextBlock Width="25">☿</TextBlock>
+                    <TextBlock Width="25">♀</TextBlock>
+                    <TextBlock Width="25">♂</TextBlock>
+                    <TextBlock Width="25">♃</TextBlock>
+                    <TextBlock Width="25">♄</TextBlock>
+                    <TextBlock Width="25">♅</TextBlock>
+                    <TextBlock Width="25">♆</TextBlock>
+                    <TextBlock Width="25">♇</TextBlock>
+                    <TextBlock Width="40">ASC</TextBlock>
+                    <TextBlock Width="40">MC</TextBlock>
+                    <TextBlock Width="40">Vt</TextBlock>
+                    <TextBlock Width="40">Pof</TextBlock>
+                    <TextBlock Width="25">☊</TextBlock>
+                    <TextBlock Width="25">⚸</TextBlock>
+                    <TextBlock Width="25">♁</TextBlock>
+                    <TextBlock Width="25">⚷</TextBlock>
+                    <TextBlock Width="25">⚳</TextBlock>
+                    <TextBlock Width="25">⚴</TextBlock>
+                    <TextBlock Width="25">⚵</TextBlock>
+                    <TextBlock Width="25">⚶</TextBlock>
+                    <TextBlock Width="40">Er</TextBlock>
+                    <TextBlock Width="40">Se</TextBlock>
+                    <TextBlock Width="40">Ha</TextBlock>
+                    <TextBlock Width="40">Ma</TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0, 0, 0, 10">
+                    <TextBlock Width="30">4</TextBlock>
+                    <TextBlock Width="25">☉</TextBlock>
+                    <TextBlock Width="25">☽</TextBlock>
+                    <TextBlock Width="25">☿</TextBlock>
+                    <TextBlock Width="25">♀</TextBlock>
+                    <TextBlock Width="25">♂</TextBlock>
+                    <TextBlock Width="25">♃</TextBlock>
+                    <TextBlock Width="25">♄</TextBlock>
+                    <TextBlock Width="25">♅</TextBlock>
+                    <TextBlock Width="25">♆</TextBlock>
+                    <TextBlock Width="25">♇</TextBlock>
+                    <TextBlock Width="40">ASC</TextBlock>
+                    <TextBlock Width="40">MC</TextBlock>
+                    <TextBlock Width="40">Vt</TextBlock>
+                    <TextBlock Width="40">Pof</TextBlock>
+                    <TextBlock Width="25">☊</TextBlock>
+                    <TextBlock Width="25">⚸</TextBlock>
+                    <TextBlock Width="25">♁</TextBlock>
+                    <TextBlock Width="25">⚷</TextBlock>
+                    <TextBlock Width="25">⚳</TextBlock>
+                    <TextBlock Width="25">⚴</TextBlock>
+                    <TextBlock Width="25">⚵</TextBlock>
+                    <TextBlock Width="25">⚶</TextBlock>
+                    <TextBlock Width="40">Er</TextBlock>
+                    <TextBlock Width="40">Se</TextBlock>
+                    <TextBlock Width="40">Ha</TextBlock>
+                    <TextBlock Width="40">Ma</TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0, 0, 0, 10">
+                    <TextBlock Width="30">5</TextBlock>
+                    <TextBlock Width="25">☉</TextBlock>
+                    <TextBlock Width="25">☽</TextBlock>
+                    <TextBlock Width="25">☿</TextBlock>
+                    <TextBlock Width="25">♀</TextBlock>
+                    <TextBlock Width="25">♂</TextBlock>
+                    <TextBlock Width="25">♃</TextBlock>
+                    <TextBlock Width="25">♄</TextBlock>
+                    <TextBlock Width="25">♅</TextBlock>
+                    <TextBlock Width="25">♆</TextBlock>
+                    <TextBlock Width="25">♇</TextBlock>
+                    <TextBlock Width="40">ASC</TextBlock>
+                    <TextBlock Width="40">MC</TextBlock>
+                    <TextBlock Width="40">Vt</TextBlock>
+                    <TextBlock Width="40">Pof</TextBlock>
+                    <TextBlock Width="25">☊</TextBlock>
+                    <TextBlock Width="25">⚸</TextBlock>
+                    <TextBlock Width="25">♁</TextBlock>
+                    <TextBlock Width="25">⚷</TextBlock>
+                    <TextBlock Width="25">⚳</TextBlock>
+                    <TextBlock Width="25">⚴</TextBlock>
+                    <TextBlock Width="25">⚵</TextBlock>
+                    <TextBlock Width="25">⚶</TextBlock>
+                    <TextBlock Width="40">Er</TextBlock>
+                    <TextBlock Width="40">Se</TextBlock>
+                    <TextBlock Width="40">Ha</TextBlock>
+                    <TextBlock Width="40">Ma</TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0, 0, 0, 10">
+                    <TextBlock Width="30">6</TextBlock>
+                    <TextBlock Width="25">☉</TextBlock>
+                    <TextBlock Width="25">☽</TextBlock>
+                    <TextBlock Width="25">☿</TextBlock>
+                    <TextBlock Width="25">♀</TextBlock>
+                    <TextBlock Width="25">♂</TextBlock>
+                    <TextBlock Width="25">♃</TextBlock>
+                    <TextBlock Width="25">♄</TextBlock>
+                    <TextBlock Width="25">♅</TextBlock>
+                    <TextBlock Width="25">♆</TextBlock>
+                    <TextBlock Width="25">♇</TextBlock>
+                    <TextBlock Width="40">ASC</TextBlock>
+                    <TextBlock Width="40">MC</TextBlock>
+                    <TextBlock Width="40">Vt</TextBlock>
+                    <TextBlock Width="40">Pof</TextBlock>
+                    <TextBlock Width="25">☊</TextBlock>
+                    <TextBlock Width="25">⚸</TextBlock>
+                    <TextBlock Width="25">♁</TextBlock>
+                    <TextBlock Width="25">⚷</TextBlock>
+                    <TextBlock Width="25">⚳</TextBlock>
+                    <TextBlock Width="25">⚴</TextBlock>
+                    <TextBlock Width="25">⚵</TextBlock>
+                    <TextBlock Width="25">⚶</TextBlock>
+                    <TextBlock Width="40">Er</TextBlock>
+                    <TextBlock Width="40">Se</TextBlock>
+                    <TextBlock Width="40">Ha</TextBlock>
+                    <TextBlock Width="40">Ma</TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0, 0, 0, 10">
+                    <TextBlock Width="30">7</TextBlock>
+                    <TextBlock Width="25">☉</TextBlock>
+                    <TextBlock Width="25">☽</TextBlock>
+                    <TextBlock Width="25">☿</TextBlock>
+                    <TextBlock Width="25">♀</TextBlock>
+                    <TextBlock Width="25">♂</TextBlock>
+                    <TextBlock Width="25">♃</TextBlock>
+                    <TextBlock Width="25">♄</TextBlock>
+                    <TextBlock Width="25">♅</TextBlock>
+                    <TextBlock Width="25">♆</TextBlock>
+                    <TextBlock Width="25">♇</TextBlock>
+                    <TextBlock Width="40">ASC</TextBlock>
+                    <TextBlock Width="40">MC</TextBlock>
+                    <TextBlock Width="40">Vt</TextBlock>
+                    <TextBlock Width="40">Pof</TextBlock>
+                    <TextBlock Width="25">☊</TextBlock>
+                    <TextBlock Width="25">⚸</TextBlock>
+                    <TextBlock Width="25">♁</TextBlock>
+                    <TextBlock Width="25">⚷</TextBlock>
+                    <TextBlock Width="25">⚳</TextBlock>
+                    <TextBlock Width="25">⚴</TextBlock>
+                    <TextBlock Width="25">⚵</TextBlock>
+                    <TextBlock Width="25">⚶</TextBlock>
+                    <TextBlock Width="40">Er</TextBlock>
+                    <TextBlock Width="40">Se</TextBlock>
+                    <TextBlock Width="40">Ha</TextBlock>
+                    <TextBlock Width="40">Ma</TextBlock>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>

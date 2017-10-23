@@ -1,5 +1,4 @@
-﻿using microcosm.Config;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -21,26 +20,11 @@ namespace microcosm.Views
     /// <summary>
     /// それ自体で使用できる空白ページまたはフレーム内に移動できる空白ページ。
     /// </summary>
-    public sealed partial class SettingSettingsPage : Page
+    public sealed partial class DatabasePage : Page
     {
-        public SettingData[] settings;
-        public SettingSettingsPage()
+        public DatabasePage()
         {
             this.InitializeComponent();
-        }
-
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            settings = (SettingData[])e.Parameter;
-
-            base.OnNavigatedTo(e);
-            this.SettingDetailFrame.Navigate(typeof(SettingDetailPlanet), (object)settings);
-
-        }
-
-        private void DispPlanetSetting_Click(object sender, RoutedEventArgs e)
-        {
-            SettingDetailFrame.Navigate(typeof(SettingDetailPlanet), (object)settings);
         }
     }
 }

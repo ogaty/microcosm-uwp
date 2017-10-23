@@ -11,10 +11,10 @@
             <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 10, 10, 10" Width="120"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0, 50, 0, 0">
-            <HyperlinkButton Content="天体表示" Margin="0, 0, 50, 0" />
-            <HyperlinkButton Content="アスペクト表示" Margin="0, 0, 50, 0" />
-            <HyperlinkButton Content="アスペクト表示(2)" Margin="0, 0, 50, 0" />
-            <HyperlinkButton Content="オーブ設定" Margin="0, 0, 50, 0" />
+            <HyperlinkButton x:Name="DispPlanetSetting" Content="天体表示" Margin="0, 0, 50, 0" Click="DispPlanetSetting_Click"  />
+            <HyperlinkButton x:Name="DispAspectCategorySetting" Content="アスペクト表示" Margin="0, 0, 50, 0" />
+            <HyperlinkButton x:Name="DispAspectPlanetSetting" Content="アスペクト表示(2)" Margin="0, 0, 50, 0" />
+            <HyperlinkButton x:Name="OrbsSetting" Content="オーブ設定" Margin="0, 0, 50, 0" />
         </StackPanel>
         <Frame x:Name="SettingDetailFrame"></Frame>
 

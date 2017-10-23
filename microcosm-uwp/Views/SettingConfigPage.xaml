@@ -8,40 +8,51 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel x:Name="HouseGroup">
-            <RadioButton Content="Placidus" x:Name="PlacidusRadio" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True"  />
-            <RadioButton Content="Koch" x:Name="KochRadio" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <RadioButton Content="Campanus" x:Name="CampanusRadio" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <RadioButton Content="Equal" x:Name="EqualRadio" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <RadioButton Content="Porphyry" x:Name="PorphyryRadio" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <RadioButton Content="Regiomontanus" x:Name="RegiomontanusRadio" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        </StackPanel>
-        <StackPanel x:Name="Progressions">
-            <RadioButton Content="一度一年法(Primary Progression)" x:Name="PrimaryRadio" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True"  />
-            <RadioButton Content="一日一年法(Secondary Progression)" x:Name="SecondaryRadio" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <RadioButton Content="CPS(Composit Progression)" x:Name="CompositRadio" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        </StackPanel>
-        <StackPanel x:Name="DoubleLetter">
-            <RadioButton Content="60進法(29.59°)" x:Name="SixtyRadio" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True"  />
-            <RadioButton Content="100進法(29.99)" x:Name="HandredRadio" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        </StackPanel>
-        <StackPanel x:Name="Charts">
-            <RadioButton Content="Simple" x:Name="SimpleRadio" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True"  />
-            <RadioButton Content="Full" x:Name="FullRadio" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        </StackPanel>
-        <StackPanel x:Name="Centrics">
-            <RadioButton Content="GeoCentric" x:Name="GeoRadio" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True"  />
-            <RadioButton Content="HelioCentric" x:Name="HelioRadio" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        </StackPanel>
-        <StackPanel x:Name="Tropicals">
-            <RadioButton Content="Tropical" x:Name="TropicalRadio" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True"  />
-            <RadioButton Content="SideReal" x:Name="SideRealRadio" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        </StackPanel>
         <StackPanel>
-            <CheckBox x:Name="特定度数を目立たせる">
-            <TextBox />
-        </StackPanel>
-        <Grid HorizontalAlignment="Left" Height="100" Margin="273,372,0,0" VerticalAlignment="Top" Width="100"/>
+            <ScrollViewer Height="500">
+                <StackPanel>
+                    <StackPanel x:Name="HouseGroup">
+                        <TextBlock FontWeight="Bold" FontSize="18">ハウス分割</TextBlock>
+                        <RadioButton Content="Placidus" x:Name="PlacidusRadio" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True" Checked="HouseDivideChanged"  />
+                        <RadioButton Content="Koch" x:Name="KochRadio" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="HouseDivideChanged"/>
+                        <RadioButton Content="Campanus" x:Name="CampanusRadio" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="HouseDivideChanged"/>
+                        <RadioButton Content="Equal" x:Name="EqualRadio" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="HouseDivideChanged"/>
+                        <RadioButton Content="Porphyry" x:Name="PorphyryRadio" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="HouseDivideChanged"/>
+                        <RadioButton Content="Regiomontanus" x:Name="RegiomontanusRadio" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="HouseDivideChanged"/>
+                    </StackPanel>
+                    <StackPanel x:Name="Progressions">
+                        <TextBlock FontWeight="Bold" FontSize="18">ハウス進行法</TextBlock>
+                        <RadioButton Content="一度一年法(Primary Progression)" x:Name="PrimaryRadio" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True" Checked="ProgressionsChanged"  />
+                        <RadioButton Content="一日一年法(Secondary Progression)" x:Name="SecondaryRadio" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="ProgressionsChanged"/>
+                        <RadioButton Content="CPS(Composit Progression)" x:Name="CompositRadio" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="ProgressionsChanged"/>
+                    </StackPanel>
+                    <StackPanel x:Name="DoubleLetter">
+                        <TextBlock FontWeight="Bold" FontSize="18">小数点以下表示</TextBlock>
+                        <RadioButton Content="60進法(29.59°)" x:Name="SixtyRadio" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True" Checked="DoubleLetterChanged"  />
+                        <RadioButton Content="100進法(29.99)" x:Name="HandredRadio" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="DoubleLetterChanged"/>
+                    </StackPanel>
+                    <StackPanel x:Name="SimpleCharts">
+                        <TextBlock FontWeight="Bold" FontSize="18">表示形式</TextBlock>
+                        <RadioButton Content="Simple(☉29)" x:Name="SimpleRadio" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True" Checked="SimpleChartsChanged"  />
+                        <RadioButton Content="Full(☉29♈15)" x:Name="FullRadio" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="SimpleChartsChanged" />
+                    </StackPanel>
+                    <StackPanel x:Name="Centrics">
+                        <TextBlock FontWeight="Bold" FontSize="18">中心点</TextBlock>
+                        <RadioButton Content="GeoCentric" x:Name="GeoRadio" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True" Checked="CentricsChanged" />
+                        <RadioButton Content="HelioCentric" x:Name="HelioRadio" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="CentricsChanged"/>
+                    </StackPanel>
+                    <StackPanel x:Name="Tropicals">
+                        <TextBlock FontWeight="Bold" FontSize="18">春分点</TextBlock>
+                        <RadioButton Content="Tropical" x:Name="TropicalRadio" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True" Checked="TropicalChanged"  />
+                        <RadioButton Content="SideReal" x:Name="SideRealRadio" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="TropicalChanged" />
+                    </StackPanel>
+                    <StackPanel>
+                        <CheckBox x:Name="DegreeCheck" Content="特定度数を目立たせる" Checked="DegreeCheck_Checked"  />
+                        <TextBox LostFocus="TextBox_LostFocus"  />
+                    </StackPanel>
 
+                </StackPanel>
+            </ScrollViewer>
+        </StackPanel>
     </Grid>
 </Page>

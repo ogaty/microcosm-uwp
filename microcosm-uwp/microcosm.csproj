@@ -106,6 +106,21 @@
     <Compile Include="Config\SettingData.cs" />
     <Compile Include="Config\SettingXml.cs" />
     <Compile Include="Config\SettingXml2.cs" />
+    <Compile Include="Views\AddressSearchPage.xaml.cs">
+      <DependentUpon>AddressSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DatabasePage.xaml.cs">
+      <DependentUpon>DatabasePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DispositorPage.xaml.cs">
+      <DependentUpon>DispositorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EventEditPage.xaml.cs">
+      <DependentUpon>EventEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GoogelSearchPage.xaml.cs">
+      <DependentUpon>GoogelSearchPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainListPage.xaml.cs">
       <DependentUpon>MainListPage.xaml</DependentUpon>
     </Compile>
@@ -113,8 +128,17 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\SettingDetailAspectCategory.xaml.cs">
+      <DependentUpon>SettingDetailAspectCategory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingDetailOrbs.xaml.cs">
+      <DependentUpon>SettingDetailOrbs.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SettingDetailPlanet.xaml.cs">
       <DependentUpon>SettingDetailPlanet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingDetailPlanetAspect.xaml.cs">
+      <DependentUpon>SettingDetailPlanetAspect.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SettingPage.xaml.cs">
       <DependentUpon>SettingPage.xaml</DependentUpon>
@@ -128,6 +152,12 @@
     <Compile Include="ViewModels\MainWindowUserDataViewModel.cs" />
     <Compile Include="Views\SettingSettingsPage.xaml.cs">
       <DependentUpon>SettingSettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TimeSetter.xaml.cs">
+      <DependentUpon>TimeSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserEditPage.xaml.cs">
+      <DependentUpon>UserEditPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -273,6 +303,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\AddressSearchPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DatabasePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DispositorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EventEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GoogelSearchPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -281,7 +331,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\SettingDetailAspectCategory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingDetailOrbs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\SettingDetailPlanet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingDetailPlanetAspect.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -294,6 +356,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\SettingSettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TimeSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserEditPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

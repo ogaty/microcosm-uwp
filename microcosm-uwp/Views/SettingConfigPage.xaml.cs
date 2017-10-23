@@ -67,5 +67,74 @@ namespace microcosm.Views
             }
         }
 
+        private void HouseDivideChanged(object sender, RoutedEventArgs e)
+        {
+            if (config == null) return;
+
+            if (PlacidusRadio.IsChecked == true)
+            {
+                config.houseCalc = EHouseCalc.PLACIDUS;
+            }
+            else if (KochRadio.IsChecked == true)
+            {
+                config.houseCalc = EHouseCalc.KOCH;
+            }
+            else if (CampanusRadio.IsChecked == true)
+            {
+                config.houseCalc = EHouseCalc.CAMPANUS;
+            }
+            else if (EqualRadio.IsChecked == true)
+            {
+                config.houseCalc = EHouseCalc.EQUAL;
+            }
+            else if (PorphyryRadio.IsChecked == true)
+            {
+                config.houseCalc = EHouseCalc.PORPHYRY;
+            }
+            else if (RegiomontanusRadio.IsChecked == true)
+            {
+                config.houseCalc = EHouseCalc.REGIOMONTANUS;
+            }
+        }
+
+        private void ProgressionsChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DoubleLetterChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SimpleChartsChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CentricsChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TropicalChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DegreeCheck_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ConfigSave()
+        {
+
+        }
     }
 }
