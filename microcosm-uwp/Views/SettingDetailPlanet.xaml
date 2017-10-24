@@ -8,217 +8,240 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="20, 0, 0, 0">
             <StackPanel>
                 <StackPanel>
-                    <ToggleButton Content="☉" />
+                    <TextBlock Text="1" FontWeight="Bold" />
                 </StackPanel>
-                
-                <StackPanel Orientation="Horizontal" Margin="0, 0, 0, 10">
-                    <TextBlock Width="30">1</TextBlock>
-                    <StackPanel x:Name="Sun11">
-                        <TextBlock Width="25">☉</TextBlock>
-                    </StackPanel>
-                    <TextBlock Width="25">☽</TextBlock>
-                    <TextBlock Width="25">☿</TextBlock>
-                    <TextBlock Width="25">♀</TextBlock>
-                    <TextBlock Width="25">♂</TextBlock>
-                    <TextBlock Width="25">♃</TextBlock>
-                    <TextBlock Width="25">♄</TextBlock>
-                    <TextBlock Width="25">♅</TextBlock>
-                    <TextBlock Width="25">♆</TextBlock>
-                    <TextBlock Width="25">♇</TextBlock>
-                    <TextBlock Width="40">ASC</TextBlock>
-                    <TextBlock Width="40">MC</TextBlock>
-                    <TextBlock Width="40">Vt</TextBlock>
-                    <TextBlock Width="40">Pof</TextBlock>
-                    <TextBlock Width="25">☊</TextBlock>
-                    <TextBlock Width="25">⚸</TextBlock>
-                    <TextBlock Width="25">♁</TextBlock>
-                    <TextBlock Width="25">⚷</TextBlock>
-                    <TextBlock Width="25">⚳</TextBlock>
-                    <TextBlock Width="25">⚴</TextBlock>
-                    <TextBlock Width="25">⚵</TextBlock>
-                    <TextBlock Width="25">⚶</TextBlock>
-                    <TextBlock Width="40">Er</TextBlock>
-                    <TextBlock Width="40">Se</TextBlock>
-                    <TextBlock Width="40">Ha</TextBlock>
-                    <TextBlock Width="40">Ma</TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <ToggleButton Content="☉" Margin="0, 0, 10, 0" x:Name="Sun1" />
+                    <ToggleButton Content="☽" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="☿" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♀" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♂" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♃" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♄" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♅" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♆" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♇" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="ASC" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="MC" Margin="0, 0, 10, 0" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0, 0, 0, 10">
-                    <TextBlock Width="30">2</TextBlock>
-                    <TextBlock Width="25">☉</TextBlock>
-                    <TextBlock Width="25">☽</TextBlock>
-                    <TextBlock Width="25">☿</TextBlock>
-                    <TextBlock Width="25">♀</TextBlock>
-                    <TextBlock Width="25">♂</TextBlock>
-                    <TextBlock Width="25">♃</TextBlock>
-                    <TextBlock Width="25">♄</TextBlock>
-                    <TextBlock Width="25">♅</TextBlock>
-                    <TextBlock Width="25">♆</TextBlock>
-                    <TextBlock Width="25">♇</TextBlock>
-                    <TextBlock Width="40">ASC</TextBlock>
-                    <TextBlock Width="40">MC</TextBlock>
-                    <TextBlock Width="40">Vt</TextBlock>
-                    <TextBlock Width="40">Pof</TextBlock>
-                    <TextBlock Width="25">☊</TextBlock>
-                    <TextBlock Width="25">⚸</TextBlock>
-                    <TextBlock Width="25">♁</TextBlock>
-                    <TextBlock Width="25">⚷</TextBlock>
-                    <TextBlock Width="25">⚳</TextBlock>
-                    <TextBlock Width="25">⚴</TextBlock>
-                    <TextBlock Width="25">⚵</TextBlock>
-                    <TextBlock Width="25">⚶</TextBlock>
-                    <TextBlock Width="40">Er</TextBlock>
-                    <TextBlock Width="40">Se</TextBlock>
-                    <TextBlock Width="40">Ha</TextBlock>
-                    <TextBlock Width="40">Ma</TextBlock>
+                <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0">
+                    <ToggleButton Content="Vt" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Pof" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="☊" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚸" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♁" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚷" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚳" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚴" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚵" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚶" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Eri" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Sed" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Hau" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Mak" Margin="0, 0, 10, 0" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0, 0, 0, 10">
-                    <TextBlock Width="30">3</TextBlock>
-                    <TextBlock Width="25">☉</TextBlock>
-                    <TextBlock Width="25">☽</TextBlock>
-                    <TextBlock Width="25">☿</TextBlock>
-                    <TextBlock Width="25">♀</TextBlock>
-                    <TextBlock Width="25">♂</TextBlock>
-                    <TextBlock Width="25">♃</TextBlock>
-                    <TextBlock Width="25">♄</TextBlock>
-                    <TextBlock Width="25">♅</TextBlock>
-                    <TextBlock Width="25">♆</TextBlock>
-                    <TextBlock Width="25">♇</TextBlock>
-                    <TextBlock Width="40">ASC</TextBlock>
-                    <TextBlock Width="40">MC</TextBlock>
-                    <TextBlock Width="40">Vt</TextBlock>
-                    <TextBlock Width="40">Pof</TextBlock>
-                    <TextBlock Width="25">☊</TextBlock>
-                    <TextBlock Width="25">⚸</TextBlock>
-                    <TextBlock Width="25">♁</TextBlock>
-                    <TextBlock Width="25">⚷</TextBlock>
-                    <TextBlock Width="25">⚳</TextBlock>
-                    <TextBlock Width="25">⚴</TextBlock>
-                    <TextBlock Width="25">⚵</TextBlock>
-                    <TextBlock Width="25">⚶</TextBlock>
-                    <TextBlock Width="40">Er</TextBlock>
-                    <TextBlock Width="40">Se</TextBlock>
-                    <TextBlock Width="40">Ha</TextBlock>
-                    <TextBlock Width="40">Ma</TextBlock>
+                <StackPanel>
+                    <TextBlock Text="2" FontWeight="Bold" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0, 0, 0, 10">
-                    <TextBlock Width="30">4</TextBlock>
-                    <TextBlock Width="25">☉</TextBlock>
-                    <TextBlock Width="25">☽</TextBlock>
-                    <TextBlock Width="25">☿</TextBlock>
-                    <TextBlock Width="25">♀</TextBlock>
-                    <TextBlock Width="25">♂</TextBlock>
-                    <TextBlock Width="25">♃</TextBlock>
-                    <TextBlock Width="25">♄</TextBlock>
-                    <TextBlock Width="25">♅</TextBlock>
-                    <TextBlock Width="25">♆</TextBlock>
-                    <TextBlock Width="25">♇</TextBlock>
-                    <TextBlock Width="40">ASC</TextBlock>
-                    <TextBlock Width="40">MC</TextBlock>
-                    <TextBlock Width="40">Vt</TextBlock>
-                    <TextBlock Width="40">Pof</TextBlock>
-                    <TextBlock Width="25">☊</TextBlock>
-                    <TextBlock Width="25">⚸</TextBlock>
-                    <TextBlock Width="25">♁</TextBlock>
-                    <TextBlock Width="25">⚷</TextBlock>
-                    <TextBlock Width="25">⚳</TextBlock>
-                    <TextBlock Width="25">⚴</TextBlock>
-                    <TextBlock Width="25">⚵</TextBlock>
-                    <TextBlock Width="25">⚶</TextBlock>
-                    <TextBlock Width="40">Er</TextBlock>
-                    <TextBlock Width="40">Se</TextBlock>
-                    <TextBlock Width="40">Ha</TextBlock>
-                    <TextBlock Width="40">Ma</TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <ToggleButton Content="☉" Margin="0, 0, 10, 0" x:Name="Sun2" />
+                    <ToggleButton Content="☽" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="☿" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♀" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♂" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♃" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♄" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♅" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♆" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♇" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="ASC" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="MC" Margin="0, 0, 10, 0" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0, 0, 0, 10">
-                    <TextBlock Width="30">5</TextBlock>
-                    <TextBlock Width="25">☉</TextBlock>
-                    <TextBlock Width="25">☽</TextBlock>
-                    <TextBlock Width="25">☿</TextBlock>
-                    <TextBlock Width="25">♀</TextBlock>
-                    <TextBlock Width="25">♂</TextBlock>
-                    <TextBlock Width="25">♃</TextBlock>
-                    <TextBlock Width="25">♄</TextBlock>
-                    <TextBlock Width="25">♅</TextBlock>
-                    <TextBlock Width="25">♆</TextBlock>
-                    <TextBlock Width="25">♇</TextBlock>
-                    <TextBlock Width="40">ASC</TextBlock>
-                    <TextBlock Width="40">MC</TextBlock>
-                    <TextBlock Width="40">Vt</TextBlock>
-                    <TextBlock Width="40">Pof</TextBlock>
-                    <TextBlock Width="25">☊</TextBlock>
-                    <TextBlock Width="25">⚸</TextBlock>
-                    <TextBlock Width="25">♁</TextBlock>
-                    <TextBlock Width="25">⚷</TextBlock>
-                    <TextBlock Width="25">⚳</TextBlock>
-                    <TextBlock Width="25">⚴</TextBlock>
-                    <TextBlock Width="25">⚵</TextBlock>
-                    <TextBlock Width="25">⚶</TextBlock>
-                    <TextBlock Width="40">Er</TextBlock>
-                    <TextBlock Width="40">Se</TextBlock>
-                    <TextBlock Width="40">Ha</TextBlock>
-                    <TextBlock Width="40">Ma</TextBlock>
+                <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0">
+                    <ToggleButton Content="Vt" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Pof" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="☊" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚸" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♁" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚷" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚳" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚴" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚵" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚶" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Eri" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Sed" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Hau" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Mak" Margin="0, 0, 10, 0" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0, 0, 0, 10">
-                    <TextBlock Width="30">6</TextBlock>
-                    <TextBlock Width="25">☉</TextBlock>
-                    <TextBlock Width="25">☽</TextBlock>
-                    <TextBlock Width="25">☿</TextBlock>
-                    <TextBlock Width="25">♀</TextBlock>
-                    <TextBlock Width="25">♂</TextBlock>
-                    <TextBlock Width="25">♃</TextBlock>
-                    <TextBlock Width="25">♄</TextBlock>
-                    <TextBlock Width="25">♅</TextBlock>
-                    <TextBlock Width="25">♆</TextBlock>
-                    <TextBlock Width="25">♇</TextBlock>
-                    <TextBlock Width="40">ASC</TextBlock>
-                    <TextBlock Width="40">MC</TextBlock>
-                    <TextBlock Width="40">Vt</TextBlock>
-                    <TextBlock Width="40">Pof</TextBlock>
-                    <TextBlock Width="25">☊</TextBlock>
-                    <TextBlock Width="25">⚸</TextBlock>
-                    <TextBlock Width="25">♁</TextBlock>
-                    <TextBlock Width="25">⚷</TextBlock>
-                    <TextBlock Width="25">⚳</TextBlock>
-                    <TextBlock Width="25">⚴</TextBlock>
-                    <TextBlock Width="25">⚵</TextBlock>
-                    <TextBlock Width="25">⚶</TextBlock>
-                    <TextBlock Width="40">Er</TextBlock>
-                    <TextBlock Width="40">Se</TextBlock>
-                    <TextBlock Width="40">Ha</TextBlock>
-                    <TextBlock Width="40">Ma</TextBlock>
+                <StackPanel>
+                    <TextBlock Text="3" FontWeight="Bold" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0, 0, 0, 10">
-                    <TextBlock Width="30">7</TextBlock>
-                    <TextBlock Width="25">☉</TextBlock>
-                    <TextBlock Width="25">☽</TextBlock>
-                    <TextBlock Width="25">☿</TextBlock>
-                    <TextBlock Width="25">♀</TextBlock>
-                    <TextBlock Width="25">♂</TextBlock>
-                    <TextBlock Width="25">♃</TextBlock>
-                    <TextBlock Width="25">♄</TextBlock>
-                    <TextBlock Width="25">♅</TextBlock>
-                    <TextBlock Width="25">♆</TextBlock>
-                    <TextBlock Width="25">♇</TextBlock>
-                    <TextBlock Width="40">ASC</TextBlock>
-                    <TextBlock Width="40">MC</TextBlock>
-                    <TextBlock Width="40">Vt</TextBlock>
-                    <TextBlock Width="40">Pof</TextBlock>
-                    <TextBlock Width="25">☊</TextBlock>
-                    <TextBlock Width="25">⚸</TextBlock>
-                    <TextBlock Width="25">♁</TextBlock>
-                    <TextBlock Width="25">⚷</TextBlock>
-                    <TextBlock Width="25">⚳</TextBlock>
-                    <TextBlock Width="25">⚴</TextBlock>
-                    <TextBlock Width="25">⚵</TextBlock>
-                    <TextBlock Width="25">⚶</TextBlock>
-                    <TextBlock Width="40">Er</TextBlock>
-                    <TextBlock Width="40">Se</TextBlock>
-                    <TextBlock Width="40">Ha</TextBlock>
-                    <TextBlock Width="40">Ma</TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <ToggleButton Content="☉" Margin="0, 0, 10, 0" x:Name="Sun3" />
+                    <ToggleButton Content="☽" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="☿" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♀" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♂" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♃" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♄" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♅" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♆" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♇" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="ASC" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="MC" Margin="0, 0, 10, 0" />
                 </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0">
+                    <ToggleButton Content="Vt" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Pof" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="☊" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚸" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♁" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚷" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚳" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚴" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚵" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚶" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Eri" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Sed" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Hau" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Mak" Margin="0, 0, 10, 0" />
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Text="4" FontWeight="Bold" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <ToggleButton Content="☉" Margin="0, 0, 10, 0" x:Name="Sun4" />
+                    <ToggleButton Content="☽" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="☿" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♀" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♂" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♃" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♄" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♅" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♆" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♇" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="ASC" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="MC" Margin="0, 0, 10, 0" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0">
+                    <ToggleButton Content="Vt" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Pof" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="☊" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚸" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♁" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚷" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚳" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚴" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚵" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚶" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Eri" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Sed" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Hau" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Mak" Margin="0, 0, 10, 0" />
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Text="5" FontWeight="Bold" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <ToggleButton Content="☉" Margin="0, 0, 10, 0" x:Name="Sun5" />
+                    <ToggleButton Content="☽" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="☿" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♀" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♂" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♃" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♄" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♅" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♆" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♇" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="ASC" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="MC" Margin="0, 0, 10, 0" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0">
+                    <ToggleButton Content="Vt" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Pof" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="☊" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚸" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♁" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚷" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚳" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚴" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚵" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚶" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Eri" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Sed" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Hau" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Mak" Margin="0, 0, 10, 0" />
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Text="6" FontWeight="Bold" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <ToggleButton Content="☉" Margin="0, 0, 10, 0" x:Name="Sun6" />
+                    <ToggleButton Content="☽" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="☿" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♀" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♂" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♃" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♄" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♅" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♆" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♇" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="ASC" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="MC" Margin="0, 0, 10, 0" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0">
+                    <ToggleButton Content="Vt" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Pof" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="☊" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚸" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♁" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚷" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚳" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚴" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚵" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚶" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Eri" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Sed" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Hau" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Mak" Margin="0, 0, 10, 0" />
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Text="7" FontWeight="Bold" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <ToggleButton Content="☉" Margin="0, 0, 10, 0" x:Name="Sun7" />
+                    <ToggleButton Content="☽" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="☿" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♀" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♂" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♃" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♄" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♅" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♆" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♇" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="ASC" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="MC" Margin="0, 0, 10, 0" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0">
+                    <ToggleButton Content="Vt" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Pof" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="☊" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚸" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="♁" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚷" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚳" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚴" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚵" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="⚶" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Eri" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Sed" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Hau" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Mak" Margin="0, 0, 10, 0" />
+                </StackPanel>
+
             </StackPanel>
         </ScrollViewer>
 

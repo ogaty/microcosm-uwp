@@ -34,8 +34,9 @@ namespace microcosm.Views
             settings = (SettingData[])e.Parameter;
 
             base.OnNavigatedTo(e);
-            this.SettingDetailFrame.Navigate(typeof(SettingDetailPlanet), (object)settings);
+//            this.SettingDetailFrame.Navigate(typeof(SettingDetailPlanet), (object)settings);
 
+            SettingCombo.Items.Add("設定0");
         }
 
         private void DispPlanetSetting_Click(object sender, RoutedEventArgs e)

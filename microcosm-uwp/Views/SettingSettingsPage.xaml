@@ -7,8 +7,12 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0, 0, 0, 0">
-            <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 10, 10, 10" Width="120"/>
+            <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 10, 10, 10" Width="120" x:Name="SettingCombo"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0, 50, 0, 0">
             <HyperlinkButton x:Name="DispPlanetSetting" Content="天体表示" Margin="0, 0, 50, 0" Click="DispPlanetSetting_Click"  />
@@ -16,7 +20,7 @@
             <HyperlinkButton x:Name="DispAspectPlanetSetting" Content="アスペクト表示(2)" Margin="0, 0, 50, 0" />
             <HyperlinkButton x:Name="OrbsSetting" Content="オーブ設定" Margin="0, 0, 50, 0" />
         </StackPanel>
-        <Frame x:Name="SettingDetailFrame"></Frame>
+        <Frame x:Name="SettingDetailFrame" Grid.Row="1"></Frame>
 
     </Grid>
 </Page>

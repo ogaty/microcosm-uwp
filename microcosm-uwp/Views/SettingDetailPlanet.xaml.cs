@@ -1,4 +1,5 @@
-﻿using System;
+﻿using microcosm.Config;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +23,24 @@ namespace microcosm.Views
     /// </summary>
     public sealed partial class SettingDetailPlanet : Page
     {
+        public SettingData[] settings;
         public SettingDetailPlanet()
         {
             this.InitializeComponent();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            settings = (SettingData[])e.Parameter;
+
+            base.OnNavigatedTo(e);
+
+            SettingInit();
+        }
+
+        private void SettingInit()
+        {
+            Sun1.IsChecked = true;
         }
     }
 }
