@@ -99,36 +99,121 @@ namespace microcosm.Views
 
         private void ProgressionsChanged(object sender, RoutedEventArgs e)
         {
+            if (config == null) return;
 
+            if (PlacidusRadio.IsChecked == true)
+            {
+                config.houseCalc = EHouseCalc.PLACIDUS;
+            }
+            else if (KochRadio.IsChecked == true)
+            {
+                config.houseCalc = EHouseCalc.KOCH;
+            }
+            else if (CampanusRadio.IsChecked == true)
+            {
+                config.houseCalc = EHouseCalc.CAMPANUS;
+            }
+            else if (EqualRadio.IsChecked == true)
+            {
+                config.houseCalc = EHouseCalc.EQUAL;
+            }
+            else if (PorphyryRadio.IsChecked == true)
+            {
+                config.houseCalc = EHouseCalc.PORPHYRY;
+            }
+            else if (RegiomontanusRadio.IsChecked == true)
+            {
+                config.houseCalc = EHouseCalc.REGIOMONTANUS;
+            }
+            else if (SolarRadio.IsChecked == true)
+            {
+                config.houseCalc = EHouseCalc.SOLAR;
+            }
+            else if (SolarSignRadio.IsChecked == true)
+            {
+                config.houseCalc = EHouseCalc.SOLARSIGN;
+            }
         }
 
         private void DoubleLetterChanged(object sender, RoutedEventArgs e)
         {
+            if (config == null) return;
+
+            if (SixtyRadio.IsChecked == true)
+            {
+                config.decimalDisp = ECentric.DEGREE;
+            }
+            else if (HandredRadio.IsChecked == true)
+            {
+                config.decimalDisp = ECentric.DEGREE;
+            }
 
         }
 
         private void SimpleChartsChanged(object sender, RoutedEventArgs e)
         {
+            if (config == null) return;
 
+            if (SimpleRadio.IsChecked == true)
+            {
+                config.dispPattern = EDispPetern.MINI;
+            }
+            else if (FullRadio.IsChecked == true)
+            {
+                config.dispPattern = EDispPetern.FULL;
+            }
         }
 
         private void CentricsChanged(object sender, RoutedEventArgs e)
         {
+            if (config == null) return;
 
+            if (GeoCentricRadio.IsChecked == true)
+            {
+                config.centric = ECentric.GEO_CENTRIC;
+            }
+            else if (GeoCentricRadio.IsChecked == true)
+            {
+                config.centric = ECentric.HELIO_CENTRIC;
+            }
         }
 
         private void TropicalChanged(object sender, RoutedEventArgs e)
         {
+            if (config == null) return;
 
+            if (TropicalRadio.IsChecked == true)
+            {
+                config.centric = ESidereal.TROPICAL;
+            }
+            else if (SideRealRadio.IsChecked == true)
+            {
+                config.centric = ESidereal.TROPICAL;
+            }
         }
 
         private void DegreeCheck_Checked(object sender, RoutedEventArgs e)
         {
+            if (config == null) return;
+
+            if (SixtyRadio.IsChecked == true)
+            {
+                config.decimalDisp = EDecimalDisp.DEGREE;
+            }
+            else if (HandredRadio.IsChecked == true)
+            {
+                config.decimalDisp = EDecimalDisp.DECIMAL;
+            }
 
         }
 
         private void TextBox_LostFocus(object sender, RoutedEventArgs e)
         {
+            if (config == null) return;
+
+            if (DegreeCheck.IsChecked == true)
+            {
+            }
 
         }
 

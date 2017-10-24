@@ -19,6 +19,8 @@
                         <RadioButton Content="Equal" x:Name="EqualRadio" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="HouseDivideChanged"/>
                         <RadioButton Content="Porphyry" x:Name="PorphyryRadio" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="HouseDivideChanged"/>
                         <RadioButton Content="Regiomontanus" x:Name="RegiomontanusRadio" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="HouseDivideChanged"/>
+                        <RadioButton Content="Solar" x:Name="SolarRadio" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="HouseDivideChanged"/>
+                        <RadioButton Content="SolarSign" x:Name="SolarSignRadio" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="HouseDivideChanged"/>
                     </StackPanel>
                     <StackPanel x:Name="Progressions">
                         <TextBlock FontWeight="Bold" FontSize="18">ハウス進行法</TextBlock>
@@ -48,7 +50,7 @@
                     </StackPanel>
                     <StackPanel>
                         <CheckBox x:Name="DegreeCheck" Content="特定度数を目立たせる" Checked="DegreeCheck_Checked"  />
-                        <TextBox LostFocus="TextBox_LostFocus"  />
+                        <TextBox x:Name="DegreeText" LostFocus="TextBox_LostFocus"  />
                     </StackPanel>
 
                 </StackPanel>

@@ -15,7 +15,7 @@ namespace microcosm.Config
         GEO_CENTRIC = 0,
         HELIO_CENTRIC = 1
     }
-    public enum Esidereal
+    public enum ESidereal
     {
         TROPICAL = 0,
         SIDEREAL = 1
@@ -33,19 +33,21 @@ namespace microcosm.Config
         CAMPANUS = 2,
         EQUAL = 3,
         PORPHYRY = 4,
-        REGIOMONTANUS = 5
+        REGIOMONTANUS = 5,
+        SOLAR = 6,
+        SOLARSIGN = 7
     }
     public enum EDecimalDisp
     {
         DECIMAL = 0,
         DEGREE = 1
     }
-    public enum DispPetern
+    public enum EDispPetern
     {
         FULL = 0,
         MINI = 1
     }
-    public enum Color29
+    public enum EColor29
     {
         NOCHANGE = 0,
         CHANGE = 1
@@ -63,7 +65,7 @@ namespace microcosm.Config
 
         // TROPICAL or SIDEREAL
         [XmlElement("sidereal")]
-        public Esidereal sidereal { get; set; }
+        public ESidereal sidereal { get; set; }
 
         // 現在地
         [XmlElement("defaultPlace")]
@@ -120,7 +122,7 @@ namespace microcosm.Config
         {
             ephepath = path;
             centric = ECentric.GEO_CENTRIC;
-            sidereal = Esidereal.TROPICAL;
+            sidereal = ESidereal.TROPICAL;
             defaultPlace = "東京都千代田区";
             lat = Common.CommonData.defaultLat;
             lng = Common.CommonData.defaultLng;
@@ -130,15 +132,15 @@ namespace microcosm.Config
             zodiacCenter = 250;
             defaultTimezone = "JST";
             decimalDisp = EDecimalDisp.DECIMAL;
-            dispPattern = 0;
+            dispPattern = EDispPetern.MINI;
             progression = EProgression.PRIMARY;
-            color29 = Color29.NOCHANGE;
+            color29 = EColor29.NOCHANGE;
         }
 
         public ConfigData()
         {
             centric = ECentric.GEO_CENTRIC;
-            sidereal = Esidereal.TROPICAL;
+            sidereal = ESidereal.TROPICAL;
             defaultPlace = "東京都千代田区";
             lat = Common.CommonData.defaultLat;
             lng = Common.CommonData.defaultLng;
@@ -148,9 +150,9 @@ namespace microcosm.Config
             zodiacCenter = 250;
             defaultTimezone = "JST";
             decimalDisp = EDecimalDisp.DECIMAL;
-            dispPattern = 0;
+            dispPattern = EDispPetern.MINI;
             progression = EProgression.PRIMARY;
-            color29 = Color29.NOCHANGE;
+            color29 = EColor29.NOCHANGE;
         }
     }
 }
