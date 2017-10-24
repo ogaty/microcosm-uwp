@@ -101,6 +101,7 @@
     <Compile Include="Common\Explanation.cs" />
     <Compile Include="Common\Util.cs" />
     <Compile Include="Config\ConfigData.cs" />
+    <Compile Include="Config\ConfigSave.cs" />
     <Compile Include="Config\SettingFromXml.cs" />
     <Compile Include="Config\ConfigFromXml.cs" />
     <Compile Include="Config\SettingData.cs" />
@@ -152,6 +153,9 @@
     <Compile Include="ViewModels\MainWindowUserDataViewModel.cs" />
     <Compile Include="Views\SettingSettingsPage.xaml.cs">
       <DependentUpon>SettingSettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingVersion.xaml.cs">
+      <DependentUpon>SettingVersion.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TimeSetter.xaml.cs">
       <DependentUpon>TimeSetter.xaml</DependentUpon>
@@ -356,6 +360,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\SettingSettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingVersion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

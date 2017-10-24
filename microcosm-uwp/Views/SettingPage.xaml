@@ -15,13 +15,13 @@
         <StackPanel Grid.Column="0">
             <TextBlock Margin="5, 10, 5, 20" FontSize="32">設定</TextBlock>
             <StackPanel x:Name="CommonSettingMenuBar" Background="Yellow">
-                <HyperlinkButton Margin="5, 10, 5, 10" x:Name="CommonSettingMenuItem" Content="共通設定" />
+                <HyperlinkButton Margin="5, 10, 5, 10" x:Name="CommonSettingMenuItem" Content="共通設定" Click="CommonSettingMenuItem_Click" />
             </StackPanel>
             <StackPanel x:Name="DisplaySettingMenuBar" Background="White">
                 <HyperlinkButton Margin="5, 10, 5, 10" x:Name="DisplaySettingMenuItem" Content="表示設定" Click="DisplaySettingMenuItem_Click" />
             </StackPanel>
             <StackPanel x:Name="VersionMenuBar" Background="White">
-                <HyperlinkButton Margin="5, 10, 5, 10" x:Name="VersionMenuItem" Content="バージョン情報" />
+                <HyperlinkButton Margin="5, 10, 5, 10" x:Name="VersionMenuItem" Content="このソフトについて" Click="VersionMenuItem_Click" />
             </StackPanel>
         </StackPanel>
 

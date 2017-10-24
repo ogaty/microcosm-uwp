@@ -111,12 +111,20 @@ namespace microcosm.Config
         public EDecimalDisp decimalDisp { get; set; }
 
         // フル表示かミニ表示か
+        // old
         [XmlElement("dispPattern")]
         public int dispPattern { get; set; }
 
+        // new
+        [XmlElement("dispPattern2")]
+        public EDispPetern dispPattern2 { get; set; }
+
         // 29度で色変える
         [XmlElement("color29")]
-        public Color29 color29 { get; set; }
+        public EColor29 color29 { get; set; }
+
+        [XmlElement("colorChange")]
+        public int colorChange { get; set; }
 
         public ConfigData(string path)
         {
@@ -132,9 +140,11 @@ namespace microcosm.Config
             zodiacCenter = 250;
             defaultTimezone = "JST";
             decimalDisp = EDecimalDisp.DECIMAL;
-            dispPattern = EDispPetern.MINI;
+            dispPattern = 1;
+            dispPattern2 = EDispPetern.MINI;
             progression = EProgression.PRIMARY;
             color29 = EColor29.NOCHANGE;
+            colorChange = -1;
         }
 
         public ConfigData()
@@ -150,9 +160,11 @@ namespace microcosm.Config
             zodiacCenter = 250;
             defaultTimezone = "JST";
             decimalDisp = EDecimalDisp.DECIMAL;
-            dispPattern = EDispPetern.MINI;
+            dispPattern = 1;
+            dispPattern2 = EDispPetern.MINI;
             progression = EProgression.PRIMARY;
             color29 = EColor29.NOCHANGE;
+            colorChange = -1;
         }
     }
 }
