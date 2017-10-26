@@ -9,7 +9,7 @@
     <Page.BottomAppBar>
         <CommandBar IsSticky="True" IsOpen="False" HorizontalContentAlignment="Left">
             <CommandBar.PrimaryCommands>
-                <AppBarButton Label="ファイル" Icon="OpenFile"></AppBarButton>
+                <AppBarButton Label="データベース" Icon="OpenFile" Click="AppBarButton_Click"></AppBarButton>
                 <AppBarButton Label="設定" Icon="Setting" Click="AppBarSettingButton_Click"></AppBarButton>
             </CommandBar.PrimaryCommands>
             <CommandBar.SecondaryCommands>
@@ -21,10 +21,14 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"></ColumnDefinition>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
-            <ColumnDefinition Width="5*"></ColumnDefinition>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="5*" />
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="5*" />
+        </Grid.RowDefinitions>
 
         <StackPanel Margin="0,0,0,0" Grid.Column="0">
             <StackPanel x:Name="UserDataView" DataContext="MainPageUserDataViewModel">
@@ -57,8 +61,10 @@
                     </StackPanel>
                 </Border>
             </StackPanel>
-            <Frame x:Name="InfoFrame"></Frame>
         </StackPanel>
+
+        <Frame x:Name="InfoFrame" Grid.Column="0" Grid.Row="1"></Frame>
+
         <StackPanel Grid.Column="1">
             <ScrollViewer VerticalScrollBarVisibility="Visible" VerticalScrollMode="Enabled" Height="90"> 
                 <StackPanel Height="120">
@@ -75,7 +81,7 @@
                 </StackPanel>
             </ScrollViewer>
         </StackPanel>
-        <StackPanel Grid.Column="2">
+        <StackPanel Grid.Column="2" Grid.RowSpan="2">
             <Canvas Background="Aquamarine" Width="660" Height="660"/>
             <StackPanel Margin="0, 10, 0, 0">
                 <TextBlock HorizontalAlignment="Center">Help Message</TextBlock>

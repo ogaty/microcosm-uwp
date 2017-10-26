@@ -8,6 +8,12 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+            <ListView x:Name="PlanetCusp" ItemsSource="{Binding planetCuspList}">
+                <GridView>
+                </GridView>
+            </ListView>
 
+        </StackPanel>
     </Grid>
 </Page>

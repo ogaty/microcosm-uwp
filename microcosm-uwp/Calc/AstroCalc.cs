@@ -11,6 +11,7 @@ using Windows.Storage;
 using Windows.Storage.Streams;
 
 using microcosm.Views;
+using microcosm.Config;
 
 namespace microcosm.Calc
 {
@@ -18,6 +19,7 @@ namespace microcosm.Calc
     {
         public SwissEph s;
         public Stream swiss_stream;
+        public double[,] houseLists = new double[7, 12];
 
         public AstroCalc(MainPage main)
         {
@@ -56,27 +58,6 @@ namespace microcosm.Calc
                 {
                     e.File = new FileStream(e.FileName, FileMode.Open);
                 }
-                /*
-                string fileName = Path.GetFileName(e.FileName);
-
-                StorageFile file;
-                switch (fileName)
-                {
-                    case "seas_18.se1":
-                    case "sepl_18.se1":
-                    case "semo_18.se1":
-                        e.File = Task.Run(async () => await GetSwissFile(fileName)).Result;
-                        break;
-                    case "seleapsec.txt":
-                        Task.Run(async () => {
-                            file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/" + fileName));
-                            e.File = GenerateStreamFromString(await FileIO.ReadTextAsync(file));
-                        });
-                        break;
-                    default:
-                        break;
-                }
-                */
             };
             int utc_year = 0;
             int utc_month = 0;
@@ -104,6 +85,11 @@ namespace microcosm.Calc
                 Debug.WriteLine(serr);
             }
 
+
+        }
+
+        public void ReCalc(ConfigData config, SettingData setting)
+        {
 
         }
     }

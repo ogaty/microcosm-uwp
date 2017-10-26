@@ -44,7 +44,6 @@ namespace microcosm.Views
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
 
             MainInit();
-            UserDataView.DataContext = new MainWindowUserDataViewModel();
         }
 
         /// <summary>
@@ -223,6 +222,8 @@ namespace microcosm.Views
             arrayTask.Add(configTask);
 
             await Task.WhenAll(arrayTask);
+            UserDataView.DataContext = new MainWindowUserDataViewModel();
+            InfoFrame.Navigate(typeof(MainListPage));
         }
 
         /*
@@ -243,6 +244,11 @@ namespace microcosm.Views
         private void AppBarSettingButton_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(SettingPage), config);
+        }
+
+        private void AppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(DatabasePage), config);
         }
     }
 }

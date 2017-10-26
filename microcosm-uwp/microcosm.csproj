@@ -107,6 +107,14 @@
     <Compile Include="Config\SettingData.cs" />
     <Compile Include="Config\SettingXml.cs" />
     <Compile Include="Config\SettingXml2.cs" />
+    <Compile Include="Models\DbItem.cs" />
+    <Compile Include="Models\HouseCuspListData.cs" />
+    <Compile Include="Models\PlanetCuspListData.cs" />
+    <Compile Include="Models\PlanetData.cs" />
+    <Compile Include="Models\TreeViewItem.cs" />
+    <Compile Include="Models\UserDirTree.cs" />
+    <Compile Include="ViewModels\MainWindowCuspListViewModel.cs" />
+    <Compile Include="ViewModels\UserDbViewModel.cs" />
     <Compile Include="Views\AddressSearchPage.xaml.cs">
       <DependentUpon>AddressSearchPage.xaml</DependentUpon>
     </Compile>
