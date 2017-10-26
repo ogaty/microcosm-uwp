@@ -9,9 +9,16 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel>
-            <ListView x:Name="PlanetCusp" ItemsSource="{Binding planetCuspList}">
-                <GridView>
-                </GridView>
+            <TextBlock Text="a"/>
+            <ListView x:Name="PlanetCusp" IsItemClickEnabled="True" Width="200" Height="200">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding name}" />
+                            <TextBlock Text="{Binding degree1}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
             </ListView>
 
         </StackPanel>

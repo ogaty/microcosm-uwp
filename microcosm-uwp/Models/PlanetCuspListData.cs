@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,15 +10,22 @@ namespace microcosm.Models
     /// <summary>
     /// 左下カスプリスト(天体)
     /// </summary>
-    public class PlanetCuspListData
+    public class PlanetCuspListData : INotifyPropertyChanged
     {
-        public string name;
-        public double degree1;
-        public double degree2;
-        public double degree3;
-        public double degree4;
-        public double degree5;
-        public double degree6;
-        public double degree7;
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public string name { get; set; }
+        public double degree1 { get; set; }
+
+        protected void OnPropertyChanged(string propertyname)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyname));
+            }
+
+        }
+
     }
 }
