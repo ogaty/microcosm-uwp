@@ -49,8 +49,9 @@ namespace microcosm.Config
         public bool[,] aspectQuintile;
         public bool[,] aspectBiQuintile;
 
+        // アスペクト一括表示、非表示切り替え
         // [from, to]
-//        public bool[,] dispAspect;
+        public bool[,] dispAspect;
 
         // オーブ
         // ソフト/ハード、1種2種150、太陽/月/その他の組み合わせ 2*3*3=18通り
@@ -324,6 +325,7 @@ namespace microcosm.Config
                 { CommonData.ZODIAC_NUMBER_MOON, xmlData.dispPlanetMoon11 },
                 { CommonData.ZODIAC_NUMBER_MERCURY, xmlData.dispPlanetMercury11 },
                 { CommonData.ZODIAC_NUMBER_VENUS, xmlData.dispPlanetVenus11 },
+                { CommonData.ZODIAC_NUMBER_MARS, xmlData.dispPlanetMars11 },
                 { CommonData.ZODIAC_NUMBER_JUPITER, xmlData.dispPlanetJupiter11 },
                 { CommonData.ZODIAC_NUMBER_SATURN, xmlData.dispPlanetSaturn11 },
                 { CommonData.ZODIAC_NUMBER_URANUS, xmlData.dispPlanetUranus11 },
@@ -355,6 +357,7 @@ namespace microcosm.Config
                 { CommonData.ZODIAC_NUMBER_MOON, xmlData.dispPlanetMoon22 },
                 { CommonData.ZODIAC_NUMBER_MERCURY, xmlData.dispPlanetMercury22 },
                 { CommonData.ZODIAC_NUMBER_VENUS, xmlData.dispPlanetVenus22 },
+                { CommonData.ZODIAC_NUMBER_MARS, xmlData.dispPlanetMars22 },
                 { CommonData.ZODIAC_NUMBER_JUPITER, xmlData.dispPlanetJupiter22 },
                 { CommonData.ZODIAC_NUMBER_SATURN, xmlData.dispPlanetSaturn22 },
                 { CommonData.ZODIAC_NUMBER_URANUS, xmlData.dispPlanetUranus22 },
@@ -386,6 +389,7 @@ namespace microcosm.Config
                 { CommonData.ZODIAC_NUMBER_MOON, xmlData.dispPlanetMoon33 },
                 { CommonData.ZODIAC_NUMBER_MERCURY, xmlData.dispPlanetMercury33 },
                 { CommonData.ZODIAC_NUMBER_VENUS, xmlData.dispPlanetVenus33 },
+                { CommonData.ZODIAC_NUMBER_MARS, xmlData.dispPlanetMars33 },
                 { CommonData.ZODIAC_NUMBER_JUPITER, xmlData.dispPlanetJupiter33 },
                 { CommonData.ZODIAC_NUMBER_SATURN, xmlData.dispPlanetSaturn33 },
                 { CommonData.ZODIAC_NUMBER_URANUS, xmlData.dispPlanetUranus33 },
@@ -417,6 +421,7 @@ namespace microcosm.Config
                 { CommonData.ZODIAC_NUMBER_MOON, false },
                 { CommonData.ZODIAC_NUMBER_MERCURY, false },
                 { CommonData.ZODIAC_NUMBER_VENUS, false },
+                { CommonData.ZODIAC_NUMBER_MARS, false },
                 { CommonData.ZODIAC_NUMBER_JUPITER, false },
                 { CommonData.ZODIAC_NUMBER_SATURN, false },
                 { CommonData.ZODIAC_NUMBER_URANUS, false },
@@ -448,6 +453,7 @@ namespace microcosm.Config
                 { CommonData.ZODIAC_NUMBER_MOON, false },
                 { CommonData.ZODIAC_NUMBER_MERCURY, false },
                 { CommonData.ZODIAC_NUMBER_VENUS, false },
+                { CommonData.ZODIAC_NUMBER_MARS, false },
                 { CommonData.ZODIAC_NUMBER_JUPITER, false },
                 { CommonData.ZODIAC_NUMBER_SATURN, false },
                 { CommonData.ZODIAC_NUMBER_URANUS, false },
@@ -479,6 +485,7 @@ namespace microcosm.Config
                 { CommonData.ZODIAC_NUMBER_MOON, false },
                 { CommonData.ZODIAC_NUMBER_MERCURY, false },
                 { CommonData.ZODIAC_NUMBER_VENUS, false },
+                { CommonData.ZODIAC_NUMBER_MARS, false },
                 { CommonData.ZODIAC_NUMBER_JUPITER, false },
                 { CommonData.ZODIAC_NUMBER_SATURN, false },
                 { CommonData.ZODIAC_NUMBER_URANUS, false },
@@ -510,6 +517,7 @@ namespace microcosm.Config
                 { CommonData.ZODIAC_NUMBER_MOON, false },
                 { CommonData.ZODIAC_NUMBER_MERCURY, false },
                 { CommonData.ZODIAC_NUMBER_VENUS, false },
+                { CommonData.ZODIAC_NUMBER_MARS, false },
                 { CommonData.ZODIAC_NUMBER_JUPITER, false },
                 { CommonData.ZODIAC_NUMBER_SATURN, false },
                 { CommonData.ZODIAC_NUMBER_URANUS, false },

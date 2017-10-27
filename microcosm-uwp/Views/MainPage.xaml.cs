@@ -34,9 +34,10 @@ namespace microcosm.Views
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        AstroCalc calc;
-        ConfigData config;
-        SettingData[] setting = new SettingData[10];
+        public AstroCalc calc;
+        public ConfigPass pass;
+        public ConfigData config;
+        public SettingData[] setting = new SettingData[10];
 
         public MainPage()
         {
@@ -206,6 +207,9 @@ namespace microcosm.Views
                 setting[i] = SettingFromXml.GetSettingFromXml(set.Path, i);
             }
 
+            pass = new ConfigPass();
+            pass.config = config;
+            pass.settings = setting;
 
             return true;
         }
@@ -243,7 +247,7 @@ namespace microcosm.Views
 
         private void AppBarSettingButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(SettingPage), config);
+            this.Frame.Navigate(typeof(SettingPage), pass);
         }
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)

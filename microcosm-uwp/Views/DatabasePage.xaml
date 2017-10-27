@@ -12,7 +12,15 @@
             <StackPanel Orientation="Horizontal">
                 <ListView x:Name="UserDirTree" Margin="10, 10, 0, 0" Width="400" Height="600" />
                 <StackPanel>
-                    <ListView x:Name="UserDataTable" Margin="40, 0, 0, 0" Width="700" Height="400" />
+                    <GridView x:Name="UserDataTable" Margin="40, 0, 0, 0" Width="700" Height="400">
+                        <GridView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBlock Text="{Binding name}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridView.ItemTemplate>
+                    </GridView>
                     <TextBox x:Name="UserMemo" IsReadOnly="True" />
                 </StackPanel>
             </StackPanel>

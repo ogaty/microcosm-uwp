@@ -1,4 +1,6 @@
-﻿using System;
+﻿using microcosm.Models;
+using microcosm.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -23,6 +25,7 @@ namespace microcosm.Views
     /// </summary>
     public sealed partial class DatabasePage : Page
     {
+        public UserDbViewModel vm;
         public DatabasePage()
         {
             this.InitializeComponent();
@@ -36,6 +39,13 @@ namespace microcosm.Views
                 }
             };
 
+            vm = new UserDbViewModel();
+            vm.userData = new List<UserEventData>();
+            UserEventData udata = new UserEventData();
+            udata.name = "サンプル";
+            vm.userData.Add(udata);
+            UserDataTable.DataContext = vm;
+            UserDataTable.ItemsSource = vm.userData;
         }
     }
 }

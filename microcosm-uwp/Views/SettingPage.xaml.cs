@@ -26,8 +26,7 @@ namespace microcosm.Views
     /// </summary>
     public sealed partial class SettingPage : Page
     {
-        ConfigData config;
-        SettingData[] settings;
+        ConfigPass pass;
         public SettingPage()
         {
             this.InitializeComponent();
@@ -45,10 +44,10 @@ namespace microcosm.Views
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            config = (ConfigData)e.Parameter;
+            pass = (ConfigPass)e.Parameter;
 
             base.OnNavigatedTo(e);
-            this.SettingFrame.Navigate(typeof(SettingsConfigPage), (object)config);
+            this.SettingFrame.Navigate(typeof(SettingsConfigPage), (object)pass.config);
 
         }
 
@@ -57,7 +56,7 @@ namespace microcosm.Views
             CommonSettingMenuBar.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
             DisplaySettingMenuBar.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 0));
             VersionMenuBar.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
-            this.SettingFrame.Navigate(typeof(SettingSettingsPage), (object)settings);
+            this.SettingFrame.Navigate(typeof(SettingSettingsPage), (object)pass.settings);
         }
 
         private void CommonSettingMenuItem_Click(object sender, RoutedEventArgs e)
@@ -65,7 +64,7 @@ namespace microcosm.Views
             CommonSettingMenuBar.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 0));
             DisplaySettingMenuBar.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
             VersionMenuBar.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
-            this.SettingFrame.Navigate(typeof(SettingsConfigPage), (object)config);
+            this.SettingFrame.Navigate(typeof(SettingsConfigPage), (object)pass.config);
         }
 
         private void VersionMenuItem_Click(object sender, RoutedEventArgs e)
@@ -73,7 +72,7 @@ namespace microcosm.Views
             CommonSettingMenuBar.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
             DisplaySettingMenuBar.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
             VersionMenuBar.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 0));
-            this.SettingFrame.Navigate(typeof(SettingVersion), (object)settings);
+            this.SettingFrame.Navigate(typeof(SettingVersion), (object)pass.settings);
         }
     }
 }

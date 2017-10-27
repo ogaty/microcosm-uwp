@@ -8,238 +8,238 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="20, 0, 0, 0">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="20, 0, 20, 20">
             <StackPanel>
                 <StackPanel>
                     <TextBlock Text="1" FontWeight="Bold" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <ToggleButton Content="☉" Margin="0, 0, 10, 0" x:Name="Sun1" />
-                    <ToggleButton Content="☽" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="☿" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♀" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♂" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♃" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♄" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♅" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♆" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♇" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="ASC" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="MC" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="☉" Margin="0, 0, 10, 0" x:Name="Sun1" Click="DispPlanetClicked" />
+                    <ToggleButton Content="☽" Margin="0, 0, 10, 0" x:Name="Moon1" />
+                    <ToggleButton Content="☿" Margin="0, 0, 10, 0" x:Name="Mercury1" />
+                    <ToggleButton Content="♀" Margin="0, 0, 10, 0" x:Name="Venus1" />
+                    <ToggleButton Content="♂" Margin="0, 0, 10, 0" x:Name="Mars1" />
+                    <ToggleButton Content="♃" Margin="0, 0, 10, 0" x:Name="Jupiter1" />
+                    <ToggleButton Content="♄" Margin="0, 0, 10, 0" x:Name="Saturn1" />
+                    <ToggleButton Content="♅" Margin="0, 0, 10, 0" x:Name="Uranus1" />
+                    <ToggleButton Content="♆" Margin="0, 0, 10, 0" x:Name="Neptune1" />
+                    <ToggleButton Content="♇" Margin="0, 0, 10, 0" x:Name="Pluto1" />
+                    <ToggleButton Content="ASC" Margin="0, 0, 10, 0" x:Name="Asc1" />
+                    <ToggleButton Content="MC" Margin="0, 0, 10, 0" x:Name="Mc1" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0">
-                    <ToggleButton Content="Vt" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Pof" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="☊" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚸" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♁" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚷" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚳" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚴" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚵" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚶" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Eri" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Sed" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Hau" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Mak" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Vt" Margin="0, 0, 10, 0" x:Name="Vt1" />
+                    <ToggleButton Content="Pof" Margin="0, 0, 10, 0" x:Name="Pof1" />
+                    <ToggleButton Content="☊" Margin="0, 0, 10, 0" x:Name="Dh1" />
+                    <ToggleButton Content="⚸" Margin="0, 0, 10, 0" x:Name="Lilith1" />
+                    <ToggleButton Content="♁" Margin="0, 0, 10, 0" x:Name="Earth1" />
+                    <ToggleButton Content="⚷" Margin="0, 0, 10, 0" x:Name="Chiron1" />
+                    <ToggleButton Content="⚳" Margin="0, 0, 10, 0" x:Name="Ceres1" />
+                    <ToggleButton Content="⚴" Margin="0, 0, 10, 0" x:Name="Paras1" />
+                    <ToggleButton Content="⚵" Margin="0, 0, 10, 0" x:Name="Juno1" />
+                    <ToggleButton Content="⚶" Margin="0, 0, 10, 0" x:Name="Vesta1" />
+                    <ToggleButton Content="Eri" Margin="0, 0, 10, 0" x:Name="Eris1" />
+                    <ToggleButton Content="Sed" Margin="0, 0, 10, 0" x:Name="Sedna1" />
+                    <ToggleButton Content="Hau" Margin="0, 0, 10, 0" x:Name="Haumea1" />
+                    <ToggleButton Content="Mak" Margin="0, 0, 10, 0" x:Name="Makemake1" />
                 </StackPanel>
                 <StackPanel>
                     <TextBlock Text="2" FontWeight="Bold" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <ToggleButton Content="☉" Margin="0, 0, 10, 0" x:Name="Sun2" />
-                    <ToggleButton Content="☽" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="☿" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♀" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♂" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♃" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♄" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♅" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♆" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♇" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="ASC" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="MC" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="☽" Margin="0, 0, 10, 0" x:Name="Moon2" />
+                    <ToggleButton Content="☿" Margin="0, 0, 10, 0" x:Name="Mercury2" />
+                    <ToggleButton Content="♀" Margin="0, 0, 10, 0" x:Name="Venus2" />
+                    <ToggleButton Content="♂" Margin="0, 0, 10, 0" x:Name="Mars2" />
+                    <ToggleButton Content="♃" Margin="0, 0, 10, 0" x:Name="Jupiter2" />
+                    <ToggleButton Content="♄" Margin="0, 0, 10, 0" x:Name="Saturn2" />
+                    <ToggleButton Content="♅" Margin="0, 0, 10, 0" x:Name="Uranus2" />
+                    <ToggleButton Content="♆" Margin="0, 0, 10, 0" x:Name="Neptune2" />
+                    <ToggleButton Content="♇" Margin="0, 0, 10, 0" x:Name="Pluto2" />
+                    <ToggleButton Content="ASC" Margin="0, 0, 10, 0" x:Name="Asc2" />
+                    <ToggleButton Content="MC" Margin="0, 0, 10, 0" x:Name="Mc2" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0">
-                    <ToggleButton Content="Vt" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Pof" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="☊" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚸" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♁" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚷" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚳" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚴" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚵" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚶" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Eri" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Sed" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Hau" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Mak" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Vt" Margin="0, 0, 10, 0" x:Name="Vt2" />
+                    <ToggleButton Content="Pof" Margin="0, 0, 10, 0" x:Name="Pof2" />
+                    <ToggleButton Content="☊" Margin="0, 0, 10, 0" x:Name="Dh2" />
+                    <ToggleButton Content="⚸" Margin="0, 0, 10, 0" x:Name="Lilith2" />
+                    <ToggleButton Content="♁" Margin="0, 0, 10, 0" x:Name="Earth2" />
+                    <ToggleButton Content="⚷" Margin="0, 0, 10, 0" x:Name="Chiron2" />
+                    <ToggleButton Content="⚳" Margin="0, 0, 10, 0" x:Name="Ceres2" />
+                    <ToggleButton Content="⚴" Margin="0, 0, 10, 0" x:Name="Paras2" />
+                    <ToggleButton Content="⚵" Margin="0, 0, 10, 0" x:Name="Juno2" />
+                    <ToggleButton Content="⚶" Margin="0, 0, 10, 0" x:Name="Vesta2" />
+                    <ToggleButton Content="Eri" Margin="0, 0, 10, 0" x:Name="Eris2" />
+                    <ToggleButton Content="Sed" Margin="0, 0, 10, 0" x:Name="Sedna2" />
+                    <ToggleButton Content="Hau" Margin="0, 0, 10, 0" x:Name="Haumea2" />
+                    <ToggleButton Content="Mak" Margin="0, 0, 10, 0" x:Name="Makemake2" />
                 </StackPanel>
                 <StackPanel>
                     <TextBlock Text="3" FontWeight="Bold" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <ToggleButton Content="☉" Margin="0, 0, 10, 0" x:Name="Sun3" />
-                    <ToggleButton Content="☽" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="☿" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♀" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♂" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♃" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♄" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♅" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♆" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♇" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="ASC" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="MC" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="☽" Margin="0, 0, 10, 0" x:Name="Moon3" />
+                    <ToggleButton Content="☿" Margin="0, 0, 10, 0" x:Name="Mercury3" />
+                    <ToggleButton Content="♀" Margin="0, 0, 10, 0" x:Name="Venus3" />
+                    <ToggleButton Content="♂" Margin="0, 0, 10, 0" x:Name="Mars3" />
+                    <ToggleButton Content="♃" Margin="0, 0, 10, 0" x:Name="Jupiter3" />
+                    <ToggleButton Content="♄" Margin="0, 0, 10, 0" x:Name="Saturn3" />
+                    <ToggleButton Content="♅" Margin="0, 0, 10, 0" x:Name="Uranus3" />
+                    <ToggleButton Content="♆" Margin="0, 0, 10, 0" x:Name="Neptune3" />
+                    <ToggleButton Content="♇" Margin="0, 0, 10, 0" x:Name="Pluto3" />
+                    <ToggleButton Content="ASC" Margin="0, 0, 10, 0" x:Name="Asc3" />
+                    <ToggleButton Content="MC" Margin="0, 0, 10, 0" x:Name="Mc3" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0">
-                    <ToggleButton Content="Vt" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Pof" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="☊" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚸" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♁" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚷" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚳" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚴" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚵" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚶" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Eri" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Sed" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Hau" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Mak" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Vt" Margin="0, 0, 10, 0" x:Name="Vt3" />
+                    <ToggleButton Content="Pof" Margin="0, 0, 10, 0" x:Name="Pof3" />
+                    <ToggleButton Content="☊" Margin="0, 0, 10, 0" x:Name="Dh3" />
+                    <ToggleButton Content="⚸" Margin="0, 0, 10, 0" x:Name="Lilith3" />
+                    <ToggleButton Content="♁" Margin="0, 0, 10, 0" x:Name="Earth3" />
+                    <ToggleButton Content="⚷" Margin="0, 0, 10, 0" x:Name="Chiron3" />
+                    <ToggleButton Content="⚳" Margin="0, 0, 10, 0" x:Name="Ceres3" />
+                    <ToggleButton Content="⚴" Margin="0, 0, 10, 0" x:Name="Paras3" />
+                    <ToggleButton Content="⚵" Margin="0, 0, 10, 0" x:Name="Juno3" />
+                    <ToggleButton Content="⚶" Margin="0, 0, 10, 0" x:Name="Vesta3" />
+                    <ToggleButton Content="Eri" Margin="0, 0, 10, 0" x:Name="Eris3" />
+                    <ToggleButton Content="Sed" Margin="0, 0, 10, 0" x:Name="Sedna3" />
+                    <ToggleButton Content="Hau" Margin="0, 0, 10, 0" x:Name="Haumea3" />
+                    <ToggleButton Content="Mak" Margin="0, 0, 10, 0" x:Name="Makemake3" />
                 </StackPanel>
                 <StackPanel>
                     <TextBlock Text="4" FontWeight="Bold" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <ToggleButton Content="☉" Margin="0, 0, 10, 0" x:Name="Sun4" />
-                    <ToggleButton Content="☽" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="☿" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♀" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♂" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♃" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♄" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♅" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♆" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♇" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="ASC" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="MC" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="☽" Margin="0, 0, 10, 0" x:Name="Moon4" />
+                    <ToggleButton Content="☿" Margin="0, 0, 10, 0" x:Name="Mercury4" />
+                    <ToggleButton Content="♀" Margin="0, 0, 10, 0" x:Name="Venus4" />
+                    <ToggleButton Content="♂" Margin="0, 0, 10, 0" x:Name="Mars4" />
+                    <ToggleButton Content="♃" Margin="0, 0, 10, 0" x:Name="Jupiter4" />
+                    <ToggleButton Content="♄" Margin="0, 0, 10, 0" x:Name="Saturn4" />
+                    <ToggleButton Content="♅" Margin="0, 0, 10, 0" x:Name="Uranus4" />
+                    <ToggleButton Content="♆" Margin="0, 0, 10, 0" x:Name="Neptune4" />
+                    <ToggleButton Content="♇" Margin="0, 0, 10, 0" x:Name="Pluto4" />
+                    <ToggleButton Content="ASC" Margin="0, 0, 10, 0" x:Name="Asc4" />
+                    <ToggleButton Content="MC" Margin="0, 0, 10, 0" x:Name="Mc4" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0">
-                    <ToggleButton Content="Vt" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Pof" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="☊" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚸" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♁" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚷" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚳" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚴" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚵" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚶" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Eri" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Sed" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Hau" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Mak" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Vt" Margin="0, 0, 10, 0" x:Name="Vt4" />
+                    <ToggleButton Content="Pof" Margin="0, 0, 10, 0" x:Name="Pof4" />
+                    <ToggleButton Content="☊" Margin="0, 0, 10, 0" x:Name="Dh4" />
+                    <ToggleButton Content="⚸" Margin="0, 0, 10, 0" x:Name="Lilith4" />
+                    <ToggleButton Content="♁" Margin="0, 0, 10, 0" x:Name="Earth4" />
+                    <ToggleButton Content="⚷" Margin="0, 0, 10, 0" x:Name="Chiron4" />
+                    <ToggleButton Content="⚳" Margin="0, 0, 10, 0" x:Name="Ceres4" />
+                    <ToggleButton Content="⚴" Margin="0, 0, 10, 0" x:Name="Paras4" />
+                    <ToggleButton Content="⚵" Margin="0, 0, 10, 0" x:Name="Juno4" />
+                    <ToggleButton Content="⚶" Margin="0, 0, 10, 0" x:Name="Vesta4" />
+                    <ToggleButton Content="Eri" Margin="0, 0, 10, 0" x:Name="Eris4" />
+                    <ToggleButton Content="Sed" Margin="0, 0, 10, 0" x:Name="Sedna4" />
+                    <ToggleButton Content="Hau" Margin="0, 0, 10, 0" x:Name="Haumea4" />
+                    <ToggleButton Content="Mak" Margin="0, 0, 10, 0" x:Name="Makemake4" />
                 </StackPanel>
                 <StackPanel>
                     <TextBlock Text="5" FontWeight="Bold" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <ToggleButton Content="☉" Margin="0, 0, 10, 0" x:Name="Sun5" />
-                    <ToggleButton Content="☽" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="☿" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♀" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♂" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♃" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♄" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♅" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♆" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♇" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="ASC" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="MC" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="☽" Margin="0, 0, 10, 0" x:Name="Moon5" />
+                    <ToggleButton Content="☿" Margin="0, 0, 10, 0" x:Name="Mercury5" />
+                    <ToggleButton Content="♀" Margin="0, 0, 10, 0" x:Name="Venus5" />
+                    <ToggleButton Content="♂" Margin="0, 0, 10, 0" x:Name="Mars5" />
+                    <ToggleButton Content="♃" Margin="0, 0, 10, 0" x:Name="Jupiter5" />
+                    <ToggleButton Content="♄" Margin="0, 0, 10, 0" x:Name="Saturn5" />
+                    <ToggleButton Content="♅" Margin="0, 0, 10, 0" x:Name="Uranus5" />
+                    <ToggleButton Content="♆" Margin="0, 0, 10, 0" x:Name="Neptune5" />
+                    <ToggleButton Content="♇" Margin="0, 0, 10, 0" x:Name="Pluto5" />
+                    <ToggleButton Content="ASC" Margin="0, 0, 10, 0" x:Name="Asc5" />
+                    <ToggleButton Content="MC" Margin="0, 0, 10, 0" x:Name="Mc5" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0">
-                    <ToggleButton Content="Vt" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Pof" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="☊" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚸" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♁" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚷" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚳" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚴" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚵" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚶" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Eri" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Sed" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Hau" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Mak" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Vt" Margin="0, 0, 10, 0" x:Name="Vt5" />
+                    <ToggleButton Content="Pof" Margin="0, 0, 10, 0" x:Name="Pof5" />
+                    <ToggleButton Content="☊" Margin="0, 0, 10, 0" x:Name="Dh5" />
+                    <ToggleButton Content="⚸" Margin="0, 0, 10, 0" x:Name="Lilith5" />
+                    <ToggleButton Content="♁" Margin="0, 0, 10, 0" x:Name="Earth5" />
+                    <ToggleButton Content="⚷" Margin="0, 0, 10, 0" x:Name="Chiron5" />
+                    <ToggleButton Content="⚳" Margin="0, 0, 10, 0" x:Name="Ceres5" />
+                    <ToggleButton Content="⚴" Margin="0, 0, 10, 0" x:Name="Paras5" />
+                    <ToggleButton Content="⚵" Margin="0, 0, 10, 0" x:Name="Juno5" />
+                    <ToggleButton Content="⚶" Margin="0, 0, 10, 0" x:Name="Vesta5" />
+                    <ToggleButton Content="Eri" Margin="0, 0, 10, 0" x:Name="Eris5" />
+                    <ToggleButton Content="Sed" Margin="0, 0, 10, 0" x:Name="Sedna5" />
+                    <ToggleButton Content="Hau" Margin="0, 0, 10, 0" x:Name="Haumea5" />
+                    <ToggleButton Content="Mak" Margin="0, 0, 10, 0" x:Name="Makemake5" />
                 </StackPanel>
                 <StackPanel>
                     <TextBlock Text="6" FontWeight="Bold" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <ToggleButton Content="☉" Margin="0, 0, 10, 0" x:Name="Sun6" />
-                    <ToggleButton Content="☽" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="☿" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♀" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♂" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♃" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♄" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♅" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♆" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♇" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="ASC" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="MC" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="☽" Margin="0, 0, 10, 0" x:Name="Moon6" />
+                    <ToggleButton Content="☿" Margin="0, 0, 10, 0" x:Name="Mercury6" />
+                    <ToggleButton Content="♀" Margin="0, 0, 10, 0" x:Name="Venus6" />
+                    <ToggleButton Content="♂" Margin="0, 0, 10, 0" x:Name="Mars6" />
+                    <ToggleButton Content="♃" Margin="0, 0, 10, 0" x:Name="Jupiter6" />
+                    <ToggleButton Content="♄" Margin="0, 0, 10, 0" x:Name="Saturn6" />
+                    <ToggleButton Content="♅" Margin="0, 0, 10, 0" x:Name="Uranus6" />
+                    <ToggleButton Content="♆" Margin="0, 0, 10, 0" x:Name="Neptune6" />
+                    <ToggleButton Content="♇" Margin="0, 0, 10, 0" x:Name="Pluto6" />
+                    <ToggleButton Content="ASC" Margin="0, 0, 10, 0" x:Name="Asc6" />
+                    <ToggleButton Content="MC" Margin="0, 0, 10, 0" x:Name="Mc6" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0">
-                    <ToggleButton Content="Vt" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Pof" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="☊" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚸" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♁" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚷" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚳" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚴" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚵" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚶" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Eri" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Sed" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Hau" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Mak" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Vt" Margin="0, 0, 10, 0" x:Name="Vt6" />
+                    <ToggleButton Content="Pof" Margin="0, 0, 10, 0" x:Name="Pof6" />
+                    <ToggleButton Content="☊" Margin="0, 0, 10, 0" x:Name="Dh6" />
+                    <ToggleButton Content="⚸" Margin="0, 0, 10, 0" x:Name="Lilith6" />
+                    <ToggleButton Content="♁" Margin="0, 0, 10, 0" x:Name="Earth6" />
+                    <ToggleButton Content="⚷" Margin="0, 0, 10, 0" x:Name="Chiron6" />
+                    <ToggleButton Content="⚳" Margin="0, 0, 10, 0" x:Name="Ceres6" />
+                    <ToggleButton Content="⚴" Margin="0, 0, 10, 0" x:Name="Paras6" />
+                    <ToggleButton Content="⚵" Margin="0, 0, 10, 0" x:Name="Juno6" />
+                    <ToggleButton Content="⚶" Margin="0, 0, 10, 0" x:Name="Vesta6" />
+                    <ToggleButton Content="Eri" Margin="0, 0, 10, 0" x:Name="Eris6" />
+                    <ToggleButton Content="Sed" Margin="0, 0, 10, 0" x:Name="Sedna6" />
+                    <ToggleButton Content="Hau" Margin="0, 0, 10, 0" x:Name="Haumea6" />
+                    <ToggleButton Content="Mak" Margin="0, 0, 10, 0" x:Name="Makemake6" />
                 </StackPanel>
                 <StackPanel>
                     <TextBlock Text="7" FontWeight="Bold" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <ToggleButton Content="☉" Margin="0, 0, 10, 0" x:Name="Sun7" />
-                    <ToggleButton Content="☽" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="☿" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♀" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♂" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♃" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♄" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♅" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♆" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♇" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="ASC" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="MC" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="☽" Margin="0, 0, 10, 0" x:Name="Moon7" />
+                    <ToggleButton Content="☿" Margin="0, 0, 10, 0" x:Name="Mercury7" />
+                    <ToggleButton Content="♀" Margin="0, 0, 10, 0" x:Name="Venus7" />
+                    <ToggleButton Content="♂" Margin="0, 0, 10, 0" x:Name="Mars7" />
+                    <ToggleButton Content="♃" Margin="0, 0, 10, 0" x:Name="Jupiter7" />
+                    <ToggleButton Content="♄" Margin="0, 0, 10, 0" x:Name="Saturn7" />
+                    <ToggleButton Content="♅" Margin="0, 0, 10, 0" x:Name="Uranus7" />
+                    <ToggleButton Content="♆" Margin="0, 0, 10, 0" x:Name="Neptune7" />
+                    <ToggleButton Content="♇" Margin="0, 0, 10, 0" x:Name="Pluto7" />
+                    <ToggleButton Content="ASC" Margin="0, 0, 10, 0" x:Name="Asc7" />
+                    <ToggleButton Content="MC" Margin="0, 0, 10, 0" x:Name="Mc7" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0">
-                    <ToggleButton Content="Vt" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Pof" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="☊" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚸" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="♁" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚷" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚳" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚴" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚵" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="⚶" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Eri" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Sed" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Hau" Margin="0, 0, 10, 0" />
-                    <ToggleButton Content="Mak" Margin="0, 0, 10, 0" />
+                    <ToggleButton Content="Vt" Margin="0, 0, 10, 0" x:Name="Vt7" />
+                    <ToggleButton Content="Pof" Margin="0, 0, 10, 0" x:Name="Pof7" />
+                    <ToggleButton Content="☊" Margin="0, 0, 10, 0" x:Name="Dh7" />
+                    <ToggleButton Content="⚸" Margin="0, 0, 10, 0" x:Name="Lilith7" />
+                    <ToggleButton Content="♁" Margin="0, 0, 10, 0" x:Name="Earth7" />
+                    <ToggleButton Content="⚷" Margin="0, 0, 10, 0" x:Name="Chiron7" />
+                    <ToggleButton Content="⚳" Margin="0, 0, 10, 0" x:Name="Ceres7" />
+                    <ToggleButton Content="⚴" Margin="0, 0, 10, 0" x:Name="Paras7" />
+                    <ToggleButton Content="⚵" Margin="0, 0, 10, 0" x:Name="Juno7" />
+                    <ToggleButton Content="⚶" Margin="0, 0, 10, 0" x:Name="Vesta7" />
+                    <ToggleButton Content="Eri" Margin="0, 0, 10, 0" x:Name="Eris7" />
+                    <ToggleButton Content="Sed" Margin="0, 0, 10, 0" x:Name="Sedna7" />
+                    <ToggleButton Content="Hau" Margin="0, 0, 10, 0" x:Name="Haumea7" />
+                    <ToggleButton Content="Mak" Margin="0, 0, 10, 0" x:Name="Makemake7" />
                 </StackPanel>
 
             </StackPanel>

@@ -101,6 +101,7 @@
     <Compile Include="Common\Explanation.cs" />
     <Compile Include="Common\Util.cs" />
     <Compile Include="Config\ConfigData.cs" />
+    <Compile Include="Config\ConfigPass.cs" />
     <Compile Include="Config\ConfigSave.cs" />
     <Compile Include="Config\SettingFromXml.cs" />
     <Compile Include="Config\ConfigFromXml.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="Models\PlanetData.cs" />
     <Compile Include="Models\TreeViewItem.cs" />
     <Compile Include="Models\UserDirTree.cs" />
+    <Compile Include="Models\UserEventData.cs" />
     <Compile Include="ViewModels\MainWindowCuspListViewModel.cs" />
     <Compile Include="ViewModels\UserDbViewModel.cs" />
     <Compile Include="Views\AddressSearchPage.xaml.cs">
