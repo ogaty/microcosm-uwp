@@ -9,8 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel>
-            <TextBlock Text="a"/>
-            <ListView x:Name="PlanetCusp" IsItemClickEnabled="True" Width="200" Height="200">
+            <ListView x:Name="PlanetCusp" IsItemClickEnabled="True" Width="200" Height="300" HorizontalAlignment="Left">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">

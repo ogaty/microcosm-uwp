@@ -43,9 +43,29 @@ namespace microcosm.Views
             SettingCombo.SelectedIndex = 0;
         }
 
+        private void SettingCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // イベント投げられるのかな
+        }
+
         private void DispPlanetSetting_Click(object sender, RoutedEventArgs e)
         {
             SettingDetailFrame.Navigate(typeof(SettingDetailPlanet), (object)settings);
+        }
+
+        private void DispAspectCategorySetting_Click(object sender, RoutedEventArgs e)
+        {
+            SettingDetailFrame.Navigate(typeof(SettingDetailAspectCategory), (object)settings);
+        }
+
+        private void DispAspectPlanetSetting_Click(object sender, RoutedEventArgs e)
+        {
+            SettingDetailFrame.Navigate(typeof(SettingDetailPlanetAspect), (object)settings);
+        }
+
+        private void OrbsSetting_Click(object sender, RoutedEventArgs e)
+        {
+            SettingDetailFrame.Navigate(typeof(SettingDetailOrbs), (object)settings);
         }
     }
 }

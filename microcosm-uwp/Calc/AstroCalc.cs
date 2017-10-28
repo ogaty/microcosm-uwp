@@ -12,6 +12,7 @@ using Windows.Storage.Streams;
 
 using microcosm.Views;
 using microcosm.Config;
+using microcosm.Models;
 
 namespace microcosm.Calc
 {
@@ -19,6 +20,7 @@ namespace microcosm.Calc
     {
         public SwissEph s;
         public Stream swiss_stream;
+        public List<PlanetData> planetList = new List<PlanetData>();
         public double[,] houseLists = new double[7, 12];
 
         public AstroCalc(MainPage main)
@@ -76,13 +78,17 @@ namespace microcosm.Calc
             int flag = SwissEph.SEFLG_SWIEPH | SwissEph.SEFLG_SPEED;
 //            flag = flag | SwissEph.SEFLG_HELCTR;
 
-            // display設定で再計算させないようにあらかじめ計算しておく
+            // display設定で再計算させないようにあらかじめ全て計算しておく
 
             foreach (int planet_number in Common.CommonData.target_numbers)
             {
                 s.swe_calc_ut(dret[1], planet_number, flag, x, ref serr);
-                Debug.WriteLine(planet_number.ToString() + " " + x[0]);
-                Debug.WriteLine(serr);
+                PlanetData p = new PlanetData()
+                {
+                    no = planet_number,
+                    absolute_position = x[0]
+                };
+                planetList.Add(p);
             }
 
 

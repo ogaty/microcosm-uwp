@@ -14,30 +14,30 @@
                     <TextBlock Text="1" FontWeight="Bold" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <ToggleButton Content="☉" Margin="0, 0, 10, 0" x:Name="Sun1" Click="DispPlanetClicked" />
-                    <ToggleButton Content="☽" Margin="0, 0, 10, 0" x:Name="Moon1" />
-                    <ToggleButton Content="☿" Margin="0, 0, 10, 0" x:Name="Mercury1" />
-                    <ToggleButton Content="♀" Margin="0, 0, 10, 0" x:Name="Venus1" />
-                    <ToggleButton Content="♂" Margin="0, 0, 10, 0" x:Name="Mars1" />
-                    <ToggleButton Content="♃" Margin="0, 0, 10, 0" x:Name="Jupiter1" />
-                    <ToggleButton Content="♄" Margin="0, 0, 10, 0" x:Name="Saturn1" />
-                    <ToggleButton Content="♅" Margin="0, 0, 10, 0" x:Name="Uranus1" />
-                    <ToggleButton Content="♆" Margin="0, 0, 10, 0" x:Name="Neptune1" />
-                    <ToggleButton Content="♇" Margin="0, 0, 10, 0" x:Name="Pluto1" />
-                    <ToggleButton Content="ASC" Margin="0, 0, 10, 0" x:Name="Asc1" />
-                    <ToggleButton Content="MC" Margin="0, 0, 10, 0" x:Name="Mc1" />
+                    <ToggleButton Content="A" FontFamily="ms-appx:/Zodiac_S/ZODIAC_S.TTF#Zodiac S" Margin="0, 0, 10, 0" x:Name="Sun1" Click="DispPlanetClicked" />
+                    <ToggleButton Content="B" FontFamily="ms-appx:/Zodiac_S/ZODIAC_S.TTF#Zodiac S" Margin="0, 0, 10, 0" x:Name="Moon1" />
+                    <ToggleButton Content="C" FontFamily="ms-appx:/Zodiac_S/ZODIAC_S.TTF#Zodiac S" Margin="0, 0, 10, 0" x:Name="Mercury1" />
+                    <ToggleButton Content="D" FontFamily="ms-appx:/Zodiac_S/ZODIAC_S.TTF#Zodiac S" Margin="0, 0, 10, 0" x:Name="Venus1" />
+                    <ToggleButton Content="E" FontFamily="ms-appx:/Zodiac_S/ZODIAC_S.TTF#Zodiac S" Margin="0, 0, 10, 0" x:Name="Mars1" />
+                    <ToggleButton Content="F" FontFamily="ms-appx:/Zodiac_S/ZODIAC_S.TTF#Zodiac S" Margin="0, 0, 10, 0" x:Name="Jupiter1" />
+                    <ToggleButton Content="G" FontFamily="ms-appx:/Zodiac_S/ZODIAC_S.TTF#Zodiac S" Margin="0, 0, 10, 0" x:Name="Saturn1" />
+                    <ToggleButton Content="H" FontFamily="ms-appx:/Zodiac_S/ZODIAC_S.TTF#Zodiac S" Margin="0, 0, 10, 0" x:Name="Uranus1" />
+                    <ToggleButton Content="I" FontFamily="ms-appx:/Zodiac_S/ZODIAC_S.TTF#Zodiac S" Margin="0, 0, 10, 0" x:Name="Neptune1" />
+                    <ToggleButton Content="J" FontFamily="ms-appx:/Zodiac_S/ZODIAC_S.TTF#Zodiac S" Margin="0, 0, 10, 0" x:Name="Pluto1" />
+                    <ToggleButton Content="K" FontFamily="ms-appx:/Zodiac_S/ZODIAC_S.TTF#Zodiac S" Margin="0, 0, 10, 0" x:Name="Asc1" />
+                    <ToggleButton Content="L" FontFamily="ms-appx:/Zodiac_S/ZODIAC_S.TTF#Zodiac S" Margin="0, 0, 10, 0" x:Name="Mc1" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0">
-                    <ToggleButton Content="Vt" Margin="0, 0, 10, 0" x:Name="Vt1" />
+                    <ToggleButton Content="X" FontFamily="ms-appx:/Zodiac_S/ZODIAC_S.TTF#Zodiac S"  Margin="0, 0, 10, 0" x:Name="Vt1" />
                     <ToggleButton Content="Pof" Margin="0, 0, 10, 0" x:Name="Pof1" />
-                    <ToggleButton Content="☊" Margin="0, 0, 10, 0" x:Name="Dh1" />
-                    <ToggleButton Content="⚸" Margin="0, 0, 10, 0" x:Name="Lilith1" />
+                    <ToggleButton Content="M" FontFamily="ms-appx:/Zodiac_S/ZODIAC_S.TTF#Zodiac S"  Margin="0, 0, 10, 0" x:Name="Dh1" />
+                    <ToggleButton Content="N" FontFamily="ms-appx:/Zodiac_S/ZODIAC_S.TTF#Zodiac S" Margin="0, 0, 10, 0" x:Name="Lilith1" />
                     <ToggleButton Content="♁" Margin="0, 0, 10, 0" x:Name="Earth1" />
-                    <ToggleButton Content="⚷" Margin="0, 0, 10, 0" x:Name="Chiron1" />
-                    <ToggleButton Content="⚳" Margin="0, 0, 10, 0" x:Name="Ceres1" />
-                    <ToggleButton Content="⚴" Margin="0, 0, 10, 0" x:Name="Paras1" />
-                    <ToggleButton Content="⚵" Margin="0, 0, 10, 0" x:Name="Juno1" />
-                    <ToggleButton Content="⚶" Margin="0, 0, 10, 0" x:Name="Vesta1" />
+                    <ToggleButton Content="Q" FontFamily="ms-appx:/Zodiac_S/ZODIAC_S.TTF#Zodiac S" Margin="0, 0, 10, 0" x:Name="Chiron1" />
+                    <ToggleButton Content="S" FontFamily="ms-appx:/Zodiac_S/ZODIAC_S.TTF#Zodiac S"  Margin="0, 0, 10, 0" x:Name="Ceres1" />
+                    <ToggleButton Content="T" FontFamily="ms-appx:/Zodiac_S/ZODIAC_S.TTF#Zodiac S"  Margin="0, 0, 10, 0" x:Name="Paras1" />
+                    <ToggleButton Content="U" FontFamily="ms-appx:/Zodiac_S/ZODIAC_S.TTF#Zodiac S" Margin="0, 0, 10, 0" x:Name="Juno1" />
+                    <ToggleButton Content="V" FontFamily="ms-appx:/Zodiac_S/ZODIAC_S.TTF#Zodiac S" Margin="0, 0, 10, 0" x:Name="Vesta1" />
                     <ToggleButton Content="Eri" Margin="0, 0, 10, 0" x:Name="Eris1" />
                     <ToggleButton Content="Sed" Margin="0, 0, 10, 0" x:Name="Sedna1" />
                     <ToggleButton Content="Hau" Margin="0, 0, 10, 0" x:Name="Haumea1" />

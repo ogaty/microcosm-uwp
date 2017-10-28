@@ -1,4 +1,5 @@
-﻿using microcosm.Models;
+﻿using microcosm.Common;
+using microcosm.Models;
 using microcosm.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -26,17 +27,29 @@ namespace microcosm.Views
     public sealed partial class MainListPage : Page
     {
         public MainWindowCuspListViewModel vm = new MainWindowCuspListViewModel();
+        public List<PlanetData> planetList;
 
         public MainListPage()
         {
             this.InitializeComponent();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            planetList = (List<PlanetData>)e.Parameter;
+
+
             PlanetCusp.DataContext = vm;
             vm.planetCuspList = new ObservableCollection<PlanetCuspListData>();
-            PlanetCuspListData pcusp = new PlanetCuspListData();
-            pcusp.name = "A";
-            pcusp.degree1 = 10.00;
-            vm.planetCuspList.Add(pcusp);
+            foreach (PlanetData p in planetList)
+            {
+                PlanetCuspListData pcusp = new PlanetCuspListData();
+                pcusp.name = Util.getPlanetSymbol(p.no);
+                pcusp.degree1 = p.absolute_position;
+                vm.planetCuspList.Add(pcusp);
+            }
             PlanetCusp.ItemsSource = vm.planetCuspList;
         }
+
     }
 }

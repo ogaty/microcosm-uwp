@@ -112,7 +112,7 @@ namespace microcosm.Views
             }
 
             calc = new AstroCalc(this);
-//            calc.PositionCalc(9.0);
+            calc.PositionCalc(9.0);
 
             return true;
         }
@@ -227,7 +227,7 @@ namespace microcosm.Views
 
             await Task.WhenAll(arrayTask);
             UserDataView.DataContext = new MainWindowUserDataViewModel();
-            InfoFrame.Navigate(typeof(MainListPage));
+            InfoFrame.Navigate(typeof(MainListPage), calc.planetList);
         }
 
         /*
