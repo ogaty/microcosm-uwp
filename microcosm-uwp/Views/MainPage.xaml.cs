@@ -24,6 +24,7 @@ using microcosm.User;
 using microcosm.Config;
 using Windows.UI.Core;
 using microcosm.ViewModels;
+using microcosm.Models;
 
 // 空白ページの項目テンプレートについては、https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x411 を参照してください
 
@@ -38,6 +39,13 @@ namespace microcosm.Views
         public ConfigPass pass;
         public ConfigData config;
         public SettingData[] setting = new SettingData[10];
+
+        public UserData udata1 = new UserData();
+        public UserData udata2 = new UserData();
+        public UserData edata1 = new UserData();
+        public UserData edata2 = new UserData();
+
+        public Calcuration[] ringsData = new Calcuration[7];
 
         public MainPage()
         {
@@ -112,8 +120,6 @@ namespace microcosm.Views
             }
 
             calc = new AstroCalc(this);
-            calc.PositionCalc(9.0);
-
             return true;
         }
 
@@ -226,8 +232,12 @@ namespace microcosm.Views
             arrayTask.Add(configTask);
 
             await Task.WhenAll(arrayTask);
+            ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
+    = calc.ReCalc(config, setting[0], new UserData());
+
+
             UserDataView.DataContext = new MainWindowUserDataViewModel();
-            InfoFrame.Navigate(typeof(MainListPage), calc.planetList);
+            InfoFrame.Navigate(typeof(MainListPage), new CuspList() { planetList = ringsData[0].planetData, cusps = ringsData[0].cusps });
         }
 
         /*

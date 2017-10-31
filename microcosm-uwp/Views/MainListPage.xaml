@@ -8,18 +8,27 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel>
-            <ListView x:Name="PlanetCusp" IsItemClickEnabled="True" Width="200" Height="300" HorizontalAlignment="Left">
+        <StackPanel Orientation="Horizontal">
+            <ListView x:Name="PlanetCusp" BorderBrush="Gray" BorderThickness="1" IsItemClickEnabled="True" Width="150" Height="300" HorizontalAlignment="Left" Margin="10, 0, 0, 0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding name}" />
+                                <TextBlock Text="{Binding degree1}" Margin="10, 0, 0, 0" />
+                            </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView x:Name="HouseCusp" BorderBrush="Gray" BorderThickness="1" IsItemClickEnabled="True" Width="150" Height="300" HorizontalAlignment="Left" Margin="10, 0, 0, 0">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="{Binding name}" />
-                            <TextBlock Text="{Binding degree1}" />
+                            <TextBlock Text="{Binding degree1}" Margin="10, 0, 0, 0" />
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
         </StackPanel>
     </Grid>
 </Page>

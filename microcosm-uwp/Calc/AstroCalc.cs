@@ -13,6 +13,7 @@ using Windows.Storage.Streams;
 using microcosm.Views;
 using microcosm.Config;
 using microcosm.Models;
+using microcosm.User;
 
 namespace microcosm.Calc
 {
@@ -20,8 +21,6 @@ namespace microcosm.Calc
     {
         public SwissEph s;
         public Stream swiss_stream;
-        public List<PlanetData> planetList = new List<PlanetData>();
-        public double[,] houseLists = new double[7, 12];
 
         public AstroCalc(MainPage main)
         {
@@ -52,8 +51,9 @@ namespace microcosm.Calc
         /// planet position calcurate.
         /// </summary>
         /// <param name="timezone">Timezone. JST=9.0</param>
-        public void PositionCalc(double timezone)
+        public List<PlanetData> PositionCalc(DateTime time, double timezone)
         {
+            List<PlanetData> planetList = new List<PlanetData>();
             s.swe_set_ephe_path(Windows.Storage.ApplicationData.Current.LocalFolder.Path + "/ephe");
             s.OnLoadFile += (sender, e) => {
                 if (File.Exists(e.FileName))
@@ -91,12 +91,103 @@ namespace microcosm.Calc
                 planetList.Add(p);
             }
 
-
+            return planetList;
         }
 
-        public void ReCalc(ConfigData config, SettingData setting)
+        /// <summary>
+        /// ハウス計算
+        /// </summary>
+        /// <returns>The calculate.</returns>
+        /// <param name="d">時刻</param>
+        /// <param name="lat">緯度</param>
+        /// <param name="lng">経度</param>
+        /// <param name="houseKind">ハウス種別
+        /// 0:Placidus
+        /// 1:Koch
+        /// 2:Campanus
+        /// 
+        /// </param>
+        /// 
+        public double[] CuspCalc(DateTime d, double lat, double lng, double timezone, EHouseCalc houseKind)
         {
+            s.swe_set_ephe_path(Windows.Storage.ApplicationData.Current.LocalFolder.Path + "/ephe");
+            s.OnLoadFile += (sender, e) => {
+                if (File.Exists(e.FileName))
+                {
+                    e.File = new FileStream(e.FileName, FileMode.Open);
+                }
+            };
 
+            int utc_year = 0;
+            int utc_month = 0;
+            int utc_day = 0;
+            int utc_hour = 0;
+            int utc_minute = 0;
+            double utc_second = 0;
+            string serr = "";
+            // [0]:Ephemeris Time [1]:Universal Time
+            double[] dret = { 0.0, 0.0 };
+
+            // utcに変換
+            s.swe_utc_time_zone(d.Year, d.Month, d.Day, d.Hour, d.Minute, d.Second, timezone, ref utc_year, ref utc_month, ref utc_day, ref utc_hour, ref utc_minute, ref utc_second);
+            s.swe_utc_to_jd(utc_year, utc_month, utc_day, utc_hour, utc_minute, utc_second, 1, dret, ref serr);
+
+            double[] cusps = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+            double[] ascmc = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+            if (houseKind == EHouseCalc.PLACIDUS)
+            {
+                // Placidas
+                s.swe_houses(dret[1], lat, lng, 'P', cusps, ascmc);
+            }
+            else if (houseKind == EHouseCalc.KOCH)
+            {
+                // Koch
+                s.swe_houses(dret[1], lat, lng, 'K', cusps, ascmc);
+            }
+            else if (houseKind == EHouseCalc.CAMPANUS)
+            {
+                // Campanus
+                s.swe_houses(dret[1], lat, lng, 'C', cusps, ascmc);
+            }
+            else if (houseKind == EHouseCalc.PORPHYRY)
+            {
+                // Porphyrious
+                s.swe_houses(dret[1], lat, lng, 'O', cusps, ascmc);
+            }
+            else if (houseKind == EHouseCalc.REGIOMONTANUS)
+            {
+                // Porphyrious
+                s.swe_houses(dret[1], lat, lng, 'R', cusps, ascmc);
+            }
+            else if (houseKind == EHouseCalc.EQUAL)
+            {
+                // Equal
+                s.swe_houses(dret[1], lat, lng, 'E', cusps, ascmc);
+            }
+            else if (houseKind == EHouseCalc.SOLAR)
+            {
+                // Solar
+                // 太陽の度数をASCとして30度
+            }
+            else if (houseKind == EHouseCalc.SOLARSIGN)
+            {
+                // SolarSign
+                // 太陽のサインの0度をASCとして30度
+            }
+            s.swe_close();
+
+            return cusps;
+        }
+
+
+        public Calcuration ReCalc(ConfigData config, SettingData setting, UserData udata)
+        {
+            List<PlanetData> p = PositionCalc(udata.birth_time, udata.timezoneDouble);
+            double[] cusps = CuspCalc(udata.birth_time, udata.lat, udata.lng, udata.timezoneDouble, config.houseCalc);
+            Calcuration calcurate = new Calcuration(p, cusps);
+
+            return calcurate;
         }
     }
 }

@@ -108,6 +108,8 @@
     <Compile Include="Config\SettingData.cs" />
     <Compile Include="Config\SettingXml.cs" />
     <Compile Include="Config\SettingXml2.cs" />
+    <Compile Include="Models\Calcuration.cs" />
+    <Compile Include="Models\CuspList.cs" />
     <Compile Include="Models\DbItem.cs" />
     <Compile Include="Models\HouseCuspListData.cs" />
     <Compile Include="Models\PlanetCuspListData.cs" />

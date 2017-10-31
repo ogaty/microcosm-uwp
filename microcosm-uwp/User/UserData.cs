@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using microcosm.Common;
+
 namespace microcosm.User
 {
     [XmlRoot("userdata")]
@@ -25,6 +27,7 @@ namespace microcosm.User
         public int birth_minute { get; set; }
         [XmlElement("birth_second")]
         public int birth_second { get; set; }
+        public DateTime birth_time;
         [XmlElement("lat")]
         public double lat { get; set; }
         [XmlElement("lng")]
@@ -35,13 +38,19 @@ namespace microcosm.User
         public string memo { get; set; }
         [XmlElement("timezone")]
         public string timezone { get; set; }
+        public double timezoneDouble;
         [XmlArray("eventlist")]
         [XmlArrayItem("event")]
         public List<UserEvent> userevent { get; set; }
 
         public UserData()
         {
-            
+            name = "現在時刻";
+            birth_time = DateTime.Now;
+            timezone = "JST";
+            timezoneDouble = 9.0;
+            lat = CommonData.defaultLat;
+            lng = CommonData.defaultLng;
         }
 
         public UserData(

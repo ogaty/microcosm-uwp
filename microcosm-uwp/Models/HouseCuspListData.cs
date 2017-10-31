@@ -11,13 +11,13 @@ namespace microcosm.Models
     /// </summary>
     public class HouseCuspListData
     {
-        public string name;
-        public double degree1;
-        public double degree2;
-        public double degree3;
-        public double degree4;
-        public double degree5;
-        public double degree6;
-        public double degree7;
+        public string name { get; set; }
+        public double degree1 { get; set; }
+        public double degree2 { get; set; }
+        public double degree3 { get; set; }
+        public double degree4 { get; set; }
+        public double degree5 { get; set; }
+        public double degree6 { get; set; }
+        public double degree7 { get; set; }
     }
 }

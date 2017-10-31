@@ -26,8 +26,9 @@ namespace microcosm.Views
     /// </summary>
     public sealed partial class MainListPage : Page
     {
-        public MainWindowCuspListViewModel vm = new MainWindowCuspListViewModel();
-        public List<PlanetData> planetList;
+        public MainWindowCuspListViewModel vm1 = new MainWindowCuspListViewModel();
+        public MainWindowCuspListViewModel vm2 = new MainWindowCuspListViewModel();
+        public CuspList cuspList;
 
         public MainListPage()
         {
@@ -36,19 +37,30 @@ namespace microcosm.Views
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            planetList = (List<PlanetData>)e.Parameter;
+            cuspList = (CuspList)e.Parameter;
 
-
-            PlanetCusp.DataContext = vm;
-            vm.planetCuspList = new ObservableCollection<PlanetCuspListData>();
-            foreach (PlanetData p in planetList)
+            PlanetCusp.DataContext = vm1;
+            vm1.planetCuspList = new ObservableCollection<PlanetCuspListData>();
+            foreach (PlanetData p in cuspList.planetList)
             {
                 PlanetCuspListData pcusp = new PlanetCuspListData();
                 pcusp.name = Util.getPlanetSymbol(p.no);
                 pcusp.degree1 = p.absolute_position;
-                vm.planetCuspList.Add(pcusp);
+                vm1.planetCuspList.Add(pcusp);
             }
-            PlanetCusp.ItemsSource = vm.planetCuspList;
+            PlanetCusp.ItemsSource = vm1.planetCuspList;
+
+            HouseCusp.DataContext = vm2;
+            vm2.houseCuspList = new ObservableCollection<HouseCuspListData>();
+            for (int i = 1; i < 13; i++)
+            {
+                HouseCuspListData hcusp = new HouseCuspListData();
+                hcusp.name = i.ToString();
+                hcusp.degree1 = cuspList.cusps[i];
+                vm2.houseCuspList.Add(hcusp);
+            }
+            HouseCusp.ItemsSource = vm2.houseCuspList;
+
         }
 
     }

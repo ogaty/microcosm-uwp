@@ -14,6 +14,7 @@ namespace microcosm.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         public ObservableCollection<PlanetCuspListData> planetCuspList { get; set; }
+        public ObservableCollection<HouseCuspListData> houseCuspList { get; set; }
 
         protected void OnPropertyChanged(string propertyname)
         {
