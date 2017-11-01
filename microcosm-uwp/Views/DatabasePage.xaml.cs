@@ -2,9 +2,11 @@
 using microcosm.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Core;
@@ -26,6 +28,9 @@ namespace microcosm.Views
     public sealed partial class DatabasePage : Page
     {
         public UserDbViewModel vm;
+        public UserDbDirListViewModel dirVM;
+        public DirectoryInfo dataDir;
+
         public DatabasePage()
         {
             this.InitializeComponent();
@@ -39,6 +44,33 @@ namespace microcosm.Views
                 }
             };
 
+            SetVM();
+        }
+
+        private async void SetVM()
+        {
+            await getDataDir();
+            UserDirTree treeDir = new UserDirTree();
+            dirVM = new UserDbDirListViewModel();
+            List<TreeViewItem2> tree = new List<TreeViewItem2>();
+            tree.Add(new TreeViewItem2() { name = "data", isDir = true, Header = "data", icon = "D" });
+
+            foreach (var directory in dataDir.GetDirectories())
+            {
+                tree.Add(new TreeViewItem2() { name = directory.Name, isDir = true, Header = directory.Name, icon = "D" });
+            }
+
+            foreach (var file in dataDir.GetFiles())
+            {
+                // ファイル
+                string trimName = System.IO.Path.GetFileNameWithoutExtension(file.Name);
+                tree.Add(new TreeViewItem2() { name = file.Name, isDir = false, Header = file.Name, icon = "F" });
+            }
+
+            dirVM.DirTree2 = tree;
+            UserDirTree.DataContext = dirVM;
+            UserDirTree.ItemsSource = dirVM.DirTree2;
+
             vm = new UserDbViewModel();
             vm.userData = new List<UserEventData>();
             UserEventData udata = new UserEventData();
@@ -46,6 +78,24 @@ namespace microcosm.Views
             vm.userData.Add(udata);
             UserDataTable.DataContext = vm;
             UserDataTable.ItemsSource = vm.userData;
+        }
+
+        private async Task<bool> getDataDir()
+        {
+            var root = Windows.Storage.ApplicationData.Current.LocalFolder;
+            var dataStorage = await root.TryGetItemAsync("data");
+            dataDir = new DirectoryInfo(dataStorage.Path);
+
+            return true;
+        }
+
+        private void UserDirTree_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            TreeViewItem2 item = (TreeViewItem2)e.ClickedItem;
+            if (item != null && item.isDir)
+            {
+                Debug.WriteLine(item.name);
+            }
         }
     }
 }

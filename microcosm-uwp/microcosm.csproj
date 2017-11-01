@@ -115,9 +115,11 @@
     <Compile Include="Models\PlanetCuspListData.cs" />
     <Compile Include="Models\PlanetData.cs" />
     <Compile Include="Models\TreeViewItem.cs" />
+    <Compile Include="Models\TreeViewItem2.cs" />
     <Compile Include="Models\UserDirTree.cs" />
     <Compile Include="Models\UserEventData.cs" />
     <Compile Include="ViewModels\MainWindowCuspListViewModel.cs" />
+    <Compile Include="ViewModels\UserDbDirListViewModel.cs" />
     <Compile Include="ViewModels\UserDbViewModel.cs" />
     <Compile Include="Views\AddressSearchPage.xaml.cs">
       <DependentUpon>AddressSearchPage.xaml</DependentUpon>

@@ -9,7 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel Orientation="Horizontal">
-            <ListView x:Name="PlanetCusp" BorderBrush="Gray" BorderThickness="1" IsItemClickEnabled="True" Width="150" Height="300" HorizontalAlignment="Left" Margin="10, 0, 0, 0">
+            <ListView x:Name="PlanetCusp" BorderBrush="Gray" BorderThickness="1" IsItemClickEnabled="True" Width="140" Height="300" HorizontalAlignment="Left" Margin="10, 0, 0, 0">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                             <StackPanel Orientation="Horizontal">
@@ -19,7 +19,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <ListView x:Name="HouseCusp" BorderBrush="Gray" BorderThickness="1" IsItemClickEnabled="True" Width="150" Height="300" HorizontalAlignment="Left" Margin="10, 0, 0, 0">
+            <ListView x:Name="HouseCusp" BorderBrush="Gray" BorderThickness="1" IsItemClickEnabled="True" Width="140" Height="300" HorizontalAlignment="Left" Margin="10, 0, 0, 0">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">

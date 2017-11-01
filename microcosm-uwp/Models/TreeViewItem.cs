@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace microcosm.Models
 {
+    /// <summary>
+    /// ユーザーDBディレクトリのバインド用
+    /// </summary>
     public class TreeViewItem
     {
         public object Tag;

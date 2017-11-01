@@ -201,6 +201,13 @@ namespace microcosm.Views
                 await setting9File.CopyAsync(systemFolder, "setting9.csm", NameCollisionOption.FailIfExists);
             }
 
+            var dataDir = await root.TryGetItemAsync("data");
+
+            if (dataDir == null)
+            {
+                await root.CreateFolderAsync("data");
+            }
+
             var cfg = await systemFolder.GetFileAsync("config.csm");
 
             config = ConfigFromXml.GetConfigFromXml(cfg.Path);
