@@ -77,6 +77,20 @@
             </StackPanel>
         </StackPanel>
 
+        <StackPanel Grid.Column="0" Grid.Row="1" Margin="50, 0, 0, 0">
+            <Pivot>
+                <PivotItem Header="○">
+                    <TextBlock Text="111" />
+                </PivotItem>
+                <PivotItem Header="△">
+                    <TextBlock Text="222" />
+                </PivotItem>
+                <PivotItem Header="☆">
+                    <TextBlock Text="333" />
+                </PivotItem>
+            </Pivot>
+        </StackPanel>
+
         <Frame x:Name="InfoFrame" Grid.Column="1" Grid.Row="1"></Frame>
 
         <StackPanel Grid.Column="2">
