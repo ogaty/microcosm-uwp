@@ -18,6 +18,12 @@ namespace microcosm.ViewModels
         {
             User1Name = "現在時刻";
             User1DateStr = Util.DateTimeToString(DateTime.Now, "JST");
+            Event1Name = "現在時刻";
+            Event1DateStr = Util.DateTimeToString(DateTime.Now, "JST");
+            User2Name = "現在時刻";
+            User2DateStr = Util.DateTimeToString(DateTime.Now, "JST");
+            Event2Name = "現在時刻";
+            Event2DateStr = Util.DateTimeToString(DateTime.Now, "JST");
         }
 
         private string _User1Name;
@@ -48,9 +54,88 @@ namespace microcosm.ViewModels
             }
         }
 
-        public void SetUserData(UserData user)
+        private string _User2Name;
+        public string User2Name
         {
+            get
+            {
+                return _User2Name;
+            }
+            set
+            {
+                _User2Name = value;
+                OnPropertyChanged("User2Name");
+            }
+        }
 
+        private string _User2DateStr;
+        public string User2DateStr
+        {
+            get
+            {
+                return _User2DateStr;
+            }
+            set
+            {
+                _User2DateStr = value;
+                OnPropertyChanged("User2DateStr");
+            }
+        }
+
+        private string _Event1Name;
+        public string Event1Name
+        {
+            get
+            {
+                return _Event1Name;
+            }
+            set
+            {
+                _Event1Name = value;
+                OnPropertyChanged("Event1Name");
+            }
+        }
+
+        private string _Event1DateStr;
+        public string Event1DateStr
+        {
+            get
+            {
+                return _Event1DateStr;
+            }
+            set
+            {
+                _Event1DateStr = value;
+                OnPropertyChanged("Event1DateStr");
+            }
+        }
+
+        private string _Event2Name;
+        public string Event2Name
+        {
+            get
+            {
+                return _Event2Name;
+            }
+            set
+            {
+                _Event2Name = value;
+                OnPropertyChanged("Event2Name");
+            }
+        }
+
+        private string _Event2DateStr;
+        public string Event2DateStr
+        {
+            get
+            {
+                return _Event2DateStr;
+            }
+            set
+            {
+                _Event2DateStr = value;
+                OnPropertyChanged("Event2DateStr");
+            }
         }
 
         protected void OnPropertyChanged(string propertyname)

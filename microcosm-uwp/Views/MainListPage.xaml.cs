@@ -1,4 +1,5 @@
 ﻿using microcosm.Common;
+using microcosm.Config;
 using microcosm.Models;
 using microcosm.ViewModels;
 using System;
@@ -43,9 +44,11 @@ namespace microcosm.Views
             vm1.planetCuspList = new ObservableCollection<PlanetCuspListData>();
             foreach (PlanetData p in cuspList.planetList)
             {
-                PlanetCuspListData pcusp = new PlanetCuspListData();
-                pcusp.name = Util.getPlanetSymbol(p.no);
-                pcusp.degree1 = p.absolute_position;
+                PlanetCuspListData pcusp = new PlanetCuspListData()
+                {
+                    name = Util.getPlanetSymbol(p.no)
+                };
+                pcusp.degree1 = Util.getPlanetDegree(p.absolute_position, CommonInstance.getInstance().config.decimalDisp);
                 vm1.planetCuspList.Add(pcusp);
             }
             PlanetCusp.ItemsSource = vm1.planetCuspList;
@@ -56,7 +59,15 @@ namespace microcosm.Views
             {
                 HouseCuspListData hcusp = new HouseCuspListData();
                 hcusp.name = i.ToString();
-                hcusp.degree1 = cuspList.cusps[i];
+                if (CommonInstance.getInstance().config.decimalDisp == EDecimalDisp.DECIMAL)
+                {
+                    hcusp.degree1 = String.Format("{0:f2}", cuspList.cusps[i]);
+                }
+                else
+                {
+                    hcusp.degree1 = Util.DecimalToHex(cuspList.cusps[i]).ToString();
+                }
+
                 vm2.houseCuspList.Add(hcusp);
             }
             HouseCusp.ItemsSource = vm2.houseCuspList;

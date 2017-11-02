@@ -1,4 +1,6 @@
-﻿using System;
+﻿using microcosm.Common;
+using microcosm.Config;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +24,25 @@ namespace microcosm.Views
     /// </summary>
     public sealed partial class SettingDetailOrbs : Page
     {
+        public SettingData[] settings;
+        public int settingIndex = 0;
+
         public SettingDetailOrbs()
         {
             this.InitializeComponent();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            settings = CommonInstance.getInstance().settings;
+
+            base.OnNavigatedTo(e);
+            SettingInit();
+        }
+
+        private void SettingInit()
+        {
+
         }
     }
 }

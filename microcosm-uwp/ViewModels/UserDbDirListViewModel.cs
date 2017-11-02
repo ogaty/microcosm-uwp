@@ -1,6 +1,7 @@
 ﻿using microcosm.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -8,22 +9,28 @@ using System.Threading.Tasks;
 
 namespace microcosm.ViewModels
 {
-    public class UserDbDirListViewModel : INotifyPropertyChanged
+    public class UserDbDirListViewModel : INotifyCollectionChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event NotifyCollectionChangedEventHandler CollectionChanged;
 
         public TreeViewItem dirTree { get; set; }
         public List<TreeViewItem2> DirTree2 { get; set; }
 
-        protected void OnPropertyChanged(string propertyname)
+        protected void OnCollectionChanged(NotifyCollectionChangedAction action, TreeViewItem2 b, int index)
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
+
+            NotifyCollectionChangedEventHandler
+
+                        handler = CollectionChanged;
+
             if (handler != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyname));
-            }
+
+                handler(this,
+
+                        new NotifyCollectionChangedEventArgs(action,
+
+                                                         b, index));
 
         }
-
     }
 }

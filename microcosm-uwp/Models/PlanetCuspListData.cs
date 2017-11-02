@@ -15,7 +15,7 @@ namespace microcosm.Models
         public event PropertyChangedEventHandler PropertyChanged;
 
         public string name { get; set; }
-        public double degree1 { get; set; }
+        public string degree1 { get; set; }
 
         protected void OnPropertyChanged(string propertyname)
         {

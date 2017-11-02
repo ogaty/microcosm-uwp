@@ -1,4 +1,5 @@
-﻿using microcosm.Config;
+﻿using microcosm.Common;
+using microcosm.Config;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -33,8 +34,7 @@ namespace microcosm.Views
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            config = (ConfigData)e.Parameter;
-
+            config = CommonInstance.getInstance().config;
             base.OnNavigatedTo(e);
 
             SettingInit();

@@ -14,6 +14,7 @@ using microcosm.Views;
 using microcosm.Config;
 using microcosm.Models;
 using microcosm.User;
+using microcosm.Common;
 
 namespace microcosm.Calc
 {
@@ -82,10 +83,31 @@ namespace microcosm.Calc
 
             foreach (int planet_number in Common.CommonData.target_numbers)
             {
+                int planet_number2 = 0;
                 s.swe_calc_ut(dret[1], planet_number, flag, x, ref serr);
+                if (planet_number == 100377)
+                {
+                    planet_number2 = CommonData.ZODIAC_NUMBER_SEDNA;
+                }
+                else if (planet_number == 146199)
+                {
+                    planet_number2 = CommonData.ZODIAC_NUMBER_ERIS;
+                }
+                else if (planet_number == 146108)
+                {
+                    planet_number2 = CommonData.ZODIAC_NUMBER_HAUMEA;
+                }
+                else if (planet_number == 146472)
+                {
+                    planet_number2 = CommonData.ZODIAC_NUMBER_MAKEMAKE;
+                }
+                else
+                {
+                    planet_number2 = planet_number;
+                }
                 PlanetData p = new PlanetData()
                 {
-                    no = planet_number,
+                    no = planet_number2,
                     absolute_position = x[0]
                 };
                 planetList.Add(p);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using microcosm.Config;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -61,11 +62,95 @@ namespace microcosm.Common
                     return "\u26b7";
                 case CommonData.ZODIAC_NUMBER_LILITH:
                     return "\u26b8";
+                case CommonData.ZODIAC_NUMBER_CERES:
+                    return "\u26B3";
+                case CommonData.ZODIAC_NUMBER_PARAS:
+                    return "\u26B4";
+                case CommonData.ZODIAC_NUMBER_JUNO:
+                    return "\u26B5";
+                case CommonData.ZODIAC_NUMBER_VESTA:
+                    return "\u26B6";
+                case CommonData.ZODIAC_NUMBER_VT:
+                    return "Vt";
+                case CommonData.ZODIAC_NUMBER_POF:
+                    return "Pof";
+                case CommonData.ZODIAC_NUMBER_SEDNA:
+                    return "Se";
                 case CommonData.ZODIAC_NUMBER_ERIS:
-                    return "\u2641";
+                    return "Er";
+                case CommonData.ZODIAC_NUMBER_HAUMEA:
+                    return "Ha";
+                case CommonData.ZODIAC_NUMBER_MAKEMAKE:
+                    return "Ma";
             }
             return number.ToString();
         }
 
+                /// <summary>
+        /// 番号を引数にサインのシンボルを返す
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public static string getSignSymbol(int number)
+        {
+            switch ((Signs)number)
+            {
+                case Signs.SIGN_ARIES:
+                    return "\u2648";
+                case Signs.SIGN_TAURUS:
+                    return "\u2649";
+                case Signs.SIGN_GEMINI:
+                    return "\u264a";
+                case Signs.SIGN_CANCER:
+                    return "\u264b";
+                case Signs.SIGN_LEO:
+                    return "\u264c";
+                case Signs.SIGN_VIRGO:
+                    return "\u264d";
+                case Signs.SIGN_LIBRA:
+                    return "\u264e";
+                case Signs.SIGN_SCORPIO:
+                    return "\u264f";
+                case Signs.SIGN_SAGITTARIUS:
+                    return "\u2650";
+                case Signs.SIGN_CAPRICORN:
+                    return "\u2651";
+                case Signs.SIGN_AQUARIUS:
+                    return "\u2652";
+                case Signs.SIGN_PISCES:
+                    return "\u2653";
+            }
+            return "";
+        }
+
+        public static string getPlanetDegree(double absolute_position, EDecimalDisp decimalDisp)
+        {
+            double degree = absolute_position % 30;
+            string symbol = getSignSymbol((int)(absolute_position / 30));
+            if (decimalDisp == EDecimalDisp.DECIMAL)
+            {
+                return symbol + String.Format("{0:f2}",degree);
+            } else
+            {
+                return symbol + DecimalToHex(degree).ToString();
+            }
+        }
+
+        public static double DecimalToHex(string decimalStr)
+        {
+            double tmp = double.Parse(decimalStr);
+            double ftmp = tmp - (int)tmp;
+            ftmp = ftmp / 100 * 60;
+            int itmp = (int)tmp;
+            return itmp + ftmp;
+        }
+
+        public static double DecimalToHex(double tmp)
+        {
+            double ftmp = tmp - (int)tmp;
+            ftmp = ftmp / 100 * 60;
+            int itmp = (int)tmp;
+            return itmp + ftmp;
+        }
     }
 }

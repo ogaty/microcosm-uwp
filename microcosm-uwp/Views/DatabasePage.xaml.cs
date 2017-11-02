@@ -1,7 +1,9 @@
 ﻿using microcosm.Models;
+using microcosm.User;
 using microcosm.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -28,8 +30,9 @@ namespace microcosm.Views
     public sealed partial class DatabasePage : Page
     {
         public UserDbViewModel vm;
-        public UserDbDirListViewModel dirVM;
         public DirectoryInfo dataDir;
+
+        public ObservableCollection<TreeViewItem2> DirTree3;
 
         public DatabasePage()
         {
@@ -51,25 +54,54 @@ namespace microcosm.Views
         {
             await getDataDir();
             UserDirTree treeDir = new UserDirTree();
-            dirVM = new UserDbDirListViewModel();
-            List<TreeViewItem2> tree = new List<TreeViewItem2>();
-            tree.Add(new TreeViewItem2() { name = "data", isDir = true, Header = "data", icon = "D" });
+            DirTree3 = new ObservableCollection<TreeViewItem2>();
+//            DirTree3.Add(new TreeViewItem2() { Name = "data", IsDir = true, Header = "data", Icon = "D", FullPath = dataDir.FullName });
+            PathCrumbParent.Text = "data";
 
             foreach (var directory in dataDir.GetDirectories())
             {
-                tree.Add(new TreeViewItem2() { name = directory.Name, isDir = true, Header = directory.Name, icon = "D" });
+                DirTree3.Add(new TreeViewItem2()
+                {
+                    Name = directory.Name,
+                    IsDir = true,
+                    Header = directory.Name,
+                    Icon = "D",
+                    FullPath = directory.FullName,
+                    NoFile = false
+                });
             }
 
             foreach (var file in dataDir.GetFiles())
             {
                 // ファイル
                 string trimName = System.IO.Path.GetFileNameWithoutExtension(file.Name);
-                tree.Add(new TreeViewItem2() { name = file.Name, isDir = false, Header = file.Name, icon = "F" });
+                DirTree3.Add(new TreeViewItem2()
+                {
+                    Name = file.Name,
+                    IsDir = false,
+                    Header = file.Name,
+                    Icon = "F",
+                    FullPath = file.FullName,
+                    NoFile = false
+                });
             }
 
-            dirVM.DirTree2 = tree;
-            UserDirTree.DataContext = dirVM;
-            UserDirTree.ItemsSource = dirVM.DirTree2;
+            if (DirTree3.Count == 0)
+            {
+                DirTree3.Add(new TreeViewItem2()
+                {
+                    Name = "ファイルがありません",
+                    IsDir = false,
+                    Header = "ファイルがありません",
+                    Icon = "F",
+                    FullPath = dataDir.FullName,
+                    NoFile = true
+                });
+            }
+
+            //            dirVM.DirTree2 = tree;
+            UserDirTree.DataContext = DirTree3;
+//            UserDirTree.ItemsSource = dirVM.DirTree2;
 
             vm = new UserDbViewModel();
             vm.userData = new List<UserEventData>();
@@ -89,12 +121,74 @@ namespace microcosm.Views
             return true;
         }
 
+        /// <summary>
+        /// TreeView Click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UserDirTree_ItemClick(object sender, ItemClickEventArgs e)
         {
-            TreeViewItem2 item = (TreeViewItem2)e.ClickedItem;
-            if (item != null && item.isDir)
+            DirTree3.Clear();
+            DirTree3.Add(new TreeViewItem2()
             {
-                Debug.WriteLine(item.name);
+                Name = "..",
+                IsDir = false,
+                Header = "..",
+                Icon = "F",
+                FullPath = ""
+            });
+
+            TreeViewItem2 item = (TreeViewItem2)e.ClickedItem;
+            if (item != null && item.IsDir)
+            {
+                DirTree3.Clear();
+//                List<TreeViewItem2> tree = new List<TreeViewItem2>();
+
+                DirectoryInfo dir = new DirectoryInfo(item.FullPath);
+                foreach (var directory in dir.GetDirectories())
+                {
+                    DirTree3.Add(new TreeViewItem2()
+                    {
+                        Name = directory.Name,
+                        IsDir = true,
+                        Header = directory.Name,
+                        Icon = "D",
+                        FullPath = directory.FullName
+                    });
+                }
+
+                foreach (var file in dir.GetFiles())
+                {
+                    // ファイル
+                    string trimName = System.IO.Path.GetFileNameWithoutExtension(file.Name);
+                    DirTree3.Add(new TreeViewItem2()
+                    {
+                        Name = file.Name,
+                        IsDir = false,
+                        Header = file.Name,
+                        Icon = "F",
+                        FullPath = file.FullName
+                    });
+                }
+
+                if (DirTree3.Count == 0)
+                {
+                    DirTree3.Add(new TreeViewItem2()
+                    {
+                        Name = "ファイルがありません",
+                        IsDir = false,
+                        Header = "ファイルがありません",
+                        Icon = "F",
+                        FullPath = dir.Parent.FullName,
+                        NoFile = true
+                    });
+                }
+
+//                dirVM.DirTree2 = tree;
+            }
+            else if (item != null && !item.IsDir)
+            {
+                UserData udata = UserXml.GetUserDataFromXml(item.FullPath);
             }
         }
     }

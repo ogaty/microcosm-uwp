@@ -12,7 +12,7 @@ namespace microcosm.Models
     public class HouseCuspListData
     {
         public string name { get; set; }
-        public double degree1 { get; set; }
+        public string degree1 { get; set; }
         public double degree2 { get; set; }
         public double degree3 { get; set; }
         public double degree4 { get; set; }

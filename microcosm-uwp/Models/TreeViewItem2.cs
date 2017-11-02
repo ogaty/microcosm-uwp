@@ -9,8 +9,10 @@ namespace microcosm.Models
     public class TreeViewItem2
     {
         public string Header { get; set; }
-        public string icon { get; set; }
-        public string name { get; set; }
-        public bool isDir { get; set; }
+        public string Icon { get; set; }
+        public string Name { get; set; }
+        public bool IsDir { get; set; }
+        public string FullPath { get; set; }
+        public bool NoFile { get; set; }
     }
 }

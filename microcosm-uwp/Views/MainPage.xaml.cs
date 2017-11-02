@@ -25,6 +25,7 @@ using microcosm.Config;
 using Windows.UI.Core;
 using microcosm.ViewModels;
 using microcosm.Models;
+using microcosm.Common;
 
 // 空白ページの項目テンプレートについては、https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x411 を参照してください
 
@@ -220,9 +221,8 @@ namespace microcosm.Views
                 setting[i] = SettingFromXml.GetSettingFromXml(set.Path, i);
             }
 
-            pass = new ConfigPass();
-            pass.config = config;
-            pass.settings = setting;
+            CommonInstance.getInstance().config = config;
+            CommonInstance.getInstance().settings = setting;
 
             return true;
         }

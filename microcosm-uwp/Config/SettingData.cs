@@ -136,7 +136,6 @@ namespace microcosm.Config
             // dispAspect[0][2] => N-T
             // dispAspect[1][3] => P-4
             // [0][2] と [2][0]は同じ
-            /*
             dispAspect = new bool[7, 7] {
                 { true, true, true, true, true, true, true },
                 { true, true, true, true, true, true, true },
@@ -146,7 +145,6 @@ namespace microcosm.Config
                 { true, true, true, true, true, true, true },
                 { true, true, true, true, true, true, true }
             };
-            */
 
             if (xmlData.version == 0)
             {

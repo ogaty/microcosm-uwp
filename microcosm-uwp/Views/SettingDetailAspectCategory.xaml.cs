@@ -1,4 +1,5 @@
-﻿using microcosm.Config;
+﻿using microcosm.Common;
+using microcosm.Config;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -33,7 +34,7 @@ namespace microcosm.Views
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            settings = (SettingData[])e.Parameter;
+            settings = CommonInstance.getInstance().settings;
 
             base.OnNavigatedTo(e);
             SettingInit();
@@ -41,9 +42,10 @@ namespace microcosm.Views
 
         private void SettingInit()
         {
-
+            settingDisp11.IsOn = settings[settingIndex].dispAspect[0, 0];
+            settingDisp22.IsOn = settings[settingIndex].dispAspect[1, 1];
+            settingDisp33.IsOn = settings[settingIndex].dispAspect[2, 2];
         }
-
 
     }
 }

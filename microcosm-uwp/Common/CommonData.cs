@@ -28,6 +28,22 @@ namespace microcosm.Common
         OTHER_SOFT_150 = 17
     }
 
+    public enum Signs
+    {
+        SIGN_ARIES = 0,
+        SIGN_TAURUS = 1,
+        SIGN_GEMINI = 2,
+        SIGN_CANCER = 3,
+        SIGN_LEO = 4,
+        SIGN_VIRGO = 5,
+        SIGN_LIBRA = 6,
+        SIGN_SCORPIO = 7,
+        SIGN_SAGITTARIUS = 8,
+        SIGN_CAPRICORN = 9,
+        SIGN_AQUARIUS = 10,
+        SIGN_PISCES = 11
+    }
+
     public static class CommonData
     {
         public static int[] target_numbers = {
@@ -74,6 +90,8 @@ namespace microcosm.Common
 
         public static double defaultLat = 35.670587;
         public static double defaultLng = 139.772003;
+
+
 
     }
 }
