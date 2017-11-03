@@ -26,6 +26,7 @@ using Windows.UI.Core;
 using microcosm.ViewModels;
 using microcosm.Models;
 using microcosm.Common;
+using System.Collections.ObjectModel;
 
 // 空白ページの項目テンプレートについては、https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x411 を参照してください
 
@@ -48,12 +49,17 @@ namespace microcosm.Views
 
         public Calcuration[] ringsData = new Calcuration[7];
 
+        public ObservableCollection<MenuItems> MenuList = new ObservableCollection<MenuItems>();
+
         public MainPage()
         {
             this.InitializeComponent();
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
 
             MainInit();
+            MenuList.Add(new MenuItems { text = "sample txt" });
+            MenuList.Add(new MenuItems { text = "dream txt" });
+            hamburgerMenuControl.DataContext = MenuList;
         }
 
         /// <summary>
@@ -271,5 +277,10 @@ namespace microcosm.Views
         {
             this.Frame.Navigate(typeof(DatabasePage), config);
         }
+    }
+
+    public class MenuItems
+    {
+        public string text { get; set; }
     }
 }

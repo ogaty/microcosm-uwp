@@ -5,7 +5,6 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
-    xmlns:views="using:microcosm.Views"
     mc:Ignorable="d">
 
     <Page.BottomAppBar>
@@ -22,6 +21,24 @@
     </Page.BottomAppBar>
 
     <Page.Resources>
+        <DataTemplate x:Key="temp">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="48" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" 
+                       Text="○" 
+                       Foreground="White" 
+                       FontSize="16" 
+                       VerticalAlignment="Center" />
+                    <TextBlock Grid.Column="1" 
+                       Text="{Binding text}" 
+                       Foreground="White" 
+                       FontSize="16" 
+                       VerticalAlignment="Center" />
+            </Grid>
+        </DataTemplate>
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -39,9 +56,12 @@
         <controls:HamburgerMenu x:Name="hamburgerMenuControl"
                                 PaneBackground="Black"
                                 Foreground="White"
-                                DisplayMode="CompactOverlay"
+                                DisplayMode="CompactInline"
+                                ItemsSource="{Binding}"
+                                ItemTemplate="{StaticResource temp}"
+                                OpenPaneLength="200"
                                 Grid.RowSpan="2">
-            <Frame x:Name="contentFrame" Foreground="Black"/>
+            <Frame x:Name="contentFrame"/>
         </controls:HamburgerMenu>
 
         <StackPanel Margin="50,0,0,0" Grid.Column="0">
