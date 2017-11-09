@@ -5,7 +5,19 @@
     xmlns:local="using:microcosm.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d">
+
+    <Page.Resources>
+        <DataTemplate x:Key="DirectoryTemplate">
+            <Grid
+                Background="White"
+                BorderBrush="Black"
+                BorderThickness="1">
+                <TextBlock Text="{Binding FileName}"/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel>
@@ -17,6 +29,13 @@
                         <TextBlock x:Name="PathCrumbChild" />
                     </StackPanel>
                     <Button x:Name="FilePickButton" Content="開く" Click="FilePickButton_Click" />
+                    <controls:AdaptiveGridView Name="AdaptiveGridViewControl"
+                                   OneRowModeEnabled="False"
+                                   ItemHeight="200"
+                                   DesiredWidth="200"
+                                   SelectionMode="Single"
+                                   IsItemClickEnabled="True"
+                                   ItemTemplate="{StaticResource DirectoryTemplate}"/>
                     <ListView x:Name="UserDirTree" IsItemClickEnabled="True" Margin="10, 10, 0, 0" Width="400" Height="600" ItemsSource="{Binding}" ItemClick="UserDirTree_ItemClick">
                         <ListView.ItemTemplate>
                             <DataTemplate>

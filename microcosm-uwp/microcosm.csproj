@@ -123,6 +123,7 @@
     <Compile Include="ViewModels\MainWindowCuspListViewModel.cs" />
     <Compile Include="ViewModels\UserDbDirListViewModel.cs" />
     <Compile Include="ViewModels\UserDbViewModel.cs" />
+    <Compile Include="ViewModels\UserDirGridViewModel.cs" />
     <Compile Include="Views\AddressSearchPage.xaml.cs">
       <DependentUpon>AddressSearchPage.xaml</DependentUpon>
     </Compile>

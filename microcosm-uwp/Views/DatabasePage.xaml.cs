@@ -30,7 +30,7 @@ namespace microcosm.Views
     /// </summary>
     public sealed partial class DatabasePage : Page
     {
-        public UserDbViewModel vm;
+        public UserDirGridViewModel vm;
         public DirectoryInfo dataDir;
 
         public ObservableCollection<TreeViewItem2> DirTree3;
@@ -54,7 +54,7 @@ namespace microcosm.Views
         private async void SetVM()
         {
             await getDataDir();
-            UserDirTree treeDir = new UserDirTree();
+//            UserDirTree treeDir = new UserDirTree();
             DirTree3 = new ObservableCollection<TreeViewItem2>();
 //            DirTree3.Add(new TreeViewItem2() { Name = "data", IsDir = true, Header = "data", Icon = "D", FullPath = dataDir.FullName });
             PathCrumbParent.Text = "data";
@@ -63,7 +63,7 @@ namespace microcosm.Views
             {
                 DirTree3.Add(new TreeViewItem2()
                 {
-                    Name = directory.Name,
+                    FileName = directory.Name,
                     IsDir = true,
                     Header = directory.Name,
                     Icon = "D",
@@ -78,7 +78,7 @@ namespace microcosm.Views
                 string trimName = System.IO.Path.GetFileNameWithoutExtension(file.Name);
                 DirTree3.Add(new TreeViewItem2()
                 {
-                    Name = file.Name,
+                    FileName = file.Name,
                     IsDir = false,
                     Header = file.Name,
                     Icon = "F",
@@ -91,7 +91,7 @@ namespace microcosm.Views
             {
                 DirTree3.Add(new TreeViewItem2()
                 {
-                    Name = "ファイルがありません",
+                    FileName = "ファイルがありません",
                     IsDir = false,
                     Header = "ファイルがありません",
                     Icon = "F",
@@ -101,16 +101,20 @@ namespace microcosm.Views
             }
 
             //            dirVM.DirTree2 = tree;
-            UserDirTree.DataContext = DirTree3;
-//            UserDirTree.ItemsSource = dirVM.DirTree2;
+            //UserDirTree.DataContext = DirTree3;
+            //            UserDirTree.ItemsSource = dirVM.DirTree2;
 
-            vm = new UserDbViewModel();
-            vm.userData = new ObservableCollection<UserEventData>();
+            vm = new UserDirGridViewModel();
+            vm.DirTrees = DirTree3;
+            AdaptiveGridViewControl.ItemsSource = vm.DirTrees;
+            AdaptiveGridViewControl.DataContext = vm;
+            /*
             UserEventData udata = new UserEventData();
             udata.name = "サンプル";
             vm.userData.Add(udata);
             UserDataTable.DataContext = vm;
             UserDataTable.ItemsSource = vm.userData;
+            */
         }
 
         private async Task<bool> getDataDir()
@@ -132,7 +136,7 @@ namespace microcosm.Views
             DirTree3.Clear();
             DirTree3.Add(new TreeViewItem2()
             {
-                Name = "..",
+                FileName = "..",
                 IsDir = false,
                 Header = "..",
                 Icon = "F",
@@ -150,7 +154,7 @@ namespace microcosm.Views
                 {
                     DirTree3.Add(new TreeViewItem2()
                     {
-                        Name = directory.Name,
+                        FileName = directory.Name,
                         IsDir = true,
                         Header = directory.Name,
                         Icon = "D",
@@ -164,7 +168,7 @@ namespace microcosm.Views
                     string trimName = System.IO.Path.GetFileNameWithoutExtension(file.Name);
                     DirTree3.Add(new TreeViewItem2()
                     {
-                        Name = file.Name,
+                        FileName = file.Name,
                         IsDir = false,
                         Header = file.Name,
                         Icon = "F",
@@ -176,7 +180,7 @@ namespace microcosm.Views
                 {
                     DirTree3.Add(new TreeViewItem2()
                     {
-                        Name = "ファイルがありません",
+                        FileName = "ファイルがありません",
                         IsDir = false,
                         Header = "ファイルがありません",
                         Icon = "F",
@@ -206,10 +210,12 @@ namespace microcosm.Views
 
 
                 UserData udata = await UserXml.GetUserDataFromXml(file);
+                /*
                 vm.userData.Clear();
                 vm.userData.Add(udata.ToUserEventData());
                 UserDataTable.ItemsSource = vm.userData;
                 UserDataTable.DataContext = vm;
+                */
             }
         }
 
