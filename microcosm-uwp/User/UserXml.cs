@@ -1,15 +1,18 @@
 ﻿using System;
 using System.IO;
+using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
+using Windows.Storage;
+
 namespace microcosm.User
 {
     public static class UserXml
     {
-        public static UserData GetUserDataFromXml(string xmlFile)
+        public static async Task<UserData> GetUserDataFromXml(StorageFile xmlFile)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(UserData));
-            FileStream fs = new FileStream(xmlFile, FileMode.Open);
+            Stream fs = await xmlFile.OpenStreamForReadAsync();
             UserData udata = new UserData("名称未設定",
                 "",
                 new DateTime(2000, 1, 1, 12, 0, 0),

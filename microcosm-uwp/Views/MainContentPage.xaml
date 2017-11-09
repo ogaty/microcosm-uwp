@@ -1,0 +1,129 @@
+﻿<Page
+    x:Class="microcosm.Views.MainContentPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" SizeChanged="Grid_SizeChanged">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" x:Name="UserBoxPanel" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="5*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="5*" />
+        </Grid.RowDefinitions>
+        <StackPanel Margin="0,0,0,0" Grid.Column="0">
+            <StackPanel x:Name="UserDataView">
+                <Border Margin="10, 10, 10, 5" BorderBrush="Black" BorderThickness="1">
+                    <StackPanel Margin="5, 5, 5, 5">
+                        <TextBlock FontWeight="Bold" Foreground="Black">ユーザー1</TextBlock>
+                        <TextBlock Foreground="Black" Text="{Binding User1Name}" />
+                        <TextBlock Foreground="Black" Text="{Binding User1DateStr}" />
+                    </StackPanel>
+                </Border>
+                <Border Margin="10, 5, 10, 10" BorderBrush="Black" BorderThickness="1">
+                    <StackPanel Margin="5, 5, 5, 5">
+                        <TextBlock Foreground="Black" FontWeight="Bold">イベント1</TextBlock>
+                        <TextBlock Foreground="Black" Text="{Binding Event1Name}" />
+                        <TextBlock Foreground="Black" Text="{Binding Event1DateStr}" />
+                    </StackPanel>
+                </Border>
+                <Border Margin="10, 5, 10, 10" BorderBrush="Black" BorderThickness="1">
+                    <StackPanel Margin="5, 5, 5, 5">
+                        <TextBlock Foreground="Black" FontWeight="Bold" Text="ユーザー2" />
+                        <TextBlock Foreground="Black" Text="{Binding User2Name}" />
+                        <TextBlock Foreground="Black" Text="{Binding User2DateStr}" />
+                    </StackPanel>
+                </Border>
+                <Border Margin="10, 5, 10, 10" BorderBrush="Black" BorderThickness="1">
+                    <StackPanel Margin="5, 5, 5, 5">
+                        <TextBlock Foreground="Black" FontWeight="Bold">イベント2</TextBlock>
+                        <TextBlock Foreground="Black" Text="{Binding Event2Name}" />
+                        <TextBlock Foreground="Black" Text="{Binding Event2DateStr}" />
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="0" Grid.Row="1" Margin="0, 0, 0, 0">
+            <Pivot>
+                <PivotItem Header="○">
+                    <StackPanel Orientation="Horizontal">
+                        <ListView x:Name="PlanetCusp" BorderBrush="Gray" BorderThickness="1" IsItemClickEnabled="True" Width="100" Height="260" HorizontalAlignment="Left" Margin="10, 0, 0, 0" ItemsSource="{Binding}">
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="Height" Value="20" />
+                                    <Setter Property="MinHeight" Value="20" />
+                                </Style>
+                            </ListView.ItemContainerStyle>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding name}" />
+                                        <TextBlock Text="{Binding degree1}" Margin="10, 0, 0, 0" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        <ListView x:Name="HouseCusp" BorderBrush="Gray" BorderThickness="1" IsItemClickEnabled="True" Width="100" Height="260" HorizontalAlignment="Left" Margin="10, 0, 0, 0" ItemsSource="{Binding}">
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="Height" Value="20" />
+                                    <Setter Property="MinHeight" Value="20" />
+                                </Style>
+                            </ListView.ItemContainerStyle>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding name}" />
+                                        <TextBlock Text="{Binding degree1}" Margin="10, 0, 0, 0" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackPanel>
+                </PivotItem>
+                <PivotItem Header="△">
+                    <TextBlock Foreground="Black" Text="222" />
+                </PivotItem>
+                <PivotItem Header="☆">
+                    <TextBlock Foreground="Black" Text="333" />
+                </PivotItem>
+            </Pivot>
+        </StackPanel>
+
+        <Frame x:Name="InfoFrame" Grid.Column="1" Grid.Row="1"></Frame>
+
+        <StackPanel Grid.Column="1">
+            <RadioButton x:Name="User1Radio" GroupName="TimeSetterRadio" Content="ユーザー1時刻" />
+            <RadioButton x:Name="User2Radio" GroupName="TimeSetterRadio" Content="ユーザー2時刻" />
+            <RadioButton x:Name="Event1Radio" GroupName="TimeSetterRadio" Content="イベント1時刻" />
+            <RadioButton x:Name="Event2Radio" GroupName="TimeSetterRadio" Content="イベント2時刻" />
+            <TextBox x:Name="TimeSetter" />
+            <ScrollViewer VerticalScrollBarVisibility="Visible" VerticalScrollMode="Enabled" Height="90">
+                <StackPanel Height="120">
+                    <TextBlock Text="aaa" />
+                    <TextBlock Text="aaa" />
+                    <TextBlock Text="abb" />
+                    <TextBlock Text="aaa" />
+                    <TextBlock Text="acc" />
+                    <TextBlock Text="aaa" />
+                    <TextBlock Text="add" />
+                    <TextBlock Text="aaa" />
+                    <TextBlock Text="aaa" />
+                    <TextBlock Text="abb" />
+                </StackPanel>
+            </ScrollViewer>
+        </StackPanel>
+        <StackPanel Grid.Column="2" Grid.RowSpan="2">
+            <Canvas Background="Aquamarine" Width="560" Height="560"/>
+            <StackPanel Margin="0, 10, 0, 0">
+                <TextBlock HorizontalAlignment="Center">Help Message</TextBlock>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -37,17 +37,8 @@ namespace microcosm.Views
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public AstroCalc calc;
-        public ConfigPass pass;
         public ConfigData config;
         public SettingData[] setting = new SettingData[10];
-
-        public UserData udata1 = new UserData();
-        public UserData udata2 = new UserData();
-        public UserData edata1 = new UserData();
-        public UserData edata2 = new UserData();
-
-        public Calcuration[] ringsData = new Calcuration[7];
 
         public ObservableCollection<MenuItems> MenuList = new ObservableCollection<MenuItems>();
 
@@ -57,9 +48,6 @@ namespace microcosm.Views
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
 
             MainInit();
-            MenuList.Add(new MenuItems { text = "sample txt" });
-            MenuList.Add(new MenuItems { text = "dream txt" });
-            hamburgerMenuControl.DataContext = MenuList;
         }
 
         /// <summary>
@@ -126,7 +114,7 @@ namespace microcosm.Views
                 await seleapsec.CopyAsync(epheFolder, "seleapsec.txt", NameCollisionOption.FailIfExists);
             }
 
-            calc = new AstroCalc(this);
+            CommonInstance.getInstance().calc = new AstroCalc(this);
             return true;
         }
 
@@ -245,12 +233,14 @@ namespace microcosm.Views
             arrayTask.Add(configTask);
 
             await Task.WhenAll(arrayTask);
-            ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-    = calc.ReCalc(config, setting[0], new UserData());
+
+            MenuList.Add(new MenuItems { text = "Home", PageType = typeof(MainContentPage) });
+            MenuList.Add(new MenuItems { text = "データベース", PageType = typeof(DatabasePage) });
+            MenuList.Add(new MenuItems { text = "設定", PageType = typeof(SettingPage) });
+            hamburgerMenuControl.DataContext = MenuList;
 
 
-            UserDataView.DataContext = new MainWindowUserDataViewModel();
-            InfoFrame.Navigate(typeof(MainListPage), new CuspList() { planetList = ringsData[0].planetData, cusps = ringsData[0].cusps });
+            ContentFrame.Navigate(typeof(MainContentPage));
         }
 
         /*
@@ -270,17 +260,21 @@ namespace microcosm.Views
 
         private void AppBarSettingButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(SettingPage), pass);
         }
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(DatabasePage), config);
+        }
+
+        private void hamburgerMenuControl_OptionsItemClick(object sender, ItemClickEventArgs e)
+        {
+        }
+
+        private void hamburgerMenuControl_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var menuItem = e.ClickedItem as MenuItems;
+            ContentFrame.Navigate(menuItem.PageType);
         }
     }
 
-    public class MenuItems
-    {
-        public string text { get; set; }
-    }
 }

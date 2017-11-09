@@ -11,6 +11,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -37,7 +38,7 @@ namespace microcosm.Views
         public DatabasePage()
         {
             this.InitializeComponent();
-            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible; ;
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed; ;
             SystemNavigationManager.GetForCurrentView().BackRequested += (s, a) =>
             {
                 if (Frame.CanGoBack)
@@ -104,7 +105,7 @@ namespace microcosm.Views
 //            UserDirTree.ItemsSource = dirVM.DirTree2;
 
             vm = new UserDbViewModel();
-            vm.userData = new List<UserEventData>();
+            vm.userData = new ObservableCollection<UserEventData>();
             UserEventData udata = new UserEventData();
             udata.name = "サンプル";
             vm.userData.Add(udata);
@@ -188,8 +189,33 @@ namespace microcosm.Views
             }
             else if (item != null && !item.IsDir)
             {
-                UserData udata = UserXml.GetUserDataFromXml(item.FullPath);
+//                UserData udata = UserXml.GetUserDataFromXml(item.FullPath);
             }
+        }
+
+        private async void FilePick()
+        {
+            var picker = new Windows.Storage.Pickers.FileOpenPicker();
+            picker.FileTypeFilter.Add(".csm");
+            picker.FileTypeFilter.Add(".mcsm");
+            StorageFile file = await picker.PickSingleFileAsync();
+            if (file != null)
+            {
+                Debug.WriteLine(file.Path);
+
+
+
+                UserData udata = await UserXml.GetUserDataFromXml(file);
+                vm.userData.Clear();
+                vm.userData.Add(udata.ToUserEventData());
+                UserDataTable.ItemsSource = vm.userData;
+                UserDataTable.DataContext = vm;
+            }
+        }
+
+        private void FilePickButton_Click(object sender, RoutedEventArgs e)
+        {
+            FilePick();
         }
     }
 }

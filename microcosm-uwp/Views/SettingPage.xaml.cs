@@ -29,7 +29,7 @@ namespace microcosm.Views
         public SettingPage()
         {
             this.InitializeComponent();
-            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible; ;
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed; ;
             SystemNavigationManager.GetForCurrentView().BackRequested += (s, a) =>
             {
                 if (Frame.CanGoBack)

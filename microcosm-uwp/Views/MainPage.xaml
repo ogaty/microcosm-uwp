@@ -28,7 +28,7 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" 
-                       Text="○" 
+                       Text="{Binding icon}" 
                        Foreground="White" 
                        FontSize="16" 
                        VerticalAlignment="Center" />
@@ -42,17 +42,6 @@
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="6*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="5*" />
-            <RowDefinition Height="5*" />
-        </Grid.RowDefinitions>
-
         <controls:HamburgerMenu x:Name="hamburgerMenuControl"
                                 PaneBackground="Black"
                                 Foreground="White"
@@ -60,80 +49,9 @@
                                 ItemsSource="{Binding}"
                                 ItemTemplate="{StaticResource temp}"
                                 OpenPaneLength="200"
-                                Grid.RowSpan="2">
-            <Frame x:Name="contentFrame"/>
+                                Grid.RowSpan="2" OptionsItemClick="hamburgerMenuControl_OptionsItemClick" ItemClick="hamburgerMenuControl_ItemClick">
+            <Frame x:Name="ContentFrame" />
         </controls:HamburgerMenu>
 
-        <StackPanel Margin="50,0,0,0" Grid.Column="0">
-            <StackPanel x:Name="UserDataView">
-                <Border Margin="10, 10, 10, 5" BorderBrush="Black" BorderThickness="1">
-                    <StackPanel Margin="5, 5, 5, 5">
-                        <TextBlock FontWeight="Bold">ユーザー1</TextBlock>
-                        <TextBlock Text="{Binding User1Name}" />
-                        <TextBlock Text="{Binding User1DateStr}" />
-                    </StackPanel>
-                </Border>
-                <Border Margin="10, 5, 10, 10" BorderBrush="Black" BorderThickness="1">
-                    <StackPanel Margin="5, 5, 5, 5">
-                        <TextBlock FontWeight="Bold">イベント1</TextBlock>
-                        <TextBlock Text="{Binding Event1Name}" />
-                        <TextBlock Text="{Binding Event1DateStr}" />
-                    </StackPanel>
-                </Border>
-                <Border Margin="10, 5, 10, 10" BorderBrush="Black" BorderThickness="1">
-                    <StackPanel Margin="5, 5, 5, 5">
-                        <TextBlock FontWeight="Bold">ユーザー2</TextBlock>
-                        <TextBlock Text="{Binding User2Name}" />
-                        <TextBlock Text="{Binding User2DateStr}" />
-                    </StackPanel>
-                </Border>
-                <Border Margin="10, 5, 10, 10" BorderBrush="Black" BorderThickness="1">
-                    <StackPanel Margin="5, 5, 5, 5">
-                        <TextBlock FontWeight="Bold">イベント2</TextBlock>
-                        <TextBlock Text="{Binding Event2Name}" />
-                        <TextBlock Text="{Binding Event2DateStr}" />
-                    </StackPanel>
-                </Border>
-            </StackPanel>
-        </StackPanel>
-
-        <StackPanel Grid.Column="0" Grid.Row="1" Margin="50, 0, 0, 0">
-            <Pivot>
-                <PivotItem Header="○">
-                    <TextBlock Text="111" />
-                </PivotItem>
-                <PivotItem Header="△">
-                    <TextBlock Text="222" />
-                </PivotItem>
-                <PivotItem Header="☆">
-                    <TextBlock Text="333" />
-                </PivotItem>
-            </Pivot>
-        </StackPanel>
-
-        <Frame x:Name="InfoFrame" Grid.Column="1" Grid.Row="1"></Frame>
-
-        <StackPanel Grid.Column="2">
-            <ScrollViewer VerticalScrollBarVisibility="Visible" VerticalScrollMode="Enabled" Height="90"> 
-                <StackPanel Height="120">
-                    <TextBlock Text="aaa" />
-                    <TextBlock Text="aaa" />
-                    <TextBlock Text="abb" />
-                    <TextBlock Text="aaa" />
-                    <TextBlock Text="acc" />
-                    <TextBlock Text="aaa" />
-                    <TextBlock Text="add" />
-                    <TextBlock Text="aaa" />
-                    <TextBlock Text="aaa" />
-                    <TextBlock Text="abb" />
-                </StackPanel>
-            </ScrollViewer>
-        </StackPanel>
-        <StackPanel Grid.Column="3" Grid.RowSpan="2">
-            <Canvas Background="Aquamarine" Width="560" Height="560"/>
-            <StackPanel Margin="0, 10, 0, 0">
-                <TextBlock HorizontalAlignment="Center">Help Message</TextBlock>
-            </StackPanel>
-        </StackPanel>
     </Grid>
 </Page>

@@ -1,6 +1,7 @@
 ﻿using microcosm.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ namespace microcosm.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public List<UserEventData> userData { get; set; }
+        public ObservableCollection<UserEventData> userData { get; set; }
 
         protected void OnPropertyChanged(string propertyname)
         {

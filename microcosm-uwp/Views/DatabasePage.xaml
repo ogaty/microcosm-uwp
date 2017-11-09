@@ -16,6 +16,7 @@
                         <TextBlock x:Name="To" Visibility="Collapsed" />
                         <TextBlock x:Name="PathCrumbChild" />
                     </StackPanel>
+                    <Button x:Name="FilePickButton" Content="開く" Click="FilePickButton_Click" />
                     <ListView x:Name="UserDirTree" IsItemClickEnabled="True" Margin="10, 10, 0, 0" Width="400" Height="600" ItemsSource="{Binding}" ItemClick="UserDirTree_ItemClick">
                         <ListView.ItemTemplate>
                             <DataTemplate>
@@ -29,15 +30,16 @@
                 </StackPanel>
 
                 <StackPanel>
-                    <GridView x:Name="UserDataTable" Margin="40, 0, 0, 0" Width="700" Height="400">
-                        <GridView.ItemTemplate>
+                    <ListView x:Name="UserDataTable" Margin="40, 0, 0, 0" Width="700" Height="400">
+                        <ListView.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                     <TextBlock Text="{Binding name}" />
+                                    <TextBlock Text="{Binding datestr}" />
                                 </StackPanel>
                             </DataTemplate>
-                        </GridView.ItemTemplate>
-                    </GridView>
+                        </ListView.ItemTemplate>
+                    </ListView>
                     <TextBox x:Name="UserMemo" IsReadOnly="True" />
                 </StackPanel>
             </StackPanel>

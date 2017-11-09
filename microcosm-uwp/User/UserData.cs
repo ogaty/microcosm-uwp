@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using microcosm.Common;
+using microcosm.Models;
 
 namespace microcosm.User
 {
@@ -84,6 +85,25 @@ namespace microcosm.User
             {
                 this.timezone = timezone;
             }
+        }
+
+        public UserEventData ToUserEventData()
+        {
+            return new UserEventData()
+            {
+                name = name,
+                year = birth_year,
+                month = birth_month,
+                day = birth_day,
+                hour = birth_hour,
+                minute = birth_minute,
+                second = birth_second,
+                lat = lat,
+                lng = lng,
+                place = birth_place,
+                timezone = timezone,
+                memo = memo
+            };
         }
     }
 }

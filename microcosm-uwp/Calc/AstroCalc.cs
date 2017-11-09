@@ -59,7 +59,7 @@ namespace microcosm.Calc
             s.OnLoadFile += (sender, e) => {
                 if (File.Exists(e.FileName))
                 {
-                    e.File = new FileStream(e.FileName, FileMode.Open);
+                    e.File = new FileStream(e.FileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
                 }
             };
             int utc_year = 0;
@@ -136,7 +136,7 @@ namespace microcosm.Calc
             s.OnLoadFile += (sender, e) => {
                 if (File.Exists(e.FileName))
                 {
-                    e.File = new FileStream(e.FileName, FileMode.Open);
+                    e.File = new FileStream(e.FileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
                 }
             };
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using microcosm.Config;
+using microcosm.Calc;
 
 namespace microcosm.Common
 {
@@ -12,6 +13,7 @@ namespace microcosm.Common
         private static CommonInstance instance = new CommonInstance();
         public ConfigData config;
         public SettingData[] settings;
+        public AstroCalc calc;
 
         private CommonInstance()
         {
