@@ -6,8 +6,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:fa="using:FontAwesome.UWP"
     mc:Ignorable="d">
-
+    
     <Page.Resources>
         <DataTemplate x:Key="DirectoryTemplate">
             <Grid
@@ -36,6 +37,9 @@
                                    SelectionMode="Single"
                                    IsItemClickEnabled="True"
                                    ItemTemplate="{StaticResource DirectoryTemplate}"/>
+                    <StackPanel>
+                        <fa:FontAwesome Icon="ArrowUp" FontSize="24" HorizontalAlignment="Left" Foreground="Black" />
+                    </StackPanel>
                     <ListView x:Name="UserDirTree" IsItemClickEnabled="True" Margin="10, 10, 0, 0" Width="400" Height="600" ItemsSource="{Binding}" ItemClick="UserDirTree_ItemClick">
                         <ListView.ItemTemplate>
                             <DataTemplate>

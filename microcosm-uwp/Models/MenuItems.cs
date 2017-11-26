@@ -9,7 +9,7 @@ namespace microcosm.Models
     public class MenuItems
     {
         public string text { get; set; }
-        public string icon { get; set; }
+        public FontAwesome.UWP.FontAwesomeIcon icon { get; set; }
         public Type PageType { get; set; }
     }
 }

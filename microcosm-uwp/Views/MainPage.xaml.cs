@@ -234,9 +234,9 @@ namespace microcosm.Views
 
             await Task.WhenAll(arrayTask);
 
-            MenuList.Add(new MenuItems { text = "Home", PageType = typeof(MainContentPage) });
-            MenuList.Add(new MenuItems { text = "データベース", PageType = typeof(DatabasePage) });
-            MenuList.Add(new MenuItems { text = "設定", PageType = typeof(SettingPage) });
+            MenuList.Add(new MenuItems { text = "Home", icon = FontAwesome.UWP.FontAwesomeIcon.Circle, PageType = typeof(MainContentPage) });
+            MenuList.Add(new MenuItems { text = "データベース", icon = FontAwesome.UWP.FontAwesomeIcon.Database, PageType = typeof(DatabasePage) });
+            MenuList.Add(new MenuItems { text = "設定", icon = FontAwesome.UWP.FontAwesomeIcon.Gear, PageType = typeof(SettingPage) });
             hamburgerMenuControl.DataContext = MenuList;
 
 
