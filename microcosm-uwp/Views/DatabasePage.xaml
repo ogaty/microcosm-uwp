@@ -10,41 +10,30 @@
     mc:Ignorable="d">
     
     <Page.Resources>
-        <DataTemplate x:Key="DirectoryTemplate">
-            <Grid
-                Background="White"
-                BorderBrush="Black"
-                BorderThickness="1">
-                <TextBlock Text="{Binding FileName}"/>
-            </Grid>
-        </DataTemplate>
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel>
             <StackPanel Orientation="Horizontal">
                 <StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock x:Name="PathCrumbParent" />
+                    <StackPanel Orientation="Horizontal" Margin="20, 0, 0, 10">
+                        <TextBlock x:Name="PathCrumbParent" Foreground="Black" />
                         <TextBlock x:Name="To" Visibility="Collapsed" />
                         <TextBlock x:Name="PathCrumbChild" />
                     </StackPanel>
-                    <Button x:Name="FilePickButton" Content="開く" Click="FilePickButton_Click" />
-                    <controls:AdaptiveGridView Name="AdaptiveGridViewControl"
-                                   OneRowModeEnabled="False"
-                                   ItemHeight="200"
-                                   DesiredWidth="200"
-                                   SelectionMode="Single"
-                                   IsItemClickEnabled="True"
-                                   ItemTemplate="{StaticResource DirectoryTemplate}"/>
-                    <StackPanel>
-                        <fa:FontAwesome Icon="ArrowUp" FontSize="24" HorizontalAlignment="Left" Foreground="Black" />
+                    <StackPanel Margin="20, 0, 0, 10">
+                        <fa:FontAwesome x:Name="UpIcon" Icon="ArrowUp" FontSize="24" HorizontalAlignment="Left" Foreground="Black" PointerPressed="UpIcon_PointerPressed" />
                     </StackPanel>
                     <ListView x:Name="UserDirTree" IsItemClickEnabled="True" Margin="10, 10, 0, 0" Width="400" Height="600" ItemsSource="{Binding}" ItemClick="UserDirTree_ItemClick">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Icon}" />
+                                    <fa:FontAwesome 
+                                        Icon="{Binding Icon}"
+                                        FontSize="16"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center" Margin="0,0,10,0"
+                                     />
                                     <TextBlock Text="{Binding Name}" />
                                 </StackPanel>
                             </DataTemplate>
@@ -53,12 +42,14 @@
                 </StackPanel>
 
                 <StackPanel>
-                    <ListView x:Name="UserDataTable" Margin="40, 0, 0, 0" Width="700" Height="400">
+                    <ListView x:Name="UserDataTable" Margin="40, 40, 0, 0" Width="700" Height="400" BorderBrush="Black">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                    <TextBlock Text="{Binding name}" />
-                                    <TextBlock Text="{Binding datestr}" />
+                                    <TextBlock Text="{Binding name}" Margin="0, 0, 20, 0" />
+                                    <TextBlock Text="{Binding datestr}" Margin="0, 0, 20, 0" />
+                                    <TextBlock Text="{Binding Place}" Margin="0, 0, 20, 0" />
+                                    <TextBlock Text="{Binding LatLng}" />
                                 </StackPanel>
                             </DataTemplate>
                         </ListView.ItemTemplate>

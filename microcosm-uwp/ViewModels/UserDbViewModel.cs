@@ -1,4 +1,5 @@
 ﻿using microcosm.Models;
+using microcosm.User;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,6 +15,23 @@ namespace microcosm.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         public ObservableCollection<UserEventData> userData { get; set; }
+
+        public UserDbViewModel(UserEventData edata)
+        {
+            userData = new ObservableCollection<UserEventData>();
+            userData.Add(edata);
+        }
+
+        public UserDbViewModel(UserData data)
+        {
+            userData = new ObservableCollection<UserEventData>();
+            userData.Add(new UserEventData(data));
+
+            foreach (UserEvent ev in data.userevent)
+            {
+                userData.Add(new UserEventData(ev));
+            }
+        }
 
         protected void OnPropertyChanged(string propertyname)
         {

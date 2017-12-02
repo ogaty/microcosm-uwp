@@ -100,7 +100,7 @@ namespace microcosm.User
                 second = birth_second,
                 lat = lat,
                 lng = lng,
-                place = birth_place,
+                Place = birth_place,
                 timezone = timezone,
                 memo = memo
             };

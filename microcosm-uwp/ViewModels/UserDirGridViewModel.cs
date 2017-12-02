@@ -16,6 +16,8 @@ namespace microcosm.ViewModels
 
         public ObservableCollection<TreeViewItem2> DirTrees { get; set; }
 
+        public bool isTop = true;
+
         protected void OnPropertyChanged(string propertyname)
         {
             PropertyChangedEventHandler handler = PropertyChanged;
