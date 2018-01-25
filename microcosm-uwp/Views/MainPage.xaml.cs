@@ -196,6 +196,19 @@ namespace microcosm.Views
                 await setting9File.CopyAsync(systemFolder, "setting9.csm", NameCollisionOption.FailIfExists);
             }
 
+            if (await systemFolder.TryGetItemAsync("canvas.html") == null)
+            {
+                var canvasFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/canvas.html")).AsTask().ConfigureAwait(false);
+                await canvasFile.CopyAsync(systemFolder, "canvas.html", NameCollisionOption.FailIfExists);
+            }
+
+            if (await systemFolder.TryGetItemAsync("datetime.html") == null)
+            {
+                var canvasFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/datetime.html")).AsTask().ConfigureAwait(false);
+                await canvasFile.CopyAsync(systemFolder, "datetime.html", NameCollisionOption.FailIfExists);
+            }
+
+            // data作成
             var dataDir = await root.TryGetItemAsync("data");
 
             if (dataDir == null)
@@ -203,12 +216,14 @@ namespace microcosm.Views
                 await root.CreateFolderAsync("data");
             }
 
+            // config読み込み
             var cfg = await systemFolder.GetFileAsync("config.csm");
 
             config = ConfigFromXml.GetConfigFromXml(cfg.Path);
 
             //            UserData udata = UserXml.GetUserDataFromXml(cfg.Path);
-
+            
+            // setting読み込み
             for (int i = 0; i < 10; i++)
             {
                 var set = await systemFolder.GetFileAsync("setting" + i.ToString() + ".csm");

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+	<style>
+	  div {
+	    padding: 4px 0;
+	  }
+	  input {
+	    width: 50px;
+	  }
+	  input#lat {
+	    width: 100px;
+	  }
+	  input#lng {
+	    width: 100px;
+	  }
+	</style>
+</head>
+<body style="background: #efef00;">
+  <div>
+	  <select>
+	    <option value="0">ユーザー1</option>
+	    <option value="1">イベント1</option>
+	    <option value="2">ユーザー2</option>
+	    <option value="3">イベント2</option>
+	  </select>
+  </div>
+  <div>
+  	<input type="number" maxlength="4" id="year">年
+  	<input type="number" maxlength="2" id="month">月
+  	<input type="number" maxlength="2" id="day">日
+  	<br>
+  	<input type="number" maxlength="2" id="hour">：
+  	<input type="number" maxlength="2" id="minute">：
+  	<input type="number" maxlength="2" id="second">
+  	<button id="now" onclick="nowSet()">now</button>
+  </div>
+  <div>
+    緯度<input type="text" id="lat"><br>
+    経度<input type="text" id="lng">
+  </div>
+  <button id="set" onclick="dateSet" style="width: 120px; height: 30px; margin-left: 30px; margin-bottom: 8px;">set</button>
+  <div style="margin-left: 40px;">
+	  <div>
+	    <input type="number" value="0">日<button id="leftday">←</button><button id="rightday">→</button>
+	  </div>
+	  <div>
+	    <input type="number" value="0">時<button id="lefthour">←</button><button id="righthour">→</button>
+	  </div>
+	  <div>
+	    <input type="number" value="0">分<button id="leftminute">←</button><button id="rightminute">→</button>
+	  </div>
+	  <div>
+	    <input type="number" value="0">秒<button id="leftsecond">←</button><button id="rightsecond">→</button>
+	  </div>
+	  <div>
+	    <button id="left">←</button><button id="right">→</button>
+	  </div>
+  </div>
+  <script>
+  function setDate(year, month, day, hour, minute, second, lat, lng) {
+    document.getElementById("year").value = year;
+    document.getElementById("month").value = month;
+    document.getElementById("day").value = day;
+    document.getElementById("hour").value = hour;
+    document.getElementById("minute").value = minute;
+    document.getElementById("second").value = second;
+    document.getElementById("lat").value = lat;
+    document.getElementById("lng").value = lng;
+  }
+  
+  function nowSet() {
+  	var date = new Date();
+    document.getElementById("year").value = date.getYear() + 1900;
+    document.getElementById("month").value = date.getMonth() + 1;
+    document.getElementById("day").value = date.getDay();
+    document.getElementById("hour").value = date.getHours();
+    document.getElementById("minute").value = date.getMinutes();
+    document.getElementById("second").value = date.getSeconds();
+  }
+  
+  function dateSet() {
+  
+  }
+  </script>
+</body>
+</html>

@@ -20,6 +20,7 @@ using microcosm.Models;
 using microcosm.User;
 using microcosm.Calc;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 // 空白ページの項目テンプレートについては、https://go.microsoft.com/fwlink/?LinkId=234238 を参照してください
 
@@ -100,12 +101,39 @@ namespace microcosm.Views
             }
             HouseCusp.ItemsSource = vm2.houseCuspList;
 
+            DateWeb.Navigate(new Uri("ms-appdata:///local/system/datetime.html"));
+//            Web.Navigate(new Uri("ms-appdata:///local/system/canvas.html"));
+        }
+
+        public async void CallScript()
+        {
+//            await Web.InvokeScriptAsync("init", new string[] {"aaaaa"});
         }
 
         private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             PlanetCusp.Width = (UserBoxPanel.ActualWidth / 2) - 30;
             HouseCusp.Width = (UserBoxPanel.ActualWidth / 2) - 30;
+
+        }
+
+        private void Web_NavigationCompleted(WebView sender, WebViewNavigationCompletedEventArgs args)
+        {
+        }
+
+        private void Web_DOMContentLoaded(WebView sender, WebViewDOMContentLoadedEventArgs args)
+        {
+//            CallScript();
+
+        }
+
+        private void TimeSetterNow_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DateWeb_DOMContentLoaded(WebView sender, WebViewDOMContentLoadedEventArgs args)
+        {
 
         }
     }

@@ -188,6 +188,10 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="Assets\canvas.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\datetime.html" />
     <Content Include="Assets\microcosm400x400.altform-unplated_targetsize-16.png" />
     <Content Include="Assets\microcosm400x400.altform-unplated_targetsize-24.png" />
     <Content Include="Assets\microcosm400x400.altform-unplated_targetsize-256.png" />
@@ -255,6 +259,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\setting9.csm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="system\canvas.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="system\datetime.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Zodiac_S\readme.txt" />

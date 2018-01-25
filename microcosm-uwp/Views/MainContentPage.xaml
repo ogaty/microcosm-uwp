@@ -8,8 +8,8 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" SizeChanged="Grid_SizeChanged">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*" x:Name="UserBoxPanel" />
-            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="2*" x:Name="UserBoxPanel" />
+            <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="6*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -99,50 +99,13 @@
         <Frame x:Name="InfoFrame" Grid.Column="1" Grid.Row="1"></Frame>
 
         <StackPanel Grid.Column="1" Grid.RowSpan="2">
-            <RadioButton x:Name="User1Radio" GroupName="TimeSetterRadio" Content="ユーザー1時刻" />
-            <RadioButton x:Name="User2Radio" GroupName="TimeSetterRadio" Content="ユーザー2時刻" />
-            <RadioButton x:Name="Event1Radio" GroupName="TimeSetterRadio" Content="イベント1時刻" />
-            <RadioButton x:Name="Event2Radio" GroupName="TimeSetterRadio" Content="イベント2時刻" />
-            <TextBox x:Name="TimeSetter" />
-            <StackPanel Orientation="Horizontal" Margin="5, 10, 5, 10">
-                <TextBox x:Name="TimeSetterYear" />
-                <TextBlock Text="年" Foreground="Black" />
-                <TextBox x:Name="TimeSetterMonth" />
-                <TextBlock Text="月" Foreground="Black" />
-                <TextBox x:Name="TimeSetterDay" />
-                <TextBlock Text="日" Foreground="Black" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="5, 10, 5, 10">
-                <TextBox x:Name="TimeSetterHour" />
-                <TextBlock Text="時" Foreground="Black" />
-                <TextBox x:Name="TimeSetterMinute" />
-                <TextBlock Text="分" Foreground="Black" />
-                <TextBox x:Name="TimeSetterSecond" />
-                <TextBlock Text="秒" Foreground="Black" />
-            </StackPanel>
-            <Button x:Name="TimeSetterNow" Content="Now" HorizontalAlignment="Center" />
-            <StackPanel Orientation="Horizontal" Margin="5, 10, 5, 10">
-                <TextBlock Text="緯度" Foreground="Black" />
-                <TextBox x:Name="TimeSetterLat" Width="80" />
-                <TextBlock Text="経度" Foreground="Black" />
-                <TextBox x:Name="TimeSetterLng" Width="80" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="5, 10, 5, 10">
-                <TextBlock Text="日" Foreground="Black" />
-                <TextBox x:Name="TimeSetterChangeDay" Width="80" />
-                <TextBlock Text="時" Foreground="Black" />
-                <TextBox x:Name="TimeSetterChangeHour" Width="80" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="5, 10, 5, 10">
-                <TextBlock Text="分" Foreground="Black" />
-                <TextBox x:Name="TimeSetterChangeMinute" Width="80" />
-                <TextBlock Text="秒" Foreground="Black" />
-                <TextBox x:Name="TimeSetterChangeSecond" Width="80" />
-            </StackPanel>
-            <Button x:Name="TimeSetterSubmit" Content="Set" HorizontalAlignment="Center" />
+            <WebView Name="DateWeb" DOMContentLoaded="DateWeb_DOMContentLoaded" Height="200"></WebView>
         </StackPanel>
         <StackPanel Grid.Column="2" Grid.RowSpan="2">
-            <Canvas Background="Aquamarine" x:Name="ChartCanvas" Width="600" Height="600"/>
+            <!--
+            <WebView Name="Web" Width="640" Height="640" NavigationCompleted="Web_NavigationCompleted" DOMContentLoaded="Web_DOMContentLoaded"></WebView>
+            -->
+            <Canvas Background="Aquamarine" x:Name="ChartCanvas" Width="640" Height="640"/>
             <StackPanel Margin="0, 10, 0, 0">
                 <TextBlock HorizontalAlignment="Center">Help Message</TextBlock>
             </StackPanel>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+	<style>
+	</style>
+</head>
+<body style="background: #efefef;">
+  <!--
+  <img src="test.png" width="100" height="100">
+  -->
+  <canvas id="canvas" width="640" height="640" style="margin-left: 30px;"></canvas>
+  <div style="margin-left: 30px; margin-right: 30px; padding: 5px; height: 20px; border: 1px solid #aaa;" id="info"></div>
+    <div id="data"></div>
+<script>
+var planets = [
+  "\u2609", 
+  "\u263d", 
+  "\u263f", 
+  "\u2640", 
+  "\u2642",
+  "\u2643",
+  "\u2644",
+  "\u2645",
+  "\u2646",
+  "\u2647"
+];
+var planet_degrees = []; 
+/*
+var planet_degrees = {sun: {"sensitive":false,"no":0,"absolute_position":286.10481192711654,"speed":1.0189568442285635},moon: {"sensitive":false,"no":1,"absolute_position":166.19920792216888,"speed":13.80209688369079},marcury: {"sensitive":false,"no":2,"absolute_position":263.97972607067442,"speed":1.2091753409318764},venus: {"sensitive":false,"no":3,"absolute_position":285.43555218348956,"speed":1.2580756429113309},mars: {"sensitive":false,"no":4,"absolute_position":227.5899866445904,"speed":0.62245253013142232},jupiter: {"sensitive":false,"no":5,"absolute_position":227.83734566884354,"speed":0.15953892325710037},saturn: {"sensitive":false,"no":6,"absolute_position":272.03020362127546,"speed":0.1157559831504207},uranus: {"sensitive":false,"no":7,"absolute_position":24.576773185829182,"speed":0.0033275029291452785},neptune: {"sensitive":false,"no":8,"absolute_position":342.03066729897841,"speed":0.024243710104564005},pluto: {"sensitive":false,"no":9,"absolute_position":288.96562403798436,"speed":0.034052880813753343}}; 
+                */
+var cusps = [0, 0, 30, 60, 90, 120, 150, 180, 210, 240, 300, 330];
+var signs = ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"];
+var center = {
+  x: 310,
+  y: 310
+}
+var outerRadius = 300;
+var innerRadius = (outerRadius - 40);
+var centerRadius = 200;
+var canvas = document.getElementById('canvas');
+
+function drawCircle() {
+  if (canvas.getContext){
+    var ctx = canvas.getContext('2d');
+    ctx.lineWidth  = 2.0;
+
+    ctx.beginPath();
+    ctx.arc(center.x, center.y, outerRadius, 0, 2 * Math.PI);
+    ctx.moveTo(center.x + innerRadius, center.y);
+    ctx.arc(center.x, center.y, innerRadius, 0, 2 * Math.PI);
+
+    ctx.stroke();
+
+    var ctx2 = canvas.getContext('2d');
+    ctx2.lineWidth  = 2.0;
+    ctx2.beginPath();
+    ctx2.strokeStyle = '#000000';
+    ctx2.fillStyle = '#ffffff';
+    ctx2.arc(center.x, center.y, centerRadius, 0, 2 * Math.PI);
+    ctx2.stroke();
+    ctx2.fill();
+  }
+  canvas.addEventListener('mousemove', function(evt) {
+    var mousePos = getMousePos(canvas, evt);
+    var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
+//        document.getElementById("info").innerText = message;
+  }, false);
+}
+
+function drawCusp() {
+  var ctx = canvas.getContext('2d');
+  ctx.lineWidth  = 2.0;
+  ctx.moveTo(center.x - outerRadius, center.y );
+  ctx.lineTo(center.x + outerRadius, center.y);
+
+
+  for (var i = 0; i < 6; i++) {
+    var newPt= rotate(outerRadius, 0, 30 * i);
+    var newPt2x = newPt.x + 10 + outerRadius ;
+    var newPt2y = (-1 * newPt.y + center.y);
+    var newPtEnd= rotate(outerRadius, 0, 30 * i + 180);
+    console.log(newPtEnd);
+    var  newPtEnd2x = (newPtEnd.x) + outerRadius +10;
+    var newPtEnd2y = (-1 * newPtEnd.y + outerRadius + 10);
+    ctx.moveTo(newPt2x , newPt2y);
+    ctx.lineTo(newPtEnd2x, newPtEnd2y);
+  }
+  ctx.stroke();
+
+}
+
+function drawSigns() {
+  var ctx = canvas.getContext('2d');
+  ctx.lineWidth  = 1.0;
+  ctx.strokeStyle = "black";
+  ctx.shadowOffsetX = 0;
+  ctx.shadowOffsetY = 0;
+  for (var i = 0; i < 12; i++) {
+    var signPt = rotate(outerRadius - 20, 0, 30 * i + 15 - cusps[1]);
+    newSignx = signPt.x + 0 + outerRadius ;
+    newSignx -= 5;
+    newSigny = (-1 * signPt.y + center.y);
+    newSigny += 15;
+    ctx.font = "36px serif";
+    ctx.strokeText(signs[i], newSignx, newSigny);
+  }
+}
+
+function drawPlanets() {
+  var ctx = canvas.getContext('2d');
+  ctx.lineWidth  = 1.0;
+  ctx.strokeStyle = "black";
+  ctx.shadowOffsetX = 0;
+  ctx.shadowOffsetY = 0;
+  Object.keys(planet_degrees).forEach(function (key) {
+    console.log("(" + planet_degrees[key].absolute_position + "," + cusps[1] + ")");
+    var planetPt = rotate(outerRadius - 60, 0, +planet_degrees[key].absolute_position - cusps[1]);
+    newPlanetx = planetPt.x + 0 + outerRadius ;
+    newPlanety = (-1 * planetPt.y + center.y);
+    newPlanety += 10;
+    ctx.font = "36px serif";
+    console.log("(" + newPlanetx + "," + newPlanety + ")");
+    ctx.fillText(planets[planet_degrees[key].no], newPlanetx, newPlanety);
+    var planetPt2 = rotate(outerRadius - 80, 0, +planet_degrees[key].absolute_position - cusps[1]);
+    newPlanet2x = planetPt2.x + 0 + outerRadius ;
+    newPlanet2y = (-1 * planetPt2.y + center.y);
+    ctx.font = "12px serif";
+    ctx.fillText(Math.floor(planet_degrees[key].absolute_position % 30), newPlanet2x, newPlanet2y);
+    if (planet_degrees[key].speed < 0) {
+      var planetPt3 = rotate(outerRadius - 95, 0, +planet_degrees[key].absolute_position - cusps[1]);
+      newPlanet3x = planetPt3.x + 0 + outerRadius ;
+      newPlanet3y = (-1 * planetPt3.y + center.y);
+      ctx.font = "12px serif";
+      ctx.fillText("R", newPlanet3x, newPlanet3y);
+    }
+  });
+}
+
+function getMousePos(canvas, evt) {
+  var rect = canvas.getBoundingClientRect();
+  return {
+    x: evt.clientX - rect.left,
+    y: evt.clientY - rect.top
+  };
+}
+
+function msg() {
+}
+
+function rotate(x, y, degree)
+{
+    // ホロスコープは180°から始まる
+    degree += 180.0;
+
+    var rad = (degree / 180.0) * Math.PI;
+    var newX = x * Math.cos(rad) - y * Math.sin(rad);
+    var newY = x * Math.sin(rad) + y * Math.cos(rad);
+
+    return {
+      x: newX,
+      y: newY
+    }
+}
+
+function setCusp(index, cusp) {
+  cusps[index] = cusp;
+}
+
+function setPlanet(index, planet) {
+  planet_degrees[index] = planet;
+}
+
+function clearCanvas() {
+  var ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, 640, 640);
+}
+
+function reRender() {
+  clearCanvas();
+  drawCusp();
+  drawSigns();
+  drawPlanets();
+  drawCircle();
+}
+
+    function init(data) {
+        document.getElementById("data").innerText = data;
+
+    }
+
+clearCanvas();
+drawCusp();
+drawSigns();
+drawPlanets();
+drawCircle();
+</script>
+
+  </body>
+</html>
