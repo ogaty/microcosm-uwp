@@ -6,41 +6,29 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" SizeChanged="Grid_SizeChanged">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" SizeChanged="Grid_SizeChanged" MinWidth="1200">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" x:Name="UserBoxPanel" />
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="6*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="5*" />
-            <RowDefinition Height="5*" />
+            <RowDefinition Height="6*" />
+            <RowDefinition Height="8*" />
         </Grid.RowDefinitions>
         <StackPanel Margin="0,0,0,0" Grid.Column="0">
             <StackPanel x:Name="UserDataView">
-                <Border Margin="10, 10, 10, 5" BorderBrush="Black" BorderThickness="1">
+                <Border Margin="10,0,10,5" BorderBrush="Black" BorderThickness="1">
                     <StackPanel Margin="5, 5, 5, 5">
                         <TextBlock FontWeight="Bold" Foreground="Black">ユーザー1</TextBlock>
                         <TextBlock Foreground="Black" Text="{Binding User1Name}" />
                         <TextBlock Foreground="Black" Text="{Binding User1DateStr}" />
-                    </StackPanel>
-                </Border>
-                <Border Margin="10, 5, 10, 10" BorderBrush="Black" BorderThickness="1">
-                    <StackPanel Margin="5, 5, 5, 5">
                         <TextBlock Foreground="Black" FontWeight="Bold">イベント1</TextBlock>
                         <TextBlock Foreground="Black" Text="{Binding Event1Name}" />
                         <TextBlock Foreground="Black" Text="{Binding Event1DateStr}" />
-                    </StackPanel>
-                </Border>
-                <Border Margin="10, 5, 10, 10" BorderBrush="Black" BorderThickness="1">
-                    <StackPanel Margin="5, 5, 5, 5">
                         <TextBlock Foreground="Black" FontWeight="Bold" Text="ユーザー2" />
                         <TextBlock Foreground="Black" Text="{Binding User2Name}" />
                         <TextBlock Foreground="Black" Text="{Binding User2DateStr}" />
-                    </StackPanel>
-                </Border>
-                <Border Margin="10, 5, 10, 10" BorderBrush="Black" BorderThickness="1">
-                    <StackPanel Margin="5, 5, 5, 5">
                         <TextBlock Foreground="Black" FontWeight="Bold">イベント2</TextBlock>
                         <TextBlock Foreground="Black" Text="{Binding Event2Name}" />
                         <TextBlock Foreground="Black" Text="{Binding Event2DateStr}" />
@@ -99,7 +87,7 @@
         <Frame x:Name="InfoFrame" Grid.Column="1" Grid.Row="1"></Frame>
 
         <StackPanel Grid.Column="1" Grid.RowSpan="2">
-            <WebView Name="DateWeb" DOMContentLoaded="DateWeb_DOMContentLoaded" Height="200"></WebView>
+            <WebView Name="DateWeb" DOMContentLoaded="DateWeb_DOMContentLoaded" Height="400"></WebView>
         </StackPanel>
         <StackPanel Grid.Column="2" Grid.RowSpan="2">
             <!--

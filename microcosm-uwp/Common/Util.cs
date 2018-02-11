@@ -18,10 +18,7 @@ namespace microcosm.Common
             string minute = dateTime.Minute.ToString();
             string second = dateTime.Second.ToString();
 
-            // todo あとでstringformatに
-            return year + "年" + month + "月" + day + "日" + 
-                " " + 
-                hour + "時" + minute + "分" + second + "秒" + " " + timezone;
+            return String.Format("{0}/{1}/{2} {3}:{4}:{5} {6}", year, month, day, hour, minute, second, timezone);
         }
 
         /// <summary>

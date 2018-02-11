@@ -27,6 +27,7 @@ using microcosm.ViewModels;
 using microcosm.Models;
 using microcosm.Common;
 using System.Collections.ObjectModel;
+using Windows.UI.ViewManagement;
 
 // 空白ページの項目テンプレートについては、https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x411 を参照してください
 
@@ -46,6 +47,8 @@ namespace microcosm.Views
         {
             this.InitializeComponent();
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
+
+            ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(1200, 760));
 
             MainInit();
         }

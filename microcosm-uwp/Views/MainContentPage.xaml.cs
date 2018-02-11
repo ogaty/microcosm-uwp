@@ -21,6 +21,9 @@ using microcosm.User;
 using microcosm.Calc;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Shapes;
+using Windows.UI;
+using System.Reflection;
 
 // 空白ページの項目テンプレートについては、https://go.microsoft.com/fwlink/?LinkId=234238 を参照してください
 
@@ -70,39 +73,13 @@ namespace microcosm.Views
 
             cuspList = new CuspList { planetList = ringsData[0].planetData, cusps = ringsData[0].cusps };
             PlanetCusp.DataContext = vm1;
-            vm1.planetCuspList = new ObservableCollection<PlanetCuspListData>();
-            foreach (PlanetData p in cuspList.planetList)
-            {
-                PlanetCuspListData pcusp = new PlanetCuspListData()
-                {
-                    name = Util.getPlanetSymbol(p.no)
-                };
-                pcusp.degree1 = Util.getPlanetDegree(p.absolute_position, CommonInstance.getInstance().config.decimalDisp);
-                vm1.planetCuspList.Add(pcusp);
-            }
-            PlanetCusp.ItemsSource = vm1.planetCuspList;
-
             HouseCusp.DataContext = vm2;
-            vm2.houseCuspList = new ObservableCollection<HouseCuspListData>();
-            for (int i = 1; i < 13; i++)
-            {
-                HouseCuspListData hcusp = new HouseCuspListData();
-                hcusp.name = i.ToString();
-                if (CommonInstance.getInstance().config.decimalDisp == EDecimalDisp.DECIMAL)
-                {
-                    hcusp.degree1 = String.Format("{0:f2}", cuspList.cusps[i]);
-                }
-                else
-                {
-                    hcusp.degree1 = Util.DecimalToHex(cuspList.cusps[i]).ToString();
-                }
+            ListRender();
 
-                vm2.houseCuspList.Add(hcusp);
-            }
-            HouseCusp.ItemsSource = vm2.houseCuspList;
-
+            // timesetter部はwebviewにする
             DateWeb.Navigate(new Uri("ms-appdata:///local/system/datetime.html"));
-//            Web.Navigate(new Uri("ms-appdata:///local/system/canvas.html"));
+
+            CanvasRender();
         }
 
         public async void CallScript()
@@ -134,6 +111,83 @@ namespace microcosm.Views
 
         private void DateWeb_DOMContentLoaded(WebView sender, WebViewDOMContentLoadedEventArgs args)
         {
+
+        }
+
+        private void CanvasRender()
+        {
+            double margin = 20;
+            double outerDiameter = 600;
+            double zodiacWidth = 60;
+            double innerDiameter = outerDiameter - zodiacWidth;
+            double centerRadius = 360;
+            string[] signs = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l" };
+            string[] planets = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "O", "L" };
+            ChartCanvas.Children.Clear();
+
+            Ellipse circle = new Ellipse();
+            circle.Width = outerDiameter;
+            circle.Height = outerDiameter;
+            circle.Stroke = new SolidColorBrush(Colors.Black);
+            circle.Fill = new SolidColorBrush(Colors.White);
+            circle.SetValue(Canvas.LeftProperty, margin);
+            circle.SetValue(Canvas.TopProperty, margin);
+            ChartCanvas.Children.Add(circle);
+
+            Ellipse innerCircle = new Ellipse();
+            innerCircle.Width = innerDiameter;
+            innerCircle.Height = innerDiameter;
+            innerCircle.Stroke = new SolidColorBrush(Colors.Black);
+            innerCircle.Fill = new SolidColorBrush(Colors.White);
+            innerCircle.SetValue(Canvas.LeftProperty, margin + zodiacWidth / 2);
+            innerCircle.SetValue(Canvas.TopProperty, margin + zodiacWidth / 2);
+            ChartCanvas.Children.Add(innerCircle);
+//            Assembly asm = Assembly.Load();
+            /*
+            System.Reflection.Assembly asm = System.Reflection.Assembly.GetExecutingAssembly();
+            SKManagedStream stream = new SKManagedStream(asm.GetManifestResourceStream("microcosm.system.AstroDotBasic.ttf"));
+            */
+
+            TextBlock symbol = new TextBlock();
+            symbol.FontFamily = new FontFamily("ms-appx:///Assets/AstroDotBasic.ttf#AstroDotBasic");
+            symbol.Text = "a";
+            symbol.Foreground = new SolidColorBrush(Colors.Black);
+            symbol.SetValue(Canvas.LeftProperty, margin + zodiacWidth / 2);
+            symbol.SetValue(Canvas.TopProperty, margin + zodiacWidth / 2);
+            ChartCanvas.Children.Add(symbol);
+        }
+
+        private void ListRender()
+        {
+            vm1.planetCuspList = new ObservableCollection<PlanetCuspListData>();
+            foreach (PlanetData p in cuspList.planetList)
+            {
+                PlanetCuspListData pcusp = new PlanetCuspListData()
+                {
+                    name = Util.getPlanetSymbol(p.no)
+                };
+                pcusp.degree1 = Util.getPlanetDegree(p.absolute_position, CommonInstance.getInstance().config.decimalDisp);
+                vm1.planetCuspList.Add(pcusp);
+            }
+            PlanetCusp.ItemsSource = vm1.planetCuspList;
+
+            vm2.houseCuspList = new ObservableCollection<HouseCuspListData>();
+            for (int i = 1; i < 13; i++)
+            {
+                HouseCuspListData hcusp = new HouseCuspListData();
+                hcusp.name = i.ToString();
+                if (CommonInstance.getInstance().config.decimalDisp == EDecimalDisp.DECIMAL)
+                {
+                    hcusp.degree1 = String.Format("{0:f2}", cuspList.cusps[i]);
+                }
+                else
+                {
+                    hcusp.degree1 = Util.DecimalToHex(cuspList.cusps[i]).ToString();
+                }
+
+                vm2.houseCuspList.Add(hcusp);
+            }
+            HouseCusp.ItemsSource = vm2.houseCuspList;
 
         }
     }
