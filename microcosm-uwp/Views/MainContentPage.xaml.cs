@@ -116,11 +116,15 @@ namespace microcosm.Views
 
         private void CanvasRender()
         {
-            double margin = 20;
-            double outerDiameter = 600;
+            int margin = 30;
+            double outerDiameter = 500;
+            if (config.size < 3)
+            {
+                outerDiameter = 480;
+            }
             double zodiacWidth = 60;
             double innerDiameter = outerDiameter - zodiacWidth;
-            double centerRadius = 360;
+            double centerDiameter = 300;
             string[] signs = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l" };
             string[] planets = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "O", "L" };
             ChartCanvas.Children.Clear();
@@ -142,34 +146,38 @@ namespace microcosm.Views
             innerCircle.SetValue(Canvas.LeftProperty, margin + zodiacWidth / 2);
             innerCircle.SetValue(Canvas.TopProperty, margin + zodiacWidth / 2);
             ChartCanvas.Children.Add(innerCircle);
-//            Assembly asm = Assembly.Load();
-            /*
-            System.Reflection.Assembly asm = System.Reflection.Assembly.GetExecutingAssembly();
-            SKManagedStream stream = new SKManagedStream(asm.GetManifestResourceStream("microcosm.system.AstroDotBasic.ttf"));
-            */
 
-            TextBlock symbol = new TextBlock();
-            symbol.FontFamily = new FontFamily("ms-appx:///Assets/AstroDotBasic.ttf#AstroDotBasic");
-            symbol.Text = "a";
-            symbol.Foreground = new SolidColorBrush(Colors.Black);
-            symbol.SetValue(Canvas.LeftProperty, margin + zodiacWidth / 2);
-            symbol.SetValue(Canvas.TopProperty, margin + zodiacWidth / 2);
-            ChartCanvas.Children.Add(symbol);
+            DrawCusp((int)(outerDiameter / 2), margin);
+            DrawSigns((int)(outerDiameter / 2), margin);
+
+            Ellipse centerCircle = new Ellipse();
+            centerCircle.Width = centerDiameter;
+            centerCircle.Height = centerDiameter;
+            centerCircle.Stroke = new SolidColorBrush(Colors.Black);
+            centerCircle.Fill = new SolidColorBrush(Colors.White);
+            centerCircle.SetValue(Canvas.LeftProperty, margin + (outerDiameter - centerDiameter) / 2);
+            centerCircle.SetValue(Canvas.TopProperty, margin + (outerDiameter - centerDiameter) / 2);
+            ChartCanvas.Children.Add(centerCircle);
+
         }
 
         private void ListRender()
         {
             vm1.planetCuspList = new ObservableCollection<PlanetCuspListData>();
+            string[] signs = new string[] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l" };
+
             foreach (PlanetData p in cuspList.planetList)
             {
                 PlanetCuspListData pcusp = new PlanetCuspListData()
                 {
-                    name = Util.getPlanetSymbol(p.no)
+//                    name = Util.getPlanetSymbol(p.no)
+                    name = Util.getPlanetAlpha(p.no),
+                    degree1 = Util.getPlanetDegree(p.absolute_position, CommonInstance.getInstance().config.decimalDisp)
                 };
-                pcusp.degree1 = Util.getPlanetDegree(p.absolute_position, CommonInstance.getInstance().config.decimalDisp);
                 vm1.planetCuspList.Add(pcusp);
             }
             PlanetCusp.ItemsSource = vm1.planetCuspList;
+
 
             vm2.houseCuspList = new ObservableCollection<HouseCuspListData>();
             for (int i = 1; i < 13; i++)
@@ -188,6 +196,61 @@ namespace microcosm.Views
                 vm2.houseCuspList.Add(hcusp);
             }
             HouseCusp.ItemsSource = vm2.houseCuspList;
+
+        }
+
+        public void DrawCusp(int radius, int margin)
+        {
+            for (var i = 0; i < 6; i++)
+            {
+                var newPtStart = Rotate(radius, 0, 30 * i);
+                var newPtEnd = Rotate(radius, 0, 30 * i + 180);
+
+                Line line = new Line()
+                {
+                    Stroke = new SolidColorBrush(Colors.Black),
+                    StrokeThickness = 2,
+                    X1 = newPtStart.X + radius + margin,
+                    Y1 =  -1 * newPtStart.Y + radius + margin,
+                    X2 = newPtEnd.X + radius + margin,
+                    Y2 = -1 * newPtEnd.Y + radius + margin
+                };
+                ChartCanvas.Children.Add(line);
+            }
+        }
+
+        public void DrawSigns(int radius, int margin)
+        {
+            double[] cusps = new double[] { 1, 2, 3 };
+            string[] signs = new string[] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"};
+            for (var i = 0; i < 12; i++)
+            {
+                var newPtStart = Rotate(radius - 16, 0, 30 * i + 17 - cusps[1]);
+
+                TextBlock symbol = new TextBlock();
+                symbol.FontFamily = new FontFamily("ms-appx:///Assets/AstroDotBasic.ttf#AstroDotBasic");
+                symbol.Text = signs[i];
+                symbol.Foreground = new SolidColorBrush(Colors.Black);
+                symbol.SetValue(Canvas.LeftProperty, newPtStart.X + radius + margin - 3);
+                symbol.SetValue(Canvas.TopProperty, -1 * newPtStart.Y + radius + margin - 5);
+                ChartCanvas.Children.Add(symbol);
+            }
+        }
+
+
+        public Point Rotate(double x, double y, double degree)
+        {
+            degree += 180.0;
+            double rad = (degree / 180.0) * Math.PI;
+            double newX = x * Math.Cos(rad) - y * Math.Sin(rad);
+            double newY = x * Math.Sin(rad) + y * Math.Cos(rad);
+
+            return new Point(newX, newY);
+        }
+
+
+        private void DateWeb_LoadCompleted(object sender, NavigationEventArgs e)
+        {
 
         }
     }

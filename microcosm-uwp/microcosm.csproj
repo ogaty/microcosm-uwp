@@ -11,7 +11,7 @@
     <AssemblyName>microcosm</AssemblyName>
     <DefaultLanguage>ja-JP</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.15063.0</TargetPlatformVersion>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.16299.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -319,6 +319,7 @@
     </Content>
     <Content Include="Zodiac_S\ZODIAC_S.TTF" />
     <Content Include="system\AstroDotBasic.ttf" />
+    <Content Include="system\ZODIAC_S.TTF" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\seleapsec.txt">

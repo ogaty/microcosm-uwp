@@ -126,6 +126,9 @@ namespace microcosm.Config
         [XmlElement("colorChange")]
         public int colorChange { get; set; }
 
+        [XmlElement("size")]
+        public int size { get; set; }
+
         public ConfigData(string path)
         {
             ephepath = path;
@@ -145,6 +148,7 @@ namespace microcosm.Config
             progression = EProgression.PRIMARY;
             color29 = EColor29.NOCHANGE;
             colorChange = -1;
+            size = 3;
         }
 
         public ConfigData()
@@ -165,6 +169,7 @@ namespace microcosm.Config
             progression = EProgression.PRIMARY;
             color29 = EColor29.NOCHANGE;
             colorChange = -1;
+            size = 3;
         }
     }
 }

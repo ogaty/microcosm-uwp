@@ -83,7 +83,69 @@ namespace microcosm.Common
             return number.ToString();
         }
 
-                /// <summary>
+        /// <summary>
+        /// 天体をアルファベットで返す
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public static string getPlanetAlpha(int number)
+        {
+            switch (number)
+            {
+                case CommonData.ZODIAC_NUMBER_SUN:
+                    return "A";
+                case CommonData.ZODIAC_NUMBER_MOON:
+                    return "B";
+                case CommonData.ZODIAC_NUMBER_MERCURY:
+                    return "C";
+                case CommonData.ZODIAC_NUMBER_VENUS:
+                    return "D";
+                case CommonData.ZODIAC_NUMBER_MARS:
+                    return "E";
+                case CommonData.ZODIAC_NUMBER_JUPITER:
+                    return "F";
+                case CommonData.ZODIAC_NUMBER_SATURN:
+                    return "G";
+                case CommonData.ZODIAC_NUMBER_URANUS:
+                    return "H";
+                case CommonData.ZODIAC_NUMBER_NEPTUNE:
+                    return "I";
+                case CommonData.ZODIAC_NUMBER_PLUTO:
+                    // 外部フォントだと天文学用のPLUTOになっているのが困りどころ
+                    return "J";
+                case CommonData.ZODIAC_NUMBER_DH_TRUENODE:
+                    return "\u260a";
+                case CommonData.ZODIAC_NUMBER_EARTH:
+                    return "\u2641";
+                case CommonData.ZODIAC_NUMBER_CHIRON:
+                    return "\u26b7";
+                case CommonData.ZODIAC_NUMBER_LILITH:
+                    return "\u26b8";
+                case CommonData.ZODIAC_NUMBER_CERES:
+                    return "\u26B3";
+                case CommonData.ZODIAC_NUMBER_PARAS:
+                    return "\u26B4";
+                case CommonData.ZODIAC_NUMBER_JUNO:
+                    return "\u26B5";
+                case CommonData.ZODIAC_NUMBER_VESTA:
+                    return "\u26B6";
+                case CommonData.ZODIAC_NUMBER_VT:
+                    return "Vt";
+                case CommonData.ZODIAC_NUMBER_POF:
+                    return "Pof";
+                case CommonData.ZODIAC_NUMBER_SEDNA:
+                    return "Se";
+                case CommonData.ZODIAC_NUMBER_ERIS:
+                    return "Er";
+                case CommonData.ZODIAC_NUMBER_HAUMEA:
+                    return "Ha";
+                case CommonData.ZODIAC_NUMBER_MAKEMAKE:
+                    return "Ma";
+            }
+            return number.ToString();
+        }
+
+        /// <summary>
         /// 番号を引数にサインのシンボルを返す
         /// </summary>
         /// <param name="number"></param>
@@ -120,10 +182,42 @@ namespace microcosm.Common
             return "";
         }
 
+        public static string getSignAlpha(int number)
+        {
+            switch ((Signs)number)
+            {
+                case Signs.SIGN_ARIES:
+                    return "a";
+                case Signs.SIGN_TAURUS:
+                    return "b";
+                case Signs.SIGN_GEMINI:
+                    return "c";
+                case Signs.SIGN_CANCER:
+                    return "d";
+                case Signs.SIGN_LEO:
+                    return "e";
+                case Signs.SIGN_VIRGO:
+                    return "f";
+                case Signs.SIGN_LIBRA:
+                    return "g";
+                case Signs.SIGN_SCORPIO:
+                    return "h";
+                case Signs.SIGN_SAGITTARIUS:
+                    return "i";
+                case Signs.SIGN_CAPRICORN:
+                    return "j";
+                case Signs.SIGN_AQUARIUS:
+                    return "k";
+                case Signs.SIGN_PISCES:
+                    return "l";
+            }
+            return "";
+        }
+
         public static string getPlanetDegree(double absolute_position, EDecimalDisp decimalDisp)
         {
             double degree = absolute_position % 30;
-            string symbol = getSignSymbol((int)(absolute_position / 30));
+            string symbol = getSignAlpha((int)(absolute_position / 30));
             if (decimalDisp == EDecimalDisp.DECIMAL)
             {
                 return symbol + String.Format("{0:f2}",degree);

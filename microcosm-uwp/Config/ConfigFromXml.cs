@@ -8,6 +8,9 @@ using System.Xml.Serialization;
 
 namespace microcosm.Config
 {
+    /// <summary>
+    /// XMLパスを指定してConfigDataを取得する
+    /// </summary>
     public static class ConfigFromXml
     {
         public static ConfigData GetConfigFromXml(string xmlFile)
