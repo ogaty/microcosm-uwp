@@ -318,7 +318,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Zodiac_S\ZODIAC_S.TTF" />
-    <Content Include="system\AstroDotBasic.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\seleapsec.txt">
