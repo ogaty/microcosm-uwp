@@ -20,18 +20,18 @@
             <StackPanel x:Name="UserDataView">
                 <Border Margin="10,0,10,5" BorderBrush="Black" BorderThickness="1">
                     <StackPanel Margin="5, 5, 5, 5">
-                        <TextBlock FontWeight="Bold" Foreground="Black" FontSize="10">ユーザー1</TextBlock>
-                        <TextBlock Foreground="Black" Text="{Binding User1Name}" FontSize="10" />
-                        <TextBlock Foreground="Black" Text="{Binding User1DateStr}" FontSize="10" />
-                        <TextBlock Foreground="Black" FontWeight="Bold" FontSize="10">イベント1</TextBlock>
-                        <TextBlock Foreground="Black" Text="{Binding Event1Name}" FontSize="10" />
-                        <TextBlock Foreground="Black" Text="{Binding Event1DateStr}" FontSize="10" />
-                        <TextBlock Foreground="Black" FontWeight="Bold" Text="ユーザー2" FontSize="10" />
-                        <TextBlock Foreground="Black" Text="{Binding User2Name}" FontSize="10" />
-                        <TextBlock Foreground="Black" Text="{Binding User2DateStr}" FontSize="10" />
-                        <TextBlock Foreground="Black" FontWeight="Bold" FontSize="10">イベント2</TextBlock>
-                        <TextBlock Foreground="Black" Text="{Binding Event2Name}"  FontSize="10"/>
-                        <TextBlock Foreground="Black" Text="{Binding Event2DateStr}"  FontSize="10"/>
+                        <TextBlock FontWeight="Bold" Foreground="Black" FontSize="12">ユーザー1</TextBlock>
+                        <TextBlock Foreground="Black" Text="{Binding User1Name}" FontSize="12" />
+                        <TextBlock Foreground="Black" Text="{Binding User1DateStr}" FontSize="12" />
+                        <TextBlock Foreground="Black" FontWeight="Bold" FontSize="12">イベント1</TextBlock>
+                        <TextBlock Foreground="Black" Text="{Binding Event1Name}" FontSize="12" />
+                        <TextBlock Foreground="Black" Text="{Binding Event1DateStr}" FontSize="12" />
+                        <TextBlock Foreground="Black" FontWeight="Bold" Text="ユーザー2" FontSize="12" />
+                        <TextBlock Foreground="Black" Text="{Binding User2Name}" FontSize="12" />
+                        <TextBlock Foreground="Black" Text="{Binding User2DateStr}" FontSize="12" />
+                        <TextBlock Foreground="Black" FontWeight="Bold" FontSize="12">イベント2</TextBlock>
+                        <TextBlock Foreground="Black" Text="{Binding Event2Name}"  FontSize="12"/>
+                        <TextBlock Foreground="Black" Text="{Binding Event2DateStr}"  FontSize="12"/>
                     </StackPanel>
                 </Border>
             </StackPanel>

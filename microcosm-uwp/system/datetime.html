@@ -17,7 +17,7 @@
 	  }
 	</style>
 </head>
-<body style="background: #efef00; transform: scale(0.8); transform-origin: left top;">
+<body style="background: #efef00;">
   <div>
 	  <select>
 	    <option value="0">ユーザー1</option>
@@ -37,24 +37,29 @@
   	<button id="now" onclick="nowSet()">now</button>
   </div>
   <div>
-    緯度<input type="text" id="lat"><br>
-    経度<input type="text" id="lng">
+    <div style="float: left;">
+      緯度<input type="text" id="lat"><br>
+      経度<input type="text" id="lng">
+    </div>
+    <button id="set" onclick="dateSet" style="display: inline-block; width: 50px; height: 40px; margin-left: 20px; margin-top: 8px;">set</button>
+    <div style="clear: both;"></div>
   </div>
-  <button id="set" onclick="dateSet" style="width: 80px; height: 30px; margin-left: 30px; margin-bottom: 8px;">set</button>
-  <div>
-    <input type="number" value="0">日<button id="leftday">←</button><button id="rightday">→</button>
-  </div>
-  <div>
-    <input type="number" value="0">時<button id="lefthour">←</button><button id="righthour">→</button>
-  </div>
-  <div>
-    <input type="number" value="0">分<button id="leftminute">←</button><button id="rightminute">→</button>
-  </div>
-  <div>
-    <input type="number" value="0">秒<button id="leftsecond">←</button><button id="rightsecond">→</button>
-  </div>
-  <div>
-    <button id="left">←</button><button id="right">→</button>
+  <div style="margin-left: 20px;">
+      <div>
+          <input type="number" value="0">日<button id="leftday" style="margin-left: 10px; width: 50px;">←</button>&nbsp;&nbsp;<button id="rightday" style="width: 50px;">→</button>
+      </div>
+      <div>
+          <input type="number" value="0">時<button id="lefthour" style="margin-left: 10px; width: 50px;">←</button>&nbsp;&nbsp;<button id="righthour" style="width: 50px;">→</button>
+      </div>
+      <div>
+          <input type="number" value="0">分<button id="leftminute" style="margin-left: 10px; width: 50px;">←</button>&nbsp;&nbsp;<button id="rightminute" style="width: 50px;">→</button>
+      </div>
+      <div>
+          <input type="number" value="0">秒<button id="leftsecond" style="margin-left: 10px; width: 50px;">←</button>&nbsp;&nbsp;<button id="rightsecond" style="width: 50px;">→</button>
+      </div>
+      <div>
+        <button id="left" style="width: 100px;">←</button>&nbsp;&nbsp;<button id="right" style="width: 100px;">→</button>
+      </div>
   </div>
   <script>
   function setDate(year, month, day, hour, minute, second, lat, lng) {
@@ -81,6 +86,8 @@
   function dateSet() {
   
   }
+
+  nowSet();
   </script>
 </body>
 </html>

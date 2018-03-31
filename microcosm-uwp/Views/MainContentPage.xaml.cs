@@ -138,6 +138,7 @@ namespace microcosm.Views
             circle.SetValue(Canvas.TopProperty, margin);
             ChartCanvas.Children.Add(circle);
 
+            // 中央円
             Ellipse innerCircle = new Ellipse();
             innerCircle.Width = innerDiameter;
             innerCircle.Height = innerDiameter;
@@ -147,8 +148,10 @@ namespace microcosm.Views
             innerCircle.SetValue(Canvas.TopProperty, margin + zodiacWidth / 2);
             ChartCanvas.Children.Add(innerCircle);
 
+            // カスプ、獣帯上の天体
             DrawCusp((int)(outerDiameter / 2), margin);
             DrawSigns((int)(outerDiameter / 2), margin);
+            DrawPlanets((int)(outerDiameter / 2), margin);
 
             Ellipse centerCircle = new Ellipse();
             centerCircle.Width = centerDiameter;
@@ -226,6 +229,24 @@ namespace microcosm.Views
             for (var i = 0; i < 12; i++)
             {
                 var newPtStart = Rotate(radius - 16, 0, 30 * i + 17 - cusps[1]);
+
+                TextBlock symbol = new TextBlock();
+                symbol.FontFamily = new FontFamily("ms-appx:///Assets/AstroDotBasic.ttf#AstroDotBasic");
+                symbol.Text = signs[i];
+                symbol.Foreground = new SolidColorBrush(Colors.Black);
+                symbol.SetValue(Canvas.LeftProperty, newPtStart.X + radius + margin - 3);
+                symbol.SetValue(Canvas.TopProperty, -1 * newPtStart.Y + radius + margin - 5);
+                ChartCanvas.Children.Add(symbol);
+            }
+        }
+
+        public void DrawPlanets(int radius, int margin)
+        {
+            double[] cusps = new double[] { 1, 2, 3 };
+            string[] signs = new string[] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l" };
+            for (var i = 0; i < 10; i++)
+            {
+                var newPtStart = Rotate(radius - 50, 0, ringsData[0].planetData[i].absolute_position - cusps[1]);
 
                 TextBlock symbol = new TextBlock();
                 symbol.FontFamily = new FontFamily("ms-appx:///Assets/AstroDotBasic.ttf#AstroDotBasic");

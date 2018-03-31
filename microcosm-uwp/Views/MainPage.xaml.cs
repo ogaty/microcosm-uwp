@@ -48,7 +48,8 @@ namespace microcosm.Views
             this.InitializeComponent();
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
 
-            ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(1200, 760));
+//            ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(1200, 760));
+            ApplicationView.GetForCurrentView().TryResizeView(new Size(1120, 660));
 
             MainInit();
         }
