@@ -244,17 +244,53 @@ namespace microcosm.Views
         {
             double[] cusps = new double[] { 1, 2, 3 };
             string[] signs = new string[] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l" };
-            for (var i = 0; i < 10; i++)
+            int[] box = new int[72];
+            int planetOffset = 0;
+            IOrderedEnumerable<PlanetData> sortPlanetData = ringsData[0].planetData.OrderBy(planetTmp => planetTmp.absolute_position);
+            foreach (PlanetData planet in sortPlanetData)
             {
-                var newPtStart = Rotate(radius - 50, 0, ringsData[0].planetData[i].absolute_position - cusps[1]);
+                // 重ならないようにずらしを入れる
+                // 1サインに6度単位5個までデータが入る
+                int index = (int)(planet.absolute_position / 5);
+                if (box[index] == 1)
+                {
+                    while (box[index] == 1)
+                    {
+                        index++;
+                        if (index == 72)
+                        {
+                            index = 0;
+                        }
+                    }
+                    box[index] = 1;
+                }
+                else
+                {
+                    box[index] = 1;
+                }
 
+                // 天体そのもの
+                planetOffset = 120;
+
+                var newPtStart = Rotate(radius - 50, 0, 5 * index - ringsData[0].cusps[1]);
                 TextBlock symbol = new TextBlock();
                 symbol.FontFamily = new FontFamily("ms-appx:///Assets/AstroDotBasic.ttf#AstroDotBasic");
-                symbol.Text = signs[i];
+                symbol.FontSize = 16;
+                symbol.Text = CommonData.getPlanetSymbol(planet.no);
                 symbol.Foreground = new SolidColorBrush(Colors.Black);
                 symbol.SetValue(Canvas.LeftProperty, newPtStart.X + radius + margin - 3);
                 symbol.SetValue(Canvas.TopProperty, -1 * newPtStart.Y + radius + margin - 5);
                 ChartCanvas.Children.Add(symbol);
+
+                // 天体度数
+                var newDegreePtStart = Rotate(radius - 80, 0, 5 * index - ringsData[0].cusps[1]);
+                TextBlock symbolDegree = new TextBlock();
+                symbolDegree.Text = ((int)(planet.absolute_position % 30)).ToString();
+                symbol.FontSize = 10;
+                symbolDegree.Foreground = new SolidColorBrush(Colors.Black);
+                symbolDegree.SetValue(Canvas.LeftProperty, newDegreePtStart.X + radius + margin - 3);
+                symbolDegree.SetValue(Canvas.TopProperty, -1 * newDegreePtStart.Y + radius + margin - 5);
+                ChartCanvas.Children.Add(symbolDegree);
             }
         }
 

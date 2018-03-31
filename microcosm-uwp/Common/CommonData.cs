@@ -92,6 +92,126 @@ namespace microcosm.Common
         public static double defaultLng = 139.772003;
 
 
+        /// <summary>
+        /// 番号を引数に天体のシンボルを返す
+        /// </summary>
+        /// <param name="number">天体番号</param>
+        /// <returns></returns>
+        public static string getPlanetSymbol(int number)
+        {
+            switch (number)
+            {
+                case ZODIAC_NUMBER_SUN:
+                    return "A";
+                case ZODIAC_NUMBER_MOON:
+                    return "B";
+                case ZODIAC_NUMBER_MERCURY:
+                    return "C";
+                case ZODIAC_NUMBER_VENUS:
+                    return "D";
+                case ZODIAC_NUMBER_MARS:
+                    return "E";
+                case ZODIAC_NUMBER_JUPITER:
+                    return "F";
+                case ZODIAC_NUMBER_SATURN:
+                    return "G";
+                case ZODIAC_NUMBER_URANUS:
+                    return "H";
+                case ZODIAC_NUMBER_NEPTUNE:
+                    return "I";
+                case ZODIAC_NUMBER_PLUTO:
+                    return "J";
+                case ZODIAC_NUMBER_DH_TRUENODE:
+                    return "L";
+                case ZODIAC_NUMBER_EARTH:
+                    return "O";
+                case ZODIAC_NUMBER_CHIRON:
+                    return "U";
+                case ZODIAC_NUMBER_LILITH:
+                    return "T";
+                case ZODIAC_NUMBER_ERIS:
+                    return "E";
+                case ZODIAC_NUMBER_SEDNA:
+                    return "S";
+                case ZODIAC_NUMBER_HAUMEA:
+                    return "H";
+                case ZODIAC_NUMBER_MAKEMAKE:
+                    return "M";
+            }
+            return "";
+        }
+
+        /// <summary>
+        /// 番号を引数にサインのシンボルを返す
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public static string getSignSymbol(int number)
+        {
+            switch (number)
+            {
+                case (int)Signs.SIGN_ARIES:
+                    return "\u2648";
+                case (int)Signs.SIGN_TAURUS:
+                    return "\u2649";
+                case (int)Signs.SIGN_GEMINI:
+                    return "\u264a";
+                case (int)Signs.SIGN_CANCER:
+                    return "\u264b";
+                case (int)Signs.SIGN_LEO:
+                    return "\u264c";
+                case (int)Signs.SIGN_VIRGO:
+                    return "\u264d";
+                case (int)Signs.SIGN_LIBRA:
+                    return "\u264e";
+                case (int)Signs.SIGN_SCORPIO:
+                    return "\u264f";
+                case (int)Signs.SIGN_SAGITTARIUS:
+                    return "\u2650";
+                case (int)Signs.SIGN_CAPRICORN:
+                    return "\u2651";
+                case (int)Signs.SIGN_AQUARIUS:
+                    return "\u2652";
+                case (int)Signs.SIGN_PISCES:
+                    return "\u2653";
+            }
+            return "";
+        }
+
+        public static string getAspectSymbol(AspectKind kind)
+        {
+            switch (kind)
+            {
+                case AspectKind.OPPOSITION:
+                    return "n";
+                case AspectKind.TRINE:
+                    return "p";
+                case AspectKind.SQUARE:
+                    return "o";
+                case AspectKind.SEXTILE:
+                    return "q";
+                case AspectKind.INCONJUNCT:
+                    return "s";
+                case AspectKind.SESQUIQUADRATE:
+                    return "u";
+                case AspectKind.SEMISQUARE:
+                    return "t";
+                case AspectKind.SEMISEXTILE:
+                    return "r";
+                case AspectKind.QUINTILE:
+                    return "v";
+                case AspectKind.BIQUINTILE:
+                    return "w";
+                case AspectKind.SEMIQINTILE:
+                    return "SQ";
+                case AspectKind.NOVILE:
+                    return "N";
+                case AspectKind.SEPTILE:
+                    return "S";
+            }
+            return "";
+
+        }
 
     }
 }
