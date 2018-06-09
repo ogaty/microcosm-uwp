@@ -116,7 +116,7 @@ namespace microcosm.Views
                 {
                     ((ToggleButton)FindName("Ceres" + j.ToString())).IsChecked = true;
                 }
-                if (settings[settingIndex].dispPlanet[i][CommonData.ZODIAC_NUMBER_PARAS] == true)
+                if (settings[settingIndex].dispPlanet[i][CommonData.ZODIAC_NUMBER_PALLAS] == true)
                 {
                     ((ToggleButton)FindName("Paras" + j.ToString())).IsChecked = true;
                 }
@@ -232,7 +232,7 @@ namespace microcosm.Views
             }
             else if (s.Name.IndexOf("Paras") > 0)
             {
-                planet_no = CommonData.ZODIAC_NUMBER_PARAS;
+                planet_no = CommonData.ZODIAC_NUMBER_PALLAS;
             }
             else if (s.Name.IndexOf("Juno") > 0)
             {

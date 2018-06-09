@@ -336,7 +336,7 @@ namespace microcosm.Config
                 { CommonData.ZODIAC_NUMBER_EARTH, xmlData.dispPlanetEarth11 },
                 { CommonData.ZODIAC_NUMBER_LILITH, xmlData.dispPlanetLilith11 },
                 { CommonData.ZODIAC_NUMBER_CERES, false },
-                { CommonData.ZODIAC_NUMBER_PARAS, false },
+                { CommonData.ZODIAC_NUMBER_PALLAS, false },
                 { CommonData.ZODIAC_NUMBER_JUNO, false },
                 { CommonData.ZODIAC_NUMBER_VESTA, false },
                 { CommonData.ZODIAC_NUMBER_ERIS, false },
@@ -368,7 +368,7 @@ namespace microcosm.Config
                 { CommonData.ZODIAC_NUMBER_EARTH, xmlData.dispPlanetEarth22 },
                 { CommonData.ZODIAC_NUMBER_LILITH, xmlData.dispPlanetLilith22 },
                 { CommonData.ZODIAC_NUMBER_CERES, false },
-                { CommonData.ZODIAC_NUMBER_PARAS, false },
+                { CommonData.ZODIAC_NUMBER_PALLAS, false },
                 { CommonData.ZODIAC_NUMBER_JUNO, false },
                 { CommonData.ZODIAC_NUMBER_VESTA, false },
                 { CommonData.ZODIAC_NUMBER_ERIS, false },
@@ -400,7 +400,7 @@ namespace microcosm.Config
                 { CommonData.ZODIAC_NUMBER_EARTH, xmlData.dispPlanetEarth33 },
                 { CommonData.ZODIAC_NUMBER_LILITH, xmlData.dispPlanetLilith33 },
                 { CommonData.ZODIAC_NUMBER_CERES, false },
-                { CommonData.ZODIAC_NUMBER_PARAS, false },
+                { CommonData.ZODIAC_NUMBER_PALLAS, false },
                 { CommonData.ZODIAC_NUMBER_JUNO, false },
                 { CommonData.ZODIAC_NUMBER_VESTA, false },
                 { CommonData.ZODIAC_NUMBER_ERIS, false },
@@ -432,7 +432,7 @@ namespace microcosm.Config
                 { CommonData.ZODIAC_NUMBER_EARTH, false },
                 { CommonData.ZODIAC_NUMBER_LILITH, false },
                 { CommonData.ZODIAC_NUMBER_CERES, false },
-                { CommonData.ZODIAC_NUMBER_PARAS, false },
+                { CommonData.ZODIAC_NUMBER_PALLAS, false },
                 { CommonData.ZODIAC_NUMBER_JUNO, false },
                 { CommonData.ZODIAC_NUMBER_VESTA, false },
                 { CommonData.ZODIAC_NUMBER_ERIS, false },
@@ -464,7 +464,7 @@ namespace microcosm.Config
                 { CommonData.ZODIAC_NUMBER_EARTH, false },
                 { CommonData.ZODIAC_NUMBER_LILITH, false },
                 { CommonData.ZODIAC_NUMBER_CERES, false },
-                { CommonData.ZODIAC_NUMBER_PARAS, false },
+                { CommonData.ZODIAC_NUMBER_PALLAS, false },
                 { CommonData.ZODIAC_NUMBER_JUNO, false },
                 { CommonData.ZODIAC_NUMBER_VESTA, false },
                 { CommonData.ZODIAC_NUMBER_ERIS, false },
@@ -496,7 +496,7 @@ namespace microcosm.Config
                 { CommonData.ZODIAC_NUMBER_EARTH, false },
                 { CommonData.ZODIAC_NUMBER_LILITH, false },
                 { CommonData.ZODIAC_NUMBER_CERES, false },
-                { CommonData.ZODIAC_NUMBER_PARAS, false },
+                { CommonData.ZODIAC_NUMBER_PALLAS, false },
                 { CommonData.ZODIAC_NUMBER_JUNO, false },
                 { CommonData.ZODIAC_NUMBER_VESTA, false },
                 { CommonData.ZODIAC_NUMBER_ERIS, false },
@@ -528,7 +528,7 @@ namespace microcosm.Config
                 { CommonData.ZODIAC_NUMBER_EARTH, false },
                 { CommonData.ZODIAC_NUMBER_LILITH, false },
                 { CommonData.ZODIAC_NUMBER_CERES, false },
-                { CommonData.ZODIAC_NUMBER_PARAS, false },
+                { CommonData.ZODIAC_NUMBER_PALLAS, false },
                 { CommonData.ZODIAC_NUMBER_JUNO, false },
                 { CommonData.ZODIAC_NUMBER_VESTA, false },
                 { CommonData.ZODIAC_NUMBER_ERIS, false },
@@ -1075,7 +1075,7 @@ namespace microcosm.Config
                 dp.Add(CommonData.ZODIAC_NUMBER_EARTH, earth[i]);
                 dp.Add(CommonData.ZODIAC_NUMBER_LILITH, lilith[i]);
                 dp.Add(CommonData.ZODIAC_NUMBER_CERES, ceres[i]);
-                dp.Add(CommonData.ZODIAC_NUMBER_PARAS, paras[i]);
+                dp.Add(CommonData.ZODIAC_NUMBER_PALLAS, paras[i]);
                 dp.Add(CommonData.ZODIAC_NUMBER_JUNO, juno[i]);
                 dp.Add(CommonData.ZODIAC_NUMBER_VESTA, vesta[i]);
                 dp.Add(CommonData.ZODIAC_NUMBER_ERIS, eris[i]);
@@ -1175,7 +1175,7 @@ namespace microcosm.Config
             da.Add(CommonData.ZODIAC_NUMBER_EARTH, aspectEarth[n]);
             da.Add(CommonData.ZODIAC_NUMBER_LILITH, aspectLilith[n]);
             da.Add(CommonData.ZODIAC_NUMBER_CERES, aspectCeres[n]);
-            da.Add(CommonData.ZODIAC_NUMBER_PARAS, false);
+            da.Add(CommonData.ZODIAC_NUMBER_PALLAS, false);
             da.Add(CommonData.ZODIAC_NUMBER_JUNO, false);
             da.Add(CommonData.ZODIAC_NUMBER_VESTA, false);
 

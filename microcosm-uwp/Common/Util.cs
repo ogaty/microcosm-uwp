@@ -61,7 +61,7 @@ namespace microcosm.Common
                     return "\u26b8";
                 case CommonData.ZODIAC_NUMBER_CERES:
                     return "\u26B3";
-                case CommonData.ZODIAC_NUMBER_PARAS:
+                case CommonData.ZODIAC_NUMBER_PALLAS:
                     return "\u26B4";
                 case CommonData.ZODIAC_NUMBER_JUNO:
                     return "\u26B5";
@@ -123,7 +123,7 @@ namespace microcosm.Common
                     return "\u26b8";
                 case CommonData.ZODIAC_NUMBER_CERES:
                     return "\u26B3";
-                case CommonData.ZODIAC_NUMBER_PARAS:
+                case CommonData.ZODIAC_NUMBER_PALLAS:
                     return "\u26B4";
                 case CommonData.ZODIAC_NUMBER_JUNO:
                     return "\u26B5";

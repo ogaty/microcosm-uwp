@@ -73,7 +73,7 @@ namespace microcosm.Common
         public const int ZODIAC_NUMBER_EARTH = 14;
         public const int ZODIAC_NUMBER_CHIRON = 15;
         public const int ZODIAC_NUMBER_CERES = 17;
-        public const int ZODIAC_NUMBER_PARAS = 18;
+        public const int ZODIAC_NUMBER_PALLAS = 18;
         public const int ZODIAC_NUMBER_JUNO = 19;
         public const int ZODIAC_NUMBER_VESTA = 20;
 
@@ -122,21 +122,29 @@ namespace microcosm.Common
                 case ZODIAC_NUMBER_PLUTO:
                     return "J";
                 case ZODIAC_NUMBER_DH_TRUENODE:
-                    return "L";
+                    return "K";
                 case ZODIAC_NUMBER_EARTH:
-                    return "O";
+                    return "M";
                 case ZODIAC_NUMBER_CHIRON:
-                    return "U";
+                    return "N";
                 case ZODIAC_NUMBER_LILITH:
-                    return "T";
+                    return "L";
+                case ZODIAC_NUMBER_CERES:
+                    return "O";
+                case ZODIAC_NUMBER_PALLAS:
+                    return "P";
+                case ZODIAC_NUMBER_JUNO:
+                    return "Q";
+                case ZODIAC_NUMBER_VESTA:
+                    return "R";
                 case ZODIAC_NUMBER_ERIS:
-                    return "E";
+                    return "X";
                 case ZODIAC_NUMBER_SEDNA:
                     return "S";
                 case ZODIAC_NUMBER_HAUMEA:
-                    return "H";
+                    return "T";
                 case ZODIAC_NUMBER_MAKEMAKE:
-                    return "M";
+                    return "U";
             }
             return "";
         }

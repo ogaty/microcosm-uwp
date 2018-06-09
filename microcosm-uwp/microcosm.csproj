@@ -127,6 +127,9 @@
     <Compile Include="Views\AddressSearchPage.xaml.cs">
       <DependentUpon>AddressSearchPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\BlankPage1.xaml.cs">
+      <DependentUpon>BlankPage1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DatabasePage.xaml.cs">
       <DependentUpon>DatabasePage.xaml</DependentUpon>
     </Compile>
@@ -270,6 +273,7 @@
     <Content Include="Zodiac_S\readme.txt" />
     <Content Include="Assets\ZODIAC_S.TTF" />
     <Content Include="Assets\AstroDotBasic.ttf" />
+    <Content Include="Assets\astro.ttf" />
     <None Include="ephe\seas_18.se1">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -320,6 +324,7 @@
     <Content Include="Zodiac_S\ZODIAC_S.TTF" />
     <Content Include="system\AstroDotBasic.ttf" />
     <Content Include="system\ZODIAC_S.TTF" />
+    <Content Include="system\astro.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\seleapsec.txt">
@@ -344,6 +349,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="Views\AddressSearchPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BlankPage1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

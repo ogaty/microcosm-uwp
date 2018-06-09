@@ -24,6 +24,9 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml.Shapes;
 using Windows.UI;
 using System.Reflection;
+using Windows.UI.ViewManagement;
+using Windows.ApplicationModel.Core;
+using Windows.UI.Core;
 
 // 空白ページの項目テンプレートについては、https://go.microsoft.com/fwlink/?LinkId=234238 を参照してください
 
@@ -274,7 +277,7 @@ namespace microcosm.Views
 
                 var newPtStart = Rotate(radius - 50, 0, 5 * index - ringsData[0].cusps[1]);
                 TextBlock symbol = new TextBlock();
-                symbol.FontFamily = new FontFamily("ms-appx:///Assets/AstroDotBasic.ttf#AstroDotBasic");
+                symbol.FontFamily = new FontFamily("ms-appx:///Assets/astro.ttf#astro");
                 symbol.FontSize = 16;
                 symbol.Text = CommonData.getPlanetSymbol(planet.no);
                 symbol.Foreground = new SolidColorBrush(Colors.Black);
@@ -309,6 +312,22 @@ namespace microcosm.Views
         private void DateWeb_LoadCompleted(object sender, NavigationEventArgs e)
         {
 
+        }
+
+        private async void abc_Click(object sender, RoutedEventArgs e)
+        {
+            var currentViewId = ApplicationView.GetForCurrentView().Id;
+            await CoreApplication.CreateNewView().Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+            {
+                Window.Current.Content = new Frame();
+                ((Frame)Window.Current.Content).Navigate(typeof(BlankPage1));
+                Window.Current.Activate();
+                await ApplicationViewSwitcher.TryShowAsStandaloneAsync(
+                    ApplicationView.GetApplicationViewIdForWindow(Window.Current.CoreWindow),
+                    ViewSizePreference.Default,
+                    currentViewId,
+                    ViewSizePreference.Default);
+            });
         }
     }
 }
