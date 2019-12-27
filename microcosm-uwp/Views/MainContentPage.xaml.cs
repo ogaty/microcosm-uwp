@@ -80,7 +80,7 @@ namespace microcosm.Views
             ListRender();
 
             // timesetter部はwebviewにする
-            DateWeb.Navigate(new Uri("ms-appdata:///local/system/datetime.html"));
+            // DateWeb.Navigate(new Uri("ms-appdata:///local/system/datetime.html"));
 
             CanvasRender();
         }

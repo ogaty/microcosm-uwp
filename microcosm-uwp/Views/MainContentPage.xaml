@@ -8,9 +8,8 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" SizeChanged="Grid_SizeChanged" MinWidth="1280">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" x:Name="UserBoxPanel" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="6*" />
+            <ColumnDefinition Width="3*" x:Name="UserBoxPanel" />
+            <ColumnDefinition Width="7*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="6*" />
@@ -40,6 +39,17 @@
 
         <StackPanel Grid.Column="0" Grid.Row="1" Margin="0, 0, 0, 0">
             <Pivot>
+                <PivotItem Header="Date">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Foreground="Black" Text="111" />
+                        <DatePicker x:Name="TargetDate" />
+                        <TimePicker x:Name="TargetTime" />
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Foreground="Black" Text="年"></TextBlock>
+                            <TextBox Width="100"></TextBox>
+                        </StackPanel>
+                    </StackPanel>
+                </PivotItem>
                 <PivotItem Header="List">
                     <StackPanel Orientation="Horizontal">
                         <ListView x:Name="PlanetCusp" BorderBrush="Gray" BorderThickness="1" IsItemClickEnabled="True" Width="100" Height="260" HorizontalAlignment="Left" Margin="10, 0, 0, 0" ItemsSource="{Binding}">
@@ -87,10 +97,7 @@
 
         <Frame x:Name="InfoFrame" Grid.Column="1" Grid.Row="1"></Frame>
 
-        <StackPanel Grid.Column="1" Grid.RowSpan="2">
-            <WebView Name="DateWeb" DOMContentLoaded="DateWeb_DOMContentLoaded" Height="400"></WebView>
-        </StackPanel>
-        <StackPanel Grid.Column="2" Grid.RowSpan="2" Name="CanvasWindow">
+        <StackPanel Grid.Column="1" Grid.RowSpan="1" Name="CanvasWindow">
             <!--
             <WebView Name="Web" Width="640" Height="640" NavigationCompleted="Web_NavigationCompleted" DOMContentLoaded="Web_DOMContentLoaded"></WebView>
             -->
