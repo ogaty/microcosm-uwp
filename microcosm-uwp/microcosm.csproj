@@ -95,8 +95,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Calc\AbstractAspect.cs" />
+    <Compile Include="Calc\AspectCalc.cs" />
     <Compile Include="Calc\AstroCalc.cs" />
-    <Compile Include="Common\AspectInfo.cs" />
+    <Compile Include="Calc\OppositionAspect.cs" />
     <Compile Include="Common\CommonData.cs" />
     <Compile Include="Common\CommonInstance.cs" />
     <Compile Include="Common\Explanation.cs" />
@@ -109,6 +111,7 @@
     <Compile Include="Config\SettingData.cs" />
     <Compile Include="Config\SettingXml.cs" />
     <Compile Include="Config\SettingXml2.cs" />
+    <Compile Include="Models\AspectInfo.cs" />
     <Compile Include="Models\Calcuration.cs" />
     <Compile Include="Models\CuspList.cs" />
     <Compile Include="Models\DbItem.cs" />
