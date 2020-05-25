@@ -23,6 +23,9 @@ namespace microcosm.Calc
             SettingData setting = Common.CommonInstance.getInstance().settings[settingIndex];
             int j = 0;
             int aspectIndex = ringIndex;
+            int categoryIndex = 7 * (ringIndex - 1);
+
+
             for (int i = 0; i < planetList.Count - 1; i++)
             {
                 for (j = i + 1; j < planetList.Count; j++)
@@ -45,10 +48,11 @@ namespace microcosm.Calc
 
                     //                    Console.WriteLine(String.Format("{0},{1}", planetList[i].absolute_position, planetList[j].absolute_position));
 
+
                     OppositionAspect opposition = new OppositionAspect(setting, ringIndex, i, j, planetList[i], planetList[j]);
                     if (opposition.Between(planetList[j].absolute_position - planetList[i].absolute_position))
                     {
-                        if (!setting.aspectOpposition[ringIndex, ringIndex])
+                        if (!setting.dispAspectCategory[categoryIndex][AspectKind.OPPOSITION])
                         {
                             isDisp = false;
                         }
@@ -62,7 +66,7 @@ namespace microcosm.Calc
                     TrineAspect trine = new TrineAspect(setting, ringIndex, i, j, planetList[i], planetList[j]);
                     if (trine.Between(planetList[j].absolute_position - planetList[i].absolute_position))
                     {
-                        if (!setting.aspectTrine[ringIndex, ringIndex])
+                        if (!setting.dispAspectCategory[categoryIndex][AspectKind.TRINE])
                         {
                             isDisp = false;
                         }
@@ -78,7 +82,7 @@ namespace microcosm.Calc
                     {
                         Console.WriteLine(i);
                         Console.WriteLine(j);
-                        if (!setting.aspectSquare[ringIndex, ringIndex])
+                        if (!setting.dispAspectCategory[categoryIndex][AspectKind.SQUARE])
                         {
                             isDisp = false;
                         }
@@ -92,7 +96,7 @@ namespace microcosm.Calc
                     SextileAspect sextile = new SextileAspect(setting, ringIndex, i, j, planetList[i], planetList[j]);
                     if (sextile.Between(planetList[j].absolute_position - planetList[i].absolute_position))
                     {
-                        if (!setting.aspectSextile[ringIndex, ringIndex])
+                        if (!setting.dispAspectCategory[categoryIndex][AspectKind.SEXTILE])
                         {
                             isDisp = false;
                         }

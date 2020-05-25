@@ -1,120 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <SettingXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <dispname>設定１</dispname>
-  <orb_sun_soft_1st_0>8</orb_sun_soft_1st_0>
-  <orb_sun_soft_1st_1>8</orb_sun_soft_1st_1>
-  <orb_sun_soft_1st_2>8</orb_sun_soft_1st_2>
-  <orb_sun_soft_1st_3>8</orb_sun_soft_1st_3>
-  <orb_sun_soft_1st_4>8</orb_sun_soft_1st_4>
-  <orb_sun_soft_1st_5>8</orb_sun_soft_1st_5>
-  <orb_sun_hard_1st_0>4</orb_sun_hard_1st_0>
-  <orb_sun_hard_1st_1>4</orb_sun_hard_1st_1>
-  <orb_sun_hard_1st_2>4</orb_sun_hard_1st_2>
-  <orb_sun_hard_1st_3>4</orb_sun_hard_1st_3>
-  <orb_sun_hard_1st_4>4</orb_sun_hard_1st_4>
-  <orb_sun_hard_1st_5>4</orb_sun_hard_1st_5>
-  <orb_moon_soft_1st_0>8</orb_moon_soft_1st_0>
-  <orb_moon_soft_1st_1>8</orb_moon_soft_1st_1>
-  <orb_moon_soft_1st_2>8</orb_moon_soft_1st_2>
-  <orb_moon_soft_1st_3>8</orb_moon_soft_1st_3>
-  <orb_moon_soft_1st_4>8</orb_moon_soft_1st_4>
-  <orb_moon_soft_1st_5>8</orb_moon_soft_1st_5>
-  <orb_moon_hard_1st_0>4</orb_moon_hard_1st_0>
-  <orb_moon_hard_1st_1>4</orb_moon_hard_1st_1>
-  <orb_moon_hard_1st_2>4</orb_moon_hard_1st_2>
-  <orb_moon_hard_1st_3>4</orb_moon_hard_1st_3>
-  <orb_moon_hard_1st_4>4</orb_moon_hard_1st_4>
-  <orb_moon_hard_1st_5>4</orb_moon_hard_1st_5>
-  <orb_other_soft_1st_0>6</orb_other_soft_1st_0>
-  <orb_other_soft_1st_1>6</orb_other_soft_1st_1>
-  <orb_other_soft_1st_2>6</orb_other_soft_1st_2>
-  <orb_other_soft_1st_3>6</orb_other_soft_1st_3>
-  <orb_other_soft_1st_4>6</orb_other_soft_1st_4>
-  <orb_other_soft_1st_5>6</orb_other_soft_1st_5>
-  <orb_other_hard_1st_0>4</orb_other_hard_1st_0>
-  <orb_other_hard_1st_1>4</orb_other_hard_1st_1>
-  <orb_other_hard_1st_2>4</orb_other_hard_1st_2>
-  <orb_other_hard_1st_3>4</orb_other_hard_1st_3>
-  <orb_other_hard_1st_4>4</orb_other_hard_1st_4>
-  <orb_other_hard_1st_5>4</orb_other_hard_1st_5>
-  <orb_sun_soft_2nd_0>2</orb_sun_soft_2nd_0>
-  <orb_sun_soft_2nd_1>2</orb_sun_soft_2nd_1>
-  <orb_sun_soft_2nd_2>2</orb_sun_soft_2nd_2>
-  <orb_sun_soft_2nd_3>2</orb_sun_soft_2nd_3>
-  <orb_sun_soft_2nd_4>2</orb_sun_soft_2nd_4>
-  <orb_sun_soft_2nd_5>2</orb_sun_soft_2nd_5>
-  <orb_sun_hard_2nd_0>1</orb_sun_hard_2nd_0>
-  <orb_sun_hard_2nd_1>1</orb_sun_hard_2nd_1>
-  <orb_sun_hard_2nd_2>1</orb_sun_hard_2nd_2>
-  <orb_sun_hard_2nd_3>1</orb_sun_hard_2nd_3>
-  <orb_sun_hard_2nd_4>1</orb_sun_hard_2nd_4>
-  <orb_sun_hard_2nd_5>1</orb_sun_hard_2nd_5>
-  <orb_moon_soft_2nd_0>2</orb_moon_soft_2nd_0>
-  <orb_moon_soft_2nd_1>2</orb_moon_soft_2nd_1>
-  <orb_moon_soft_2nd_2>2</orb_moon_soft_2nd_2>
-  <orb_moon_soft_2nd_3>2</orb_moon_soft_2nd_3>
-  <orb_moon_soft_2nd_4>2</orb_moon_soft_2nd_4>
-  <orb_moon_soft_2nd_5>2</orb_moon_soft_2nd_5>
-  <orb_moon_hard_2nd_0>1</orb_moon_hard_2nd_0>
-  <orb_moon_hard_2nd_1>1</orb_moon_hard_2nd_1>
-  <orb_moon_hard_2nd_2>1</orb_moon_hard_2nd_2>
-  <orb_moon_hard_2nd_3>1</orb_moon_hard_2nd_3>
-  <orb_moon_hard_2nd_4>1</orb_moon_hard_2nd_4>
-  <orb_moon_hard_2nd_5>1</orb_moon_hard_2nd_5>
-  <orb_other_soft_2nd_0>1.5</orb_other_soft_2nd_0>
-  <orb_other_soft_2nd_1>1.5</orb_other_soft_2nd_1>
-  <orb_other_soft_2nd_2>1.5</orb_other_soft_2nd_2>
-  <orb_other_soft_2nd_3>1.5</orb_other_soft_2nd_3>
-  <orb_other_soft_2nd_4>1.5</orb_other_soft_2nd_4>
-  <orb_other_soft_2nd_5>1.5</orb_other_soft_2nd_5>
-  <orb_other_hard_2nd_0>1</orb_other_hard_2nd_0>
-  <orb_other_hard_2nd_1>1</orb_other_hard_2nd_1>
-  <orb_other_hard_2nd_2>1</orb_other_hard_2nd_2>
-  <orb_other_hard_2nd_3>1</orb_other_hard_2nd_3>
-  <orb_other_hard_2nd_4>1</orb_other_hard_2nd_4>
-  <orb_other_hard_2nd_5>1</orb_other_hard_2nd_5>
-  <orb_sun_soft_150_0>3</orb_sun_soft_150_0>
-  <orb_sun_soft_150_1>3</orb_sun_soft_150_1>
-  <orb_sun_soft_150_2>3</orb_sun_soft_150_2>
-  <orb_sun_soft_150_3>3</orb_sun_soft_150_3>
-  <orb_sun_soft_150_4>3</orb_sun_soft_150_4>
-  <orb_sun_soft_150_5>3</orb_sun_soft_150_5>
-  <orb_sun_hard_150_0>1.5</orb_sun_hard_150_0>
-  <orb_sun_hard_150_1>1.5</orb_sun_hard_150_1>
-  <orb_sun_hard_150_2>1.5</orb_sun_hard_150_2>
-  <orb_sun_hard_150_3>1.5</orb_sun_hard_150_3>
-  <orb_sun_hard_150_4>1.5</orb_sun_hard_150_4>
-  <orb_sun_hard_150_5>1.5</orb_sun_hard_150_5>
-  <orb_moon_soft_150_0>3</orb_moon_soft_150_0>
-  <orb_moon_soft_150_1>3</orb_moon_soft_150_1>
-  <orb_moon_soft_150_2>3</orb_moon_soft_150_2>
-  <orb_moon_soft_150_3>3</orb_moon_soft_150_3>
-  <orb_moon_soft_150_4>3</orb_moon_soft_150_4>
-  <orb_moon_soft_150_5>3</orb_moon_soft_150_5>
-  <orb_moon_hard_150_0>1.5</orb_moon_hard_150_0>
-  <orb_moon_hard_150_1>1.5</orb_moon_hard_150_1>
-  <orb_moon_hard_150_2>1.5</orb_moon_hard_150_2>
-  <orb_moon_hard_150_3>1.5</orb_moon_hard_150_3>
-  <orb_moon_hard_150_4>1.5</orb_moon_hard_150_4>
-  <orb_moon_hard_150_5>1.5</orb_moon_hard_150_5>
-  <orb_other_soft_150_0>2</orb_other_soft_150_0>
-  <orb_other_soft_150_1>2</orb_other_soft_150_1>
-  <orb_other_soft_150_2>2</orb_other_soft_150_2>
-  <orb_other_soft_150_3>2</orb_other_soft_150_3>
-  <orb_other_soft_150_4>2</orb_other_soft_150_4>
-  <orb_other_soft_150_5>2</orb_other_soft_150_5>
-  <orb_other_hard_150_0>1</orb_other_hard_150_0>
-  <orb_other_hard_150_1>1</orb_other_hard_150_1>
-  <orb_other_hard_150_2>1</orb_other_hard_150_2>
-  <orb_other_hard_150_3>1</orb_other_hard_150_3>
-  <orb_other_hard_150_4>1</orb_other_hard_150_4>
-  <orb_other_hard_150_5>1</orb_other_hard_150_5>
+  <orb_sun_soft_1st>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_sun_soft_1st>
+  <orb_sun_hard_1st>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_sun_hard_1st>
+  <orb_sun_other_1st>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_sun_other_1st>
+  <orb_moon_soft_1st>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_moon_soft_1st>
+  <orb_moon_hard_1st>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_moon_hard_1st>
+  <orb_moon_other_1st>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_moon_other_1st>
+  <orb_other_soft_1st>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_other_soft_1st>
+  <orb_other_hard_1st>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_other_hard_1st>
+  <orb_other_other_1st>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_other_other_1st>
+  <orb_sun_soft_2nd>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_sun_soft_2nd>
+  <orb_sun_hard_2nd>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_sun_hard_2nd>
+  <orb_sun_other_2nd>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_sun_other_2nd>
+  <orb_moon_soft_2nd>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_moon_soft_2nd>
+  <orb_moon_hard_2nd>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_moon_hard_2nd>
+  <orb_moon_other_2nd>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_moon_other_2nd>
+  <orb_other_soft_2nd>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_other_soft_2nd>
+  <orb_other_hard_2nd>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_other_hard_2nd>
+  <orb_other_other_2nd>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_other_other_2nd>
+  <orb_sun_soft_150>1.5,1.5,1.5,1.5,1.5,1.5,1.5</orb_sun_soft_150>
+  <orb_sun_hard_150>1.5,1.5,1.5,1.5,1.5,1.5,1.5</orb_sun_hard_150>
+  <orb_sun_other_150>1.5,1.5,1.5,1.5,1.5,1.5,1.5</orb_sun_other_150>
+  <orb_moon_soft_150>1.5,1.5,1.5,1.5,1.5,1.5,1.5</orb_moon_soft_150>
+  <orb_moon_hard_150>1.5,1.5,1.5,1.5,1.5,1.5,1.5</orb_moon_hard_150>
+  <orb_moon_other_150>1.5,1.5,1.5,1.5,1.5,1.5,1.5</orb_moon_other_150>
+  <orb_other_soft_150>1.5,1.5,1.5,1.5,1.5,1.5,1.5</orb_other_soft_150>
+  <orb_other_hard_150>1.5,1.5,1.5,1.5,1.5,1.5,1.5</orb_other_hard_150>
+  <orb_other_other_150>1.5,1.5,1.5,1.5,1.5,1.5,1.5</orb_other_other_150>
   <dispCircle>true</dispCircle>
   <dispCircle>false</dispCircle>
   <dispCircle>false</dispCircle>
   <dispCircle>false</dispCircle>
   <dispCircle>false</dispCircle>
   <dispCircle>false</dispCircle>
+  <dispPlanetSun>true,true,true,true,true,true,true</dispPlanetSun>
+  <dispPlanetMoon>true,true,true,true,true,true,true</dispPlanetMoon>
   <dispPlanetSun11>true</dispPlanetSun11>
   <dispPlanetMoon11>true</dispPlanetMoon11>
   <dispPlanetMercury11>true</dispPlanetMercury11>
@@ -214,7 +135,7 @@
   <dispAspect>true</dispAspect>
   <dispAspect>false</dispAspect>
   <dispAspect>false</dispAspect>
-  <dispAspect>false</dispAspect>
+  <dispAspect>true</dispAspect>
   <dispAspect>false</dispAspect>
   <dispAspect>false</dispAspect>
   <aspectSun11>true</aspectSun11>
@@ -229,8 +150,8 @@
   <aspectPluto11>true</aspectPluto11>
   <aspectDh11>true</aspectDh11>
   <aspectChiron11>true</aspectChiron11>
-  <aspectAsc11>true</aspectAsc11>
-  <aspectMc11>true</aspectMc11>
+  <aspectAsc11>false</aspectAsc11>
+  <aspectMc11>false</aspectMc11>
   <aspectEarth11>false</aspectEarth11>
   <aspectLilith11>false</aspectLilith11>
   <aspectSun22>true</aspectSun22>
@@ -313,6 +234,20 @@
   <aspectMc23>true</aspectMc23>
   <aspectEarth23>false</aspectEarth23>
   <aspectLilith23>false</aspectLilith23>
+  <aspectConjunction1>true,true,true,true,true,true,true</aspectConjunction1>
+  <aspectConjunction2>true,true,true,true,true,true,true</aspectConjunction2>
+  <aspectConjunction3>true,true,true,true,true,true,true</aspectConjunction3>
+  <aspectConjunction4>true,true,true,true,true,true,true</aspectConjunction4>
+  <aspectConjunction5>true,true,true,true,true,true,true</aspectConjunction5>
+  <aspectConjunction6>true,true,true,true,true,true,true</aspectConjunction6>
+  <aspectConjunction7>true,true,true,true,true,true,true</aspectConjunction7>
+  <aspectOpposition1>true,true,true,true,true,true,true</aspectOpposition1>
+  <aspectOpposition2>true,true,true,true,true,true,true</aspectOpposition2>
+  <aspectOpposition3>true,true,true,true,true,true,true</aspectOpposition3>
+  <aspectOpposition4>true,true,true,true,true,true,true</aspectOpposition4>
+  <aspectOpposition5>true,true,true,true,true,true,true</aspectOpposition5>
+  <aspectOpposition6>true,true,true,true,true,true,true</aspectOpposition6>
+  <aspectOpposition7>true,true,true,true,true,true,true</aspectOpposition7>
   <aspectConjunction11>true</aspectConjunction11>
   <aspectOpposition11>true</aspectOpposition11>
   <aspectTrine11>true</aspectTrine11>

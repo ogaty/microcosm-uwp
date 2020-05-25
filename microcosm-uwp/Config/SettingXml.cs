@@ -830,10 +830,34 @@ namespace microcosm.Config
         #endregion
 
         #region aspect Aspect
-        [XmlElement("aspectConjunction11")]
-        public bool aspectConjunction11;
-        [XmlElement("aspectOpposition11")]
-        public bool aspectOpposition11;
+        [XmlElement("aspectConjunction1")]
+        public string aspectConjunction1;
+        [XmlElement("aspectOpposition1")]
+        public string aspectOpposition1;
+        [XmlElement("aspectConjunction2")]
+        public string aspectConjunction2;
+        [XmlElement("aspectOpposition2")]
+        public string aspectOpposition2;
+        [XmlElement("aspectConjunction3")]
+        public string aspectConjunction3;
+        [XmlElement("aspectOpposition3")]
+        public string aspectOpposition3;
+        [XmlElement("aspectConjunction4")]
+        public string aspectConjunction4;
+        [XmlElement("aspectOpposition4")]
+        public string aspectOpposition4;
+        [XmlElement("aspectConjunction5")]
+        public string aspectConjunction5;
+        [XmlElement("aspectOpposition5")]
+        public string aspectOpposition5;
+        [XmlElement("aspectConjunction6")]
+        public string aspectConjunction6;
+        [XmlElement("aspectOpposition6")]
+        public string aspectOpposition6;
+        [XmlElement("aspectConjunction7")]
+        public string aspectConjunction7;
+        [XmlElement("aspectOpposition7")]
+        public string aspectOpposition7;
         [XmlElement("aspectTrine11")]
         public bool aspectTrine11;
         [XmlElement("aspectSquare11")]
@@ -1220,8 +1244,6 @@ namespace microcosm.Config
             aspectMc23 = true;
             aspectEarth23 = true;
             aspectLilith23 = false;
-            aspectConjunction11 = true;
-            aspectOpposition11 = true;
             aspectTrine11 = true;
             aspectSquare11 = true;
             aspectSextile11 = true;
