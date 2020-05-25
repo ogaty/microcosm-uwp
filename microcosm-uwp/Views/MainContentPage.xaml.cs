@@ -27,6 +27,7 @@ using System.Reflection;
 using Windows.UI.ViewManagement;
 using Windows.ApplicationModel.Core;
 using Windows.UI.Core;
+using System.Drawing;
 
 // 空白ページの項目テンプレートについては、https://go.microsoft.com/fwlink/?LinkId=234238 を参照してください
 
@@ -43,6 +44,7 @@ namespace microcosm.Views
         public MainWindowCuspListViewModel vm1 = new MainWindowCuspListViewModel();
         public MainWindowCuspListViewModel vm2 = new MainWindowCuspListViewModel();
         public CuspList cuspList;
+        List<AspectInfo> aspectList;
 
         public UserData udata1 = new UserData();
         public UserData udata2 = new UserData();
@@ -68,22 +70,30 @@ namespace microcosm.Views
             setting = CommonInstance.getInstance().settings;
             calc = CommonInstance.getInstance().calc;
 
+            // ユーザー情報を現在時刻で初期化
             UserData udata = new UserData();
 
+            // 天体情報
             ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-= calc.ReCalc(config, setting[0], udata);
+            = calc.ReCalc(config, setting[0], udata);
 
             UserDataView.DataContext = new MainWindowUserDataViewModel();
             //            InfoFrame.Navigate(typeof(MainListPage), new CuspList() { planetList = ringsData[0].planetData, cusps = ringsData[0].cusps });
 
+            // 天体情報を元にカスプを取得
             cuspList = new CuspList { planetList = ringsData[0].planetData, cusps = ringsData[0].cusps };
+
             //PlanetCusp.DataContext = vm1;
             //HouseCusp.DataContext = vm2;
             //ListRender();
 
+            aspectList = AspectCalc.AspectCalcSame(ringsData[0].planetData, 0);
+
             // timesetter部はwebviewにする
             // DateWeb.Navigate(new Uri("ms-appdata:///local/system/datetime.html"));
 
+            // timesetter部分
+            // なんか嫌だね
             var now = DateTime.Now;
             TargetYear.Text = now.Year.ToString();
             TargetMonth.Text = now.Month.ToString();
@@ -93,6 +103,9 @@ namespace microcosm.Views
             TargetSecond.Text = now.Second.ToString();
             TargetLat.Text = udata.lat.ToString();
             TargetLng.Text = udata.lng.ToString();
+
+
+            // 表示メイン部分
             CanvasRender(cuspList);
         }
 
@@ -128,6 +141,11 @@ namespace microcosm.Views
 
         }
 
+        /// <summary>
+        /// メイン描画部分
+        /// cuspListはメンバ変数でいい気がする
+        /// </summary>
+        /// <param name="cuspList"></param>
         private void CanvasRender(CuspList cuspList)
         {
             int margin = 30;
@@ -316,19 +334,25 @@ namespace microcosm.Views
             }
         }
 
+        /// <summary>
+        /// アスペクト描画メイン
+        /// </summary>
+        /// <param name="radius"></param>
+        /// <param name="margin"></param>
         public void DrawAspects(int radius, int margin)
         {
             double startRingX = 100;
             double endRingX = 100;
 
+            // (X1,Y1)から(X2,Y2)にラインを引く
             Line line = new Line()
             {
                 Stroke = new SolidColorBrush(Colors.Gray),
                 StrokeThickness = 2,
                 X1 = 100 + radius + margin,
                 Y1 = -1 * 100 + radius + margin,
-                X2 = 200 + radius + margin,
-                Y2 = -1 * 200 + radius + margin
+                X2 = 10 + radius + margin,
+                Y2 = -1 * 10 + radius + margin
             };
             ChartCanvas.Children.Add(line);
         }
@@ -339,6 +363,7 @@ namespace microcosm.Views
             int startPosition, int endPosition, int aspectRings,
             int aspectKind)
         {
+            /*
             if (list == null)
             {
                 return;
@@ -390,11 +415,13 @@ namespace microcosm.Views
                     aspectListRender(startDegree, list, newList[i].thirdAspects, startPoint, endRingX, endPosition);
                 }
             }
+            */
         }
 
         // aspectRender サブ関数
         private void aspectListRender(double startDegree, Dictionary<int, PlanetData> list, List<AspectInfo> aspects, PointF startPoint, double endRingX, int endPosition)
         {
+            /*
             for (int j = 0; j < aspects.Count; j++)
             {
                 if (!list[aspects[j].targetPlanetNo].isAspectDisp)
@@ -490,18 +517,18 @@ namespace microcosm.Views
                 ringCanvas.Children.Add(aspectLbl);
 
             }
-
+            */
         }
 
 
-        public Point Rotate(double x, double y, double degree)
+        public System.Drawing.PointF Rotate(double x, double y, double degree)
         {
             degree += 180.0;
             double rad = (degree / 180.0) * Math.PI;
             double newX = x * Math.Cos(rad) - y * Math.Sin(rad);
             double newY = x * Math.Sin(rad) + y * Math.Cos(rad);
 
-            return new Point(newX, newY);
+            return new System.Drawing.PointF((float)newX, (float)newY);
         }
 
 

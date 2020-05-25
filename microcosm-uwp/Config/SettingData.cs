@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using microcosm.Common;
+using microcosm.Models;
 
 namespace microcosm.Config
 {

@@ -98,6 +98,9 @@
     <Compile Include="Calc\AbstractAspect.cs" />
     <Compile Include="Calc\AspectCalc.cs" />
     <Compile Include="Calc\AstroCalc.cs" />
+    <Compile Include="Calc\SquareAspect.cs" />
+    <Compile Include="Calc\SextileAspect.cs" />
+    <Compile Include="Calc\TrineAspect.cs" />
     <Compile Include="Calc\OppositionAspect.cs" />
     <Compile Include="Common\CommonData.cs" />
     <Compile Include="Common\CommonInstance.cs" />

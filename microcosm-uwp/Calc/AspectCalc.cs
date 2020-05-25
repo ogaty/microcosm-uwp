@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace microcosm.Calc
 {
-    class AspectCalc
+    public class AspectCalc
     {
         /// <summary>
         /// アスペクト計算
@@ -16,7 +16,7 @@ namespace microcosm.Calc
         /// <returns>The calculate same.</returns>
         /// <param name="planetList">Planet list.</param>
         /// <param name="ringIndex">ringIndex(0〜6)</param>
-        public List<AspectInfo> AspectCalcSame(List<PlanetData> planetList, int ringIndex)
+        public static List<AspectInfo> AspectCalcSame(List<PlanetData> planetList, int ringIndex)
         {
             List<AspectInfo> aspects = new List<AspectInfo>();
             int settingIndex = 0;
