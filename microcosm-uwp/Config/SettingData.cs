@@ -373,6 +373,10 @@ namespace microcosm.Config
             da.Add(CommonData.ZODIAC_NUMBER_PALLAS, false);
             da.Add(CommonData.ZODIAC_NUMBER_JUNO, false);
             da.Add(CommonData.ZODIAC_NUMBER_VESTA, false);
+            da.Add(CommonData.ZODIAC_NUMBER_SEDNA, false);
+            da.Add(CommonData.ZODIAC_NUMBER_ERIS, false);
+            da.Add(CommonData.ZODIAC_NUMBER_HAUMEA, false);
+            da.Add(CommonData.ZODIAC_NUMBER_MAKEMAKE, false);
 
             return da;
         }

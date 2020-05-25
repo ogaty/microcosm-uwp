@@ -36,16 +36,14 @@
   <dispCircle>false</dispCircle>
   <dispPlanetSun>true,true,true,true,true,true,true</dispPlanetSun>
   <dispPlanetMoon>true,true,true,true,true,true,true</dispPlanetMoon>
-  <dispPlanetSun11>true</dispPlanetSun11>
-  <dispPlanetMoon11>true</dispPlanetMoon11>
-  <dispPlanetMercury11>true</dispPlanetMercury11>
-  <dispPlanetVenus11>true</dispPlanetVenus11>
-  <dispPlanetMars11>true</dispPlanetMars11>
-  <dispPlanetJupiter11>true</dispPlanetJupiter11>
-  <dispPlanetSaturn11>true</dispPlanetSaturn11>
-  <dispPlanetUranus11>true</dispPlanetUranus11>
-  <dispPlanetNeptune11>true</dispPlanetNeptune11>
-  <dispPlanetPluto11>true</dispPlanetPluto11>
+  <dispPlanetMercury>true,true,true,true,true,true,true</dispPlanetMercury>
+  <dispPlanetVenus>true,true,true,true,true,true,true</dispPlanetVenus>
+  <dispPlanetMars>true,true,true,true,true,true,true</dispPlanetMars>
+  <dispPlanetJupiter>true,true,true,true,true,true,true</dispPlanetJupiter>
+  <dispPlanetSaturn>true,true,true,true,true,true,true</dispPlanetSaturn>
+  <dispPlanetUranus>true,true,true,true,true,true,true</dispPlanetUranus>
+  <dispPlanetNeptune>true,true,true,true,true,true,true</dispPlanetNeptune>
+  <dispPlanetPluto>true,true,true,true,true,true,true</dispPlanetPluto>
   <dispPlanetDh11>true</dispPlanetDh11>
   <dispPlanetChiron11>true</dispPlanetChiron11>
   <dispPlanetAsc11>true</dispPlanetAsc11>

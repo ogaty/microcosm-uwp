@@ -36,96 +36,44 @@
   <dispCircle>false</dispCircle>
   <dispPlanetSun>true,true,true,true,true,true,true</dispPlanetSun>
   <dispPlanetMoon>true,true,true,true,true,true,true</dispPlanetMoon>
-  <dispPlanetSun11>true</dispPlanetSun11>
-  <dispPlanetMoon11>true</dispPlanetMoon11>
-  <dispPlanetMercury11>true</dispPlanetMercury11>
-  <dispPlanetVenus11>true</dispPlanetVenus11>
-  <dispPlanetMars11>true</dispPlanetMars11>
-  <dispPlanetJupiter11>true</dispPlanetJupiter11>
-  <dispPlanetSaturn11>true</dispPlanetSaturn11>
-  <dispPlanetUranus11>true</dispPlanetUranus11>
-  <dispPlanetNeptune11>true</dispPlanetNeptune11>
-  <dispPlanetPluto11>true</dispPlanetPluto11>
+  <dispPlanetMercury>true,true,true,true,true,true,true</dispPlanetMercury>
+  <dispPlanetVenus>true,true,true,true,true,true,true</dispPlanetVenus>
+  <dispPlanetMars>true,true,true,true,true,true,true</dispPlanetMars>
+  <dispPlanetJupiter>true,true,true,true,true,true,true</dispPlanetJupiter>
+  <dispPlanetSaturn>true,true,true,true,true,true,true</dispPlanetSaturn>
+  <dispPlanetUranus>true,true,true,true,true,true,true</dispPlanetUranus>
+  <dispPlanetNeptune>true,true,true,true,true,true,true</dispPlanetNeptune>
+  <dispPlanetPluto>true,true,true,true,true,true,true</dispPlanetPluto>
   <dispPlanetDh11>true</dispPlanetDh11>
   <dispPlanetChiron11>true</dispPlanetChiron11>
   <dispPlanetAsc11>true</dispPlanetAsc11>
   <dispPlanetMc11>true</dispPlanetMc11>
   <dispPlanetEarth11>false</dispPlanetEarth11>
   <dispPlanetLilith11>false</dispPlanetLilith11>
-  <dispPlanetSun22>true</dispPlanetSun22>
-  <dispPlanetMoon22>true</dispPlanetMoon22>
-  <dispPlanetMercury22>true</dispPlanetMercury22>
-  <dispPlanetVenus22>true</dispPlanetVenus22>
-  <dispPlanetMars22>true</dispPlanetMars22>
-  <dispPlanetJupiter22>true</dispPlanetJupiter22>
-  <dispPlanetSaturn22>true</dispPlanetSaturn22>
-  <dispPlanetUranus22>true</dispPlanetUranus22>
-  <dispPlanetNeptune22>true</dispPlanetNeptune22>
-  <dispPlanetPluto22>true</dispPlanetPluto22>
   <dispPlanetDh22>true</dispPlanetDh22>
   <dispPlanetChiron22>true</dispPlanetChiron22>
   <dispPlanetAsc22>true</dispPlanetAsc22>
   <dispPlanetMc22>true</dispPlanetMc22>
   <dispPlanetEarth22>false</dispPlanetEarth22>
   <dispPlanetLilith22>false</dispPlanetLilith22>
-  <dispPlanetSun33>true</dispPlanetSun33>
-  <dispPlanetMoon33>true</dispPlanetMoon33>
-  <dispPlanetMercury33>true</dispPlanetMercury33>
-  <dispPlanetVenus33>true</dispPlanetVenus33>
-  <dispPlanetMars33>true</dispPlanetMars33>
-  <dispPlanetJupiter33>true</dispPlanetJupiter33>
-  <dispPlanetSaturn33>true</dispPlanetSaturn33>
-  <dispPlanetUranus33>true</dispPlanetUranus33>
-  <dispPlanetNeptune33>true</dispPlanetNeptune33>
-  <dispPlanetPluto33>true</dispPlanetPluto33>
   <dispPlanetDh33>true</dispPlanetDh33>
   <dispPlanetChiron33>true</dispPlanetChiron33>
   <dispPlanetAsc33>true</dispPlanetAsc33>
   <dispPlanetMc33>true</dispPlanetMc33>
   <dispPlanetEarth33>false</dispPlanetEarth33>
   <dispPlanetLilith33>false</dispPlanetLilith33>
-  <dispPlanetSun12>true</dispPlanetSun12>
-  <dispPlanetMoon12>true</dispPlanetMoon12>
-  <dispPlanetMercury12>true</dispPlanetMercury12>
-  <dispPlanetVenus12>true</dispPlanetVenus12>
-  <dispPlanetMars12>true</dispPlanetMars12>
-  <dispPlanetJupiter12>true</dispPlanetJupiter12>
-  <dispPlanetSaturn12>true</dispPlanetSaturn12>
-  <dispPlanetUranus12>true</dispPlanetUranus12>
-  <dispPlanetNeptune12>true</dispPlanetNeptune12>
-  <dispPlanetPluto12>true</dispPlanetPluto12>
   <dispPlanetDh12>true</dispPlanetDh12>
   <dispPlanetChiron12>true</dispPlanetChiron12>
   <dispPlanetAsc12>true</dispPlanetAsc12>
   <dispPlanetMc12>true</dispPlanetMc12>
   <dispPlanetEarth12>true</dispPlanetEarth12>
   <dispPlanetLilith12>false</dispPlanetLilith12>
-  <dispPlanetSun13>true</dispPlanetSun13>
-  <dispPlanetMoon13>true</dispPlanetMoon13>
-  <dispPlanetMercury13>true</dispPlanetMercury13>
-  <dispPlanetVenus13>true</dispPlanetVenus13>
-  <dispPlanetMars13>true</dispPlanetMars13>
-  <dispPlanetJupiter13>true</dispPlanetJupiter13>
-  <dispPlanetSaturn13>true</dispPlanetSaturn13>
-  <dispPlanetUranus13>true</dispPlanetUranus13>
-  <dispPlanetNeptune13>true</dispPlanetNeptune13>
-  <dispPlanetPluto13>true</dispPlanetPluto13>
   <dispPlanetDh13>true</dispPlanetDh13>
   <dispPlanetChiron13>true</dispPlanetChiron13>
   <dispPlanetAsc13>true</dispPlanetAsc13>
   <dispPlanetMc13>true</dispPlanetMc13>
   <dispPlanetEarth13>true</dispPlanetEarth13>
   <dispPlanetLilith13>false</dispPlanetLilith13>
-  <dispPlanetSun23>true</dispPlanetSun23>
-  <dispPlanetMoon23>true</dispPlanetMoon23>
-  <dispPlanetMercury23>true</dispPlanetMercury23>
-  <dispPlanetVenus23>true</dispPlanetVenus23>
-  <dispPlanetMars23>true</dispPlanetMars23>
-  <dispPlanetJupiter23>true</dispPlanetJupiter23>
-  <dispPlanetSaturn23>true</dispPlanetSaturn23>
-  <dispPlanetUranus23>true</dispPlanetUranus23>
-  <dispPlanetNeptune23>true</dispPlanetNeptune23>
-  <dispPlanetPluto23>true</dispPlanetPluto23>
   <dispPlanetDh23>true</dispPlanetDh23>
   <dispPlanetChiron23>true</dispPlanetChiron23>
   <dispPlanetAsc23>true</dispPlanetAsc23>
