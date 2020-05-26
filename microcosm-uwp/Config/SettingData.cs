@@ -102,7 +102,7 @@ namespace microcosm.Config
         private bool[] aspectEarth = new bool[28];
         private bool[] aspectLilith = new bool[28];
         private bool[] aspectCeres = new bool[28];
-        private bool[] aspectParas = new bool[28];
+        private bool[] aspectPallas = new bool[28];
         private bool[] aspectJuno = new bool[28];
         private bool[] aspectVesta = new bool[28];
         private bool[] aspectEris = new bool[28];
@@ -232,14 +232,12 @@ namespace microcosm.Config
             bool[] pallas = ConvertBool(xmlData.dispPlanetPallas.Split(','));
             bool[] juno = ConvertBool(xmlData.dispPlanetJuno.Split(','));
             bool[] vesta = ConvertBool(xmlData.dispPlanetVesta.Split(','));
-            /*
             bool[] eris = ConvertBool(xmlData.dispPlanetEris.Split(','));
             bool[] sedna = ConvertBool(xmlData.dispPlanetSedna.Split(','));
             bool[] haumea = ConvertBool(xmlData.dispPlanetHaumea.Split(','));
             bool[] makemake = ConvertBool(xmlData.dispPlanetMakemake.Split(','));
             bool[] vt = ConvertBool(xmlData.dispPlanetVt.Split(','));
             bool[] pof = ConvertBool(xmlData.dispPlanetPof.Split(','));
-            */
 
 
             for (int i = 0; i < 7; i++)
@@ -265,16 +263,14 @@ namespace microcosm.Config
                     { CommonData.ZODIAC_NUMBER_CERES, ceres[i] },
                     { CommonData.ZODIAC_NUMBER_PALLAS, pallas[i] },
                     { CommonData.ZODIAC_NUMBER_JUNO, juno[i] },
-                    { CommonData.ZODIAC_NUMBER_VESTA, vesta[i] }
+                    { CommonData.ZODIAC_NUMBER_VESTA, vesta[i] },
+                    { CommonData.ZODIAC_NUMBER_ERIS, vesta[i] },
+                    { CommonData.ZODIAC_NUMBER_SEDNA, vesta[i] },
+                    { CommonData.ZODIAC_NUMBER_HAUMEA, vesta[i] },
+                    { CommonData.ZODIAC_NUMBER_MAKEMAKE, vesta[i] },
+                    { CommonData.ZODIAC_NUMBER_VT, vesta[i] },
+                    { CommonData.ZODIAC_NUMBER_POF, vesta[i] }
                 };
-                /*
-                dp.Add(CommonData.ZODIAC_NUMBER_ERIS, eris[i]);
-                dp.Add(CommonData.ZODIAC_NUMBER_SEDNA, sedna[i]);
-                dp.Add(CommonData.ZODIAC_NUMBER_HAUMEA, haumea[i]);
-                dp.Add(CommonData.ZODIAC_NUMBER_MAKEMAKE, makemake[i]);
-                dp.Add(CommonData.ZODIAC_NUMBER_VT, vt[i]);
-                dp.Add(CommonData.ZODIAC_NUMBER_POF, pof[i]);
-                */
                 dispPlanet.Add(dp);
             }
         }
@@ -355,6 +351,14 @@ namespace microcosm.Config
 
         private  Dictionary<int, bool> GetDispAspectDictionary(int n)
         {
+            aspectSun = ConvertBool(xmlData.aspectSun.Split(','));
+            aspectMoon = ConvertBool(xmlData.aspectMoon.Split(','));
+            aspectMercury = ConvertBool(xmlData.aspectMercury.Split(','));
+            aspectVenus = ConvertBool(xmlData.aspectVenus.Split(','));
+            aspectMars = ConvertBool(xmlData.aspectMars.Split(','));
+            aspectJupiter = ConvertBool(xmlData.aspectJupiter.Split(','));
+            aspectSaturn = ConvertBool(xmlData.aspectSaturn.Split(','));
+            aspectUranus = ConvertBool(xmlData.aspectUranus.Split(','));
             Dictionary<int, bool> da = new Dictionary<int, bool>
             {
                 { CommonData.ZODIAC_NUMBER_SUN, aspectSun[n] },
@@ -462,9 +466,6 @@ namespace microcosm.Config
             dac[AspectKind.SQUARE] = aspectSquare[m];
             dac[AspectKind.SEXTILE] = aspectSextile[m];
             /*
-            dac.Add(AspectKind.TRINE, aspectTrine[n, m]);
-            dac.Add(AspectKind.SQUARE, aspectSquare[n, m]);
-            dac.Add(AspectKind.SEXTILE, aspectSextile[n, m]);
             dac.Add(AspectKind.INCONJUNCT, aspectInconjunct[n, m]);
             dac.Add(AspectKind.SESQUIQUADRATE, aspectSesquiquadrate[n, m]);
             dac.Add(AspectKind.SEMISEXTILE, aspectSemiSextile[n, m]);

@@ -8,19 +8,6 @@
     xmlns:fa="using:FontAwesome.UWP"
     mc:Ignorable="d">
 
-    <Page.BottomAppBar>
-        <CommandBar IsSticky="True" IsOpen="False" HorizontalContentAlignment="Left">
-            <CommandBar.PrimaryCommands>
-                <AppBarButton Label="データベース" Icon="OpenFile" Click="AppBarButton_Click"></AppBarButton>
-                <AppBarButton Label="設定" Icon="Setting" Click="AppBarSettingButton_Click"></AppBarButton>
-            </CommandBar.PrimaryCommands>
-            <CommandBar.SecondaryCommands>
-
-            </CommandBar.SecondaryCommands>
-
-        </CommandBar>
-    </Page.BottomAppBar>
-
     <Page.Resources>
         <DataTemplate x:Key="temp">
             <Grid>

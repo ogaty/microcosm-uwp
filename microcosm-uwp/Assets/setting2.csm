@@ -54,20 +54,26 @@
   <dispPlanetPallas>false,false,false,false,false,false,false</dispPlanetPallas>
   <dispPlanetJuno>false,false,false,false,false,false,false</dispPlanetJuno>
   <dispPlanetVesta>false,false,false,false,false,false,false</dispPlanetVesta>
+  <dispPlanetEris>false,false,false,false,false,false,false</dispPlanetEris>
+  <dispPlanetSedna>false,false,false,false,false,false,false</dispPlanetSedna>
+  <dispPlanetHaumea>false,false,false,false,false,false,false</dispPlanetHaumea>
+  <dispPlanetMakemake>false,false,false,false,false,false,false</dispPlanetMakemake>
+  <dispPlanetVt>false,false,false,false,false,false,false</dispPlanetVt>
+  <dispPlanetPof>false,false,false,false,false,false,false</dispPlanetPof>
   <dispAspect>true</dispAspect>
   <dispAspect>false</dispAspect>
   <dispAspect>false</dispAspect>
   <dispAspect>true</dispAspect>
   <dispAspect>false</dispAspect>
   <dispAspect>false</dispAspect>
-  <aspectSun11>true</aspectSun11>
-  <aspectMoon11>true</aspectMoon11>
-  <aspectMercury11>true</aspectMercury11>
-  <aspectVenus11>true</aspectVenus11>
-  <aspectMars11>true</aspectMars11>
-  <aspectJupiter11>true</aspectJupiter11>
-  <aspectSaturn11>true</aspectSaturn11>
-  <aspectUranus11>true</aspectUranus11>
+  <aspectSun>true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true</aspectSun>
+  <aspectMoon>true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true</aspectMoon>
+  <aspectMercury>true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true</aspectMercury>
+  <aspectVenus>true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true</aspectVenus>
+  <aspectMars>true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true</aspectMars>
+  <aspectJupiter>true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true</aspectJupiter>
+  <aspectSaturn>true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true</aspectSaturn>
+  <aspectUranus>true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true</aspectUranus>
   <aspectNeptune11>true</aspectNeptune11>
   <aspectPluto11>true</aspectPluto11>
   <aspectDh11>true</aspectDh11>

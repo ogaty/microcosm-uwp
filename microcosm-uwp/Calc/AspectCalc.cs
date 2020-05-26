@@ -23,7 +23,7 @@ namespace microcosm.Calc
             SettingData setting = Common.CommonInstance.getInstance().settings[settingIndex];
             int j = 0;
             int aspectIndex = ringIndex;
-            int categoryIndex = 7 * (ringIndex - 1);
+            int categoryIndex = 7 * ringIndex;
 
 
             for (int i = 0; i < planetList.Count - 1; i++)
@@ -45,8 +45,8 @@ namespace microcosm.Calc
                         isDisp = false;
                         continue;
                     }
-
-                    //                    Console.WriteLine(String.Format("{0},{1}", planetList[i].absolute_position, planetList[j].absolute_position));
+                    //System.Diagnostics.Debug.WriteLine(String.Format("{0} {1} aspect {2}", i.ToString(), j.ToString(), isDisp.ToString()));
+                    //System.Diagnostics.Debug.WriteLine(String.Format("{0},{1}", planetList[i].absolute_position, planetList[j].absolute_position));
 
 
                     OppositionAspect opposition = new OppositionAspect(setting, ringIndex, i, j, planetList[i], planetList[j]);
@@ -56,10 +56,7 @@ namespace microcosm.Calc
                         {
                             isDisp = false;
                         }
-                        else
-                        {
                             aspects.Add(opposition.CreateAspectInfo(i, j, isDisp));
-                        }
                         continue;
                     }
 
@@ -70,10 +67,7 @@ namespace microcosm.Calc
                         {
                             isDisp = false;
                         }
-                        else
-                        {
                             aspects.Add(trine.CreateAspectInfo(i, j, isDisp));
-                        }
                         continue;
                     }
 
@@ -86,10 +80,7 @@ namespace microcosm.Calc
                         {
                             isDisp = false;
                         }
-                        else
-                        {
                             aspects.Add(square.CreateAspectInfo(i, j, isDisp));
-                        }
                         continue;
                     }
 
@@ -100,10 +91,7 @@ namespace microcosm.Calc
                         {
                             isDisp = false;
                         }
-                        else
-                        {
                             aspects.Add(sextile.CreateAspectInfo(i, j, isDisp));
-                        }
                     }
                     // TODO
                 }

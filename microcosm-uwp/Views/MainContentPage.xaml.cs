@@ -53,6 +53,8 @@ namespace microcosm.Views
 
         public Calcuration[] ringsData = new Calcuration[7];
 
+        public Dictionary<int, PointF> planetPt;
+
 
         public MainContentPage()
         {
@@ -149,6 +151,7 @@ namespace microcosm.Views
         private void CanvasRender(CuspList cuspList)
         {
             int margin = 30;
+            int margin2 = 60;
             double outerDiameter = 500;
             if (config.size < 3)
             {
@@ -181,9 +184,9 @@ namespace microcosm.Views
             ChartCanvas.Children.Add(innerCircle);
 
             // カスプ、獣帯上の天体
-            DrawCusp((int)(outerDiameter / 2), margin, cuspList);
-            DrawSigns((int)(outerDiameter / 2), margin);
-            DrawPlanets((int)(outerDiameter / 2), margin);
+            DrawCusp((int)(innerDiameter / 2), margin2, cuspList);
+            DrawSigns((int)(outerDiameter / 2), margin, margin2 - margin);
+            DrawPlanets((int)(outerDiameter / 2), margin, outerDiameter - centerDiameter);
 
             Ellipse centerCircle = new Ellipse();
             centerCircle.Width = centerDiameter;
@@ -262,13 +265,18 @@ namespace microcosm.Views
             }
         }
 
-        public void DrawSigns(int radius, int margin)
+        /// <summary>
+        /// 獣帯
+        /// </summary>
+        /// <param name="radius"></param>
+        /// <param name="margin"></param>
+        /// <param name="gap"></param>
+        public void DrawSigns(int radius, int margin, int gap)
         {
-            double[] cusps = new double[] { 1, 2, 3 };
             string[] signs = new string[] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"};
             for (var i = 0; i < 12; i++)
             {
-                var newPtStart = Rotate(radius - 16, 0, 30 * i + 17 - cusps[1]);
+                var newPtStart = Rotate(radius - 16, 0, 30 * i + 17 - cuspList.cusps[1]);
 
                 TextBlock symbol = new TextBlock();
                 symbol.FontFamily = new FontFamily("ms-appx:///Assets/AstroDotBasic.ttf#AstroDotBasic");
@@ -278,17 +286,52 @@ namespace microcosm.Views
                 symbol.SetValue(Canvas.TopProperty, -1 * newPtStart.Y + radius + margin - 5);
                 ChartCanvas.Children.Add(symbol);
             }
+
+            for (var i = 0; i < 12; i++)
+            {
+                var newPtStart = Rotate(radius, 0, 30 * i + 2 - cuspList.cusps[1]);
+                var newPtEnd = Rotate(radius - gap, 0, 30 * i + 2 - cuspList.cusps[1]);
+                Line line = new Line()
+                {
+                    StrokeThickness = 2,
+                    X1 = newPtStart.X + radius + margin,
+                    Y1 = -1 * newPtStart.Y + radius + margin,
+                    X2 = newPtEnd.X + radius + margin,
+                    Y2 = -1 * newPtEnd.Y + radius + margin
+                };
+                line.Stroke = new SolidColorBrush(Colors.LightGray);
+
+                ChartCanvas.Children.Add(line);
+            }
         }
 
-        public void DrawPlanets(int radius, int margin)
+        /// <summary>
+        /// チャート上の天体
+        /// </summary>
+        /// <param name="radius"></param>
+        /// <param name="margin"></param>
+        public void DrawPlanets(int radius, int margin, double centerRing)
         {
-            double[] cusps = new double[] { 1, 2, 3 };
             string[] signs = new string[] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l" };
             int[] box = new int[72];
-            int planetOffset = 0;
+
+            if (null == planetPt)
+            {
+                planetPt = new Dictionary<int, PointF>();
+            }
+            planetPt.Clear();
+
+            //int planetOffset = 0;
             IOrderedEnumerable<PlanetData> sortPlanetData = ringsData[0].planetData.OrderBy(planetTmp => planetTmp.absolute_position);
             foreach (PlanetData planet in sortPlanetData)
             {
+
+                if (!setting[0].dispPlanet[0][planet.no])
+                {
+                    continue;
+                }
+
+
                 // 重ならないようにずらしを入れる
                 // 1サインに6度単位5個までデータが入る
                 int index = (int)(planet.absolute_position / 5);
@@ -310,7 +353,7 @@ namespace microcosm.Views
                 }
 
                 // 天体そのもの
-                planetOffset = 120;
+                //planetOffset = 120;
 
                 var newPtStart = Rotate(radius - 50, 0, 5 * index - ringsData[0].cusps[1]);
                 TextBlock symbol = new TextBlock();
@@ -331,6 +374,8 @@ namespace microcosm.Views
                 symbolDegree.SetValue(Canvas.LeftProperty, newDegreePtStart.X + radius + margin - 3);
                 symbolDegree.SetValue(Canvas.TopProperty, -1 * newDegreePtStart.Y + radius + margin - 5);
                 ChartCanvas.Children.Add(symbolDegree);
+
+                planetPt[planet.no] = Rotate(centerRing - 50, 0, 5 * index - ringsData[0].cusps[1]);
             }
         }
 
@@ -341,20 +386,50 @@ namespace microcosm.Views
         /// <param name="margin"></param>
         public void DrawAspects(int radius, int margin)
         {
-            double startRingX = 100;
-            double endRingX = 100;
-
-            // (X1,Y1)から(X2,Y2)にラインを引く
-            Line line = new Line()
+            if (planetPt == null)
             {
-                Stroke = new SolidColorBrush(Colors.Gray),
-                StrokeThickness = 2,
-                X1 = 100 + radius + margin,
-                Y1 = -1 * 100 + radius + margin,
-                X2 = 10 + radius + margin,
-                Y2 = -1 * 10 + radius + margin
-            };
-            ChartCanvas.Children.Add(line);
+                return;
+            }
+
+            // temp 1重円
+            int rings = 1;
+            if (rings == 1)
+            {
+                Windows.UI.Color c = Colors.Gray;
+                foreach (AspectInfo a in aspectList)
+                {
+                    if (!a.isDisp)
+                    {
+                        continue;
+                    }
+                    switch (a.aspectKind)
+                    {
+                        case AspectKind.OPPOSITION:
+                            c = Colors.Red;
+                            break;
+                        case AspectKind.TRINE:
+                            c = Colors.Orange;
+                            break;
+                        case AspectKind.SQUARE:
+                            c = Colors.Purple;
+                            break;
+                        case AspectKind.SEXTILE:
+                            c = Colors.Green;
+                            break;
+                    }
+
+                    Line line = new Line()
+                    {
+                        Stroke = new SolidColorBrush(c),
+                        StrokeThickness = 2,
+                        X1 = planetPt[a.srcPlanetNo].X + radius + margin,
+                        Y1 = -1 * planetPt[a.srcPlanetNo].Y + radius + margin,
+                        X2 = planetPt[a.targetPlanetNo].X + radius + margin,
+                        Y2 = -1 * planetPt[a.targetPlanetNo].Y + radius + margin
+                    };
+                    ChartCanvas.Children.Add(line);
+                }
+            }
         }
 
         // startPosition、endPosition : n-pの線は1-2となる

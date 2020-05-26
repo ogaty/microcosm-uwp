@@ -54,17 +54,26 @@
   <dispPlanetPallas>false,false,false,false,false,false,false</dispPlanetPallas>
   <dispPlanetJuno>false,false,false,false,false,false,false</dispPlanetJuno>
   <dispPlanetVesta>false,false,false,false,false,false,false</dispPlanetVesta>
+  <dispPlanetEris>false,false,false,false,false,false,false</dispPlanetEris>
+  <dispPlanetSedna>false,false,false,false,false,false,false</dispPlanetSedna>
+  <dispPlanetHaumea>false,false,false,false,false,false,false</dispPlanetHaumea>
+  <dispPlanetMakemake>false,false,false,false,false,false,false</dispPlanetMakemake>
+  <dispPlanetVt>false,false,false,false,false,false,false</dispPlanetVt>
+  <dispPlanetPof>false,false,false,false,false,false,false</dispPlanetPof>
   <dispAspect>true</dispAspect>
   <dispAspect>false</dispAspect>
   <dispAspect>false</dispAspect>
   <dispAspect>true</dispAspect>
   <dispAspect>false</dispAspect>
   <dispAspect>false</dispAspect>
-  <aspectSun11>true</aspectSun11>
-  <aspectMoon11>true</aspectMoon11>
-  <aspectMercury11>true</aspectMercury11>
-  <aspectVenus11>true</aspectVenus11>
-  <aspectMars11>true</aspectMars11>
+  <aspectSun>true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true</aspectSun>
+  <aspectMoon>true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true</aspectMoon>
+  <aspectMercury>true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true</aspectMercury>
+  <aspectVenus>true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true</aspectVenus>
+  <aspectMars>true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true</aspectMars>
+  <aspectJupiter>true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true</aspectJupiter>
+  <aspectSaturn>true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true</aspectSaturn>
+  <aspectUranus>true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true</aspectUranus>
   <aspectJupiter11>true</aspectJupiter11>
   <aspectSaturn11>true</aspectSaturn11>
   <aspectUranus11>true</aspectUranus11>
@@ -76,11 +85,6 @@
   <aspectMc11>false</aspectMc11>
   <aspectEarth11>false</aspectEarth11>
   <aspectLilith11>false</aspectLilith11>
-  <aspectSun22>true</aspectSun22>
-  <aspectMoon22>true</aspectMoon22>
-  <aspectMercury22>true</aspectMercury22>
-  <aspectVenus22>true</aspectVenus22>
-  <aspectMars22>true</aspectMars22>
   <aspectJupiter22>true</aspectJupiter22>
   <aspectSaturn22>true</aspectSaturn22>
   <aspectUranus22>true</aspectUranus22>
@@ -92,11 +96,6 @@
   <aspectMc22>true</aspectMc22>
   <aspectEarth22>false</aspectEarth22>
   <aspectLilith22>false</aspectLilith22>
-  <aspectSun33>true</aspectSun33>
-  <aspectMoon33>true</aspectMoon33>
-  <aspectMercury33>true</aspectMercury33>
-  <aspectVenus33>true</aspectVenus33>
-  <aspectMars33>true</aspectMars33>
   <aspectJupiter33>true</aspectJupiter33>
   <aspectSaturn33>true</aspectSaturn33>
   <aspectUranus33>true</aspectUranus33>
@@ -108,11 +107,6 @@
   <aspectMc33>true</aspectMc33>
   <aspectEarth33>false</aspectEarth33>
   <aspectLilith33>false</aspectLilith33>
-  <aspectSun12>true</aspectSun12>
-  <aspectMoon12>true</aspectMoon12>
-  <aspectMercury12>true</aspectMercury12>
-  <aspectVenus12>true</aspectVenus12>
-  <aspectMars12>true</aspectMars12>
   <aspectJupiter12>true</aspectJupiter12>
   <aspectSaturn12>true</aspectSaturn12>
   <aspectUranus12>true</aspectUranus12>
@@ -124,11 +118,6 @@
   <aspectMc12>true</aspectMc12>
   <aspectEarth12>false</aspectEarth12>
   <aspectLilith12>false</aspectLilith12>
-  <aspectSun13>true</aspectSun13>
-  <aspectMoon13>true</aspectMoon13>
-  <aspectMercury13>true</aspectMercury13>
-  <aspectVenus13>true</aspectVenus13>
-  <aspectMars13>true</aspectMars13>
   <aspectJupiter13>true</aspectJupiter13>
   <aspectSaturn13>true</aspectSaturn13>
   <aspectUranus13>true</aspectUranus13>
@@ -140,11 +129,6 @@
   <aspectMc13>true</aspectMc13>
   <aspectEarth13>false</aspectEarth13>
   <aspectLilith13>false</aspectLilith13>
-  <aspectSun23>true</aspectSun23>
-  <aspectMoon23>true</aspectMoon23>
-  <aspectMercury23>true</aspectMercury23>
-  <aspectVenus23>true</aspectVenus23>
-  <aspectMars23>true</aspectMars23>
   <aspectJupiter23>true</aspectJupiter23>
   <aspectSaturn23>true</aspectSaturn23>
   <aspectUranus23>true</aspectUranus23>
