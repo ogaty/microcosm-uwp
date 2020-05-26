@@ -72,7 +72,7 @@ namespace microcosm.Calc
             double[] x = { 0, 0, 0, 0, 0, 0 };
             string serr = "";
 
-            s.swe_utc_time_zone(1980, 12, 21, 12, 0, 0, timezone,
+            s.swe_utc_time_zone(time.Year, time.Month, time.Day, time.Hour, time.Minute, time.Second, timezone,
                                 ref utc_year, ref utc_month, ref utc_day, ref utc_hour, ref utc_minute, ref utc_second);
             s.swe_utc_to_jd(utc_year, utc_month, utc_day, utc_hour, utc_minute, utc_second, 1, dret, ref serr);
 

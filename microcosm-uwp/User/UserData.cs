@@ -73,6 +73,14 @@ namespace microcosm.User
             this.birth_hour = birth.Hour;
             this.birth_minute = birth.Minute;
             this.birth_second = birth.Second;
+            this.birth_time = new DateTime(
+                birth.Year,
+                birth.Month,
+                birth.Day,
+                birth.Hour,
+                birth.Minute,
+                birth.Second
+                );
             this.lat = lat;
             this.lng = lng;
             this.birth_place = birth_place;

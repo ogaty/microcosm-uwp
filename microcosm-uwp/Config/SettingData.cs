@@ -359,6 +359,8 @@ namespace microcosm.Config
             aspectJupiter = ConvertBool(xmlData.aspectJupiter.Split(','));
             aspectSaturn = ConvertBool(xmlData.aspectSaturn.Split(','));
             aspectUranus = ConvertBool(xmlData.aspectUranus.Split(','));
+            aspectNeptune = ConvertBool(xmlData.aspectNeptune.Split(','));
+            aspectPluto = ConvertBool(xmlData.aspectPluto.Split(','));
             Dictionary<int, bool> da = new Dictionary<int, bool>
             {
                 { CommonData.ZODIAC_NUMBER_SUN, aspectSun[n] },

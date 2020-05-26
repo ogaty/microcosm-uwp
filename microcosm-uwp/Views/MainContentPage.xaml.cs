@@ -72,18 +72,18 @@ namespace microcosm.Views
             setting = CommonInstance.getInstance().settings;
             calc = CommonInstance.getInstance().calc;
 
-            // ユーザー情報を現在時刻で初期化
-            UserData udata = new UserData();
-
             // 天体情報
             ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-            = calc.ReCalc(config, setting[0], udata);
+            = calc.ReCalc(config, setting[0], udata1);
 
             UserDataView.DataContext = new MainWindowUserDataViewModel();
             //            InfoFrame.Navigate(typeof(MainListPage), new CuspList() { planetList = ringsData[0].planetData, cusps = ringsData[0].cusps });
 
             // 天体情報を元にカスプを取得
-            cuspList = new CuspList { planetList = ringsData[0].planetData, cusps = ringsData[0].cusps };
+            cuspList = new CuspList { 
+                planetList = ringsData[0].planetData, 
+                cusps = ringsData[0].cusps 
+            };
 
             //PlanetCusp.DataContext = vm1;
             //HouseCusp.DataContext = vm2;
@@ -97,14 +97,11 @@ namespace microcosm.Views
             // timesetter部分
             // なんか嫌だね
             var now = DateTime.Now;
-            TargetYear.Text = now.Year.ToString();
-            TargetMonth.Text = now.Month.ToString();
-            TargetDay.Text = now.Day.ToString();
-            TargetHour.Text = now.Hour.ToString();
-            TargetMinute.Text = now.Minute.ToString();
+            TargetDate.Date = now;
+            TargetTime.Time = new TimeSpan(now.Hour, now.Minute, now.Second);
             TargetSecond.Text = now.Second.ToString();
-            TargetLat.Text = udata.lat.ToString();
-            TargetLng.Text = udata.lng.ToString();
+            TargetLat.Text = udata1.lat.ToString();
+            TargetLng.Text = udata1.lng.ToString();
 
 
             // 表示メイン部分
@@ -369,10 +366,10 @@ namespace microcosm.Views
                 var newDegreePtStart = Rotate(radius - 80, 0, 5 * index - ringsData[0].cusps[1]);
                 TextBlock symbolDegree = new TextBlock();
                 symbolDegree.Text = ((int)(planet.absolute_position % 30)).ToString();
-                symbol.FontSize = 10;
+                symbol.FontSize = 9;
                 symbolDegree.Foreground = new SolidColorBrush(Colors.Black);
                 symbolDegree.SetValue(Canvas.LeftProperty, newDegreePtStart.X + radius + margin - 3);
-                symbolDegree.SetValue(Canvas.TopProperty, -1 * newDegreePtStart.Y + radius + margin - 5);
+                symbolDegree.SetValue(Canvas.TopProperty, -1 * newDegreePtStart.Y + radius + margin - 8);
                 ChartCanvas.Children.Add(symbolDegree);
 
                 planetPt[planet.no] = Rotate(centerRing - 50, 0, 5 * index - ringsData[0].cusps[1]);
@@ -612,6 +609,11 @@ namespace microcosm.Views
 
         }
 
+        /// <summary>
+        /// newWindow(未使用)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void abc_Click(object sender, RoutedEventArgs e)
         {
             var currentViewId = ApplicationView.GetForCurrentView().Id;
@@ -626,6 +628,42 @@ namespace microcosm.Views
                     currentViewId,
                     ViewSizePreference.Default);
             });
+        }
+
+        /// <summary>
+        /// TimeSetterクリック
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TargetSet_Click(object sender, RoutedEventArgs e)
+        {
+            UserData user = new UserData(
+                "current", 
+                "current", 
+                new DateTime(
+                    TargetDate.Date.Year,
+                    TargetDate.Date.Month, 
+                    TargetDate.Date.Day, 
+                    12, 
+                    TargetTime.Time.Minutes, 
+                    0), 139, 40, "aaa", "", "JST");
+            ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
+= calc.ReCalc(config, setting[0], user);
+            // 天体情報を元にカスプを取得
+            cuspList = new CuspList
+            {
+                planetList = ringsData[0].planetData,
+                cusps = ringsData[0].cusps
+            };
+
+            //PlanetCusp.DataContext = vm1;
+            //HouseCusp.DataContext = vm2;
+            //ListRender();
+
+            aspectList = AspectCalc.AspectCalcSame(ringsData[0].planetData, 0);
+
+            // 表示メイン部分
+            CanvasRender(cuspList);
         }
     }
 }

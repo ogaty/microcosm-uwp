@@ -16,7 +16,6 @@
             <RowDefinition Height="8*" />
         </Grid.RowDefinitions>
         <StackPanel Margin="0,0,0,0" Grid.Column="0">
-            <Button Name="abc" Click="abc_Click"></Button>
             <StackPanel x:Name="UserDataView">
                 <Border Margin="10,0,10,5" BorderBrush="Black" BorderThickness="1">
                     <StackPanel Margin="5, 5, 5, 5">
@@ -41,28 +40,18 @@
             <Pivot>
                 <PivotItem Header="Date">
                     <StackPanel Orientation="Vertical">
+                        <DatePicker x:Name="TargetDate"></DatePicker>
                         <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                            <TextBox Width="80" Name="TargetYear"></TextBox>
-                            <TextBlock Foreground="Black" Text="年" Margin="0,0,10,0"></TextBlock>
-                            <TextBox Width="80" Name="TargetMonth"></TextBox>
-                            <TextBlock Foreground="Black" Text="月" Margin="0,0,10,0"></TextBlock>
-                            <TextBox Width="80" Name="TargetDay"></TextBox>
-                            <TextBlock Foreground="Black" Text="日"></TextBlock>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                            <TextBox Width="80" Name="TargetHour"></TextBox>
-                            <TextBlock Foreground="Black" Text="："></TextBlock>
-                            <TextBox Width="80" Name="TargetMinute"></TextBox>
-                            <TextBlock Foreground="Black" Text="："></TextBlock>
-                            <TextBox Width="80" Name="TargetSecond"></TextBox>
+                            <TimePicker x:Name="TargetTime" Margin="0,0,10,0"></TimePicker>
+                            <TextBox Width="70" Name="TargetSecond"></TextBox>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                             <TextBlock Foreground="Black" Text="緯度"></TextBlock>
-                            <TextBox Width="80" Name="TargetLat"></TextBox>
+                            <TextBox Width="90" Name="TargetLat"></TextBox>
                             <TextBlock Foreground="Black" Text="経度" Margin="10,0,0,0"></TextBlock>
-                            <TextBox Width="80" Name="TargetLng"></TextBox>
+                            <TextBox Width="90" Name="TargetLng"></TextBox>
                         </StackPanel>
-                        <Button x:Name="TargetSet" Content="SET" Width="300" Margin="0,20,0,0"  />
+                        <Button x:Name="TargetSet" Content="SET" Width="350" Margin="0,20,0,0" Click="TargetSet_Click"  />
                         <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                             <TextBlock Foreground="Black" Text="日"></TextBlock>
                             <TextBox Width="80" Name="MoveDate" Margin="0,0,10,0"></TextBox>

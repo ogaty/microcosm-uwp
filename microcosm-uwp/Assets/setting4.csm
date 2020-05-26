@@ -68,6 +68,8 @@
   <aspectJupiter>true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true</aspectJupiter>
   <aspectSaturn>true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true</aspectSaturn>
   <aspectUranus>true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true</aspectUranus>
+  <aspectNeptune>true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true</aspectNeptune>
+  <aspectPluto>true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true</aspectPluto>
   <aspectConjunction1>true,true,true,true,true,true,true</aspectConjunction1>
   <aspectConjunction2>true,true,true,true,true,true,true</aspectConjunction2>
   <aspectConjunction3>true,true,true,true,true,true,true</aspectConjunction3>

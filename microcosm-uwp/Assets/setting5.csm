@@ -74,8 +74,8 @@
   <aspectJupiter>true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true</aspectJupiter>
   <aspectSaturn>true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true</aspectSaturn>
   <aspectUranus>true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true</aspectUranus>
-  <aspectNeptune11>true</aspectNeptune11>
-  <aspectPluto11>true</aspectPluto11>
+  <aspectNeptune>true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true</aspectNeptune>
+  <aspectPluto>true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true</aspectPluto>
   <aspectDh11>true</aspectDh11>
   <aspectChiron11>true</aspectChiron11>
   <aspectAsc11>false</aspectAsc11>
