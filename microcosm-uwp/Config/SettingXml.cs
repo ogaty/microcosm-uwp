@@ -92,8 +92,8 @@ namespace microcosm.Config
         public string dispPlanetLilith;
         [XmlElement("dispPlanetCeres")]
         public string dispPlanetCeres;
-        [XmlElement("dispPlanetParas")]
-        public string dispPlanetParas;
+        [XmlElement("dispPlanetPallas")]
+        public string dispPlanetPallas;
         [XmlElement("dispPlanetJuno")]
         public string dispPlanetJuno;
         [XmlElement("dispPlanetVesta")]
@@ -153,8 +153,8 @@ namespace microcosm.Config
         public string aspectLilith;
         [XmlElement("aspectCeres")]
         public string aspectCeres;
-        [XmlElement("aspectParas")]
-        public string aspectParas;
+        [XmlElement("aspectPallas")]
+        public string aspectPallas;
         [XmlElement("aspectJuno")]
         public string aspectJuno;
         [XmlElement("aspectVesta")]
@@ -834,30 +834,72 @@ namespace microcosm.Config
         public string aspectConjunction1;
         [XmlElement("aspectOpposition1")]
         public string aspectOpposition1;
+        [XmlElement("aspectTrine1")]
+        public string aspectTrine1;
+        [XmlElement("aspectSquare1")]
+        public string aspectSquare1;
+        [XmlElement("aspectSextile1")]
+        public string aspectSextile1;
         [XmlElement("aspectConjunction2")]
         public string aspectConjunction2;
         [XmlElement("aspectOpposition2")]
         public string aspectOpposition2;
+        [XmlElement("aspectTrine2")]
+        public string aspectTrine2;
+        [XmlElement("aspectSquare2")]
+        public string aspectSquare2;
+        [XmlElement("aspectSextile2")]
+        public string aspectSextile2;
         [XmlElement("aspectConjunction3")]
         public string aspectConjunction3;
         [XmlElement("aspectOpposition3")]
         public string aspectOpposition3;
+        [XmlElement("aspectTrine3")]
+        public string aspectTrine3;
+        [XmlElement("aspectSquare3")]
+        public string aspectSquare3;
+        [XmlElement("aspectSextile3")]
+        public string aspectSextile3;
         [XmlElement("aspectConjunction4")]
         public string aspectConjunction4;
         [XmlElement("aspectOpposition4")]
         public string aspectOpposition4;
+        [XmlElement("aspectTrine4")]
+        public string aspectTrine4;
+        [XmlElement("aspectSquare4")]
+        public string aspectSquare4;
+        [XmlElement("aspectSextile4")]
+        public string aspectSextile4;
         [XmlElement("aspectConjunction5")]
         public string aspectConjunction5;
         [XmlElement("aspectOpposition5")]
         public string aspectOpposition5;
+        [XmlElement("aspectTrine5")]
+        public string aspectTrine5;
+        [XmlElement("aspectSquare5")]
+        public string aspectSquare5;
+        [XmlElement("aspectSextile5")]
+        public string aspectSextile5;
         [XmlElement("aspectConjunction6")]
         public string aspectConjunction6;
         [XmlElement("aspectOpposition6")]
         public string aspectOpposition6;
+        [XmlElement("aspectTrine6")]
+        public string aspectTrine6;
+        [XmlElement("aspectSquare6")]
+        public string aspectSquare6;
+        [XmlElement("aspectSextile6")]
+        public string aspectSextile6;
         [XmlElement("aspectConjunction7")]
         public string aspectConjunction7;
         [XmlElement("aspectOpposition7")]
         public string aspectOpposition7;
+        [XmlElement("aspectTrine7")]
+        public string aspectTrine7;
+        [XmlElement("aspectSquare7")]
+        public string aspectSquare7;
+        [XmlElement("aspectSextile7")]
+        public string aspectSextile7;
         [XmlElement("aspectTrine11")]
         public bool aspectTrine11;
         [XmlElement("aspectSquare11")]

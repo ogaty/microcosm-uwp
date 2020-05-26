@@ -44,42 +44,16 @@
   <dispPlanetUranus>true,true,true,true,true,true,true</dispPlanetUranus>
   <dispPlanetNeptune>true,true,true,true,true,true,true</dispPlanetNeptune>
   <dispPlanetPluto>true,true,true,true,true,true,true</dispPlanetPluto>
-  <dispPlanetDh11>true</dispPlanetDh11>
-  <dispPlanetChiron11>true</dispPlanetChiron11>
-  <dispPlanetAsc11>true</dispPlanetAsc11>
-  <dispPlanetMc11>true</dispPlanetMc11>
-  <dispPlanetEarth11>false</dispPlanetEarth11>
-  <dispPlanetLilith11>false</dispPlanetLilith11>
-  <dispPlanetDh22>true</dispPlanetDh22>
-  <dispPlanetChiron22>true</dispPlanetChiron22>
-  <dispPlanetAsc22>true</dispPlanetAsc22>
-  <dispPlanetMc22>true</dispPlanetMc22>
-  <dispPlanetEarth22>false</dispPlanetEarth22>
-  <dispPlanetLilith22>false</dispPlanetLilith22>
-  <dispPlanetDh33>true</dispPlanetDh33>
-  <dispPlanetChiron33>true</dispPlanetChiron33>
-  <dispPlanetAsc33>true</dispPlanetAsc33>
-  <dispPlanetMc33>true</dispPlanetMc33>
-  <dispPlanetEarth33>false</dispPlanetEarth33>
-  <dispPlanetLilith33>false</dispPlanetLilith33>
-  <dispPlanetDh12>true</dispPlanetDh12>
-  <dispPlanetChiron12>true</dispPlanetChiron12>
-  <dispPlanetAsc12>true</dispPlanetAsc12>
-  <dispPlanetMc12>true</dispPlanetMc12>
-  <dispPlanetEarth12>true</dispPlanetEarth12>
-  <dispPlanetLilith12>false</dispPlanetLilith12>
-  <dispPlanetDh13>true</dispPlanetDh13>
-  <dispPlanetChiron13>true</dispPlanetChiron13>
-  <dispPlanetAsc13>true</dispPlanetAsc13>
-  <dispPlanetMc13>true</dispPlanetMc13>
-  <dispPlanetEarth13>true</dispPlanetEarth13>
-  <dispPlanetLilith13>false</dispPlanetLilith13>
-  <dispPlanetDh23>true</dispPlanetDh23>
-  <dispPlanetChiron23>true</dispPlanetChiron23>
-  <dispPlanetAsc23>true</dispPlanetAsc23>
-  <dispPlanetMc23>true</dispPlanetMc23>
-  <dispPlanetEarth23>true</dispPlanetEarth23>
-  <dispPlanetLilith23>false</dispPlanetLilith23>
+  <dispPlanetDh>true,true,true,true,true,true,true</dispPlanetDh>
+  <dispPlanetChiron>true,true,true,true,true,true,true</dispPlanetChiron>
+  <dispPlanetAsc>true,true,true,true,true,true,true</dispPlanetAsc>
+  <dispPlanetMc>true,true,true,true,true,true,true</dispPlanetMc>
+  <dispPlanetEarth>false,false,false,false,false,false,false</dispPlanetEarth>
+  <dispPlanetLilith>false,false,false,false,false,false,false</dispPlanetLilith>
+  <dispPlanetCeres>false,false,false,false,false,false,false</dispPlanetCeres>
+  <dispPlanetPallas>false,false,false,false,false,false,false</dispPlanetPallas>
+  <dispPlanetJuno>false,false,false,false,false,false,false</dispPlanetJuno>
+  <dispPlanetVesta>false,false,false,false,false,false,false</dispPlanetVesta>
   <dispAspect>true</dispAspect>
   <dispAspect>false</dispAspect>
   <dispAspect>false</dispAspect>
@@ -196,6 +170,27 @@
   <aspectOpposition5>true,true,true,true,true,true,true</aspectOpposition5>
   <aspectOpposition6>true,true,true,true,true,true,true</aspectOpposition6>
   <aspectOpposition7>true,true,true,true,true,true,true</aspectOpposition7>
+  <aspectTrine1>true,true,true,true,true,true,true</aspectTrine1>
+  <aspectTrine2>true,true,true,true,true,true,true</aspectTrine2>
+  <aspectTrine3>true,true,true,true,true,true,true</aspectTrine3>
+  <aspectTrine4>true,true,true,true,true,true,true</aspectTrine4>
+  <aspectTrine5>true,true,true,true,true,true,true</aspectTrine5>
+  <aspectTrine6>true,true,true,true,true,true,true</aspectTrine6>
+  <aspectTrine7>true,true,true,true,true,true,true</aspectTrine7>
+  <aspectSquare1>true,true,true,true,true,true,true</aspectSquare1>
+  <aspectSquare2>true,true,true,true,true,true,true</aspectSquare2>
+  <aspectSquare3>true,true,true,true,true,true,true</aspectSquare3>
+  <aspectSquare4>true,true,true,true,true,true,true</aspectSquare4>
+  <aspectSquare5>true,true,true,true,true,true,true</aspectSquare5>
+  <aspectSquare6>true,true,true,true,true,true,true</aspectSquare6>
+  <aspectSquare7>true,true,true,true,true,true,true</aspectSquare7>
+  <aspectSextile1>true,true,true,true,true,true,true</aspectSextile1>
+  <aspectSextile2>true,true,true,true,true,true,true</aspectSextile2>
+  <aspectSextile3>true,true,true,true,true,true,true</aspectSextile3>
+  <aspectSextile4>true,true,true,true,true,true,true</aspectSextile4>
+  <aspectSextile5>true,true,true,true,true,true,true</aspectSextile5>
+  <aspectSextile6>true,true,true,true,true,true,true</aspectSextile6>
+  <aspectSextile7>true,true,true,true,true,true,true</aspectSextile7>
   <aspectConjunction11>true</aspectConjunction11>
   <aspectOpposition11>true</aspectOpposition11>
   <aspectTrine11>true</aspectTrine11>
