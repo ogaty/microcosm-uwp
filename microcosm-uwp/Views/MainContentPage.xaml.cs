@@ -41,10 +41,13 @@ namespace microcosm.Views
         public AstroCalc calc;
         public ConfigData config;
         public SettingData[] setting;
+        public SettingData currentSetting;
         public MainWindowCuspListViewModel vm1 = new MainWindowCuspListViewModel();
         public MainWindowCuspListViewModel vm2 = new MainWindowCuspListViewModel();
         public CuspList cuspList;
         List<AspectInfo> aspectList;
+
+        MainWindowUserDataViewModel userBox;
 
         public UserData udata1 = new UserData();
         public UserData udata2 = new UserData();
@@ -70,13 +73,16 @@ namespace microcosm.Views
         {
             config = CommonInstance.getInstance().config;
             setting = CommonInstance.getInstance().settings;
+            currentSetting = setting[0];
             calc = CommonInstance.getInstance().calc;
 
             // 天体情報
             ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-            = calc.ReCalc(config, setting[0], udata1);
+            = calc.ReCalc(config, currentSetting, udata1);
 
-            UserDataView.DataContext = new MainWindowUserDataViewModel();
+
+            userBox = new MainWindowUserDataViewModel();
+            UserDataView.DataContext = userBox;
             //            InfoFrame.Navigate(typeof(MainListPage), new CuspList() { planetList = ringsData[0].planetData, cusps = ringsData[0].cusps });
 
             // 天体情報を元にカスプを取得
@@ -85,9 +91,13 @@ namespace microcosm.Views
                 cusps = ringsData[0].cusps 
             };
 
-            //PlanetCusp.DataContext = vm1;
-            //HouseCusp.DataContext = vm2;
-            //ListRender();
+            MainWindowCuspListViewModel vm1 = new MainWindowCuspListViewModel();
+            MainWindowCuspListViewModel vm2 = new MainWindowCuspListViewModel();
+
+
+            PlanetCusp.DataContext = vm1;
+            HouseCusp.DataContext = vm2;
+            ListRender();
 
             aspectList = AspectCalc.AspectCalcSame(ringsData[0].planetData, 0);
 
@@ -98,14 +108,18 @@ namespace microcosm.Views
             // なんか嫌だね
             var now = DateTime.Now;
             TargetDate.Date = now;
-            TargetTime.Time = new TimeSpan(now.Hour, now.Minute, now.Second);
-            TargetSecond.Text = now.Second.ToString();
+            //            TargetTime.Time = new TimeSpan(now.Hour, now.Minute, now.Second);
+            ChangeTarget.SelectedItem = "ユーザー1";
+            TargetHour.SelectedItem = now.Hour.ToString();
+            TargetMinute.SelectedItem = now.Minute.ToString();
+            TargetSecond.SelectedItem = now.Second.ToString();
             TargetLat.Text = udata1.lat.ToString();
             TargetLng.Text = udata1.lng.ToString();
 
 
             // 表示メイン部分
             CanvasRender(cuspList);
+            ReportRender();
         }
 
         public async void CallScript()
@@ -197,6 +211,9 @@ namespace microcosm.Views
             DrawAspects((int)(outerDiameter / 2), margin);
         }
 
+        /// <summary>
+        /// 左下ボックス List部分
+        /// </summary>
         private void ListRender()
         {
             vm1.planetCuspList = new ObservableCollection<PlanetCuspListData>();
@@ -204,6 +221,11 @@ namespace microcosm.Views
 
             foreach (PlanetData p in cuspList.planetList)
             {
+                if (p.no == CommonData.ZODIAC_NUMBER_ERIS || 
+                    p.no == CommonData.ZODIAC_NUMBER_SEDNA ||
+                    p.no == CommonData.ZODIAC_NUMBER_HAUMEA ||
+                    p.no == CommonData.ZODIAC_NUMBER_MAKEMAKE)
+                    continue;
                 PlanetCuspListData pcusp = new PlanetCuspListData()
                 {
 //                    name = Util.getPlanetSymbol(p.no)
@@ -222,7 +244,7 @@ namespace microcosm.Views
                 hcusp.name = i.ToString();
                 if (CommonInstance.getInstance().config.decimalDisp == EDecimalDisp.DECIMAL)
                 {
-                    hcusp.degree1 = String.Format("{0:f2}", cuspList.cusps[i]);
+                    hcusp.degree1 = Util.getPlanetDegree(cuspList.cusps[i], EDecimalDisp.DECIMAL);
                 }
                 else
                 {
@@ -232,6 +254,14 @@ namespace microcosm.Views
                 vm2.houseCuspList.Add(hcusp);
             }
             HouseCusp.ItemsSource = vm2.houseCuspList;
+
+        }
+
+        /// <summary>
+        /// 左下エリア描画
+        /// </summary>
+        public void AreaRender()
+        {
 
         }
 
@@ -323,7 +353,7 @@ namespace microcosm.Views
             foreach (PlanetData planet in sortPlanetData)
             {
 
-                if (!setting[0].dispPlanet[0][planet.no])
+                if (!currentSetting.dispPlanet[0][planet.no])
                 {
                     continue;
                 }
@@ -630,40 +660,57 @@ namespace microcosm.Views
             });
         }
 
-        /// <summary>
-        /// TimeSetterクリック
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TargetSet_Click(object sender, RoutedEventArgs e)
+        public void UserBoxSet(int kind, UserData udata)
         {
-            UserData user = new UserData(
-                "current", 
-                "current", 
-                new DateTime(
-                    TargetDate.Date.Year,
-                    TargetDate.Date.Month, 
-                    TargetDate.Date.Day, 
-                    12, 
-                    TargetTime.Time.Minutes, 
-                    0), 139, 40, "aaa", "", "JST");
-            ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-= calc.ReCalc(config, setting[0], user);
-            // 天体情報を元にカスプを取得
-            cuspList = new CuspList
+            switch (kind)
             {
-                planetList = ringsData[0].planetData,
-                cusps = ringsData[0].cusps
-            };
+                case 1:
+                    userBox.User1DateStr = Util.DateTimeToString(udata.birth_time, "JST");
+                    break;
+                case 2:
+                    userBox.User2DateStr = Util.DateTimeToString(udata.birth_time, "JST");
+                    break;
+                case 3:
+                    userBox.Event1DateStr = Util.DateTimeToString(udata.birth_time, "JST");
+                    break;
+                case 4:
+                    userBox.Event2DateStr = Util.DateTimeToString(udata.birth_time, "JST");
+                    break;
+                default:
+                    break;
+            }
+        }
 
-            //PlanetCusp.DataContext = vm1;
-            //HouseCusp.DataContext = vm2;
-            //ListRender();
 
-            aspectList = AspectCalc.AspectCalcSame(ringsData[0].planetData, 0);
+        public void ReportRender()
+        {
+            MainWindowReportViewModel vm = new MainWindowReportViewModel();
 
-            // 表示メイン部分
-            CanvasRender(cuspList);
+            ReportCalc reportCalc = new ReportCalc();
+            reportCalc.ReCalcReport(ringsData[0]);
+
+            vm.houseUp = reportCalc.up.ToString();
+            AreaUp.Text = reportCalc.up.ToString();
+            vm.houseRight = reportCalc.right.ToString();
+            AreaRight.Text = reportCalc.right.ToString();
+            vm.houseLeft = reportCalc.left.ToString();
+            AreaLeft.Text = reportCalc.left.ToString();
+            vm.houseDown = reportCalc.down.ToString();
+            AreaDown.Text = reportCalc.down.ToString();
+
+            Fire.Text = reportCalc.fire.ToString();
+            Earth.Text = reportCalc.earth.ToString();
+            Air.Text = reportCalc.air.ToString();
+            Water.Text = reportCalc.water.ToString();
+
+            Cardinal.Text = reportCalc.cardinalSign.ToString();
+            Fixed.Text = reportCalc.fixedSign.ToString();
+            Mutable.Text = reportCalc.mutableSign.ToString();
+
+            Angular.Text = reportCalc.angularHouse.ToString();
+            Succedent.Text = reportCalc.succedentHouse.ToString();
+            Cadent.Text = reportCalc.cadentHouse.ToString();
+
         }
     }
 }

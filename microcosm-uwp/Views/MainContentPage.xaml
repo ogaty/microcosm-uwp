@@ -40,10 +40,166 @@
             <Pivot>
                 <PivotItem Header="Date">
                     <StackPanel Orientation="Vertical">
+                        <ComboBox x:Name="ChangeTarget" Margin="0,0,0,10">
+                            <x:String>ユーザー1</x:String>
+                            <x:String>ユーザー2</x:String>
+                            <x:String>イベント1</x:String>
+                            <x:String>イベント2</x:String>
+                        </ComboBox>
                         <DatePicker x:Name="TargetDate"></DatePicker>
                         <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                            <TimePicker x:Name="TargetTime" Margin="0,0,10,0"></TimePicker>
-                            <TextBox Width="70" Name="TargetSecond"></TextBox>
+                            <ComboBox x:Name="TargetHour">
+                                <x:String>0</x:String>
+                                <x:String>1</x:String>
+                                <x:String>2</x:String>
+                                <x:String>3</x:String>
+                                <x:String>4</x:String>
+                                <x:String>5</x:String>
+                                <x:String>6</x:String>
+                                <x:String>7</x:String>
+                                <x:String>8</x:String>
+                                <x:String>9</x:String>
+                                <x:String>10</x:String>
+                                <x:String>11</x:String>
+                                <x:String>12</x:String>
+                                <x:String>13</x:String>
+                                <x:String>14</x:String>
+                                <x:String>15</x:String>
+                                <x:String>16</x:String>
+                                <x:String>17</x:String>
+                                <x:String>18</x:String>
+                                <x:String>19</x:String>
+                                <x:String>20</x:String>
+                                <x:String>21</x:String>
+                                <x:String>22</x:String>
+                                <x:String>23</x:String>
+                            </ComboBox>
+                            <TextBlock Foreground="Black">：</TextBlock>
+                            <ComboBox x:Name="TargetMinute">
+                                <x:String>0</x:String>
+                                <x:String>1</x:String>
+                                <x:String>2</x:String>
+                                <x:String>3</x:String>
+                                <x:String>4</x:String>
+                                <x:String>5</x:String>
+                                <x:String>6</x:String>
+                                <x:String>7</x:String>
+                                <x:String>8</x:String>
+                                <x:String>9</x:String>
+                                <x:String>10</x:String>
+                                <x:String>11</x:String>
+                                <x:String>12</x:String>
+                                <x:String>13</x:String>
+                                <x:String>14</x:String>
+                                <x:String>15</x:String>
+                                <x:String>16</x:String>
+                                <x:String>17</x:String>
+                                <x:String>18</x:String>
+                                <x:String>19</x:String>
+                                <x:String>20</x:String>
+                                <x:String>21</x:String>
+                                <x:String>22</x:String>
+                                <x:String>23</x:String>
+                                <x:String>24</x:String>
+                                <x:String>25</x:String>
+                                <x:String>26</x:String>
+                                <x:String>27</x:String>
+                                <x:String>28</x:String>
+                                <x:String>29</x:String>
+                                <x:String>30</x:String>
+                                <x:String>31</x:String>
+                                <x:String>32</x:String>
+                                <x:String>33</x:String>
+                                <x:String>34</x:String>
+                                <x:String>35</x:String>
+                                <x:String>36</x:String>
+                                <x:String>37</x:String>
+                                <x:String>38</x:String>
+                                <x:String>39</x:String>
+                                <x:String>40</x:String>
+                                <x:String>41</x:String>
+                                <x:String>42</x:String>
+                                <x:String>43</x:String>
+                                <x:String>44</x:String>
+                                <x:String>45</x:String>
+                                <x:String>46</x:String>
+                                <x:String>47</x:String>
+                                <x:String>48</x:String>
+                                <x:String>49</x:String>
+                                <x:String>50</x:String>
+                                <x:String>51</x:String>
+                                <x:String>52</x:String>
+                                <x:String>53</x:String>
+                                <x:String>54</x:String>
+                                <x:String>55</x:String>
+                                <x:String>56</x:String>
+                                <x:String>57</x:String>
+                                <x:String>58</x:String>
+                                <x:String>59</x:String>
+                            </ComboBox>
+                            <TextBlock Foreground="Black">：</TextBlock>
+                            <ComboBox x:Name="TargetSecond">
+                                <x:String>0</x:String>
+                                <x:String>1</x:String>
+                                <x:String>2</x:String>
+                                <x:String>3</x:String>
+                                <x:String>4</x:String>
+                                <x:String>5</x:String>
+                                <x:String>6</x:String>
+                                <x:String>7</x:String>
+                                <x:String>8</x:String>
+                                <x:String>9</x:String>
+                                <x:String>10</x:String>
+                                <x:String>11</x:String>
+                                <x:String>12</x:String>
+                                <x:String>13</x:String>
+                                <x:String>14</x:String>
+                                <x:String>15</x:String>
+                                <x:String>16</x:String>
+                                <x:String>17</x:String>
+                                <x:String>18</x:String>
+                                <x:String>19</x:String>
+                                <x:String>20</x:String>
+                                <x:String>21</x:String>
+                                <x:String>22</x:String>
+                                <x:String>23</x:String>
+                                <x:String>24</x:String>
+                                <x:String>25</x:String>
+                                <x:String>26</x:String>
+                                <x:String>27</x:String>
+                                <x:String>28</x:String>
+                                <x:String>29</x:String>
+                                <x:String>30</x:String>
+                                <x:String>31</x:String>
+                                <x:String>32</x:String>
+                                <x:String>33</x:String>
+                                <x:String>34</x:String>
+                                <x:String>35</x:String>
+                                <x:String>36</x:String>
+                                <x:String>37</x:String>
+                                <x:String>38</x:String>
+                                <x:String>39</x:String>
+                                <x:String>40</x:String>
+                                <x:String>41</x:String>
+                                <x:String>42</x:String>
+                                <x:String>43</x:String>
+                                <x:String>44</x:String>
+                                <x:String>45</x:String>
+                                <x:String>46</x:String>
+                                <x:String>47</x:String>
+                                <x:String>48</x:String>
+                                <x:String>49</x:String>
+                                <x:String>50</x:String>
+                                <x:String>51</x:String>
+                                <x:String>52</x:String>
+                                <x:String>53</x:String>
+                                <x:String>54</x:String>
+                                <x:String>55</x:String>
+                                <x:String>56</x:String>
+                                <x:String>57</x:String>
+                                <x:String>58</x:String>
+                                <x:String>59</x:String>
+                            </ComboBox>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                             <TextBlock Foreground="Black" Text="緯度"></TextBlock>
@@ -55,22 +211,22 @@
                         <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                             <TextBlock Foreground="Black" Text="日"></TextBlock>
                             <TextBox Width="80" Name="MoveDate" Margin="0,0,10,0"></TextBox>
-                            <Button x:Name="MoveDateLeft" Content="←" />
-                            <Button x:Name="MoveDateRight" Content="→" />
+                            <Button x:Name="MoveDateLeft" Content="←" Click="MoveDateLeft_Click" />
+                            <Button x:Name="MoveDateRight" Content="→" Click="MoveDateRight_Click" />
                             <TextBlock Foreground="Black" Text="分" Margin="10,0,0,0"></TextBlock>
                             <TextBox Width="80" Name="MoveMinute" Margin="0,0,10,0"></TextBox>
-                            <Button x:Name="MoveMinuteLeft" Content="←" />
-                            <Button x:Name="MoveMinuteRight" Content="→" />
+                            <Button x:Name="MoveMinuteLeft" Content="←" Click="MoveMinuteLeft_Click" />
+                            <Button x:Name="MoveMinuteRight" Content="→" Click="MoveMinuteRight_Click" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                             <TextBlock Foreground="Black" Text="時"></TextBlock>
                             <TextBox Width="80" Name="MoveHour" Margin="0,0,10,0"></TextBox>
-                            <Button x:Name="MoveHourLeft" Content="←" />
-                            <Button x:Name="MoveHourRight" Content="→" />
+                            <Button x:Name="MoveHourLeft" Content="←" Click="MoveHourLeft_Click" />
+                            <Button x:Name="MoveHourRight" Content="→" Click="MoveHourRight_Click" />
                             <TextBlock Foreground="Black" Text="秒" Margin="10,0,0,0"></TextBlock>
                             <TextBox Width="80" Name="MoveSecond" Margin="0,0,10,0"></TextBox>
-                            <Button x:Name="MoveSecondLeft" Content="←" />
-                            <Button x:Name="MoveSecondRight" Content="→" />
+                            <Button x:Name="MoveSecondLeft" Content="←" Click="MoveSecondLeft_Click" />
+                            <Button x:Name="MoveSecondRight" Content="→" Click="MoveSecondRight_Click" />
                         </StackPanel>
                     </StackPanel>
                     
@@ -103,8 +259,8 @@
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding name}" />
-                                        <TextBlock Text="{Binding degree1}" Margin="10, 0, 0, 0" />
+                                        <TextBlock Text="{Binding name}" FontFamily="ms-appx:///Assets/ZODIAC_S.TTF#Zodiac S" />
+                                        <TextBlock Text="{Binding degree1}" FontFamily="ms-appx:///Assets/ZODIAC_S.TTF#Zodiac S" Margin="10, 0, 0, 0" />
                                     </StackPanel>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
@@ -112,7 +268,58 @@
                     </StackPanel>
                 </PivotItem>
                 <PivotItem Header="分布">
-                    <TextBlock Foreground="Black" Text="222" />
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="ms-appx:///Assets/up.png" Width="32" Height="32" HorizontalAlignment="Left"></Image>
+                            <TextBlock x:Name="AreaUp" Foreground="Black" DataContext="houseUp" Text="" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="ms-appx:///Assets/right.png" Width="32" Height="32" HorizontalAlignment="Left"></Image>
+                            <TextBlock x:Name="AreaRight" Foreground="Black" Text="" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="ms-appx:///Assets/left.png" Width="32" Height="32" HorizontalAlignment="Left"></Image>
+                            <TextBlock x:Name="AreaLeft" Foreground="Black" Text="" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="ms-appx:///Assets/down.png" Width="32" Height="32" HorizontalAlignment="Left"></Image>
+                            <TextBlock x:Name="AreaDown" Foreground="Black" Text="" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Foreground="Black" Text="Fire" />
+                            <TextBlock x:Name="Fire" Foreground="Black" Text="" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Foreground="Black" Text="Earth" />
+                            <TextBlock x:Name="Earth" Foreground="Black" Text="" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Foreground="Black" Text="Air" />
+                            <TextBlock x:Name="Air" Foreground="Black" Text="" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10" >
+                            <TextBlock Foreground="Black" Text="Water" />
+                            <TextBlock x:Name="Water" Foreground="Black" Text="" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Foreground="Black" Text="Cardinal" />
+                            <TextBlock x:Name="Cardinal" Foreground="Black" Text="" Width="20" />
+                            <TextBlock Foreground="Black" Text="Angular" />
+                            <TextBlock x:Name="Angular" Foreground="Black" Text="" Width="20" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Foreground="Black" Text="Fixed" />
+                            <TextBlock x:Name="Fixed" Foreground="Black" Text="" Width="20" />
+                            <TextBlock Foreground="Black" Text="Succedent" />
+                            <TextBlock x:Name="Succedent" Foreground="Black" Text="" Width="20" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <TextBlock Foreground="Black" Text="Mutable" />
+                            <TextBlock x:Name="Mutable" Foreground="Black" Text="" Width="20" />
+                            <TextBlock Foreground="Black" Text="Cadent" />
+                            <TextBlock x:Name="Cadent" Foreground="Black" Text="" Width="20" />
+                        </StackPanel>
+                    </StackPanel>
                 </PivotItem>
                 <PivotItem Header="↔">
                     <TextBlock Foreground="Black" Text="333" />

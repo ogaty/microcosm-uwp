@@ -98,6 +98,7 @@
     <Compile Include="Calc\AbstractAspect.cs" />
     <Compile Include="Calc\AspectCalc.cs" />
     <Compile Include="Calc\AstroCalc.cs" />
+    <Compile Include="Calc\ReportCalc.cs" />
     <Compile Include="Calc\SquareAspect.cs" />
     <Compile Include="Calc\SextileAspect.cs" />
     <Compile Include="Calc\TrineAspect.cs" />
@@ -127,6 +128,7 @@
     <Compile Include="Models\UserDirTree.cs" />
     <Compile Include="Models\UserEventData.cs" />
     <Compile Include="ViewModels\MainWindowCuspListViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowReportViewModel.cs" />
     <Compile Include="ViewModels\UserDbDirListViewModel.cs" />
     <Compile Include="ViewModels\UserDbViewModel.cs" />
     <Compile Include="ViewModels\UserDirGridViewModel.cs" />
@@ -151,6 +153,7 @@
     <Compile Include="Views\MainContentPage.xaml.cs">
       <DependentUpon>MainContentPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\MainContentPageTimeSetter.cs" />
     <Compile Include="Views\MainListPage.xaml.cs">
       <DependentUpon>MainListPage.xaml</DependentUpon>
     </Compile>
@@ -201,6 +204,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\datetime.html" />
+    <Content Include="Assets\down.png" />
+    <Content Include="Assets\left.png" />
     <Content Include="Assets\microcosm400x400.altform-unplated_targetsize-16.png" />
     <Content Include="Assets\microcosm400x400.altform-unplated_targetsize-24.png" />
     <Content Include="Assets\microcosm400x400.altform-unplated_targetsize-256.png" />
@@ -216,6 +221,7 @@
     <Content Include="Assets\microcosm400x400.targetsize-256.png" />
     <Content Include="Assets\microcosm400x400.targetsize-32.png" />
     <Content Include="Assets\microcosm400x400.targetsize-48.png" />
+    <Content Include="Assets\right.png" />
     <Content Include="Assets\seas_18.se1">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -270,6 +276,7 @@
     <Content Include="Assets\setting9.csm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\up.png" />
     <Content Include="Zodiac_S\readme.txt" />
     <Content Include="Assets\ZODIAC_S.TTF" />
     <Content Include="Assets\AstroDotBasic.ttf" />
