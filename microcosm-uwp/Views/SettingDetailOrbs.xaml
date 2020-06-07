@@ -77,7 +77,7 @@
                     <TextBlock Text="ハード" Foreground="Black"  />
                     <TextBox x:Name="OtherHard150" />
                 </StackPanel>
-
+                <Button Content="更新" x:Name="OrbUpdate" Margin="0,20,0,20" Click="OrbUpdate_Click"></Button>
             </StackPanel>
         </ScrollViewer>
     </Grid>

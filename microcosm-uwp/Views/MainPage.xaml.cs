@@ -140,6 +140,12 @@ namespace microcosm.Views
                 await configFile.CopyAsync(systemFolder, "config.csm", NameCollisionOption.FailIfExists);
             }
 
+            if (await systemFolder.TryGetItemAsync("setting0.json") == null)
+            {
+                var setting0File = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/setting0.json")).AsTask().ConfigureAwait(false);
+                await setting0File.CopyAsync(systemFolder, "setting0.json", NameCollisionOption.FailIfExists);
+            }
+
             if (await systemFolder.TryGetItemAsync("setting0.csm") == null)
             {
                 var setting0File = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/setting0.csm")).AsTask().ConfigureAwait(false);
@@ -233,6 +239,10 @@ namespace microcosm.Views
                 var set = await systemFolder.GetFileAsync("setting" + i.ToString() + ".csm");
                 setting[i] = SettingFromXml.GetSettingFromXml(set.Path, i);
             }
+
+            SettingFromJson settingGetter = new SettingFromJson();
+
+            await settingGetter.GetSettingDataFromJson("setting0.json", 0);
 
             CommonInstance.getInstance().config = config;
             CommonInstance.getInstance().settings = setting;

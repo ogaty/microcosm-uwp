@@ -110,6 +110,9 @@
     <Compile Include="Config\ConfigData.cs" />
     <Compile Include="Config\ConfigPass.cs" />
     <Compile Include="Config\ConfigSave.cs" />
+    <Compile Include="Config\SettingFromJson.cs" />
+    <Compile Include="Config\SettingJson.cs" />
+    <Compile Include="Config\SettingToXml.cs" />
     <Compile Include="Config\SettingFromXml.cs" />
     <Compile Include="Config\ConfigFromXml.cs" />
     <Compile Include="Config\SettingData.cs" />
@@ -281,6 +284,9 @@
     <Content Include="Assets\ZODIAC_S.TTF" />
     <Content Include="Assets\AstroDotBasic.ttf" />
     <Content Include="Assets\astro.ttf" />
+    <Content Include="Assets\setting0.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="ephe\seas_18.se1">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

@@ -71,7 +71,7 @@ namespace microcosm.Views
 
         private void OrbUpdate_Click(object sender, RoutedEventArgs e)
         {
-
+            SettingToXml.SaveXml(settingIndex, settings[settingIndex]);
         }
     }
 }
