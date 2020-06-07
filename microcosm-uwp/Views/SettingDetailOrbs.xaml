@@ -8,74 +8,77 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel>
-            <TextBlock Text="1種" FontSize="24"/>
-            <TextBlock Text="太陽" />
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="ソフト" />
-                <TextBox x:Name="SunSoft1" />
-                <TextBlock Text="ハード" />
-                <TextBox x:Name="SunHard1" />
-            </StackPanel>
-            <TextBlock Text="月" x:Name="Moon1" />
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="ソフト" />
-                <TextBox x:Name="MoonSoft1" />
-                <TextBlock Text="ハード" />
-                <TextBox x:Name="MoonHard1" />
-            </StackPanel>
-            <TextBlock Text="その他" />
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="ソフト" />
-                <TextBox x:Name="OtherSoft1" />
-                <TextBlock Text="ハード" />
-                <TextBox x:Name="OtherHard1" />
-            </StackPanel>
-            <TextBlock Text="2種・3種" FontSize="24"/>
-            <TextBlock Text="太陽" />
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="ソフト" />
-                <TextBox x:Name="SunSoft2" />
-                <TextBlock Text="ハード" />
-                <TextBox x:Name="SunHard2" />
-            </StackPanel>
-            <TextBlock Text="月" />
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="ソフト" />
-                <TextBox x:Name="MoonSoft2" />
-                <TextBlock Text="ハード" />
-                <TextBox x:Name="MoonHard2" />
-            </StackPanel>
-            <TextBlock Text="その他" />
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="ソフト" />
-                <TextBox x:Name="OtherSoft2" />
-                <TextBlock Text="ハード" />
-                <TextBox x:Name="OtherHard2" />
-            </StackPanel>
-            <TextBlock Text="2種・3種" FontSize="24"/>
-            <TextBlock Text="太陽" />
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="ソフト" />
-                <TextBox x:Name="SunSoft150" />
-                <TextBlock Text="ハード" />
-                <TextBox x:Name="SunHard150" />
-            </StackPanel>
-            <TextBlock Text="月" />
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="ソフト" />
-                <TextBox x:Name="MoonSoft150" />
-                <TextBlock Text="ハード" />
-                <TextBox x:Name="MoonHard150" />
-            </StackPanel>
-            <TextBlock Text="その他" />
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="ソフト" />
-                <TextBox x:Name="OtherSoft150" />
-                <TextBlock Text="ハード" />
-                <TextBox x:Name="OtherHard150" />
-            </StackPanel>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="20, 0, 20, 20">
 
-        </StackPanel>
+            <StackPanel>
+                <TextBlock Text="1種同士" FontSize="24" Foreground="Black" />
+                <TextBlock Text="太陽" Foreground="Black"  />
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="ソフト" Foreground="Black"  />
+                    <TextBox x:Name="SunSoft1" />
+                    <TextBlock Text="ハード" Foreground="Black"  />
+                    <TextBox x:Name="SunHard1" />
+                </StackPanel>
+                <TextBlock Text="月" x:Name="Moon1" Foreground="Black"  />
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="ソフト" Foreground="Black"  />
+                    <TextBox x:Name="MoonSoft1" />
+                    <TextBlock Text="ハード" Foreground="Black"  />
+                    <TextBox x:Name="MoonHard1" Foreground="Black"  />
+                </StackPanel>
+                <TextBlock Text="その他" Foreground="Black"  />
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="ソフト" Foreground="Black"  />
+                    <TextBox x:Name="OtherSoft1" />
+                    <TextBlock Text="ハード" Foreground="Black"  />
+                    <TextBox x:Name="OtherHard1" Foreground="Black"  />
+                </StackPanel>
+                <TextBlock Text="2種・3種" FontSize="24" Foreground="Black" />
+                <TextBlock Text="太陽" Foreground="Black"  />
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="ソフト" Foreground="Black"  />
+                    <TextBox x:Name="SunSoft2" />
+                    <TextBlock Text="ハード" Foreground="Black"  />
+                    <TextBox x:Name="SunHard2" />
+                </StackPanel>
+                <TextBlock Text="月" Foreground="Black"  />
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="ソフト" Foreground="Black"  />
+                    <TextBox x:Name="MoonSoft2" />
+                    <TextBlock Text="ハード" Foreground="Black"  />
+                    <TextBox x:Name="MoonHard2" />
+                </StackPanel>
+                <TextBlock Text="その他" Foreground="Black"  />
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="ソフト" Foreground="Black"  />
+                    <TextBox x:Name="OtherSoft2" />
+                    <TextBlock Text="ハード" Foreground="Black"  />
+                    <TextBox x:Name="OtherHard2" />
+                </StackPanel>
+                <TextBlock Text="150度" FontSize="24" Foreground="Black" />
+                <TextBlock Text="太陽" Foreground="Black"  />
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="ソフト" Foreground="Black"  />
+                    <TextBox x:Name="SunSoft150" />
+                    <TextBlock Text="ハード" Foreground="Black"  />
+                    <TextBox x:Name="SunHard150" />
+                </StackPanel>
+                <TextBlock Text="月" Foreground="Black"  />
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="ソフト" Foreground="Black"  />
+                    <TextBox x:Name="MoonSoft150" />
+                    <TextBlock Text="ハード" Foreground="Black"  />
+                    <TextBox x:Name="MoonHard150" />
+                </StackPanel>
+                <TextBlock Text="その他" Foreground="Black"  />
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="ソフト" Foreground="Black"  />
+                    <TextBox x:Name="OtherSoft150" />
+                    <TextBlock Text="ハード" Foreground="Black"  />
+                    <TextBox x:Name="OtherHard150" />
+                </StackPanel>
+
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

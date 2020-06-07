@@ -454,6 +454,14 @@ namespace microcosm.Views
                         X2 = planetPt[a.targetPlanetNo].X + radius + margin,
                         Y2 = -1 * planetPt[a.targetPlanetNo].Y + radius + margin
                     };
+                    if (a.softHard == SoftHard.SOFT)
+                    {
+                        line.StrokeDashArray = new DoubleCollection();
+                        line.StrokeDashArray.Add(1);
+                        line.StrokeDashOffset = 3;
+
+                    }
+
                     ChartCanvas.Children.Add(line);
                 }
             }

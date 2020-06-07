@@ -25,6 +25,8 @@ namespace microcosm.Views
     public sealed partial class SettingSettingsPage : Page
     {
         public SettingData[] settings;
+        public int display;
+
         public SettingSettingsPage()
         {
             this.InitializeComponent();
@@ -47,26 +49,34 @@ namespace microcosm.Views
         private void SettingCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             // イベント投げられるのかな
+            if (display == 3)
+            {
+                SettingDetailFrame.Navigate(typeof(SettingDetailOrbs), (object)SettingCombo.SelectedIndex);
+            }
         }
 
         private void DispPlanetSetting_Click(object sender, RoutedEventArgs e)
         {
+            display = 0;
             SettingDetailFrame.Navigate(typeof(SettingDetailPlanet), (object)settings);
         }
 
         private void DispAspectCategorySetting_Click(object sender, RoutedEventArgs e)
         {
+            display = 1;
             SettingDetailFrame.Navigate(typeof(SettingDetailAspectCategory), (object)settings);
         }
 
         private void DispAspectPlanetSetting_Click(object sender, RoutedEventArgs e)
         {
+            display = 2;
             SettingDetailFrame.Navigate(typeof(SettingDetailPlanetAspect), (object)settings);
         }
 
         private void OrbsSetting_Click(object sender, RoutedEventArgs e)
         {
-            SettingDetailFrame.Navigate(typeof(SettingDetailOrbs), (object)settings);
+            display = 3;
+            SettingDetailFrame.Navigate(typeof(SettingDetailOrbs), (object)SettingCombo.SelectedIndex);
         }
     }
 }

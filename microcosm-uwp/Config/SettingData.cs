@@ -317,23 +317,23 @@ namespace microcosm.Config
             Dictionary<OrbKind, double> o = new Dictionary<OrbKind, double>
             {
                 [OrbKind.SUN_HARD_1ST] = orb_sun_hard_1st[n],
-                [OrbKind.SUN_SOFT_1ST] = orb_sun_hard_1st[n],
+                [OrbKind.SUN_SOFT_1ST] = orb_sun_soft_1st[n],
                 [OrbKind.SUN_HARD_2ND] = orb_sun_hard_2nd[n],
-                [OrbKind.SUN_SOFT_2ND] = orb_sun_hard_2nd[n],
+                [OrbKind.SUN_SOFT_2ND] = orb_sun_soft_2nd[n],
                 [OrbKind.SUN_HARD_150] = orb_sun_hard_150[n],
-                [OrbKind.SUN_SOFT_150] = orb_sun_hard_150[n],
+                [OrbKind.SUN_SOFT_150] = orb_sun_soft_150[n],
                 [OrbKind.MOON_HARD_1ST] = orb_moon_hard_1st[n],
-                [OrbKind.MOON_SOFT_1ST] = orb_moon_hard_1st[n],
+                [OrbKind.MOON_SOFT_1ST] = orb_moon_soft_1st[n],
                 [OrbKind.MOON_HARD_2ND] = orb_moon_hard_2nd[n],
-                [OrbKind.MOON_SOFT_2ND] = orb_moon_hard_2nd[n],
+                [OrbKind.MOON_SOFT_2ND] = orb_moon_soft_2nd[n],
                 [OrbKind.MOON_HARD_150] = orb_moon_hard_150[n],
-                [OrbKind.MOON_SOFT_150] = orb_moon_hard_150[n],
+                [OrbKind.MOON_SOFT_150] = orb_moon_soft_150[n],
                 [OrbKind.OTHER_HARD_1ST] = orb_other_hard_1st[n],
-                [OrbKind.OTHER_SOFT_1ST] = orb_other_hard_1st[n],
+                [OrbKind.OTHER_SOFT_1ST] = orb_other_soft_1st[n],
                 [OrbKind.OTHER_HARD_2ND] = orb_other_hard_2nd[n],
-                [OrbKind.OTHER_SOFT_2ND] = orb_other_hard_2nd[n],
+                [OrbKind.OTHER_SOFT_2ND] = orb_other_soft_2nd[n],
                 [OrbKind.OTHER_HARD_150] = orb_other_hard_150[n],
-                [OrbKind.OTHER_SOFT_150] = orb_other_hard_150[n]
+                [OrbKind.OTHER_SOFT_150] = orb_other_soft_150[n]
             };
 
             return o;

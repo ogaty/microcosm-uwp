@@ -14,7 +14,7 @@
 
         <StackPanel Grid.Column="0">
             <TextBlock Margin="5, 10, 5, 20" FontSize="32">設定</TextBlock>
-            <StackPanel x:Name="CommonSettingMenuBar" Background="Yellow">
+            <StackPanel x:Name="CommonSettingMenuBar" Background="LightGoldenrodYellow">
                 <HyperlinkButton Margin="5, 10, 5, 10" x:Name="CommonSettingMenuItem" Content="共通設定" Click="CommonSettingMenuItem_Click" />
             </StackPanel>
             <StackPanel x:Name="DisplaySettingMenuBar" Background="White">

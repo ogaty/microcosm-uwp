@@ -2,32 +2,23 @@
 <SettingXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <dispname>設定８</dispname>
   <orb_sun_soft_1st>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_sun_soft_1st>
-  <orb_sun_hard_1st>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_sun_hard_1st>
-  <orb_sun_other_1st>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_sun_other_1st>
+  <orb_sun_hard_1st>5.0,5.0,5.0,5.0,5.0,5.0,5.0</orb_sun_hard_1st>
   <orb_moon_soft_1st>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_moon_soft_1st>
-  <orb_moon_hard_1st>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_moon_hard_1st>
-  <orb_moon_other_1st>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_moon_other_1st>
-  <orb_other_soft_1st>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_other_soft_1st>
-  <orb_other_hard_1st>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_other_hard_1st>
-  <orb_other_other_1st>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_other_other_1st>
-  <orb_sun_soft_2nd>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_sun_soft_2nd>
-  <orb_sun_hard_2nd>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_sun_hard_2nd>
-  <orb_sun_other_2nd>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_sun_other_2nd>
-  <orb_moon_soft_2nd>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_moon_soft_2nd>
-  <orb_moon_hard_2nd>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_moon_hard_2nd>
-  <orb_moon_other_2nd>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_moon_other_2nd>
-  <orb_other_soft_2nd>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_other_soft_2nd>
-  <orb_other_hard_2nd>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_other_hard_2nd>
-  <orb_other_other_2nd>8.0,8.0,8.0,8.0,8.0,8.0,8.0</orb_other_other_2nd>
+  <orb_moon_hard_1st>5.0,5.0,5.0,5.0,5.0,5.0,5.0</orb_moon_hard_1st>
+  <orb_other_soft_1st>6.0,6.0,6.0,6.0,6.0,6.0,6.0</orb_other_soft_1st>
+  <orb_other_hard_1st>3.0,3.0,3.0,3.0,3.0,3.0,3.0</orb_other_hard_1st>
+  <orb_sun_soft_2nd>7.0,7.0,7.0,7.0,7.0,7.0,7.0</orb_sun_soft_2nd>
+  <orb_sun_hard_2nd>4.0,4.0,4.0,4.0,4.0,4.0,4.0</orb_sun_hard_2nd>
+  <orb_moon_soft_2nd>7.0,7.0,7.0,7.0,7.0,7.0,7.0</orb_moon_soft_2nd>
+  <orb_moon_hard_2nd>4.0,4.0,4.0,4.0,4.0,4.0,4.0</orb_moon_hard_2nd>
+  <orb_other_soft_2nd>6.0,6.0,6.0,6.0,6.0,6.0,6.0</orb_other_soft_2nd>
+  <orb_other_hard_2nd>3.0,3.0,3.0,3.0,3.0,3.0,3.0</orb_other_hard_2nd>
   <orb_sun_soft_150>1.5,1.5,1.5,1.5,1.5,1.5,1.5</orb_sun_soft_150>
-  <orb_sun_hard_150>1.5,1.5,1.5,1.5,1.5,1.5,1.5</orb_sun_hard_150>
-  <orb_sun_other_150>1.5,1.5,1.5,1.5,1.5,1.5,1.5</orb_sun_other_150>
+  <orb_sun_hard_150>1.0,1.0,1.0,1.0,1.0,1.0,1.0</orb_sun_hard_150>
   <orb_moon_soft_150>1.5,1.5,1.5,1.5,1.5,1.5,1.5</orb_moon_soft_150>
-  <orb_moon_hard_150>1.5,1.5,1.5,1.5,1.5,1.5,1.5</orb_moon_hard_150>
-  <orb_moon_other_150>1.5,1.5,1.5,1.5,1.5,1.5,1.5</orb_moon_other_150>
-  <orb_other_soft_150>1.5,1.5,1.5,1.5,1.5,1.5,1.5</orb_other_soft_150>
-  <orb_other_hard_150>1.5,1.5,1.5,1.5,1.5,1.5,1.5</orb_other_hard_150>
-  <orb_other_other_150>1.5,1.5,1.5,1.5,1.5,1.5,1.5</orb_other_other_150>
+  <orb_moon_hard_150>1.0,1.0,1.0,1.0,1.0,1.0,1.0</orb_moon_hard_150>
+  <orb_other_soft_150>1.0,1.0,1.0,1.0,1.0,1.0,1.0</orb_other_soft_150>
+  <orb_other_hard_150>0.5,0.5,0.5,0.5,0.5,0.5,0.5</orb_other_hard_150>
   <dispCircle>true</dispCircle>
   <dispCircle>false</dispCircle>
   <dispCircle>false</dispCircle>

@@ -52,14 +52,14 @@ namespace microcosm.Views
         private void DisplaySettingMenuItem_Click(object sender, RoutedEventArgs e)
         {
             CommonSettingMenuBar.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
-            DisplaySettingMenuBar.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 0));
+            DisplaySettingMenuBar.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 192));
             VersionMenuBar.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
             this.SettingFrame.Navigate(typeof(SettingSettingsPage));
         }
 
         private void CommonSettingMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            CommonSettingMenuBar.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 0));
+            CommonSettingMenuBar.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 192));
             DisplaySettingMenuBar.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
             VersionMenuBar.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
             this.SettingFrame.Navigate(typeof(SettingsConfigPage));
@@ -69,7 +69,7 @@ namespace microcosm.Views
         {
             CommonSettingMenuBar.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
             DisplaySettingMenuBar.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
-            VersionMenuBar.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 0));
+            VersionMenuBar.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 192));
             this.SettingFrame.Navigate(typeof(SettingVersion));
         }
     }
