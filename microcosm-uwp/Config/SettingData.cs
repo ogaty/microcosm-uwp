@@ -18,6 +18,7 @@ namespace microcosm.Config
 
         public SettingXml xmlData;
         public SettingXml2 xmlData2;
+        public SettingJson jsonData;
         public string dispName { get; set; }
 
         public bool[] dispCircle = new bool[] {
@@ -122,6 +123,12 @@ namespace microcosm.Config
             Init(no, xml);
         }
 
+
+        public SettingData(int no, SettingJson json)
+        {
+            Init(no, json);
+        }
+
         public void Init(int no, SettingXml xml)
         {
 
@@ -154,12 +161,20 @@ namespace microcosm.Config
 
         }
 
+        public void Init(int no, SettingJson json)
+        {
+            jsonData = json;
+            this.dispName = jsonData.dispname;
+
+            InitSet();
+        }
+
         /// <summary>
         /// wpfソースではなぜかMainWindow.csでやっていたやつ
         /// </summary>
         private void InitSet()
         {
-            version = xmlData.version;
+            version = xmlData != null ? xmlData.version : jsonData.version;
 
             SetDispPlanet();
             SetDispAspectPlanet();
@@ -212,8 +227,18 @@ namespace microcosm.Config
         /// </summary>
         public void SetDispPlanet()
         {
-            bool[] sun = ConvertBool(xmlData.dispPlanetSun.Split(','));
-            bool[] moon = ConvertBool(xmlData.dispPlanetMoon.Split(','));
+            bool[] sun;
+            bool[] moon;
+
+            if (xmlData != null)
+            {
+                sun = ConvertBool(xmlData.dispPlanetSun.Split(','));
+                moon = ConvertBool(xmlData.dispPlanetMoon.Split(','));
+            } else
+            {
+                sun = ConvertBool(jsonData.dispPlanetSun.Split(','));
+                moon = ConvertBool(jsonData.dispPlanetMoon.Split(','));
+            }
             bool[] mercury = ConvertBool(xmlData.dispPlanetMercury.Split(','));
             bool[] venus = ConvertBool(xmlData.dispPlanetVenus.Split(','));
             bool[] mars = ConvertBool(xmlData.dispPlanetMars.Split(','));
@@ -264,12 +289,12 @@ namespace microcosm.Config
                     { CommonData.ZODIAC_NUMBER_PALLAS, pallas[i] },
                     { CommonData.ZODIAC_NUMBER_JUNO, juno[i] },
                     { CommonData.ZODIAC_NUMBER_VESTA, vesta[i] },
-                    { CommonData.ZODIAC_NUMBER_ERIS, vesta[i] },
-                    { CommonData.ZODIAC_NUMBER_SEDNA, vesta[i] },
-                    { CommonData.ZODIAC_NUMBER_HAUMEA, vesta[i] },
-                    { CommonData.ZODIAC_NUMBER_MAKEMAKE, vesta[i] },
-                    { CommonData.ZODIAC_NUMBER_VT, vesta[i] },
-                    { CommonData.ZODIAC_NUMBER_POF, vesta[i] }
+                    { CommonData.ZODIAC_NUMBER_ERIS, eris[i] },
+                    { CommonData.ZODIAC_NUMBER_SEDNA, sedna[i] },
+                    { CommonData.ZODIAC_NUMBER_HAUMEA, haumea[i] },
+                    { CommonData.ZODIAC_NUMBER_MAKEMAKE, makemake[i] },
+                    { CommonData.ZODIAC_NUMBER_VT, vt[i] },
+                    { CommonData.ZODIAC_NUMBER_POF, pof[i] }
                 };
                 dispPlanet.Add(dp);
             }

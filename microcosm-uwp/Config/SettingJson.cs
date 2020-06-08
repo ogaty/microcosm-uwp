@@ -10,7 +10,16 @@ namespace microcosm.Config
     [JsonObject("setting")]
     public class SettingJson
     {
+        [JsonProperty("version")]
+        public int version;
+
         [JsonProperty("dispname")]
         public string dispname;
+
+        [JsonProperty("dispPlanetSun")]
+        public string dispPlanetSun;
+
+        [JsonProperty("dispPlanetMoon")]
+        public string dispPlanetMoon;
     }
 }

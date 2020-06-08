@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,13 +41,13 @@ namespace microcosm.Config
 
                         Debug.WriteLine(json);
                         SettingJson setting = JsonConvert.DeserializeObject<SettingJson>(json);
-                        //settings[no] = new SettingData(no, setting);
+                        settings[no] = new SettingData(no, setting);
                     }
                 }
             }
-            catch (InvalidOperationException e)
+            catch (Exception e)
             {
-                settings[no] = new SettingData(no, null);
+                settings[no] = new SettingData(no, new SettingJson());
             }
 
             return true;
