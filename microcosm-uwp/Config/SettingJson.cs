@@ -21,5 +21,25 @@ namespace microcosm.Config
 
         [JsonProperty("dispPlanetMoon")]
         public string dispPlanetMoon;
+
+        [JsonProperty("dispPlanetMercury")]
+        public string dispPlanetMercury;
+
+        [JsonProperty("dispPlanetVenus")]
+        public string dispPlanetVenus;
+
+        [JsonProperty("dispPlanetMars")]
+        public string dispPlanetMars;
+
+        public SettingJson()
+        {
+            version = 1;
+            dispname = "名称未設定";
+            dispPlanetSun = "true,true,true,true,true,true,true";
+            dispPlanetMoon = "true,true,true,true,true,true,true";
+            dispPlanetMercury = "true,true,true,true,true,true,true";
+            dispPlanetVenus = "true,true,true,true,true,true,true";
+            dispPlanetMars = "true,true,true,true,true,true,true";
+        }
     }
 }

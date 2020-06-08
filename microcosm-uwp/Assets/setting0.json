@@ -2,5 +2,8 @@
   "version": 1,
   "dispname": "設定０",
   "dispPlanetSun": "true,true,true,true,true,true,true",
-  "dispPlanetMoon": "true,true,true,true,true,true,true"
+  "dispPlanetMoon": "true,true,true,true,true,true,true",
+  "dispPlanetMercury": "true,true,true,true,true,true,true",
+  "dispPlanetVenus": "true,true,true,true,true,true,true",
+  "dispPlanetMars": "true,true,true,true,true,true,true"
 }
