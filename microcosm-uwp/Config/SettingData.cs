@@ -235,6 +235,8 @@ namespace microcosm.Config
             bool[] jupiter;
             bool[] saturn;
             bool[] uranus;
+            bool[] neptune;
+            bool[] pluto;
 
             if (xmlData != null)
             {
@@ -246,6 +248,8 @@ namespace microcosm.Config
                 jupiter = ConvertBool(xmlData.dispPlanetJupiter.Split(','));
                 saturn = ConvertBool(xmlData.dispPlanetSaturn.Split(','));
                 uranus = ConvertBool(xmlData.dispPlanetUranus.Split(','));
+                neptune = ConvertBool(xmlData.dispPlanetNeptune.Split(','));
+                pluto = ConvertBool(xmlData.dispPlanetPluto.Split(','));
             } else
             {
                 sun = ConvertBool(jsonData.dispPlanetSun.Split(','));
@@ -256,9 +260,9 @@ namespace microcosm.Config
                 jupiter = ConvertBool(jsonData.dispPlanetJupiter.Split(','));
                 saturn = ConvertBool(jsonData.dispPlanetSaturn.Split(','));
                 uranus = ConvertBool(jsonData.dispPlanetUranus.Split(','));
+                neptune = ConvertBool(jsonData.dispPlanetNeptune.Split(','));
+                pluto = ConvertBool(jsonData.dispPlanetPluto.Split(','));
             }
-            bool[] neptune = ConvertBool(xmlData.dispPlanetNeptune.Split(','));
-            bool[] pluto = ConvertBool(xmlData.dispPlanetPluto.Split(','));
             bool[] dh = ConvertBool(xmlData.dispPlanetDh.Split(','));
             bool[] asc = ConvertBool(xmlData.dispPlanetAsc.Split(','));
             bool[] mc = ConvertBool(xmlData.dispPlanetMc.Split(','));
