@@ -5,5 +5,8 @@
   "dispPlanetMoon": "true,true,true,true,true,true,true",
   "dispPlanetMercury": "true,true,true,true,true,true,true",
   "dispPlanetVenus": "true,true,true,true,true,true,true",
-  "dispPlanetMars": "true,true,true,true,true,true,true"
+  "dispPlanetMars": "true,true,true,true,true,true,true",
+  "dispPlanetJupiter": "true,true,true,true,true,true,true",
+  "dispPlanetSaturn": "true,true,true,true,true,true,true",
+  "dispPlanetUranus": "true,true,true,true,true,true,true"
 }
