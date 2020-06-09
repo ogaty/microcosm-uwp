@@ -46,6 +46,15 @@ namespace microcosm.Config
         [JsonProperty("dispPlanetPluto")]
         public string dispPlanetPluto;
 
+        [JsonProperty("dispPlanetDh")]
+        public string dispPlanetDh;
+
+        [JsonProperty("dispPlanetAsc")]
+        public string dispPlanetAsc;
+
+        [JsonProperty("dispPlanetMc")]
+        public string dispPlanetMc;
+
 
         public SettingJson()
         {
@@ -61,6 +70,9 @@ namespace microcosm.Config
             dispPlanetUranus = "true,true,true,true,true,true,true";
             dispPlanetNeptune = "true,true,true,true,true,true,true";
             dispPlanetPluto = "true,true,true,true,true,true,true";
+            dispPlanetDh = "true,true,true,true,true,true,true";
+            dispPlanetAsc = "true,true,true,true,true,true,true";
+            dispPlanetMc = "true,true,true,true,true,true,true";
         }
     }
 }
