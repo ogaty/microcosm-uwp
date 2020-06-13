@@ -247,6 +247,13 @@ namespace microcosm.Config
             bool[] pallas;
             bool[] juno;
             bool[] vesta;
+            bool[] eris;
+            bool[] sedna;
+            bool[] haumea;
+            bool[] makemake;
+            bool[] vt;
+            bool[] pof;
+
 
 
             if (xmlData != null)
@@ -271,6 +278,12 @@ namespace microcosm.Config
                 pallas = ConvertBool(xmlData.dispPlanetPallas.Split(','));
                 juno = ConvertBool(xmlData.dispPlanetJuno.Split(','));
                 vesta = ConvertBool(xmlData.dispPlanetVesta.Split(','));
+                eris = ConvertBool(xmlData.dispPlanetEris.Split(','));
+                sedna = ConvertBool(xmlData.dispPlanetSedna.Split(','));
+                haumea = ConvertBool(xmlData.dispPlanetHaumea.Split(','));
+                makemake = ConvertBool(xmlData.dispPlanetMakemake.Split(','));
+                vt = ConvertBool(xmlData.dispPlanetVt.Split(','));
+                pof = ConvertBool(xmlData.dispPlanetPof.Split(','));
             } else
             {
                 sun = ConvertBool(jsonData.dispPlanetSun.Split(','));
@@ -292,15 +305,14 @@ namespace microcosm.Config
                 ceres = ConvertBool(jsonData.dispPlanetCeres.Split(','));
                 pallas = ConvertBool(jsonData.dispPlanetPallas.Split(','));
                 juno = ConvertBool(jsonData.dispPlanetJuno.Split(','));
-                vesta = ConvertBool(jsonData.dispPlanetVesta.Split(','))
+                vesta = ConvertBool(jsonData.dispPlanetVesta.Split(','));
+                eris = ConvertBool(jsonData.dispPlanetEris.Split(','));
+                sedna = ConvertBool(jsonData.dispPlanetSedna.Split(','));
+                haumea = ConvertBool(jsonData.dispPlanetHaumea.Split(','));
+                makemake = ConvertBool(jsonData.dispPlanetMakemake.Split(','));
+                vt = ConvertBool(jsonData.dispPlanetVt.Split(','));
+                pof = ConvertBool(jsonData.dispPlanetPof.Split(','));
             }
-
-            bool[] eris = ConvertBool(xmlData.dispPlanetEris.Split(','));
-            bool[] sedna = ConvertBool(xmlData.dispPlanetSedna.Split(','));
-            bool[] haumea = ConvertBool(xmlData.dispPlanetHaumea.Split(','));
-            bool[] makemake = ConvertBool(xmlData.dispPlanetMakemake.Split(','));
-            bool[] vt = ConvertBool(xmlData.dispPlanetVt.Split(','));
-            bool[] pof = ConvertBool(xmlData.dispPlanetPof.Split(','));
 
 
             for (int i = 0; i < 7; i++)
@@ -408,51 +420,63 @@ namespace microcosm.Config
         {
             for (int i = 0; i < 28; i++)
             {
-                dispAspectPlanet.Add(GetDispAspectDictionary(i));
+                if (xmlData != null)
+                {
+                    aspectSun = ConvertBool(xmlData.aspectSun.Split(','));
+                    aspectMoon = ConvertBool(xmlData.aspectMoon.Split(','));
+                    aspectMercury = ConvertBool(xmlData.aspectMercury.Split(','));
+                    aspectVenus = ConvertBool(xmlData.aspectVenus.Split(','));
+                    aspectMars = ConvertBool(xmlData.aspectMars.Split(','));
+                    aspectJupiter = ConvertBool(xmlData.aspectJupiter.Split(','));
+                    aspectSaturn = ConvertBool(xmlData.aspectSaturn.Split(','));
+                    aspectUranus = ConvertBool(xmlData.aspectUranus.Split(','));
+                    aspectNeptune = ConvertBool(xmlData.aspectNeptune.Split(','));
+                    aspectPluto = ConvertBool(xmlData.aspectPluto.Split(','));
+                }
+                else
+                {
+                    aspectSun = ConvertBool(jsonData.aspectSun.Split(','));
+                    aspectMoon = ConvertBool(jsonData.aspectMoon.Split(','));
+                    aspectMercury = ConvertBool(jsonData.aspectMercury.Split(','));
+                    aspectVenus = ConvertBool(jsonData.aspectVenus.Split(','));
+                    aspectMars = ConvertBool(jsonData.aspectMars.Split(','));
+                    aspectJupiter = ConvertBool(jsonData.aspectJupiter.Split(','));
+                    aspectSaturn = ConvertBool(jsonData.aspectSaturn.Split(','));
+                    aspectUranus = ConvertBool(jsonData.aspectUranus.Split(','));
+                    aspectNeptune = ConvertBool(jsonData.aspectNeptune.Split(','));
+                    aspectPluto = ConvertBool(jsonData.aspectPluto.Split(','));
+                    aspectDh = ConvertBool(jsonData.aspectDh.Split(','));
+                }
+                Dictionary<int, bool> da = new Dictionary<int, bool>
+                {
+                    { CommonData.ZODIAC_NUMBER_SUN, aspectSun[i] },
+                    { CommonData.ZODIAC_NUMBER_MOON, aspectMoon[i] },
+                    { CommonData.ZODIAC_NUMBER_MERCURY, aspectMercury[i] },
+                    { CommonData.ZODIAC_NUMBER_VENUS, aspectVenus[i] },
+                    { CommonData.ZODIAC_NUMBER_MARS, aspectMars[i] },
+                    { CommonData.ZODIAC_NUMBER_JUPITER, aspectJupiter[i] },
+                    { CommonData.ZODIAC_NUMBER_SATURN, aspectSaturn[i] },
+                    { CommonData.ZODIAC_NUMBER_URANUS, aspectUranus[i] },
+                    { CommonData.ZODIAC_NUMBER_NEPTUNE, aspectNeptune[i] },
+                    { CommonData.ZODIAC_NUMBER_PLUTO, aspectPluto[i] },
+                    { CommonData.ZODIAC_NUMBER_DH_TRUENODE, aspectDh[i] },
+                    { CommonData.ZODIAC_NUMBER_ASC, aspectAsc[i] },
+                    { CommonData.ZODIAC_NUMBER_MC, aspectMc[i] },
+                    { CommonData.ZODIAC_NUMBER_CHIRON, aspectChiron[i] },
+                    { CommonData.ZODIAC_NUMBER_EARTH, aspectEarth[i] },
+                    { CommonData.ZODIAC_NUMBER_LILITH, aspectLilith[i] },
+                    { CommonData.ZODIAC_NUMBER_CERES, aspectCeres[i] },
+                    { CommonData.ZODIAC_NUMBER_PALLAS, false },
+                    { CommonData.ZODIAC_NUMBER_JUNO, false },
+                    { CommonData.ZODIAC_NUMBER_VESTA, false },
+                    { CommonData.ZODIAC_NUMBER_SEDNA, false },
+                    { CommonData.ZODIAC_NUMBER_ERIS, false },
+                    { CommonData.ZODIAC_NUMBER_HAUMEA, false },
+                    { CommonData.ZODIAC_NUMBER_MAKEMAKE, false }
+                };
+
+                dispAspectPlanet.Add(da);
             }
-        }
-
-        private  Dictionary<int, bool> GetDispAspectDictionary(int n)
-        {
-            aspectSun = ConvertBool(xmlData.aspectSun.Split(','));
-            aspectMoon = ConvertBool(xmlData.aspectMoon.Split(','));
-            aspectMercury = ConvertBool(xmlData.aspectMercury.Split(','));
-            aspectVenus = ConvertBool(xmlData.aspectVenus.Split(','));
-            aspectMars = ConvertBool(xmlData.aspectMars.Split(','));
-            aspectJupiter = ConvertBool(xmlData.aspectJupiter.Split(','));
-            aspectSaturn = ConvertBool(xmlData.aspectSaturn.Split(','));
-            aspectUranus = ConvertBool(xmlData.aspectUranus.Split(','));
-            aspectNeptune = ConvertBool(xmlData.aspectNeptune.Split(','));
-            aspectPluto = ConvertBool(xmlData.aspectPluto.Split(','));
-            Dictionary<int, bool> da = new Dictionary<int, bool>
-            {
-                { CommonData.ZODIAC_NUMBER_SUN, aspectSun[n] },
-                { CommonData.ZODIAC_NUMBER_MOON, aspectMoon[n] },
-                { CommonData.ZODIAC_NUMBER_MERCURY, aspectMercury[n] },
-                { CommonData.ZODIAC_NUMBER_VENUS, aspectVenus[n] },
-                { CommonData.ZODIAC_NUMBER_MARS, aspectMars[n] },
-                { CommonData.ZODIAC_NUMBER_JUPITER, aspectJupiter[n] },
-                { CommonData.ZODIAC_NUMBER_SATURN, aspectSaturn[n] },
-                { CommonData.ZODIAC_NUMBER_URANUS, aspectUranus[n] },
-                { CommonData.ZODIAC_NUMBER_NEPTUNE, aspectNeptune[n] },
-                { CommonData.ZODIAC_NUMBER_PLUTO, aspectPluto[n] },
-                { CommonData.ZODIAC_NUMBER_DH_TRUENODE, aspectDh[n] },
-                { CommonData.ZODIAC_NUMBER_ASC, aspectAsc[n] },
-                { CommonData.ZODIAC_NUMBER_MC, aspectMc[n] },
-                { CommonData.ZODIAC_NUMBER_CHIRON, aspectChiron[n] },
-                { CommonData.ZODIAC_NUMBER_EARTH, aspectEarth[n] },
-                { CommonData.ZODIAC_NUMBER_LILITH, aspectLilith[n] },
-                { CommonData.ZODIAC_NUMBER_CERES, aspectCeres[n] },
-                { CommonData.ZODIAC_NUMBER_PALLAS, false },
-                { CommonData.ZODIAC_NUMBER_JUNO, false },
-                { CommonData.ZODIAC_NUMBER_VESTA, false },
-                { CommonData.ZODIAC_NUMBER_SEDNA, false },
-                { CommonData.ZODIAC_NUMBER_ERIS, false },
-                { CommonData.ZODIAC_NUMBER_HAUMEA, false },
-                { CommonData.ZODIAC_NUMBER_MAKEMAKE, false }
-            };
-
-            return da;
         }
 
         private void SetDispAspectCategory()

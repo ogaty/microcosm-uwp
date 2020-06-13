@@ -76,6 +76,58 @@ namespace microcosm.Config
         [JsonProperty("dispPlanetVesta")]
         public string dispPlanetVesta;
 
+        [JsonProperty("dispPlanetEris")]
+        public string dispPlanetEris;
+
+        [JsonProperty("dispPlanetSedna")]
+        public string dispPlanetSedna;
+
+        [JsonProperty("dispPlanetHaumea")]
+        public string dispPlanetHaumea;
+
+        [JsonProperty("dispPlanetMakemake")]
+        public string dispPlanetMakemake;
+
+        [JsonProperty("dispPlanetMakemake")]
+        public string dispPlanetVt;
+
+        [JsonProperty("dispPlanetMakemake")]
+        public string dispPlanetPof;
+
+        [JsonProperty("aspectSun")]
+        public string aspectSun;
+
+        [JsonProperty("aspectMoon")]
+        public string aspectMoon;
+
+        [JsonProperty("aspectMercury")]
+        public string aspectMercury;
+
+        [JsonProperty("aspectVenus")]
+        public string aspectVenus;
+
+        [JsonProperty("aspectMars")]
+        public string aspectMars;
+
+        [JsonProperty("aspectJupiter")]
+        public string aspectJupiter;
+
+        [JsonProperty("aspectSaturn")]
+        public string aspectSaturn;
+
+        [JsonProperty("aspectUranus")]
+        public string aspectUranus;
+
+        [JsonProperty("aspectNeptune")]
+        public string aspectNeptune;
+
+        [JsonProperty("aspectPluto")]
+        public string aspectPluto;
+
+        [JsonProperty("aspectDh")]
+        public string aspectDh;
+
+        // TODO
 
         public SettingJson()
         {
@@ -101,6 +153,23 @@ namespace microcosm.Config
             dispPlanetPallas = "false,false,false,false,false,false,false";
             dispPlanetJuno = "false,false,false,false,false,false,false";
             dispPlanetVesta = "false,false,false,false,false,false,false";
+            dispPlanetEris = "false,false,false,false,false,false,false";
+            dispPlanetSedna = "false,false,false,false,false,false,false";
+            dispPlanetHaumea = "false,false,false,false,false,false,false";
+            dispPlanetMakemake = "false,false,false,false,false,false,false";
+            dispPlanetVt = "false,false,false,false,false,false,false";
+            dispPlanetPof = "false,false,false,false,false,false,false";
+            aspectSun = "true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true";
+            aspectMoon = "true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true";
+            aspectMercury = "true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true";
+            aspectVenus = "true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true";
+            aspectMars = "true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true";
+            aspectJupiter = "true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true";
+            aspectSaturn = "true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true";
+            aspectUranus = "true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true";
+            aspectNeptune = "true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true";
+            aspectPluto = "true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true";
+            aspectDh = "true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true";
         }
     }
 }
