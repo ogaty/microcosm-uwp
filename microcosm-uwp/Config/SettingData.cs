@@ -243,6 +243,10 @@ namespace microcosm.Config
             bool[] chiron;
             bool[] earth;
             bool[] lilith;
+            bool[] ceres;
+            bool[] pallas;
+            bool[] juno;
+            bool[] vesta;
 
 
             if (xmlData != null)
@@ -263,6 +267,10 @@ namespace microcosm.Config
                 chiron = ConvertBool(xmlData.dispPlanetChiron.Split(','));
                 earth = ConvertBool(xmlData.dispPlanetEarth.Split(','));
                 lilith = ConvertBool(xmlData.dispPlanetLilith.Split(','));
+                ceres = ConvertBool(xmlData.dispPlanetCeres.Split(','));
+                pallas = ConvertBool(xmlData.dispPlanetPallas.Split(','));
+                juno = ConvertBool(xmlData.dispPlanetJuno.Split(','));
+                vesta = ConvertBool(xmlData.dispPlanetVesta.Split(','));
             } else
             {
                 sun = ConvertBool(jsonData.dispPlanetSun.Split(','));
@@ -281,12 +289,12 @@ namespace microcosm.Config
                 chiron = ConvertBool(jsonData.dispPlanetChiron.Split(','));
                 earth = ConvertBool(jsonData.dispPlanetEarth.Split(','));
                 lilith = ConvertBool(jsonData.dispPlanetLilith.Split(','));
+                ceres = ConvertBool(jsonData.dispPlanetCeres.Split(','));
+                pallas = ConvertBool(jsonData.dispPlanetPallas.Split(','));
+                juno = ConvertBool(jsonData.dispPlanetJuno.Split(','));
+                vesta = ConvertBool(jsonData.dispPlanetVesta.Split(','))
             }
 
-            bool[] ceres = ConvertBool(xmlData.dispPlanetCeres.Split(','));
-            bool[] pallas = ConvertBool(xmlData.dispPlanetPallas.Split(','));
-            bool[] juno = ConvertBool(xmlData.dispPlanetJuno.Split(','));
-            bool[] vesta = ConvertBool(xmlData.dispPlanetVesta.Split(','));
             bool[] eris = ConvertBool(xmlData.dispPlanetEris.Split(','));
             bool[] sedna = ConvertBool(xmlData.dispPlanetSedna.Split(','));
             bool[] haumea = ConvertBool(xmlData.dispPlanetHaumea.Split(','));

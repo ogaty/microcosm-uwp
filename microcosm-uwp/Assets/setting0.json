@@ -14,5 +14,9 @@
   "dispPlanetDh": "true,true,true,true,true,true,true",
   "dispPlanetChiron": "true,true,true,true,true,true,true",
   "dispPlanetEarth": "false,false,false,false,false,false,false",
-  "dispPlanetLilith": "false,false,false,false,false,false,false"
+  "dispPlanetLilith": "false,false,false,false,false,false,false",
+  "dispPlanetCeres": "false,false,false,false,false,false,false",
+  "dispPlanetPallas": "false,false,false,false,false,false,false",
+  "dispPlanetJuno": "false,false,false,false,false,false,false",
+  "dispPlanetVesta": "false,false,false,false,false,false,false"
 }

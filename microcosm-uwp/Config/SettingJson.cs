@@ -64,6 +64,19 @@ namespace microcosm.Config
         [JsonProperty("dispPlanetLilith")]
         public string dispPlanetLilith;
 
+        [JsonProperty("dispPlanetCeres")]
+        public string dispPlanetCeres;
+
+        [JsonProperty("dispPlanetPallas")]
+        public string dispPlanetPallas;
+
+        [JsonProperty("dispPlanetJuno")]
+        public string dispPlanetJuno;
+
+        [JsonProperty("dispPlanetVesta")]
+        public string dispPlanetVesta;
+
+
         public SettingJson()
         {
             version = 1;
@@ -84,6 +97,10 @@ namespace microcosm.Config
             dispPlanetChiron = "true,true,true,true,true,true,true";
             dispPlanetEarth = "false,false,false,false,false,false,false";
             dispPlanetLilith = "false,false,false,false,false,false,false";
+            dispPlanetCeres = "false,false,false,false,false,false,false";
+            dispPlanetPallas = "false,false,false,false,false,false,false";
+            dispPlanetJuno = "false,false,false,false,false,false,false";
+            dispPlanetVesta = "false,false,false,false,false,false,false";
         }
     }
 }
