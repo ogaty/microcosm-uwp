@@ -127,6 +127,111 @@ namespace microcosm.Config
         [JsonProperty("aspectDh")]
         public string aspectDh;
 
+        [JsonProperty("aspectConjunction1")]
+        public string aspectConjunction1;
+
+        [JsonProperty("aspectConjunction2")]
+        public string aspectConjunction2;
+
+        [JsonProperty("aspectConjunction3")]
+        public string aspectConjunction3;
+
+        [JsonProperty("aspectConjunction4")]
+        public string aspectConjunction4;
+
+        [JsonProperty("aspectConjunction5")]
+        public string aspectConjunction5;
+
+        [JsonProperty("aspectConjunction6")]
+        public string aspectConjunction6;
+
+        [JsonProperty("aspectConjunction7")]
+        public string aspectConjunction7;
+
+        [JsonProperty("aspectOpposition1")]
+        public string aspectOpposition1;
+
+        [JsonProperty("aspectOpposition2")]
+        public string aspectOpposition2;
+
+        [JsonProperty("aspectOpposition3")]
+        public string aspectOpposition3;
+
+        [JsonProperty("aspectOpposition4")]
+        public string aspectOpposition4;
+
+        [JsonProperty("aspectOpposition5")]
+        public string aspectOpposition5;
+
+        [JsonProperty("aspectOpposition6")]
+        public string aspectOpposition6;
+
+        [JsonProperty("aspectOpposition7")]
+        public string aspectOpposition7;
+
+        [JsonProperty("aspectTrine1")]
+        public string aspectTrine1;
+
+        [JsonProperty("aspectTrine2")]
+        public string aspectTrine2;
+
+        [JsonProperty("aspectTrine3")]
+        public string aspectTrine3;
+
+        [JsonProperty("aspectTrine4")]
+        public string aspectTrine4;
+
+        [JsonProperty("aspectTrine5")]
+        public string aspectTrine5;
+
+        [JsonProperty("aspectTrine6")]
+        public string aspectTrine6;
+
+        [JsonProperty("aspectTrine7")]
+        public string aspectTrine7;
+
+        [JsonProperty("aspectSquare1")]
+        public string aspectSquare1;
+
+        [JsonProperty("aspectSquare2")]
+        public string aspectSquare2;
+
+        [JsonProperty("aspectSquare3")]
+        public string aspectSquare3;
+
+        [JsonProperty("aspectSquare4")]
+        public string aspectSquare4;
+
+        [JsonProperty("aspectSquare5")]
+        public string aspectSquare5;
+
+        [JsonProperty("aspectSquare6")]
+        public string aspectSquare6;
+
+        [JsonProperty("aspectSquare7")]
+        public string aspectSquare7;
+
+        [JsonProperty("aspectSextile1")]
+        public string aspectSextile1;
+
+        [JsonProperty("aspectSextile2")]
+        public string aspectSextile2;
+
+        [JsonProperty("aspectSextile3")]
+        public string aspectSextile3;
+
+        [JsonProperty("aspectSextile4")]
+        public string aspectSextile4;
+
+        [JsonProperty("aspectSextile5")]
+        public string aspectSextile5;
+
+        [JsonProperty("aspectSextile6")]
+        public string aspectSextile6;
+
+        [JsonProperty("aspectSextile7")]
+        public string aspectSextile7;
+
         // TODO
 
         public SettingJson()
@@ -170,6 +275,42 @@ namespace microcosm.Config
             aspectNeptune = "true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true";
             aspectPluto = "true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true";
             aspectDh = "true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true";
+            aspectConjunction1 = "true,true,true,true,true,true,true";
+            aspectConjunction2 = "true,true,true,true,true,true,true";
+            aspectConjunction3 = "true,true,true,true,true,true,true";
+            aspectConjunction4 = "true,true,true,true,true,true,true";
+            aspectConjunction5 = "true,true,true,true,true,true,true";
+            aspectConjunction6 = "true,true,true,true,true,true,true";
+            aspectConjunction7 = "true,true,true,true,true,true,true";
+            aspectOpposition1 = "true,true,true,true,true,true,true";
+            aspectOpposition2 = "true,true,true,true,true,true,true";
+            aspectOpposition3 = "true,true,true,true,true,true,true";
+            aspectOpposition4 = "true,true,true,true,true,true,true";
+            aspectOpposition5 = "true,true,true,true,true,true,true";
+            aspectOpposition6 = "true,true,true,true,true,true,true";
+            aspectOpposition7 = "true,true,true,true,true,true,true";
+            aspectTrine1 = "true,true,true,true,true,true,true";
+            aspectTrine2 = "true,true,true,true,true,true,true";
+            aspectTrine3 = "true,true,true,true,true,true,true";
+            aspectTrine4 = "true,true,true,true,true,true,true";
+            aspectTrine5 = "true,true,true,true,true,true,true";
+            aspectTrine6 = "true,true,true,true,true,true,true";
+            aspectTrine7 = "true,true,true,true,true,true,true";
+            aspectTrine7 = "true,true,true,true,true,true,true";
+            aspectSquare1 = "true,true,true,true,true,true,true";
+            aspectSquare2 = "true,true,true,true,true,true,true";
+            aspectSquare3 = "true,true,true,true,true,true,true";
+            aspectSquare4 = "true,true,true,true,true,true,true";
+            aspectSquare5 = "true,true,true,true,true,true,true";
+            aspectSquare6 = "true,true,true,true,true,true,true";
+            aspectSquare7 = "true,true,true,true,true,true,true";
+            aspectSextile1 = "true,true,true,true,true,true,true";
+            aspectSextile2 = "true,true,true,true,true,true,true";
+            aspectSextile3 = "true,true,true,true,true,true,true";
+            aspectSextile4 = "true,true,true,true,true,true,true";
+            aspectSextile5 = "true,true,true,true,true,true,true";
+            aspectSextile6 = "true,true,true,true,true,true,true";
+            aspectSextile7 = "true,true,true,true,true,true,true";
         }
     }
 }

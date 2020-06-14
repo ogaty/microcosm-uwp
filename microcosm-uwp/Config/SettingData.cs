@@ -500,53 +500,130 @@ namespace microcosm.Config
             switch (n)
             {
                 case 0:
-                    aspectConjunction = ConvertBool(xmlData.aspectConjunction1.Split(','));
-                    aspectOpposition = ConvertBool(xmlData.aspectOpposition1.Split(','));
-                    aspectTrine = ConvertBool(xmlData.aspectTrine1.Split(','));
-                    aspectSquare = ConvertBool(xmlData.aspectSquare1.Split(','));
-                    aspectSextile = ConvertBool(xmlData.aspectSextile1.Split(','));
+                    if (xmlData != null)
+                    {
+                        aspectConjunction = ConvertBool(xmlData.aspectConjunction1.Split(','));
+                        aspectOpposition = ConvertBool(xmlData.aspectOpposition1.Split(','));
+                        aspectTrine = ConvertBool(xmlData.aspectTrine1.Split(','));
+                        aspectSquare = ConvertBool(xmlData.aspectSquare1.Split(','));
+                        aspectSextile = ConvertBool(xmlData.aspectSextile1.Split(','));
+                    }
+                    else
+                    {
+                        aspectConjunction = ConvertBool(jsonData.aspectConjunction1.Split(','));
+                        aspectOpposition = ConvertBool(jsonData.aspectOpposition1.Split(','));
+                        aspectTrine = ConvertBool(jsonData.aspectTrine1.Split(','));
+                        aspectSquare = ConvertBool(jsonData.aspectSquare1.Split(','));
+                        aspectSextile = ConvertBool(jsonData.aspectSextile1.Split(','));
+                    }
                     break;
                 case 1:
-                    aspectConjunction = ConvertBool(xmlData.aspectConjunction2.Split(','));
-                    aspectOpposition = ConvertBool(xmlData.aspectOpposition2.Split(','));
-                    aspectTrine = ConvertBool(xmlData.aspectTrine2.Split(','));
-                    aspectSquare = ConvertBool(xmlData.aspectSquare2.Split(','));
-                    aspectSextile = ConvertBool(xmlData.aspectSextile2.Split(','));
+                    if (xmlData != null)
+                    {
+                        aspectConjunction = ConvertBool(xmlData.aspectConjunction2.Split(','));
+                        aspectOpposition = ConvertBool(xmlData.aspectOpposition2.Split(','));
+                        aspectTrine = ConvertBool(xmlData.aspectTrine2.Split(','));
+                        aspectSquare = ConvertBool(xmlData.aspectSquare2.Split(','));
+                        aspectSextile = ConvertBool(xmlData.aspectSextile2.Split(','));
+                    }
+                    else
+                    {
+                        aspectConjunction = ConvertBool(jsonData.aspectConjunction2.Split(','));
+                        aspectOpposition = ConvertBool(jsonData.aspectOpposition2.Split(','));
+                        aspectTrine = ConvertBool(jsonData.aspectTrine2.Split(','));
+                        aspectSquare = ConvertBool(jsonData.aspectSquare2.Split(','));
+                        aspectSextile = ConvertBool(jsonData.aspectSextile2.Split(','));
+                    }
                     break;
                 case 2:
-                    aspectConjunction = ConvertBool(xmlData.aspectConjunction3.Split(','));
-                    aspectOpposition = ConvertBool(xmlData.aspectOpposition3.Split(','));
-                    aspectTrine = ConvertBool(xmlData.aspectTrine3.Split(','));
-                    aspectSquare = ConvertBool(xmlData.aspectSquare3.Split(','));
-                    aspectSextile = ConvertBool(xmlData.aspectSextile3.Split(','));
+                    if (xmlData != null)
+                    {
+                        aspectConjunction = ConvertBool(xmlData.aspectConjunction3.Split(','));
+                        aspectOpposition = ConvertBool(xmlData.aspectOpposition3.Split(','));
+                        aspectTrine = ConvertBool(xmlData.aspectTrine3.Split(','));
+                        aspectSquare = ConvertBool(xmlData.aspectSquare3.Split(','));
+                        aspectSextile = ConvertBool(xmlData.aspectSextile3.Split(','));
+                    }
+                    else
+                    {
+                        aspectConjunction = ConvertBool(jsonData.aspectConjunction3.Split(','));
+                        aspectOpposition = ConvertBool(jsonData.aspectOpposition3.Split(','));
+                        aspectTrine = ConvertBool(jsonData.aspectTrine3.Split(','));
+                        aspectSquare = ConvertBool(jsonData.aspectSquare3.Split(','));
+                        aspectSextile = ConvertBool(jsonData.aspectSextile3.Split(','));
+                    }
                     break;
                 case 3:
-                    aspectConjunction = ConvertBool(xmlData.aspectConjunction4.Split(','));
-                    aspectOpposition = ConvertBool(xmlData.aspectOpposition4.Split(','));
-                    aspectTrine = ConvertBool(xmlData.aspectTrine4.Split(','));
-                    aspectSquare = ConvertBool(xmlData.aspectSquare4.Split(','));
-                    aspectSextile = ConvertBool(xmlData.aspectSextile4.Split(','));
+                    if (xmlData != null)
+                    {
+                        aspectConjunction = ConvertBool(xmlData.aspectConjunction4.Split(','));
+                        aspectOpposition = ConvertBool(xmlData.aspectOpposition4.Split(','));
+                        aspectTrine = ConvertBool(xmlData.aspectTrine4.Split(','));
+                        aspectSquare = ConvertBool(xmlData.aspectSquare4.Split(','));
+                        aspectSextile = ConvertBool(xmlData.aspectSextile4.Split(','));
+                    }
+                    else
+                    {
+                        aspectConjunction = ConvertBool(jsonData.aspectConjunction5.Split(','));
+                        aspectOpposition = ConvertBool(jsonData.aspectOpposition5.Split(','));
+                        aspectTrine = ConvertBool(jsonData.aspectTrine5.Split(','));
+                        aspectSquare = ConvertBool(jsonData.aspectSquare5.Split(','));
+                        aspectSextile = ConvertBool(jsonData.aspectSextile5.Split(','));
+                    }
                     break;
                 case 4:
-                    aspectConjunction = ConvertBool(xmlData.aspectConjunction5.Split(','));
-                    aspectOpposition = ConvertBool(xmlData.aspectOpposition5.Split(','));
-                    aspectTrine = ConvertBool(xmlData.aspectTrine5.Split(','));
-                    aspectSquare = ConvertBool(xmlData.aspectSquare5.Split(','));
-                    aspectSextile = ConvertBool(xmlData.aspectSextile5.Split(','));
+                    if (xmlData != null)
+                    {
+                        aspectConjunction = ConvertBool(xmlData.aspectConjunction5.Split(','));
+                        aspectOpposition = ConvertBool(xmlData.aspectOpposition5.Split(','));
+                        aspectTrine = ConvertBool(xmlData.aspectTrine5.Split(','));
+                        aspectSquare = ConvertBool(xmlData.aspectSquare5.Split(','));
+                        aspectSextile = ConvertBool(xmlData.aspectSextile5.Split(','));
+                    }
+                    else
+                    {
+                        aspectConjunction = ConvertBool(jsonData.aspectConjunction5.Split(','));
+                        aspectOpposition = ConvertBool(jsonData.aspectOpposition5.Split(','));
+                        aspectTrine = ConvertBool(jsonData.aspectTrine5.Split(','));
+                        aspectSquare = ConvertBool(jsonData.aspectSquare5.Split(','));
+                        aspectSextile = ConvertBool(jsonData.aspectSextile5.Split(','));
+                    }
                     break;
                 case 5:
-                    aspectConjunction = ConvertBool(xmlData.aspectConjunction6.Split(','));
-                    aspectOpposition = ConvertBool(xmlData.aspectOpposition6.Split(','));
-                    aspectTrine = ConvertBool(xmlData.aspectTrine6.Split(','));
-                    aspectSquare = ConvertBool(xmlData.aspectSquare6.Split(','));
-                    aspectSextile = ConvertBool(xmlData.aspectSextile6.Split(','));
+                    if (xmlData != null)
+                    {
+                        aspectConjunction = ConvertBool(xmlData.aspectConjunction6.Split(','));
+                        aspectOpposition = ConvertBool(xmlData.aspectOpposition6.Split(','));
+                        aspectTrine = ConvertBool(xmlData.aspectTrine6.Split(','));
+                        aspectSquare = ConvertBool(xmlData.aspectSquare6.Split(','));
+                        aspectSextile = ConvertBool(xmlData.aspectSextile6.Split(','));
+                    }
+                    else
+                    {
+                        aspectConjunction = ConvertBool(jsonData.aspectConjunction6.Split(','));
+                        aspectOpposition = ConvertBool(jsonData.aspectOpposition6.Split(','));
+                        aspectTrine = ConvertBool(jsonData.aspectTrine6.Split(','));
+                        aspectSquare = ConvertBool(jsonData.aspectSquare6.Split(','));
+                        aspectSextile = ConvertBool(jsonData.aspectSextile6.Split(','));
+                    }
                     break;
                 case 6:
-                    aspectConjunction = ConvertBool(xmlData.aspectConjunction7.Split(','));
-                    aspectOpposition = ConvertBool(xmlData.aspectOpposition7.Split(','));
-                    aspectTrine = ConvertBool(xmlData.aspectTrine7.Split(','));
-                    aspectSquare = ConvertBool(xmlData.aspectSquare7.Split(','));
-                    aspectSextile = ConvertBool(xmlData.aspectSextile7.Split(','));
+                    if (xmlData != null)
+                    {
+                        aspectConjunction = ConvertBool(xmlData.aspectConjunction7.Split(','));
+                        aspectOpposition = ConvertBool(xmlData.aspectOpposition7.Split(','));
+                        aspectTrine = ConvertBool(xmlData.aspectTrine7.Split(','));
+                        aspectSquare = ConvertBool(xmlData.aspectSquare7.Split(','));
+                        aspectSextile = ConvertBool(xmlData.aspectSextile7.Split(','));
+                    }
+                    else
+                    {
+                        aspectConjunction = ConvertBool(jsonData.aspectConjunction7.Split(','));
+                        aspectOpposition = ConvertBool(jsonData.aspectOpposition7.Split(','));
+                        aspectTrine = ConvertBool(jsonData.aspectTrine7.Split(','));
+                        aspectSquare = ConvertBool(jsonData.aspectSquare7.Split(','));
+                        aspectSextile = ConvertBool(jsonData.aspectSextile7.Split(','));
+                    }
                     break;
             }
             dac[AspectKind.CONJUNCTION] = aspectConjunction[m];
