@@ -232,7 +232,59 @@ namespace microcosm.Config
         [JsonProperty("aspectSextile7")]
         public string aspectSextile7;
 
-        // TODO
+        [JsonProperty("orb_sun_soft_1st")]
+        public string orb_sun_soft_1st;
+
+        [JsonProperty("orb_sun_hard_1st")]
+        public string orb_sun_hard_1st;
+
+        [JsonProperty("orb_sun_soft_2nd")]
+        public string orb_sun_soft_2nd;
+
+        [JsonProperty("orb_sun_hard_2nd")]
+        public string orb_sun_hard_2nd;
+
+        [JsonProperty("orb_sun_soft_150")]
+        public string orb_sun_soft_150;
+
+        [JsonProperty("orb_sun_hard_150")]
+        public string orb_sun_hard_150;
+
+        [JsonProperty("orb_moon_soft_1st")]
+        public string orb_moon_soft_1st;
+
+        [JsonProperty("orb_moon_hard_1st")]
+        public string orb_moon_hard_1st;
+
+        [JsonProperty("orb_moon_soft_2nd")]
+        public string orb_moon_soft_2nd;
+
+        [JsonProperty("orb_moon_hard_2nd")]
+        public string orb_moon_hard_2nd;
+
+        [JsonProperty("orb_moon_soft_150")]
+        public string orb_moon_soft_150;
+
+        [JsonProperty("orb_moon_hard_150")]
+        public string orb_moon_hard_150;
+
+        [JsonProperty("orb_other_soft_1st")]
+        public string orb_other_soft_1st;
+
+        [JsonProperty("orb_other_hard_1st")]
+        public string orb_other_hard_1st;
+
+        [JsonProperty("orb_other_soft_2nd")]
+        public string orb_other_soft_2nd;
+
+        [JsonProperty("orb_other_hard_2nd")]
+        public string orb_other_hard_2nd;
+
+        [JsonProperty("orb_other_soft_150")]
+        public string orb_other_soft_150;
+
+        [JsonProperty("orb_other_hard_150")]
+        public string orb_other_hard_150;
 
         public SettingJson()
         {
@@ -311,6 +363,24 @@ namespace microcosm.Config
             aspectSextile5 = "true,true,true,true,true,true,true";
             aspectSextile6 = "true,true,true,true,true,true,true";
             aspectSextile7 = "true,true,true,true,true,true,true";
+            orb_sun_soft_1st = "8.0,8.0,8.0,8.0,8.0,8.0,8.0";
+            orb_sun_hard_1st = "6.0,6.0,6.0,6.0,6.0,6.0,6.0";
+            orb_sun_soft_2nd = "6.0,6.0,6.0,6.0,6.0,6.0,6.0";
+            orb_sun_hard_2nd = "4.0,4.0,4.0,4.0,4.0,4.0,4.0";
+            orb_sun_soft_150 = "3.0,3.0,3.0,3.0,3.0,3.0,3.0";
+            orb_sun_hard_150 = "1.5,1.5,1.5,1.5,1.5,1.5,1.5";
+            orb_moon_soft_1st = "8.0,8.0,8.0,8.0,8.0,8.0,8.0";
+            orb_moon_hard_1st = "6.0,6.0,6.0,6.0,6.0,6.0,6.0";
+            orb_moon_soft_2nd = "6.0,6.0,6.0,6.0,6.0,6.0,6.0";
+            orb_moon_hard_2nd = "4.0,4.0,4.0,4.0,4.0,4.0,4.0";
+            orb_moon_soft_150 = "3.0,3.0,3.0,3.0,3.0,3.0,3.0";
+            orb_moon_hard_150 = "1.5,1.5,1.5,1.5,1.5,1.5,1.5";
+            orb_other_soft_1st = "5.0,5.0,5.0,5.0,5.0,5.0,5.0";
+            orb_other_hard_1st = "3.0,3.0,3.0,3.0,3.0,3.0,3.0";
+            orb_other_soft_2nd = "4.0,4.0,4.0,4.0,4.0,4.0,4.0";
+            orb_other_hard_2nd = "2.0,2.0,2.0,2.0,2.0,2.0,2.0";
+            orb_other_soft_150 = "1.5,1.5,1.5,1.5,1.5,1.5,1.5";
+            orb_other_hard_150 = "1.0,1.0,1.0,1.0,1.0,1.0,1.0";
         }
     }
 }

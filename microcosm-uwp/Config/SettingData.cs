@@ -357,24 +357,48 @@ namespace microcosm.Config
         /// </summary>
         private void SetOrbs()
         {
-            orb_sun_soft_1st = ConvertDouble(xmlData.orb_sun_soft_1st.Split(','));
-            orb_sun_soft_2nd = ConvertDouble(xmlData.orb_sun_soft_2nd.Split(','));
-            orb_sun_soft_150 = ConvertDouble(xmlData.orb_sun_soft_150.Split(','));
-            orb_sun_hard_1st = ConvertDouble(xmlData.orb_sun_hard_1st.Split(','));
-            orb_sun_hard_2nd = ConvertDouble(xmlData.orb_sun_hard_2nd.Split(','));
-            orb_sun_hard_150 = ConvertDouble(xmlData.orb_sun_hard_150.Split(','));
-            orb_moon_soft_1st = ConvertDouble(xmlData.orb_moon_soft_1st.Split(','));
-            orb_moon_soft_2nd = ConvertDouble(xmlData.orb_moon_soft_2nd.Split(','));
-            orb_moon_soft_150 = ConvertDouble(xmlData.orb_moon_soft_150.Split(','));
-            orb_moon_hard_1st = ConvertDouble(xmlData.orb_moon_hard_1st.Split(','));
-            orb_moon_hard_2nd = ConvertDouble(xmlData.orb_moon_hard_2nd.Split(','));
-            orb_moon_hard_150 = ConvertDouble(xmlData.orb_moon_hard_150.Split(','));
-            orb_other_soft_1st = ConvertDouble(xmlData.orb_other_soft_1st.Split(','));
-            orb_other_soft_2nd = ConvertDouble(xmlData.orb_other_soft_2nd.Split(','));
-            orb_other_soft_150 = ConvertDouble(xmlData.orb_other_soft_150.Split(','));
-            orb_other_hard_1st = ConvertDouble(xmlData.orb_other_hard_1st.Split(','));
-            orb_other_hard_2nd = ConvertDouble(xmlData.orb_other_hard_2nd.Split(','));
-            orb_other_hard_150 = ConvertDouble(xmlData.orb_other_hard_150.Split(','));
+            if (xmlData != null)
+            {
+                orb_sun_soft_1st = ConvertDouble(xmlData.orb_sun_soft_1st.Split(','));
+                orb_sun_soft_2nd = ConvertDouble(xmlData.orb_sun_soft_2nd.Split(','));
+                orb_sun_soft_150 = ConvertDouble(xmlData.orb_sun_soft_150.Split(','));
+                orb_sun_hard_1st = ConvertDouble(xmlData.orb_sun_hard_1st.Split(','));
+                orb_sun_hard_2nd = ConvertDouble(xmlData.orb_sun_hard_2nd.Split(','));
+                orb_sun_hard_150 = ConvertDouble(xmlData.orb_sun_hard_150.Split(','));
+                orb_moon_soft_1st = ConvertDouble(xmlData.orb_moon_soft_1st.Split(','));
+                orb_moon_soft_2nd = ConvertDouble(xmlData.orb_moon_soft_2nd.Split(','));
+                orb_moon_soft_150 = ConvertDouble(xmlData.orb_moon_soft_150.Split(','));
+                orb_moon_hard_1st = ConvertDouble(xmlData.orb_moon_hard_1st.Split(','));
+                orb_moon_hard_2nd = ConvertDouble(xmlData.orb_moon_hard_2nd.Split(','));
+                orb_moon_hard_150 = ConvertDouble(xmlData.orb_moon_hard_150.Split(','));
+                orb_other_soft_1st = ConvertDouble(xmlData.orb_other_soft_1st.Split(','));
+                orb_other_soft_2nd = ConvertDouble(xmlData.orb_other_soft_2nd.Split(','));
+                orb_other_soft_150 = ConvertDouble(xmlData.orb_other_soft_150.Split(','));
+                orb_other_hard_1st = ConvertDouble(xmlData.orb_other_hard_1st.Split(','));
+                orb_other_hard_2nd = ConvertDouble(xmlData.orb_other_hard_2nd.Split(','));
+                orb_other_hard_150 = ConvertDouble(xmlData.orb_other_hard_150.Split(','));
+            }
+            else
+            {
+                orb_sun_soft_1st = ConvertDouble(jsonData.orb_sun_soft_1st.Split(','));
+                orb_sun_soft_2nd = ConvertDouble(jsonData.orb_sun_soft_2nd.Split(','));
+                orb_sun_soft_150 = ConvertDouble(jsonData.orb_sun_soft_150.Split(','));
+                orb_sun_hard_1st = ConvertDouble(jsonData.orb_sun_hard_1st.Split(','));
+                orb_sun_hard_2nd = ConvertDouble(jsonData.orb_sun_hard_2nd.Split(','));
+                orb_sun_hard_150 = ConvertDouble(jsonData.orb_sun_hard_150.Split(','));
+                orb_moon_soft_1st = ConvertDouble(jsonData.orb_moon_soft_1st.Split(','));
+                orb_moon_soft_2nd = ConvertDouble(jsonData.orb_moon_soft_2nd.Split(','));
+                orb_moon_soft_150 = ConvertDouble(jsonData.orb_moon_soft_150.Split(','));
+                orb_moon_hard_1st = ConvertDouble(jsonData.orb_moon_hard_1st.Split(','));
+                orb_moon_hard_2nd = ConvertDouble(jsonData.orb_moon_hard_2nd.Split(','));
+                orb_moon_hard_150 = ConvertDouble(jsonData.orb_moon_hard_150.Split(','));
+                orb_other_soft_1st = ConvertDouble(jsonData.orb_other_soft_1st.Split(','));
+                orb_other_soft_2nd = ConvertDouble(jsonData.orb_other_soft_2nd.Split(','));
+                orb_other_soft_150 = ConvertDouble(jsonData.orb_other_soft_150.Split(','));
+                orb_other_hard_1st = ConvertDouble(jsonData.orb_other_hard_1st.Split(','));
+                orb_other_hard_2nd = ConvertDouble(jsonData.orb_other_hard_2nd.Split(','));
+                orb_other_hard_150 = ConvertDouble(jsonData.orb_other_hard_150.Split(','));
+            }
 
             for (int i = 0; i < 7; i++)
             {
