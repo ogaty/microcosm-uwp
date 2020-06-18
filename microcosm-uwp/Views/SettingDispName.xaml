@@ -1,0 +1,57 @@
+﻿<Page
+    x:Class="microcosm.Views.SettingDispName"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:microcosm.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Left">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="設定０" Foreground="Black"></TextBlock>
+                <TextBox x:Name="setting0" Width="100"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="設定１" Foreground="Black"></TextBlock>
+                <TextBox x:Name="setting1" Width="100"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="設定２" Foreground="Black"></TextBlock>
+                <TextBox x:Name="setting2" Width="100"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="設定３" Foreground="Black"></TextBlock>
+                <TextBox x:Name="setting3" Width="100"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="設定４" Foreground="Black"></TextBlock>
+                <TextBox x:Name="setting4" Width="100"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="設定５" Foreground="Black"></TextBlock>
+                <TextBox x:Name="setting5" Width="100"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="設定６" Foreground="Black"></TextBlock>
+                <TextBox x:Name="setting6" Width="100"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="設定７" Foreground="Black"></TextBlock>
+                <TextBox x:Name="setting7" Width="100"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="設定８" Foreground="Black"></TextBlock>
+                <TextBox x:Name="setting8" Width="100"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="設定９" Foreground="Black"></TextBlock>
+                <TextBox x:Name="setting9" Width="100"></TextBox>
+            </StackPanel>
+            <Button x:Name="change" Content="変更" Click="change_Click"></Button>
+        </StackPanel>
+
+    </Grid>
+</Page>

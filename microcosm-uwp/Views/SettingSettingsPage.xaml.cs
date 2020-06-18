@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -39,6 +40,13 @@ namespace microcosm.Views
             base.OnNavigatedTo(e);
             this.SettingDetailFrame.Navigate(typeof(SettingDetailPlanet), (object)settings);
 
+            ResetCombo();
+        }
+
+        public void ResetCombo()
+        {
+            settings = CommonInstance.getInstance().settings;
+            SettingCombo.Items.Clear();
             foreach (SettingData setting in settings)
             {
                 SettingCombo.Items.Add(setting.dispName);
@@ -58,25 +66,56 @@ namespace microcosm.Views
         private void DispPlanetSetting_Click(object sender, RoutedEventArgs e)
         {
             display = 0;
+            DispPlanetSetting.Background = new SolidColorBrush(Colors.LemonChiffon);
+            DispAspectCategorySetting.Background = new SolidColorBrush(Colors.White);
+            DispAspectPlanetSetting.Background = new SolidColorBrush(Colors.White);
+            OrbsSetting.Background = new SolidColorBrush(Colors.White);
+            DispNameSetting.Background = new SolidColorBrush(Colors.White);
             SettingDetailFrame.Navigate(typeof(SettingDetailPlanet), (object)settings);
         }
 
         private void DispAspectCategorySetting_Click(object sender, RoutedEventArgs e)
         {
             display = 1;
+            DispPlanetSetting.Background = new SolidColorBrush(Colors.White);
+            DispAspectCategorySetting.Background = new SolidColorBrush(Colors.LemonChiffon);
+            DispAspectPlanetSetting.Background = new SolidColorBrush(Colors.White);
+            OrbsSetting.Background = new SolidColorBrush(Colors.White);
+            DispNameSetting.Background = new SolidColorBrush(Colors.White);
             SettingDetailFrame.Navigate(typeof(SettingDetailAspectCategory), (object)settings);
         }
 
         private void DispAspectPlanetSetting_Click(object sender, RoutedEventArgs e)
         {
             display = 2;
+            DispPlanetSetting.Background = new SolidColorBrush(Colors.White);
+            DispAspectCategorySetting.Background = new SolidColorBrush(Colors.White);
+            DispAspectPlanetSetting.Background = new SolidColorBrush(Colors.LemonChiffon);
+            OrbsSetting.Background = new SolidColorBrush(Colors.White);
+            DispNameSetting.Background = new SolidColorBrush(Colors.White);
             SettingDetailFrame.Navigate(typeof(SettingDetailPlanetAspect), (object)settings);
         }
 
         private void OrbsSetting_Click(object sender, RoutedEventArgs e)
         {
             display = 3;
+            DispPlanetSetting.Background = new SolidColorBrush(Colors.White);
+            DispAspectCategorySetting.Background = new SolidColorBrush(Colors.White);
+            DispAspectPlanetSetting.Background = new SolidColorBrush(Colors.White);
+            OrbsSetting.Background = new SolidColorBrush(Colors.LemonChiffon);
+            DispNameSetting.Background = new SolidColorBrush(Colors.White);
             SettingDetailFrame.Navigate(typeof(SettingDetailOrbs), (object)SettingCombo.SelectedIndex);
+        }
+
+        private void DispNameSetting_Click(object sender, RoutedEventArgs e)
+        {
+            display = 4;
+            DispPlanetSetting.Background = new SolidColorBrush(Colors.White);
+            DispAspectCategorySetting.Background = new SolidColorBrush(Colors.White);
+            DispAspectPlanetSetting.Background = new SolidColorBrush(Colors.White);
+            OrbsSetting.Background = new SolidColorBrush(Colors.White);
+            DispNameSetting.Background = new SolidColorBrush(Colors.LemonChiffon);
+            SettingDetailFrame.Navigate(typeof(SettingDispName), (object)this);
         }
     }
 }
