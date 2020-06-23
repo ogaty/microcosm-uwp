@@ -20,7 +20,7 @@ namespace microcosm.Calc
             aspectDegree = (double)AspectDegrees.OPPOSITION;
         }
 
-        public override AspectInfo CreateAspectInfo(int i, int j, bool isDisp)
+        public override AspectInfo CreateAspectInfo(int src, int target, bool isDisp)
         {
             return new AspectInfo()
             {
@@ -28,8 +28,8 @@ namespace microcosm.Calc
                 softHard = softHard,
                 absoluteDegree = from.absolute_position,
                 targetDegree = to.absolute_position,
-                srcPlanetNo = i,
-                targetPlanetNo = j,
+                srcPlanetNo = src,
+                targetPlanetNo = target,
                 isDisp = isDisp
             };
         }

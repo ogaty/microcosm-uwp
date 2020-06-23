@@ -112,7 +112,7 @@
     <Compile Include="Config\ConfigSave.cs" />
     <Compile Include="Config\SettingFromJson.cs" />
     <Compile Include="Config\SettingJson.cs" />
-    <Compile Include="Config\SettingToXml.cs" />
+    <Compile Include="Config\SettingToJson.cs" />
     <Compile Include="Config\SettingFromXml.cs" />
     <Compile Include="Config\ConfigFromXml.cs" />
     <Compile Include="Config\SettingData.cs" />

@@ -88,10 +88,10 @@ namespace microcosm.Config
         [JsonProperty("dispPlanetMakemake")]
         public string dispPlanetMakemake;
 
-        [JsonProperty("dispPlanetMakemake")]
+        [JsonProperty("dispPlanetVt")]
         public string dispPlanetVt;
 
-        [JsonProperty("dispPlanetMakemake")]
+        [JsonProperty("dispPlanetPof")]
         public string dispPlanetPof;
 
         [JsonProperty("aspectSun")]

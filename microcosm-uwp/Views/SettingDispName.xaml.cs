@@ -68,6 +68,11 @@ namespace microcosm.Views
             settings[8].dispName = setting8.Text;
             settings[9].dispName = setting9.Text;
             CommonInstance.getInstance().settings = settings;
+
+            //SettingToXml.SaveXml(0, settings[0]);
+            SettingToJson.SaveJson(0, settings[0]);
+
+
             parent.ResetCombo();
         }
     }

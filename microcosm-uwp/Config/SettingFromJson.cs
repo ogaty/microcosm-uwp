@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using microcosm.Common;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -16,7 +17,7 @@ namespace microcosm.Config
 
         public SettingFromJson()
         {
-            settings = new SettingData[10];
+            settings = CommonInstance.getInstance().settings;
         }
 
 

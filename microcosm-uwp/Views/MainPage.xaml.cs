@@ -228,8 +228,9 @@ namespace microcosm.Views
             config = ConfigFromXml.GetConfigFromXml(cfg.Path);
 
             //            UserData udata = UserXml.GetUserDataFromXml(cfg.Path);
-            
+
             // setting読み込み
+            CommonInstance.getInstance().settings = setting;
             for (int i = 0; i < 10; i++)
             {
                 var set = await systemFolder.GetFileAsync("setting" + i.ToString() + ".csm");
@@ -241,7 +242,6 @@ namespace microcosm.Views
             await settingGetter.GetSettingDataFromJson("setting0.json", 0);
 
             CommonInstance.getInstance().config = config;
-            CommonInstance.getInstance().settings = setting;
 
             return true;
         }

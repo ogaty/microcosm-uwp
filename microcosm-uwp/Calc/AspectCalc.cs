@@ -3,6 +3,7 @@ using microcosm.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -56,7 +57,7 @@ namespace microcosm.Calc
                         {
                             isDisp = false;
                         }
-                            aspects.Add(opposition.CreateAspectInfo(i, j, isDisp));
+                            aspects.Add(opposition.CreateAspectInfo(planetList[i].no, planetList[j].no, isDisp));
                         continue;
                     }
 
@@ -67,7 +68,7 @@ namespace microcosm.Calc
                         {
                             isDisp = false;
                         }
-                            aspects.Add(trine.CreateAspectInfo(i, j, isDisp));
+                            aspects.Add(trine.CreateAspectInfo(planetList[i].no, planetList[j].no, isDisp));
                         continue;
                     }
 
@@ -80,7 +81,7 @@ namespace microcosm.Calc
                         {
                             isDisp = false;
                         }
-                            aspects.Add(square.CreateAspectInfo(i, j, isDisp));
+                            aspects.Add(square.CreateAspectInfo(planetList[i].no, planetList[j].no, isDisp));
                         continue;
                     }
 
@@ -91,7 +92,7 @@ namespace microcosm.Calc
                         {
                             isDisp = false;
                         }
-                            aspects.Add(sextile.CreateAspectInfo(i, j, isDisp));
+                            aspects.Add(sextile.CreateAspectInfo(planetList[i].no, planetList[j].no, isDisp));
                     }
                     // TODO
                 }
