@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using microcosm.Common;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -286,6 +287,27 @@ namespace microcosm.Config
         [JsonProperty("orb_other_hard_150")]
         public string orb_other_hard_150;
 
+        public string ConvertBools(bool[] bools)
+        {
+            string boolStr = "";
+            foreach (var s in bools)
+            {
+                boolStr += s.ToString() + ",";
+            }
+            return boolStr.TrimEnd(',');
+        }
+
+        private string DispPlanetStr(SettingData data, int commonData)
+        {
+            return data.dispPlanet[0][commonData].ToString() + "," +
+                data.dispPlanet[1][commonData].ToString() + "," +
+                data.dispPlanet[2][commonData].ToString() + "," +
+                data.dispPlanet[3][commonData].ToString() + "," +
+                data.dispPlanet[4][commonData].ToString() + "," +
+                data.dispPlanet[5][commonData].ToString() + "," +
+                data.dispPlanet[6][commonData].ToString();
+        }
+
         public SettingJson()
         {
             version = 1;
@@ -381,6 +403,23 @@ namespace microcosm.Config
             orb_other_hard_2nd = "2.0,2.0,2.0,2.0,2.0,2.0,2.0";
             orb_other_soft_150 = "1.5,1.5,1.5,1.5,1.5,1.5,1.5";
             orb_other_hard_150 = "1.0,1.0,1.0,1.0,1.0,1.0,1.0";
+        }
+
+        public SettingJson(SettingData data)
+        {
+            version = data.version;
+            dispname = data.dispName;
+            dispPlanetSun = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_SUN);
+            dispPlanetMoon = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_MOON);
+            dispPlanetMercury = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_MERCURY);
+            dispPlanetVenus = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_VENUS);
+            dispPlanetMars = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_MARS);
+            dispPlanetJupiter = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_JUPITER);
+            dispPlanetSaturn = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_SATURN);
+            dispPlanetUranus = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_URANUS);
+            dispPlanetNeptune = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_NEPTUNE);
+            dispPlanetPluto = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_PLUTO);
+            // todo
         }
     }
 }

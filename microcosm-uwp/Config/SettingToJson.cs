@@ -20,8 +20,7 @@ namespace microcosm.Config
             //                var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.Read);
             //                ulong size = stream.Size;
 
-            SettingJson json = new SettingJson();
-            json.dispname = settingData.dispName;
+            SettingJson json = new SettingJson(settingData);
             StorageFile file = await systemFolder.CreateFileAsync(String.Format("setting{0}.json", settingIndex), CreationCollisionOption.ReplaceExisting);
             using (Stream stream = await file.OpenStreamForWriteAsync())
             {
