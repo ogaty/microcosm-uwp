@@ -128,6 +128,18 @@ namespace microcosm.Config
         [JsonProperty("aspectDh")]
         public string aspectDh;
 
+        [JsonProperty("aspectAsc")]
+        public string aspectAsc;
+
+        [JsonProperty("aspectMc")]
+        public string aspectMc;
+
+        [JsonProperty("aspectChiron")]
+        public string aspectChiron;
+
+        [JsonProperty("aspectEarth")]
+        public string aspectEarth;
+
         [JsonProperty("aspectConjunction1")]
         public string aspectConjunction1;
 
@@ -308,6 +320,38 @@ namespace microcosm.Config
                 data.dispPlanet[6][commonData].ToString();
         }
 
+        private string DispAspectPlanetStr(SettingData data, int commonData)
+        {
+            return data.dispAspectPlanet[0][commonData].ToString() + "," +
+                data.dispAspectPlanet[1][commonData].ToString() + "," +
+                data.dispAspectPlanet[2][commonData].ToString() + "," +
+                data.dispAspectPlanet[3][commonData].ToString() + "," +
+                data.dispAspectPlanet[4][commonData].ToString() + "," +
+                data.dispAspectPlanet[5][commonData].ToString() + "," +
+                data.dispAspectPlanet[6][commonData].ToString() + "," +
+                data.dispAspectPlanet[7][commonData].ToString() + "," +
+                data.dispAspectPlanet[8][commonData].ToString() + "," +
+                data.dispAspectPlanet[9][commonData].ToString() + "," +
+                data.dispAspectPlanet[10][commonData].ToString() + "," +
+                data.dispAspectPlanet[11][commonData].ToString() + "," +
+                data.dispAspectPlanet[12][commonData].ToString() + "," +
+                data.dispAspectPlanet[13][commonData].ToString() + "," +
+                data.dispAspectPlanet[14][commonData].ToString() + "," +
+                data.dispAspectPlanet[15][commonData].ToString() + "," +
+                data.dispAspectPlanet[16][commonData].ToString() + "," +
+                data.dispAspectPlanet[17][commonData].ToString() + "," +
+                data.dispAspectPlanet[18][commonData].ToString() + "," +
+                data.dispAspectPlanet[19][commonData].ToString() + "," +
+                data.dispAspectPlanet[20][commonData].ToString() + "," +
+                data.dispAspectPlanet[21][commonData].ToString() + "," +
+                data.dispAspectPlanet[22][commonData].ToString() + "," +
+                data.dispAspectPlanet[23][commonData].ToString() + "," +
+                data.dispAspectPlanet[24][commonData].ToString() + "," +
+                data.dispAspectPlanet[25][commonData].ToString() + "," +
+                data.dispAspectPlanet[26][commonData].ToString() + "," +
+                data.dispAspectPlanet[27][commonData].ToString();
+        }
+
         public SettingJson()
         {
             version = 1;
@@ -349,6 +393,10 @@ namespace microcosm.Config
             aspectNeptune = "true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true";
             aspectPluto = "true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true";
             aspectDh = "true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true";
+            aspectAsc = "true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true";
+            aspectMc = "true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true"; 
+            aspectChiron = "true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true";
+            aspectEarth = "true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true";
             aspectConjunction1 = "true,true,true,true,true,true,true";
             aspectConjunction2 = "true,true,true,true,true,true,true";
             aspectConjunction3 = "true,true,true,true,true,true,true";
@@ -419,6 +467,39 @@ namespace microcosm.Config
             dispPlanetUranus = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_URANUS);
             dispPlanetNeptune = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_NEPTUNE);
             dispPlanetPluto = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_PLUTO);
+            dispPlanetDh = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_DH_TRUENODE);
+            dispPlanetAsc = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_ASC);
+            dispPlanetMc = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_MC);
+            dispPlanetChiron = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_CHIRON);
+            dispPlanetEarth = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_EARTH);
+            dispPlanetLilith = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_LILITH);
+            dispPlanetCeres = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_CERES);
+            dispPlanetPallas = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_PALLAS);
+            dispPlanetJuno = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_JUNO);
+            dispPlanetVesta = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_VESTA);
+            dispPlanetEris = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_ERIS);
+            dispPlanetSedna = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_SEDNA);
+            dispPlanetHaumea = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_HAUMEA);
+            dispPlanetMakemake = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_MAKEMAKE);
+            dispPlanetVt = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_VT);
+            dispPlanetPof = DispPlanetStr(data, CommonData.ZODIAC_NUMBER_POF);
+
+            aspectSun = DispAspectPlanetStr(data, CommonData.ZODIAC_NUMBER_SUN);
+            aspectMoon = DispAspectPlanetStr(data, CommonData.ZODIAC_NUMBER_MOON);
+            aspectMercury = DispAspectPlanetStr(data, CommonData.ZODIAC_NUMBER_MERCURY);
+            aspectVenus = DispAspectPlanetStr(data, CommonData.ZODIAC_NUMBER_VENUS);
+            aspectMars = DispAspectPlanetStr(data, CommonData.ZODIAC_NUMBER_MARS);
+            aspectJupiter = DispAspectPlanetStr(data, CommonData.ZODIAC_NUMBER_JUPITER);
+            aspectSaturn = DispAspectPlanetStr(data, CommonData.ZODIAC_NUMBER_SATURN);
+            aspectUranus = DispAspectPlanetStr(data, CommonData.ZODIAC_NUMBER_URANUS);
+            aspectNeptune = DispAspectPlanetStr(data, CommonData.ZODIAC_NUMBER_NEPTUNE);
+            aspectPluto = DispAspectPlanetStr(data, CommonData.ZODIAC_NUMBER_PLUTO);
+            aspectDh = DispAspectPlanetStr(data, CommonData.ZODIAC_NUMBER_DH_TRUENODE);
+            aspectAsc = DispAspectPlanetStr(data, CommonData.ZODIAC_NUMBER_ASC);
+            aspectMc = DispAspectPlanetStr(data, CommonData.ZODIAC_NUMBER_MC);
+            aspectChiron = DispAspectPlanetStr(data, CommonData.ZODIAC_NUMBER_CHIRON);
+            aspectEarth = DispAspectPlanetStr(data, CommonData.ZODIAC_NUMBER_EARTH);
+
             // todo
         }
     }

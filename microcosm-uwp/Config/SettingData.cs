@@ -490,13 +490,13 @@ namespace microcosm.Config
                     { CommonData.ZODIAC_NUMBER_EARTH, aspectEarth[i] },
                     { CommonData.ZODIAC_NUMBER_LILITH, aspectLilith[i] },
                     { CommonData.ZODIAC_NUMBER_CERES, aspectCeres[i] },
-                    { CommonData.ZODIAC_NUMBER_PALLAS, false },
-                    { CommonData.ZODIAC_NUMBER_JUNO, false },
-                    { CommonData.ZODIAC_NUMBER_VESTA, false },
-                    { CommonData.ZODIAC_NUMBER_SEDNA, false },
-                    { CommonData.ZODIAC_NUMBER_ERIS, false },
-                    { CommonData.ZODIAC_NUMBER_HAUMEA, false },
-                    { CommonData.ZODIAC_NUMBER_MAKEMAKE, false }
+                    { CommonData.ZODIAC_NUMBER_PALLAS, aspectPallas[i] },
+                    { CommonData.ZODIAC_NUMBER_JUNO, aspectJuno[i] },
+                    { CommonData.ZODIAC_NUMBER_VESTA, aspectVesta[i] },
+                    { CommonData.ZODIAC_NUMBER_SEDNA, aspectSedna[i] },
+                    { CommonData.ZODIAC_NUMBER_ERIS, aspectEris[i] },
+                    { CommonData.ZODIAC_NUMBER_HAUMEA, aspectHaumea[i] },
+                    { CommonData.ZODIAC_NUMBER_MAKEMAKE, aspectMakemake[i] }
                 };
 
                 dispAspectPlanet.Add(da);

@@ -231,15 +231,12 @@ namespace microcosm.Views
 
             // setting読み込み
             CommonInstance.getInstance().settings = setting;
-            for (int i = 0; i < 10; i++)
-            {
-                var set = await systemFolder.GetFileAsync("setting" + i.ToString() + ".csm");
-                setting[i] = SettingFromXml.GetSettingFromXml(set.Path, i);
-            }
-
             SettingFromJson settingGetter = new SettingFromJson();
 
-            await settingGetter.GetSettingDataFromJson("setting0.json", 0);
+            for (int i = 0; i < 10; i++)
+            {
+                await settingGetter.GetSettingDataFromJson(String.Format("setting{0}.json", i), i);
+            }
 
             CommonInstance.getInstance().config = config;
 
