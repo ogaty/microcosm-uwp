@@ -71,6 +71,32 @@ namespace microcosm.Views
 
         private void OrbUpdate_Click(object sender, RoutedEventArgs e)
         {
+            for (int i = 0; i < 7; i++)
+            {
+                settings[settingIndex].orbs[i][OrbKind.SUN_HARD_1ST] = double.Parse(SunHard1.Text);
+                settings[settingIndex].orbs[i][OrbKind.SUN_SOFT_1ST] = double.Parse(SunSoft1.Text);
+                settings[settingIndex].orbs[i][OrbKind.SUN_HARD_2ND] = double.Parse(SunHard2.Text);
+                settings[settingIndex].orbs[i][OrbKind.SUN_SOFT_2ND] = double.Parse(SunSoft2.Text);
+                settings[settingIndex].orbs[i][OrbKind.SUN_HARD_150] = double.Parse(SunHard150.Text);
+                settings[settingIndex].orbs[i][OrbKind.SUN_SOFT_150] = double.Parse(SunSoft150.Text);
+
+                settings[settingIndex].orbs[i][OrbKind.MOON_HARD_1ST] = double.Parse(MoonHard1.Text);
+                settings[settingIndex].orbs[i][OrbKind.MOON_SOFT_1ST] = double.Parse(MoonSoft1.Text);
+                settings[settingIndex].orbs[i][OrbKind.MOON_HARD_2ND] = double.Parse(MoonHard2.Text);
+                settings[settingIndex].orbs[i][OrbKind.MOON_SOFT_2ND] = double.Parse(MoonSoft2.Text);
+                settings[settingIndex].orbs[i][OrbKind.MOON_HARD_150] = double.Parse(MoonHard150.Text);
+                settings[settingIndex].orbs[i][OrbKind.MOON_SOFT_150] = double.Parse(MoonSoft150.Text);
+
+                settings[settingIndex].orbs[i][OrbKind.OTHER_HARD_1ST] = double.Parse(OtherHard1.Text);
+                settings[settingIndex].orbs[i][OrbKind.OTHER_SOFT_1ST] = double.Parse(OtherSoft1.Text);
+                settings[settingIndex].orbs[i][OrbKind.OTHER_HARD_2ND] = double.Parse(OtherHard2.Text);
+                settings[settingIndex].orbs[i][OrbKind.OTHER_SOFT_2ND] = double.Parse(OtherSoft2.Text);
+                settings[settingIndex].orbs[i][OrbKind.OTHER_HARD_150] = double.Parse(OtherHard150.Text);
+                settings[settingIndex].orbs[i][OrbKind.OTHER_SOFT_150] = double.Parse(OtherSoft150.Text);
+            }
+            CommonInstance.getInstance().settings = settings;
+            SettingToJson.SaveJson(settingIndex, settings[settingIndex]);
+
             //SettingToXml.SaveXml(settingIndex, settings[settingIndex]);
         }
     }

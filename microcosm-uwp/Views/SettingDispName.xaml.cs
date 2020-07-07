@@ -70,8 +70,10 @@ namespace microcosm.Views
             CommonInstance.getInstance().settings = settings;
 
             //SettingToXml.SaveXml(0, settings[0]);
-            SettingToJson.SaveJson(0, settings[0]);
-
+            for (int i = 0; i < 7; i++)
+            {
+                SettingToJson.SaveJson(i, settings[i]);
+            }
 
             parent.ResetCombo();
         }
