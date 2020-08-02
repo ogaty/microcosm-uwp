@@ -500,6 +500,152 @@ namespace microcosm.Config
             aspectChiron = DispAspectPlanetStr(data, CommonData.ZODIAC_NUMBER_CHIRON);
             aspectEarth = DispAspectPlanetStr(data, CommonData.ZODIAC_NUMBER_EARTH);
 
+            orb_sun_hard_1st = data.orbs[0][OrbKind.SUN_HARD_1ST].ToString() + ',' +
+                data.orbs[1][OrbKind.SUN_HARD_1ST].ToString() + ',' +
+                data.orbs[2][OrbKind.SUN_HARD_1ST].ToString() + ',' +
+                data.orbs[3][OrbKind.SUN_HARD_1ST].ToString() + ',' +
+                data.orbs[4][OrbKind.SUN_HARD_1ST].ToString() + ',' +
+                data.orbs[5][OrbKind.SUN_HARD_1ST].ToString() + ',' +
+                data.orbs[6][OrbKind.SUN_HARD_1ST].ToString();
+
+            orb_sun_soft_1st = data.orbs[0][OrbKind.SUN_SOFT_1ST].ToString() + ',' +
+                data.orbs[1][OrbKind.SUN_SOFT_1ST].ToString() + ',' +
+                data.orbs[2][OrbKind.SUN_SOFT_1ST].ToString() + ',' +
+                data.orbs[3][OrbKind.SUN_SOFT_1ST].ToString() + ',' +
+                data.orbs[4][OrbKind.SUN_SOFT_1ST].ToString() + ',' +
+                data.orbs[5][OrbKind.SUN_SOFT_1ST].ToString() + ',' +
+                data.orbs[6][OrbKind.SUN_SOFT_1ST].ToString();
+
+            orb_sun_hard_2nd = data.orbs[0][OrbKind.SUN_HARD_2ND].ToString() + ',' +
+                data.orbs[1][OrbKind.SUN_HARD_2ND].ToString() + ',' +
+                data.orbs[2][OrbKind.SUN_HARD_2ND].ToString() + ',' +
+                data.orbs[3][OrbKind.SUN_HARD_2ND].ToString() + ',' +
+                data.orbs[4][OrbKind.SUN_HARD_2ND].ToString() + ',' +
+                data.orbs[5][OrbKind.SUN_HARD_2ND].ToString() + ',' +
+                data.orbs[6][OrbKind.SUN_HARD_2ND].ToString();
+
+            orb_sun_soft_2nd = data.orbs[0][OrbKind.SUN_SOFT_2ND].ToString() + ',' +
+                data.orbs[1][OrbKind.SUN_SOFT_2ND].ToString() + ',' +
+                data.orbs[2][OrbKind.SUN_SOFT_2ND].ToString() + ',' +
+                data.orbs[3][OrbKind.SUN_SOFT_2ND].ToString() + ',' +
+                data.orbs[4][OrbKind.SUN_SOFT_2ND].ToString() + ',' +
+                data.orbs[5][OrbKind.SUN_SOFT_2ND].ToString() + ',' +
+                data.orbs[6][OrbKind.SUN_SOFT_2ND].ToString();
+
+            orb_sun_hard_150 = data.orbs[0][OrbKind.SUN_HARD_150].ToString() + ',' +
+                data.orbs[1][OrbKind.SUN_HARD_150].ToString() + ',' +
+                data.orbs[2][OrbKind.SUN_HARD_150].ToString() + ',' +
+                data.orbs[3][OrbKind.SUN_HARD_150].ToString() + ',' +
+                data.orbs[4][OrbKind.SUN_HARD_150].ToString() + ',' +
+                data.orbs[5][OrbKind.SUN_HARD_150].ToString() + ',' +
+                data.orbs[6][OrbKind.SUN_HARD_150].ToString();
+
+            orb_sun_soft_150 = data.orbs[0][OrbKind.SUN_SOFT_150].ToString() + ',' +
+                data.orbs[1][OrbKind.SUN_SOFT_150].ToString() + ',' +
+                data.orbs[2][OrbKind.SUN_SOFT_150].ToString() + ',' +
+                data.orbs[3][OrbKind.SUN_SOFT_150].ToString() + ',' +
+                data.orbs[4][OrbKind.SUN_SOFT_150].ToString() + ',' +
+                data.orbs[5][OrbKind.SUN_SOFT_150].ToString() + ',' +
+                data.orbs[6][OrbKind.SUN_SOFT_150].ToString();
+
+            orb_moon_hard_1st = data.orbs[0][OrbKind.MOON_HARD_1ST].ToString() + ',' +
+                data.orbs[1][OrbKind.MOON_HARD_1ST].ToString() + ',' +
+                data.orbs[2][OrbKind.MOON_HARD_1ST].ToString() + ',' +
+                data.orbs[3][OrbKind.MOON_HARD_1ST].ToString() + ',' +
+                data.orbs[4][OrbKind.MOON_HARD_1ST].ToString() + ',' +
+                data.orbs[5][OrbKind.MOON_HARD_1ST].ToString() + ',' +
+                data.orbs[6][OrbKind.MOON_HARD_1ST].ToString();
+
+            orb_moon_soft_1st = data.orbs[0][OrbKind.MOON_SOFT_1ST].ToString() + ',' +
+                data.orbs[1][OrbKind.MOON_SOFT_1ST].ToString() + ',' +
+                data.orbs[2][OrbKind.MOON_SOFT_1ST].ToString() + ',' +
+                data.orbs[3][OrbKind.MOON_SOFT_1ST].ToString() + ',' +
+                data.orbs[4][OrbKind.MOON_SOFT_1ST].ToString() + ',' +
+                data.orbs[5][OrbKind.MOON_SOFT_1ST].ToString() + ',' +
+                data.orbs[6][OrbKind.MOON_SOFT_1ST].ToString();
+
+            orb_moon_hard_2nd = data.orbs[0][OrbKind.MOON_HARD_2ND].ToString() + ',' +
+                data.orbs[1][OrbKind.MOON_HARD_2ND].ToString() + ',' +
+                data.orbs[2][OrbKind.MOON_HARD_2ND].ToString() + ',' +
+                data.orbs[3][OrbKind.MOON_HARD_2ND].ToString() + ',' +
+                data.orbs[4][OrbKind.MOON_HARD_2ND].ToString() + ',' +
+                data.orbs[5][OrbKind.MOON_HARD_2ND].ToString() + ',' +
+                data.orbs[6][OrbKind.MOON_HARD_2ND].ToString();
+
+            orb_moon_soft_2nd = data.orbs[0][OrbKind.MOON_SOFT_2ND].ToString() + ',' +
+                data.orbs[1][OrbKind.MOON_SOFT_2ND].ToString() + ',' +
+                data.orbs[2][OrbKind.MOON_SOFT_2ND].ToString() + ',' +
+                data.orbs[3][OrbKind.MOON_SOFT_2ND].ToString() + ',' +
+                data.orbs[4][OrbKind.MOON_SOFT_2ND].ToString() + ',' +
+                data.orbs[5][OrbKind.MOON_SOFT_2ND].ToString() + ',' +
+                data.orbs[6][OrbKind.MOON_SOFT_2ND].ToString();
+
+            orb_moon_hard_2nd = data.orbs[0][OrbKind.MOON_HARD_150].ToString() + ',' +
+                data.orbs[1][OrbKind.MOON_HARD_150].ToString() + ',' +
+                data.orbs[2][OrbKind.MOON_HARD_150].ToString() + ',' +
+                data.orbs[3][OrbKind.MOON_HARD_150].ToString() + ',' +
+                data.orbs[4][OrbKind.MOON_HARD_150].ToString() + ',' +
+                data.orbs[5][OrbKind.MOON_HARD_150].ToString() + ',' +
+                data.orbs[6][OrbKind.MOON_HARD_150].ToString();
+
+            orb_moon_soft_2nd = data.orbs[0][OrbKind.MOON_SOFT_150].ToString() + ',' +
+                data.orbs[1][OrbKind.MOON_SOFT_150].ToString() + ',' +
+                data.orbs[2][OrbKind.MOON_SOFT_150].ToString() + ',' +
+                data.orbs[3][OrbKind.MOON_SOFT_150].ToString() + ',' +
+                data.orbs[4][OrbKind.MOON_SOFT_150].ToString() + ',' +
+                data.orbs[5][OrbKind.MOON_SOFT_150].ToString() + ',' +
+                data.orbs[6][OrbKind.MOON_SOFT_150].ToString();
+
+            orb_other_hard_1st = data.orbs[0][OrbKind.OTHER_HARD_1ST].ToString() + ',' +
+                data.orbs[1][OrbKind.OTHER_HARD_1ST].ToString() + ',' +
+                data.orbs[2][OrbKind.OTHER_HARD_1ST].ToString() + ',' +
+                data.orbs[3][OrbKind.OTHER_HARD_1ST].ToString() + ',' +
+                data.orbs[4][OrbKind.OTHER_HARD_1ST].ToString() + ',' +
+                data.orbs[5][OrbKind.OTHER_HARD_1ST].ToString() + ',' +
+                data.orbs[6][OrbKind.OTHER_HARD_1ST].ToString();
+
+            orb_other_soft_1st = data.orbs[0][OrbKind.OTHER_SOFT_1ST].ToString() + ',' +
+                data.orbs[1][OrbKind.OTHER_SOFT_1ST].ToString() + ',' +
+                data.orbs[2][OrbKind.OTHER_SOFT_1ST].ToString() + ',' +
+                data.orbs[3][OrbKind.OTHER_SOFT_1ST].ToString() + ',' +
+                data.orbs[4][OrbKind.OTHER_SOFT_1ST].ToString() + ',' +
+                data.orbs[5][OrbKind.OTHER_SOFT_1ST].ToString() + ',' +
+                data.orbs[6][OrbKind.OTHER_SOFT_1ST].ToString();
+
+            orb_other_hard_2nd = data.orbs[0][OrbKind.OTHER_HARD_2ND].ToString() + ',' +
+                data.orbs[1][OrbKind.OTHER_HARD_2ND].ToString() + ',' +
+                data.orbs[2][OrbKind.OTHER_HARD_2ND].ToString() + ',' +
+                data.orbs[3][OrbKind.OTHER_HARD_2ND].ToString() + ',' +
+                data.orbs[4][OrbKind.OTHER_HARD_2ND].ToString() + ',' +
+                data.orbs[5][OrbKind.OTHER_HARD_2ND].ToString() + ',' +
+                data.orbs[6][OrbKind.OTHER_HARD_2ND].ToString();
+
+            orb_other_soft_2nd = data.orbs[0][OrbKind.OTHER_SOFT_2ND].ToString() + ',' +
+                data.orbs[1][OrbKind.OTHER_SOFT_2ND].ToString() + ',' +
+                data.orbs[2][OrbKind.OTHER_SOFT_2ND].ToString() + ',' +
+                data.orbs[3][OrbKind.OTHER_SOFT_2ND].ToString() + ',' +
+                data.orbs[4][OrbKind.OTHER_SOFT_2ND].ToString() + ',' +
+                data.orbs[5][OrbKind.OTHER_SOFT_2ND].ToString() + ',' +
+                data.orbs[6][OrbKind.OTHER_SOFT_2ND].ToString();
+
+            orb_other_hard_150 = data.orbs[0][OrbKind.OTHER_HARD_150].ToString() + ',' +
+                data.orbs[1][OrbKind.OTHER_HARD_150].ToString() + ',' +
+                data.orbs[2][OrbKind.OTHER_HARD_150].ToString() + ',' +
+                data.orbs[3][OrbKind.OTHER_HARD_150].ToString() + ',' +
+                data.orbs[4][OrbKind.OTHER_HARD_150].ToString() + ',' +
+                data.orbs[5][OrbKind.OTHER_HARD_150].ToString() + ',' +
+                data.orbs[6][OrbKind.OTHER_HARD_150].ToString();
+
+            orb_other_soft_150 = data.orbs[0][OrbKind.OTHER_SOFT_150].ToString() + ',' +
+                data.orbs[1][OrbKind.OTHER_SOFT_150].ToString() + ',' +
+                data.orbs[2][OrbKind.OTHER_SOFT_150].ToString() + ',' +
+                data.orbs[3][OrbKind.OTHER_SOFT_150].ToString() + ',' +
+                data.orbs[4][OrbKind.OTHER_SOFT_150].ToString() + ',' +
+                data.orbs[5][OrbKind.OTHER_SOFT_150].ToString() + ',' +
+                data.orbs[6][OrbKind.OTHER_SOFT_150].ToString();
+
+
+
             // todo
         }
     }

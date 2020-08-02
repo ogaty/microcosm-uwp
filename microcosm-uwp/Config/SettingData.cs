@@ -38,20 +38,20 @@ namespace microcosm.Config
         // 内部変数
         // [from, to]
         // [0,0] = true -> １重円のアスペクトを表示
-        public bool[] aspectConjunction;
-        public bool[] aspectOpposition;
-        public bool[] aspectSquare;
-        public bool[] aspectTrine;
-        public bool[] aspectSextile;
-        public bool[] aspectInconjunct;
-        public bool[] aspectSesquiquadrate;
-        public bool[] aspectSemiSextile;
-        public bool[] aspectSemiQuintile;
-        public bool[] aspectSemiSquare;
-        public bool[] aspectNovile;
-        public bool[] aspectSeptile;
-        public bool[] aspectQuintile;
-        public bool[] aspectBiQuintile;
+        private bool[] aspectConjunction;
+        private bool[] aspectOpposition;
+        private bool[] aspectSquare;
+        private bool[] aspectTrine;
+        private bool[] aspectSextile;
+        private bool[] aspectInconjunct;
+        private bool[] aspectSesquiquadrate;
+        private bool[] aspectSemiSextile;
+        private bool[] aspectSemiQuintile;
+        private bool[] aspectSemiSquare;
+        private bool[] aspectNovile;
+        private bool[] aspectSeptile;
+        private bool[] aspectQuintile;
+        private bool[] aspectBiQuintile;
 
         // アスペクト一括表示、非表示切り替え
         // [from, to]

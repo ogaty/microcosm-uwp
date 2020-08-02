@@ -12,6 +12,11 @@ namespace microcosm.Config
 {
     public static class SettingToJson
     {
+        /// <summary>
+        /// settingDataをsettingJsonに変換して保存
+        /// </summary>
+        /// <param name="settingIndex"></param>
+        /// <param name="settingData"></param>
         public static async void SaveJson(int settingIndex, SettingData settingData)
         {
                 var root = Windows.Storage.ApplicationData.Current.LocalFolder;

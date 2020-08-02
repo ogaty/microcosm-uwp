@@ -99,5 +99,10 @@ namespace microcosm.Views
 
             //SettingToXml.SaveXml(settingIndex, settings[settingIndex]);
         }
+
+        private string BoolsToString(bool[] bools)
+        {
+            return string.Join(',', bools);
+        }
     }
 }

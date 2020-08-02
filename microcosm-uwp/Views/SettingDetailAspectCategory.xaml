@@ -8,18 +8,21 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="20, 0, 20, 20">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="20, 0, 20, 20">
             <StackPanel Margin="20, 0, 0, 0">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="1-1(N)" Width="50" Margin="0, 10, 20, 0" />
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="1-1(N)" Width="50" Margin="0, 10, 20, 0" Foreground="Black" />
+                    <!--
                         <ToggleSwitch x:Name="settingDisp11" OffContent="非表示" OnContent="表示"></ToggleSwitch>
-                        <ToggleButton x:Name="settingAspectCategoryConjunction11" Content="☌" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategoryOpposition11" Content="☍" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategoryTrine11" Content="△" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategorySquare11" Content="□" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategorySextile11" Content="⚹" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategoryInconjunct11" Content="⚻" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategorySesquiQuadrate11" Content="⚼" Margin="0, 0, 10, 0" />
+                    -->
+                    <ToggleButton x:Name="settingAspectCategoryConjunction11" Content="☌" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategoryOpposition11" Content="☍" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategoryTrine11" Content="△" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategorySquare11" Content="□" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategorySextile11" Content="⚹" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategoryInconjunct11" Content="⚻" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategorySesquiQuadrate11" Content="⚼" Margin="0, 0, 10, 0" />
+                    <!--
                         <ToggleButton x:Name="settingAspectCategorySemiSquare11" Content="∠" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategorySemiSextile11" Content="⚺" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategorySemiQuintile11" Content="⊥" Margin="0, 0, 10, 0" />
@@ -27,35 +30,37 @@
                         <ToggleButton x:Name="settingAspectCategorySeptile11" Content="S" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategoryQuintile11" Content="Q" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategoryBiQuintile11" Content="bQ" Margin="0, 0, 10, 0" />
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="2-2(P)" Width="50" Margin="0, 10, 20, 0" />
-                        <ToggleSwitch x:Name="settingDisp22" OffContent="非表示" OnContent="表示"></ToggleSwitch>
-                        <ToggleButton x:Name="settingAspectCategoryConjunction22" Content="☌" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategoryOpposition22" Content="☍" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategoryTrine22" Content="△" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategorySquare22" Content="□" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategorySextile22" Content="⚹" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategoryInconjunct22" Content="⚻" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategorySesquiQuadrate22" Content="⚼" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategorySemiSquare22" Content="∠" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategorySemiSextile22" Content="⚺" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategorySemiQuintile22" Content="⊥" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategoryNovile22" Content="N" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategorySeptile22" Content="S" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategoryQuintile22" Content="Q" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategoryBiQuintile22" Content="bQ" Margin="0, 0, 10, 0" />
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="3-3(T)" Width="50" Margin="0, 10, 20, 0" />
-                        <ToggleSwitch x:Name="settingDisp33" OffContent="非表示" OnContent="表示"></ToggleSwitch>
-                        <ToggleButton x:Name="settingAspectCategoryConjunction33" Content="☌" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategoryOpposition33" Content="☍" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategoryTrine33" Content="△" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategorySquare33" Content="□" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategorySextile33" Content="⚹" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategoryInconjunct33" Content="⚻" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategorySesquiQuadrate33" Content="⚼" Margin="0, 0, 10, 0" />
+                    -->
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="2-2(P)" Width="50" Margin="0, 10, 20, 0" Foreground="Black" />
+                    <ToggleButton x:Name="settingAspectCategoryConjunction22" Content="☌" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategoryOpposition22" Content="☍" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategoryTrine22" Content="△" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategorySquare22" Content="□" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategorySextile22" Content="⚹" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategoryInconjunct22" Content="⚻" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategorySesquiQuadrate22" Content="⚼" Margin="0, 0, 10, 0" />
+                        <!--
+                    <ToggleButton x:Name="settingAspectCategorySemiSquare22" Content="∠" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategorySemiSextile22" Content="⚺" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategorySemiQuintile22" Content="⊥" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategoryNovile22" Content="N" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategorySeptile22" Content="S" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategoryQuintile22" Content="Q" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategoryBiQuintile22" Content="bQ" Margin="0, 0, 10, 0" />
+                        -->
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="3-3(T)" Width="50" Margin="0, 10, 20, 0" Foreground="Black" />
+                    <ToggleButton x:Name="settingAspectCategoryConjunction33" Content="☌" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategoryOpposition33" Content="☍" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategoryTrine33" Content="△" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategorySquare33" Content="□" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategorySextile33" Content="⚹" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategoryInconjunct33" Content="⚻" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategorySesquiQuadrate33" Content="⚼" Margin="0, 0, 10, 0" />
+                    <!--
                         <ToggleButton x:Name="settingAspectCategorySemiSquare33" Content="∠" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategorySemiSextile33" Content="⚺" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategorySemiQuintile33" Content="⊥" Margin="0, 0, 10, 0" />
@@ -63,17 +68,18 @@
                         <ToggleButton x:Name="settingAspectCategorySeptile33" Content="S" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategoryQuintile33" Content="Q" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategoryBiQuintile33" Content="bQ" Margin="0, 0, 10, 0" />
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="1-2" Width="50" Margin="0, 10, 20, 0" />
-                        <ToggleSwitch x:Name="settingDisp12" OffContent="非表示" OnContent="表示"></ToggleSwitch>
-                        <ToggleButton x:Name="settingAspectCategoryConjunction12" Content="☌" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategoryOpposition12" Content="☍" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategoryTrine12" Content="△" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategorySquare12" Content="□" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategorySextile12" Content="⚹" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategoryInconjunct12" Content="⚻" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategorySesquiQuadrate12" Content="⚼" Margin="0, 0, 10, 0" />
+                    -->
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="1-2" Width="50" Margin="0, 10, 20, 0" Foreground="Black" />
+                    <ToggleButton x:Name="settingAspectCategoryConjunction12" Content="☌" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategoryOpposition12" Content="☍" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategoryTrine12" Content="△" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategorySquare12" Content="□" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategorySextile12" Content="⚹" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategoryInconjunct12" Content="⚻" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategorySesquiQuadrate12" Content="⚼" Margin="0, 0, 10, 0" />
+                    <!--
                         <ToggleButton x:Name="settingAspectCategorySemiSquare12" Content="∠" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategorySemiSextile12" Content="⚺" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategorySemiQuintile12" Content="⊥" Margin="0, 0, 10, 0" />
@@ -81,17 +87,18 @@
                         <ToggleButton x:Name="settingAspectCategorySeptile12" Content="S" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategoryQuintile12" Content="Q" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategoryBiQuintile12" Content="bQ" Margin="0, 0, 10, 0" />
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="1-3" Width="50" Margin="0, 10, 20, 0" />
-                        <ToggleSwitch x:Name="settingDisp13" OffContent="非表示" OnContent="表示"></ToggleSwitch>
-                        <ToggleButton x:Name="settingAspectCategoryConjunction13" Content="☌" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategoryOpposition13" Content="☍" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategoryTrine13" Content="△" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategorySquare13" Content="□" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategorySextile13" Content="⚹" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategoryInconjunct13" Content="⚻" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategorySesquiQuadrate13" Content="⚼" Margin="0, 0, 10, 0" />
+                    -->
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="1-3" Width="50" Margin="0, 10, 20, 0" Foreground="Black" />
+                    <ToggleButton x:Name="settingAspectCategoryConjunction13" Content="☌" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategoryOpposition13" Content="☍" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategoryTrine13" Content="△" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategorySquare13" Content="□" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategorySextile13" Content="⚹" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategoryInconjunct13" Content="⚻" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategorySesquiQuadrate13" Content="⚼" Margin="0, 0, 10, 0" />
+                    <!--
                         <ToggleButton x:Name="settingAspectCategorySemiSquare13" Content="∠" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategorySemiSextile13" Content="⚺" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategorySemiQuintile13" Content="⊥" Margin="0, 0, 10, 0" />
@@ -99,17 +106,18 @@
                         <ToggleButton x:Name="settingAspectCategorySeptile13" Content="S" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategoryQuintile13" Content="Q" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategoryBiQuintile13" Content="bQ" Margin="0, 0, 10, 0" />
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="2-3" Width="50" Margin="0, 10, 20, 0" />
-                        <ToggleSwitch x:Name="settingDisp23" OffContent="非表示" OnContent="表示"></ToggleSwitch>
-                        <ToggleButton x:Name="settingAspectCategoryConjunction23" Content="☌" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategoryOpposition23" Content="☍" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategoryTrine23" Content="△" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategorySquare23" Content="□" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategorySextile23" Content="⚹" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategoryInconjunct23" Content="⚻" Margin="0, 0, 10, 0" />
-                        <ToggleButton x:Name="settingAspectCategorySesquiQuadrate23" Content="⚼" Margin="0, 0, 10, 0" />
+                    -->
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="2-3" Width="50" Margin="0, 10, 20, 0" Foreground="Black" />
+                    <ToggleButton x:Name="settingAspectCategoryConjunction23" Content="☌" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategoryOpposition23" Content="☍" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategoryTrine23" Content="△" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategorySquare23" Content="□" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategorySextile23" Content="⚹" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategoryInconjunct23" Content="⚻" Margin="0, 0, 10, 0" />
+                    <ToggleButton x:Name="settingAspectCategorySesquiQuadrate23" Content="⚼" Margin="0, 0, 10, 0" />
+                    <!--
                         <ToggleButton x:Name="settingAspectCategorySemiSquare23" Content="∠" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategorySemiSextile23" Content="⚺" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategorySemiQuintile23" Content="⊥" Margin="0, 0, 10, 0" />
@@ -117,9 +125,11 @@
                         <ToggleButton x:Name="settingAspectCategorySeptile23" Content="S" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategoryQuintile23" Content="Q" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategoryBiQuintile23" Content="bQ" Margin="0, 0, 10, 0" />
+                    -->
                     </StackPanel>
+                <!--
                     <StackPanel Orientation="Horizontal" Margin="0, 30, 0, 0">
-                        <TextBlock Text="4-4" Width="50" Margin="0, 10, 20, 0" />
+                    <TextBlock Text="4-4" Width="50" Margin="0, 10, 20, 0" Foreground="Black" />
                         <ToggleSwitch x:Name="settingDisp44" OffContent="非表示" OnContent="表示"></ToggleSwitch>
                         <ToggleButton x:Name="settingAspectCategoryConjunction44" Content="☌" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategoryOpposition44" Content="☍" Margin="0, 0, 10, 0" />
@@ -137,7 +147,7 @@
                         <ToggleButton x:Name="settingAspectCategoryBiQuintile44" Content="bQ" Margin="0, 0, 10, 0" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="5-5" Width="50" Margin="0, 10, 20, 0" />
+                    <TextBlock Text="5-5" Width="50" Margin="0, 10, 20, 0" Foreground="Black" />
                         <ToggleSwitch x:Name="settingDisp55" OffContent="非表示" OnContent="表示"></ToggleSwitch>
                         <ToggleButton x:Name="settingAspectCategoryConjunction55" Content="☌" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategoryOpposition55" Content="☍" Margin="0, 0, 10, 0" />
@@ -155,7 +165,7 @@
                         <ToggleButton x:Name="settingAspectCategoryBiQuintile55" Content="bQ" Margin="0, 0, 10, 0" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="6-6" Width="50" Margin="0, 10, 20, 0" />
+                    <TextBlock Text="6-6" Width="50" Margin="0, 10, 20, 0" Foreground="Black" />
                         <ToggleSwitch x:Name="settingDisp66" OffContent="非表示" OnContent="表示"></ToggleSwitch>
                         <ToggleButton x:Name="settingAspectCategoryConjunction66" Content="☌" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategoryOpposition66" Content="☍" Margin="0, 0, 10, 0" />
@@ -173,7 +183,7 @@
                         <ToggleButton x:Name="settingAspectCategoryBiQuintile66" Content="bQ" Margin="0, 0, 10, 0" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="7-7" Width="50" Margin="0, 10, 20, 0" />
+                    <TextBlock Text="7-7" Width="50" Margin="0, 10, 20, 0" Foreground="Black" />
                         <ToggleSwitch x:Name="settingDisp77" OffContent="非表示" OnContent="表示"></ToggleSwitch>
                         <ToggleButton x:Name="settingAspectCategoryConjunction77" Content="☌" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategoryOpposition77" Content="☍" Margin="0, 0, 10, 0" />
@@ -191,7 +201,7 @@
                         <ToggleButton x:Name="settingAspectCategoryBiQuintile77" Content="bQ" Margin="0, 0, 10, 0" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="4-5" Width="50" Margin="0, 10, 20, 0" />
+                    <TextBlock Text="4-5" Width="50" Margin="0, 10, 20, 0" Foreground="Black" />
                         <ToggleSwitch x:Name="settingDisp45" OffContent="非表示" OnContent="表示"></ToggleSwitch>
                         <ToggleButton x:Name="settingAspectCategoryConjunction45" Content="☌" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategoryOpposition45" Content="☍" Margin="0, 0, 10, 0" />
@@ -209,7 +219,7 @@
                         <ToggleButton x:Name="settingAspectCategoryBiQuintile45" Content="bQ" Margin="0, 0, 10, 0" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="4-6" Width="50" Margin="0, 10, 20, 0" />
+                    <TextBlock Text="4-6" Width="50" Margin="0, 10, 20, 0" Foreground="Black" />
                         <ToggleSwitch x:Name="settingDisp46" OffContent="非表示" OnContent="表示"></ToggleSwitch>
                         <ToggleButton x:Name="settingAspectCategoryConjunction46" Content="☌" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategoryOpposition46" Content="☍" Margin="0, 0, 10, 0" />
@@ -227,7 +237,7 @@
                         <ToggleButton x:Name="settingAspectCategoryBiQuintile46" Content="bQ" Margin="0, 0, 10, 0" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="4-7" Width="50" Margin="0, 10, 20, 0" />
+                    <TextBlock Text="4-7" Width="50" Margin="0, 10, 20, 0" Foreground="Black" />
                         <ToggleSwitch x:Name="settingDisp47" OffContent="非表示" OnContent="表示"></ToggleSwitch>
                         <ToggleButton x:Name="settingAspectCategoryConjunction47" Content="☌" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategoryOpposition47" Content="☍" Margin="0, 0, 10, 0" />
@@ -245,7 +255,7 @@
                         <ToggleButton x:Name="settingAspectCategoryBiQuintile47" Content="bQ" Margin="0, 0, 10, 0" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="5-6" Width="50" Margin="0, 10, 20, 0" />
+                        <TextBlock Text="5-6" Width="50" Margin="0, 10, 20, 0" Foreground="Black" />
                         <ToggleSwitch x:Name="settingDisp56" OffContent="非表示" OnContent="表示"></ToggleSwitch>
                         <ToggleButton x:Name="settingAspectCategoryConjunction56" Content="☌" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategoryOpposition56" Content="☍" Margin="0, 0, 10, 0" />
@@ -263,7 +273,7 @@
                         <ToggleButton x:Name="settingAspectCategoryBiQuintile56" Content="bQ" Margin="0, 0, 10, 0" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="5-7" Width="50" Margin="0, 10, 20, 0" />
+                    <TextBlock Text="5-7" Width="50" Margin="0, 10, 20, 0" Foreground="Black" />
                         <ToggleSwitch x:Name="settingDisp57" OffContent="非表示" OnContent="表示"></ToggleSwitch>
                         <ToggleButton x:Name="settingAspectCategoryConjunction57" Content="☌" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategoryOpposition57" Content="☍" Margin="0, 0, 10, 0" />
@@ -281,7 +291,7 @@
                         <ToggleButton x:Name="settingAspectCategoryBiQuintile57" Content="bQ" Margin="0, 0, 10, 0" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="6-7" Width="50" Margin="0, 10, 20, 0" />
+                    <TextBlock Text="6-7" Width="50" Margin="0, 10, 20, 0" Foreground="Black" />
                         <ToggleSwitch x:Name="settingDisp67" OffContent="非表示" OnContent="表示"></ToggleSwitch>
                         <ToggleButton x:Name="settingAspectCategoryConjunction67" Content="☌" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategoryOpposition67" Content="☍" Margin="0, 0, 10, 0" />
@@ -298,7 +308,11 @@
                         <ToggleButton x:Name="settingAspectCategoryQuintile67" Content="Q" Margin="0, 0, 10, 0" />
                         <ToggleButton x:Name="settingAspectCategoryBiQuintile67" Content="bQ" Margin="0, 0, 10, 0" />
                     </StackPanel>
+                -->
+                <StackPanel>
+                    <Button Content="更新" x:Name="OrbUpdate" Margin="0,20,0,20" Click="OrbUpdate_Click"></Button>
                 </StackPanel>
-            </ScrollViewer>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>
