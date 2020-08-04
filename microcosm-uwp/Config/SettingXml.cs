@@ -830,6 +830,16 @@ namespace microcosm.Config
         #endregion
 
         #region aspect Aspect
+        [XmlElement("aspectConjunction")]
+        public string aspectConjunction;
+        [XmlElement("aspectOpposition")]
+        public string aspectOpposition;
+        [XmlElement("aspectTrine")]
+        public string aspectTrine;
+        [XmlElement("aspectSquare")]
+        public string aspectSquare;
+        [XmlElement("aspectSextile")]
+        public string aspectSextile;
         [XmlElement("aspectConjunction1")]
         public string aspectConjunction1;
         [XmlElement("aspectOpposition1")]

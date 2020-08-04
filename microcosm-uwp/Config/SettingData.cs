@@ -38,11 +38,11 @@ namespace microcosm.Config
         // 内部変数
         // [from, to]
         // [0,0] = true -> １重円のアスペクトを表示
-        private bool[] aspectConjunction;
-        private bool[] aspectOpposition;
-        private bool[] aspectSquare;
-        private bool[] aspectTrine;
-        private bool[] aspectSextile;
+        public bool[] aspectConjunction;
+        public bool[] aspectOpposition;
+        public bool[] aspectSquare;
+        public bool[] aspectTrine;
+        public bool[] aspectSextile;
         private bool[] aspectInconjunct;
         private bool[] aspectSesquiquadrate;
         private bool[] aspectSemiSextile;
@@ -217,7 +217,7 @@ namespace microcosm.Config
             bool[] ret = new bool[strings.Length];
             for (int i = 0; i < strings.Length; i++)
             {
-                ret[i] = strings[i] == "true" ? true : false;
+                ret[i] = Convert.ToBoolean(strings[i]);
             }
             return ret;
         }
@@ -442,35 +442,36 @@ namespace microcosm.Config
 
         public void SetDispAspectPlanet()
         {
+            if (xmlData != null)
+            {
+                aspectSun = ConvertBool(xmlData.aspectSun.Split(','));
+                aspectMoon = ConvertBool(xmlData.aspectMoon.Split(','));
+                aspectMercury = ConvertBool(xmlData.aspectMercury.Split(','));
+                aspectVenus = ConvertBool(xmlData.aspectVenus.Split(','));
+                aspectMars = ConvertBool(xmlData.aspectMars.Split(','));
+                aspectJupiter = ConvertBool(xmlData.aspectJupiter.Split(','));
+                aspectSaturn = ConvertBool(xmlData.aspectSaturn.Split(','));
+                aspectUranus = ConvertBool(xmlData.aspectUranus.Split(','));
+                aspectNeptune = ConvertBool(xmlData.aspectNeptune.Split(','));
+                aspectPluto = ConvertBool(xmlData.aspectPluto.Split(','));
+            }
+            else
+            {
+                aspectSun = ConvertBool(jsonData.aspectSun.Split(','));
+                aspectMoon = ConvertBool(jsonData.aspectMoon.Split(','));
+                aspectMercury = ConvertBool(jsonData.aspectMercury.Split(','));
+                aspectVenus = ConvertBool(jsonData.aspectVenus.Split(','));
+                aspectMars = ConvertBool(jsonData.aspectMars.Split(','));
+                aspectJupiter = ConvertBool(jsonData.aspectJupiter.Split(','));
+                aspectSaturn = ConvertBool(jsonData.aspectSaturn.Split(','));
+                aspectUranus = ConvertBool(jsonData.aspectUranus.Split(','));
+                aspectNeptune = ConvertBool(jsonData.aspectNeptune.Split(','));
+                aspectPluto = ConvertBool(jsonData.aspectPluto.Split(','));
+                aspectDh = ConvertBool(jsonData.aspectDh.Split(','));
+            }
+
             for (int i = 0; i < 28; i++)
             {
-                if (xmlData != null)
-                {
-                    aspectSun = ConvertBool(xmlData.aspectSun.Split(','));
-                    aspectMoon = ConvertBool(xmlData.aspectMoon.Split(','));
-                    aspectMercury = ConvertBool(xmlData.aspectMercury.Split(','));
-                    aspectVenus = ConvertBool(xmlData.aspectVenus.Split(','));
-                    aspectMars = ConvertBool(xmlData.aspectMars.Split(','));
-                    aspectJupiter = ConvertBool(xmlData.aspectJupiter.Split(','));
-                    aspectSaturn = ConvertBool(xmlData.aspectSaturn.Split(','));
-                    aspectUranus = ConvertBool(xmlData.aspectUranus.Split(','));
-                    aspectNeptune = ConvertBool(xmlData.aspectNeptune.Split(','));
-                    aspectPluto = ConvertBool(xmlData.aspectPluto.Split(','));
-                }
-                else
-                {
-                    aspectSun = ConvertBool(jsonData.aspectSun.Split(','));
-                    aspectMoon = ConvertBool(jsonData.aspectMoon.Split(','));
-                    aspectMercury = ConvertBool(jsonData.aspectMercury.Split(','));
-                    aspectVenus = ConvertBool(jsonData.aspectVenus.Split(','));
-                    aspectMars = ConvertBool(jsonData.aspectMars.Split(','));
-                    aspectJupiter = ConvertBool(jsonData.aspectJupiter.Split(','));
-                    aspectSaturn = ConvertBool(jsonData.aspectSaturn.Split(','));
-                    aspectUranus = ConvertBool(jsonData.aspectUranus.Split(','));
-                    aspectNeptune = ConvertBool(jsonData.aspectNeptune.Split(','));
-                    aspectPluto = ConvertBool(jsonData.aspectPluto.Split(','));
-                    aspectDh = ConvertBool(jsonData.aspectDh.Split(','));
-                }
                 Dictionary<int, bool> da = new Dictionary<int, bool>
                 {
                     { CommonData.ZODIAC_NUMBER_SUN, aspectSun[i] },
@@ -505,6 +506,38 @@ namespace microcosm.Config
 
         private void SetDispAspectCategory()
         {
+            if (xmlData != null)
+            {
+                aspectConjunction = ConvertBool(xmlData.aspectConjunction.Split(','));
+                aspectOpposition = ConvertBool(xmlData.aspectOpposition.Split(','));
+                aspectTrine = ConvertBool(xmlData.aspectTrine.Split(','));
+                aspectSquare = ConvertBool(xmlData.aspectSquare.Split(','));
+                aspectSextile = ConvertBool(xmlData.aspectSextile.Split(','));
+            }
+            else
+            {
+                aspectConjunction = ConvertBool(jsonData.aspectConjunction.Split(','));
+                aspectOpposition = ConvertBool(jsonData.aspectOpposition.Split(','));
+                aspectTrine = ConvertBool(jsonData.aspectTrine.Split(','));
+                aspectSquare = ConvertBool(jsonData.aspectSquare.Split(','));
+                aspectSextile = ConvertBool(jsonData.aspectSextile.Split(','));
+            }
+
+            for (int i = 0; i < 28; i++)
+            {
+
+                Dictionary<AspectKind, bool> dak = new Dictionary<AspectKind, bool>
+                {
+                    [AspectKind.CONJUNCTION] = aspectConjunction[i],
+                    [AspectKind.OPPOSITION] = aspectOpposition[i],
+                    [AspectKind.TRINE] = aspectTrine[i],
+                    [AspectKind.SQUARE] = aspectSquare[i],
+                    [AspectKind.SEXTILE] = aspectSextile[i]
+                };
+
+                dispAspectCategory.Add(dak);
+            }
+            /*
             for (int i = 0; i < 7; i++)
             {
                 for (int j = 0; j < 7; j++)
@@ -516,8 +549,10 @@ namespace microcosm.Config
                     }
                 }
             }
+            */
         }
 
+        /*
         private  Dictionary<AspectKind, bool> GetDispAspectCategoryDictionary(int n, int m)
         {
             Dictionary<AspectKind, bool> dac = new Dictionary<AspectKind, bool>();
@@ -655,7 +690,6 @@ namespace microcosm.Config
             dac[AspectKind.TRINE] = aspectTrine[m];
             dac[AspectKind.SQUARE] = aspectSquare[m];
             dac[AspectKind.SEXTILE] = aspectSextile[m];
-            /*
             dac.Add(AspectKind.INCONJUNCT, aspectInconjunct[n, m]);
             dac.Add(AspectKind.SESQUIQUADRATE, aspectSesquiquadrate[n, m]);
             dac.Add(AspectKind.SEMISEXTILE, aspectSemiSextile[n, m]);
@@ -665,10 +699,10 @@ namespace microcosm.Config
             dac.Add(AspectKind.SEPTILE, aspectSeptile[n, m]);
             dac.Add(AspectKind.QUINTILE, aspectQuintile[n, m]);
             dac.Add(AspectKind.BIQUINTILE, aspectBiQuintile[n, m]);
-            */
 
             return dac;
         }
+        */
     }
 }
 

@@ -140,8 +140,23 @@ namespace microcosm.Config
         [JsonProperty("aspectEarth")]
         public string aspectEarth;
 
+        [JsonProperty("aspectConjunction")]
+        public string aspectConjunction;
+
+        [JsonProperty("aspectOpposition")]
+        public string aspectOpposition;
+
         [JsonProperty("aspectConjunction1")]
         public string aspectConjunction1;
+
+        [JsonProperty("aspectTrine")]
+        public string aspectTrine;
+
+        [JsonProperty("aspectSquare")]
+        public string aspectSquare;
+
+        [JsonProperty("aspectSextile")]
+        public string aspectSextile;
 
         [JsonProperty("aspectConjunction2")]
         public string aspectConjunction2;
@@ -580,7 +595,7 @@ namespace microcosm.Config
                 data.orbs[5][OrbKind.MOON_SOFT_2ND].ToString() + ',' +
                 data.orbs[6][OrbKind.MOON_SOFT_2ND].ToString();
 
-            orb_moon_hard_2nd = data.orbs[0][OrbKind.MOON_HARD_150].ToString() + ',' +
+            orb_moon_hard_150 = data.orbs[0][OrbKind.MOON_HARD_150].ToString() + ',' +
                 data.orbs[1][OrbKind.MOON_HARD_150].ToString() + ',' +
                 data.orbs[2][OrbKind.MOON_HARD_150].ToString() + ',' +
                 data.orbs[3][OrbKind.MOON_HARD_150].ToString() + ',' +
@@ -588,7 +603,7 @@ namespace microcosm.Config
                 data.orbs[5][OrbKind.MOON_HARD_150].ToString() + ',' +
                 data.orbs[6][OrbKind.MOON_HARD_150].ToString();
 
-            orb_moon_soft_2nd = data.orbs[0][OrbKind.MOON_SOFT_150].ToString() + ',' +
+            orb_moon_soft_150 = data.orbs[0][OrbKind.MOON_SOFT_150].ToString() + ',' +
                 data.orbs[1][OrbKind.MOON_SOFT_150].ToString() + ',' +
                 data.orbs[2][OrbKind.MOON_SOFT_150].ToString() + ',' +
                 data.orbs[3][OrbKind.MOON_SOFT_150].ToString() + ',' +
@@ -644,6 +659,55 @@ namespace microcosm.Config
                 data.orbs[5][OrbKind.OTHER_SOFT_150].ToString() + ',' +
                 data.orbs[6][OrbKind.OTHER_SOFT_150].ToString();
 
+            aspectConjunction = "";
+            for (int i = 0; i < 28; i++)
+            {
+                aspectConjunction += data.dispAspectCategory[i][Models.AspectKind.CONJUNCTION].ToString();
+                if (i < 27)
+                {
+                    aspectConjunction += ',';
+                }
+            }
+
+            aspectOpposition = "";
+            for (int i = 0; i < 28; i++)
+            {
+                aspectOpposition += data.dispAspectCategory[i][Models.AspectKind.OPPOSITION].ToString();
+                if (i < 27)
+                {
+                    aspectOpposition += ',';
+                }
+            }
+
+            aspectTrine = "";
+            for (int i = 0; i < 28; i++)
+            {
+                aspectTrine += data.dispAspectCategory[i][Models.AspectKind.TRINE].ToString();
+                if (i < 27)
+                {
+                    aspectTrine += ',';
+                }
+            }
+
+            aspectSquare = "";
+            for (int i = 0; i < 28; i++)
+            {
+                aspectSquare += data.dispAspectCategory[i][Models.AspectKind.SQUARE].ToString();
+                if (i < 27)
+                {
+                    aspectSquare += ',';
+                }
+            }
+
+            aspectSextile = "";
+            for (int i = 0; i < 28; i++)
+            {
+                aspectSextile += data.dispAspectCategory[i][Models.AspectKind.SEXTILE].ToString();
+                if (i < 27)
+                {
+                    aspectSextile += ',';
+                }
+            }
 
 
             // todo

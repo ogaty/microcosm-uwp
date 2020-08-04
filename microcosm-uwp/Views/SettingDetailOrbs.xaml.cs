@@ -104,5 +104,10 @@ namespace microcosm.Views
         {
             return string.Join(',', bools);
         }
+
+        private void AspectCategoryUpdate_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

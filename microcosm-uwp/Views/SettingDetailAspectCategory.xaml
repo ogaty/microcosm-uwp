@@ -310,7 +310,7 @@
                     </StackPanel>
                 -->
                 <StackPanel>
-                    <Button Content="更新" x:Name="OrbUpdate" Margin="0,20,0,20" Click="OrbUpdate_Click"></Button>
+                    <Button Content="更新" x:Name="AspectCategoryUpdate" Margin="0,20,0,20" Click="AspectCategoryUpdate_Click"/>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>

@@ -82,6 +82,10 @@ namespace microcosm.Views
 
         private void OrbUpdate_Click(object sender, RoutedEventArgs e)
         {
+        }
+
+        private void AspectCategoryUpdate_Click(object sender, RoutedEventArgs e)
+        {
             settings[settingIndex].dispAspectCategory[0][Models.AspectKind.CONJUNCTION] = settingAspectCategoryConjunction11.IsChecked ?? false;
             settings[settingIndex].dispAspectCategory[1][Models.AspectKind.CONJUNCTION] = settingAspectCategoryConjunction22.IsChecked ?? false;
             settings[settingIndex].dispAspectCategory[2][Models.AspectKind.CONJUNCTION] = settingAspectCategoryConjunction33.IsChecked ?? false;
@@ -94,12 +98,33 @@ namespace microcosm.Views
             settings[settingIndex].dispAspectCategory[7][Models.AspectKind.OPPOSITION] = settingAspectCategoryOpposition12.IsChecked ?? false;
             settings[settingIndex].dispAspectCategory[8][Models.AspectKind.OPPOSITION] = settingAspectCategoryOpposition13.IsChecked ?? false;
             settings[settingIndex].dispAspectCategory[13][Models.AspectKind.OPPOSITION] = settingAspectCategoryOpposition23.IsChecked ?? false;
+            settings[settingIndex].dispAspectCategory[0][Models.AspectKind.TRINE] = settingAspectCategoryTrine11.IsChecked ?? false;
+            settings[settingIndex].dispAspectCategory[1][Models.AspectKind.TRINE] = settingAspectCategoryTrine22.IsChecked ?? false;
+            settings[settingIndex].dispAspectCategory[2][Models.AspectKind.TRINE] = settingAspectCategoryTrine33.IsChecked ?? false;
+            settings[settingIndex].dispAspectCategory[7][Models.AspectKind.TRINE] = settingAspectCategoryTrine12.IsChecked ?? false;
+            settings[settingIndex].dispAspectCategory[8][Models.AspectKind.TRINE] = settingAspectCategoryTrine13.IsChecked ?? false;
+            settings[settingIndex].dispAspectCategory[13][Models.AspectKind.TRINE] = settingAspectCategoryTrine23.IsChecked ?? false;
+            settings[settingIndex].dispAspectCategory[0][Models.AspectKind.SQUARE] = settingAspectCategorySquare11.IsChecked ?? false;
+            settings[settingIndex].dispAspectCategory[1][Models.AspectKind.SQUARE] = settingAspectCategorySquare22.IsChecked ?? false;
+            settings[settingIndex].dispAspectCategory[2][Models.AspectKind.SQUARE] = settingAspectCategorySquare33.IsChecked ?? false;
+            settings[settingIndex].dispAspectCategory[7][Models.AspectKind.SQUARE] = settingAspectCategorySquare12.IsChecked ?? false;
+            settings[settingIndex].dispAspectCategory[8][Models.AspectKind.SQUARE] = settingAspectCategorySquare13.IsChecked ?? false;
+            settings[settingIndex].dispAspectCategory[13][Models.AspectKind.SQUARE] = settingAspectCategorySquare23.IsChecked ?? false;
+            settings[settingIndex].dispAspectCategory[0][Models.AspectKind.SEXTILE] = settingAspectCategorySextile11.IsChecked ?? false;
+            settings[settingIndex].dispAspectCategory[1][Models.AspectKind.SEXTILE] = settingAspectCategorySextile22.IsChecked ?? false;
+            settings[settingIndex].dispAspectCategory[2][Models.AspectKind.SEXTILE] = settingAspectCategorySextile33.IsChecked ?? false;
+            settings[settingIndex].dispAspectCategory[7][Models.AspectKind.SEXTILE] = settingAspectCategorySextile12.IsChecked ?? false;
+            settings[settingIndex].dispAspectCategory[8][Models.AspectKind.SEXTILE] = settingAspectCategorySextile13.IsChecked ?? false;
+            settings[settingIndex].dispAspectCategory[13][Models.AspectKind.SEXTILE] = settingAspectCategorySextile23.IsChecked ?? false;
 
-            var nop = new int[] { 3,4,5,6,9,10,11,12,14,15,16,17,18,19,20,21,22,23,24,25,26,27 };
+            var nop = new int[] { 3, 4, 5, 6, 9, 10, 11, 12, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27 };
             foreach (int i in nop)
             {
                 settings[settingIndex].dispAspectCategory[i][Models.AspectKind.CONJUNCTION] = false;
                 settings[settingIndex].dispAspectCategory[i][Models.AspectKind.OPPOSITION] = false;
+                settings[settingIndex].dispAspectCategory[i][Models.AspectKind.TRINE] = false;
+                settings[settingIndex].dispAspectCategory[i][Models.AspectKind.SQUARE] = false;
+                settings[settingIndex].dispAspectCategory[i][Models.AspectKind.SEXTILE] = false;
             }
 
             CommonInstance.getInstance().settings = settings;
