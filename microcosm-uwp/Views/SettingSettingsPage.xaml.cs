@@ -56,10 +56,24 @@ namespace microcosm.Views
 
         private void SettingCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // イベント投げられるのかな
-            if (display == 3)
+            switch (display)
             {
-                SettingDetailFrame.Navigate(typeof(SettingDetailOrbs), (object)SettingCombo.SelectedIndex);
+                case 0:
+                    SettingDetailFrame.Navigate(typeof(SettingDetailPlanet), (object)SettingCombo.SelectedIndex);
+                    break;
+
+                case 1:
+                    SettingDetailFrame.Navigate(typeof(SettingDetailAspectCategory), (object)SettingCombo.SelectedIndex);
+                    break;
+
+                case 2:
+                    SettingDetailFrame.Navigate(typeof(SettingDetailPlanetAspect), (object)SettingCombo.SelectedIndex);
+                    break;
+
+                case 3:
+                    SettingDetailFrame.Navigate(typeof(SettingDetailOrbs), (object)SettingCombo.SelectedIndex);
+                    break;
+
             }
         }
 
@@ -71,7 +85,7 @@ namespace microcosm.Views
             DispAspectPlanetSetting.Background = new SolidColorBrush(Colors.White);
             OrbsSetting.Background = new SolidColorBrush(Colors.White);
             DispNameSetting.Background = new SolidColorBrush(Colors.White);
-            SettingDetailFrame.Navigate(typeof(SettingDetailPlanet), (object)settings);
+            SettingDetailFrame.Navigate(typeof(SettingDetailPlanet), (object)SettingCombo.SelectedIndex);
         }
 
         private void DispAspectCategorySetting_Click(object sender, RoutedEventArgs e)
@@ -82,7 +96,7 @@ namespace microcosm.Views
             DispAspectPlanetSetting.Background = new SolidColorBrush(Colors.White);
             OrbsSetting.Background = new SolidColorBrush(Colors.White);
             DispNameSetting.Background = new SolidColorBrush(Colors.White);
-            SettingDetailFrame.Navigate(typeof(SettingDetailAspectCategory), (object)settings);
+            SettingDetailFrame.Navigate(typeof(SettingDetailAspectCategory), (object)SettingCombo.SelectedIndex);
         }
 
         private void DispAspectPlanetSetting_Click(object sender, RoutedEventArgs e)
@@ -93,7 +107,7 @@ namespace microcosm.Views
             DispAspectPlanetSetting.Background = new SolidColorBrush(Colors.LemonChiffon);
             OrbsSetting.Background = new SolidColorBrush(Colors.White);
             DispNameSetting.Background = new SolidColorBrush(Colors.White);
-            SettingDetailFrame.Navigate(typeof(SettingDetailPlanetAspect), (object)settings);
+            SettingDetailFrame.Navigate(typeof(SettingDetailPlanetAspect), (object)SettingCombo.SelectedIndex);
         }
 
         private void OrbsSetting_Click(object sender, RoutedEventArgs e)

@@ -35,6 +35,7 @@ namespace microcosm.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             settings = CommonInstance.getInstance().settings;
+            settingIndex = (int)e.Parameter;
 
             base.OnNavigatedTo(e);
             SettingInit();
