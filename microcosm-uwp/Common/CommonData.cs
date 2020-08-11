@@ -50,8 +50,11 @@ namespace microcosm.Common
         public static int[] target_numbers = {
             0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
             11, 13, 14, 15,
-            17, 18, 19, 20,
-            100377, 146108, 146199, 146472
+            17, //CERES
+            18, //PALLAS 
+            19, //JUNO
+            20  //VESTA
+//            100377, 146108, 146199, 146472
         };
 
         public const double TIMEZONE_JST = 9.0;

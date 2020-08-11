@@ -38,7 +38,7 @@ namespace microcosm.Views
             settings = CommonInstance.getInstance().settings;
 
             base.OnNavigatedTo(e);
-            this.SettingDetailFrame.Navigate(typeof(SettingDetailPlanet), (object)settings);
+            this.SettingDetailFrame.Navigate(typeof(SettingDetailPlanet), (object)0);
 
             ResetCombo();
         }

@@ -24,6 +24,7 @@ namespace microcosm.Views
 {
     /// <summary>
     /// それ自体で使用できる空白ページまたはフレーム内に移動できる空白ページ。
+    /// たぶんこのクラス使ってない
     /// </summary>
     public sealed partial class MainListPage : Page
     {

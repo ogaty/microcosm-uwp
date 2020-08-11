@@ -37,6 +37,7 @@ namespace microcosm.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             settings = CommonInstance.getInstance().settings;
+            settingIndex = (int)e.Parameter;
 
             base.OnNavigatedTo(e);
             SettingInit();
@@ -44,12 +45,11 @@ namespace microcosm.Views
 
         private void SettingInit()
         {
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 3; i++)
             {
                 int j = i + 1;
                 if (settings[settingIndex].dispPlanet[i][CommonData.ZODIAC_NUMBER_SUN] == true)
                 {
-                    var btn = ((ToggleButton)FindName("Sun1"));
                     ((ToggleButton)FindName("Sun" + j.ToString())).IsChecked = true;
                 }
                 if (settings[settingIndex].dispPlanet[i][CommonData.ZODIAC_NUMBER_MOON] == true)
@@ -128,6 +128,7 @@ namespace microcosm.Views
                 {
                     ((ToggleButton)FindName("Vesta" + j.ToString())).IsChecked = true;
                 }
+                /*
                 if (settings[settingIndex].dispPlanet[i][CommonData.ZODIAC_NUMBER_ERIS] == true)
                 {
                     ((ToggleButton)FindName("Eris" + j.ToString())).IsChecked = true;
@@ -152,12 +153,16 @@ namespace microcosm.Views
                 {
                     ((ToggleButton)FindName("Pof" + j.ToString())).IsChecked = true;
                 }
+                */
             }
         }
 
         private void DispPlanetClicked(object sender, RoutedEventArgs e)
         {
+            #region notuse
             // Nameからクリックされた場所を判定
+            // Submit用意したから使わなくなった
+            /*
             var s = (ToggleButton)sender;
             int planet_no = 0;
             int index = 0;
@@ -296,6 +301,81 @@ namespace microcosm.Views
             {
                 settings[settingIndex].dispPlanet[index][planet_no] = false;
             }
+            */
+            #endregion
+        }
+
+        private void Sun1Clicked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Submit_Click(object sender, RoutedEventArgs e)
+        {
+            settings[settingIndex].dispPlanet[0][CommonData.ZODIAC_NUMBER_SUN] = Sun1.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[1][CommonData.ZODIAC_NUMBER_SUN] = Sun2.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[2][CommonData.ZODIAC_NUMBER_SUN] = Sun3.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[0][CommonData.ZODIAC_NUMBER_MOON] = Moon1.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[1][CommonData.ZODIAC_NUMBER_MOON] = Moon2.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[2][CommonData.ZODIAC_NUMBER_MOON] = Moon3.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[0][CommonData.ZODIAC_NUMBER_MERCURY] = Mercury1.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[1][CommonData.ZODIAC_NUMBER_MERCURY] = Mercury2.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[2][CommonData.ZODIAC_NUMBER_MERCURY] = Mercury3.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[0][CommonData.ZODIAC_NUMBER_VENUS] = Venus1.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[1][CommonData.ZODIAC_NUMBER_VENUS] = Venus2.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[2][CommonData.ZODIAC_NUMBER_VENUS] = Venus3.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[0][CommonData.ZODIAC_NUMBER_MARS] = Mars1.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[1][CommonData.ZODIAC_NUMBER_MARS] = Mars2.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[2][CommonData.ZODIAC_NUMBER_MARS] = Mars3.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[0][CommonData.ZODIAC_NUMBER_JUPITER] = Jupiter1.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[1][CommonData.ZODIAC_NUMBER_JUPITER] = Jupiter2.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[2][CommonData.ZODIAC_NUMBER_JUPITER] = Jupiter3.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[0][CommonData.ZODIAC_NUMBER_SATURN] = Saturn1.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[1][CommonData.ZODIAC_NUMBER_SATURN] = Saturn2.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[2][CommonData.ZODIAC_NUMBER_SATURN] = Saturn3.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[0][CommonData.ZODIAC_NUMBER_URANUS] = Uranus1.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[1][CommonData.ZODIAC_NUMBER_URANUS] = Uranus2.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[2][CommonData.ZODIAC_NUMBER_URANUS] = Uranus3.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[0][CommonData.ZODIAC_NUMBER_NEPTUNE] = Neptune1.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[1][CommonData.ZODIAC_NUMBER_NEPTUNE] = Neptune2.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[2][CommonData.ZODIAC_NUMBER_NEPTUNE] = Neptune3.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[0][CommonData.ZODIAC_NUMBER_PLUTO] = Pluto1.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[1][CommonData.ZODIAC_NUMBER_PLUTO] = Pluto2.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[2][CommonData.ZODIAC_NUMBER_PLUTO] = Pluto3.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[0][CommonData.ZODIAC_NUMBER_ASC] = Asc1.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[1][CommonData.ZODIAC_NUMBER_ASC] = Asc2.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[2][CommonData.ZODIAC_NUMBER_ASC] = Asc3.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[0][CommonData.ZODIAC_NUMBER_MC] = Mc1.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[1][CommonData.ZODIAC_NUMBER_MC] = Mc2.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[2][CommonData.ZODIAC_NUMBER_MC] = Mc3.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[0][CommonData.ZODIAC_NUMBER_DH_TRUENODE] = Dh1.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[1][CommonData.ZODIAC_NUMBER_DH_TRUENODE] = Dh2.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[2][CommonData.ZODIAC_NUMBER_DH_TRUENODE] = Dh3.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[0][CommonData.ZODIAC_NUMBER_CHIRON] = Chiron1.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[1][CommonData.ZODIAC_NUMBER_CHIRON] = Chiron2.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[2][CommonData.ZODIAC_NUMBER_CHIRON] = Chiron3.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[0][CommonData.ZODIAC_NUMBER_EARTH] = Earth1.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[1][CommonData.ZODIAC_NUMBER_EARTH] = Earth2.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[2][CommonData.ZODIAC_NUMBER_EARTH] = Earth3.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[0][CommonData.ZODIAC_NUMBER_LILITH] = Lilith1.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[1][CommonData.ZODIAC_NUMBER_LILITH] = Lilith2.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[2][CommonData.ZODIAC_NUMBER_LILITH] = Lilith3.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[0][CommonData.ZODIAC_NUMBER_CERES] = Ceres1.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[1][CommonData.ZODIAC_NUMBER_CERES] = Ceres2.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[2][CommonData.ZODIAC_NUMBER_CERES] = Ceres3.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[0][CommonData.ZODIAC_NUMBER_PALLAS] = Pallas1.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[1][CommonData.ZODIAC_NUMBER_PALLAS] = Pallas2.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[2][CommonData.ZODIAC_NUMBER_PALLAS] = Pallas3.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[0][CommonData.ZODIAC_NUMBER_JUNO] = Juno1.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[1][CommonData.ZODIAC_NUMBER_JUNO] = Juno2.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[2][CommonData.ZODIAC_NUMBER_JUNO] = Juno3.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[0][CommonData.ZODIAC_NUMBER_VESTA] = Vesta1.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[1][CommonData.ZODIAC_NUMBER_VESTA] = Vesta2.IsChecked ?? false;
+            settings[settingIndex].dispPlanet[2][CommonData.ZODIAC_NUMBER_VESTA] = Vesta3.IsChecked ?? false;
+
+            CommonInstance.getInstance().settings = settings;
+            SettingToJson.SaveJson(settingIndex, settings[settingIndex]);
+
         }
     }
 }

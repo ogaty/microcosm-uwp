@@ -92,17 +92,14 @@ namespace microcosm.Views
                 cusps = ringsData[0].cusps 
             };
 
-            MainWindowCuspListViewModel vm1 = new MainWindowCuspListViewModel();
-            MainWindowCuspListViewModel vm2 = new MainWindowCuspListViewModel();
-
-
-            PlanetCusp.DataContext = vm1;
-            HouseCusp.DataContext = vm2;
+            PlanetCusp.DataContext = new MainWindowCuspListViewModel();
+            HouseCusp.DataContext = new MainWindowCuspListViewModel();
             ListRender();
 
             aspectList = AspectCalc.AspectCalcSame(ringsData[0].planetData, 0);
 
             // timesetter部はwebviewにする
+            // やっぱりやめた
             // DateWeb.Navigate(new Uri("ms-appdata:///local/system/datetime.html"));
 
             // timesetter部分
@@ -123,10 +120,10 @@ namespace microcosm.Views
             ReportRender();
         }
 
-        public async void CallScript()
-        {
+//        public async void CallScript()
+//        {
 //            await Web.InvokeScriptAsync("init", new string[] {"aaaaa"});
-        }
+//        }
 
         private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
         {

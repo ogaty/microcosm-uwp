@@ -9,8 +9,11 @@ using microcosm.Models;
 
 namespace microcosm.Config
 {
-    // 複数クラスが存在（0～9）
 
+    /// <summary>
+    ///Settingメイン部分
+    // 複数クラスが存在（0～9）
+    /// </summary>
     public class SettingData
     {
         public const int xmlVersion = 2;
@@ -106,6 +109,7 @@ namespace microcosm.Config
         private bool[] aspectPallas = new bool[28];
         private bool[] aspectJuno = new bool[28];
         private bool[] aspectVesta = new bool[28];
+        // 以下現バージョンでは未使用
         private bool[] aspectEris = new bool[28];
         private bool[] aspectSedna = new bool[28];
         private bool[] aspectHaumea = new bool[28];
@@ -494,10 +498,12 @@ namespace microcosm.Config
                     { CommonData.ZODIAC_NUMBER_PALLAS, aspectPallas[i] },
                     { CommonData.ZODIAC_NUMBER_JUNO, aspectJuno[i] },
                     { CommonData.ZODIAC_NUMBER_VESTA, aspectVesta[i] },
-                    { CommonData.ZODIAC_NUMBER_SEDNA, aspectSedna[i] },
-                    { CommonData.ZODIAC_NUMBER_ERIS, aspectEris[i] },
-                    { CommonData.ZODIAC_NUMBER_HAUMEA, aspectHaumea[i] },
-                    { CommonData.ZODIAC_NUMBER_MAKEMAKE, aspectMakemake[i] }
+                    { CommonData.ZODIAC_NUMBER_SEDNA, aspectSedna[i] }
+                    //{ CommonData.ZODIAC_NUMBER_ERIS, aspectEris[i] },
+                    //{ CommonData.ZODIAC_NUMBER_HAUMEA, aspectHaumea[i] },
+                    //{ CommonData.ZODIAC_NUMBER_MAKEMAKE, aspectMakemake[i] },
+                    //{ CommonData.ZODIAC_NUMBER_VT, aspectVt[i] },
+                    //{ CommonData.ZODIAC_NUMBER_POF, aspectPof[i] }
                 };
 
                 dispAspectPlanet.Add(da);
