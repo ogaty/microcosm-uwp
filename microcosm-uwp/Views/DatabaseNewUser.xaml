@@ -16,6 +16,17 @@
             <TextBox x:Name="UserName" Width="200"></TextBox>
             <TextBlock Foreground="Black" FontWeight="Bold">かな</TextBlock>
             <TextBox x:Name="UserKana" Width="200"></TextBox>
+            <TextBlock Foreground="Black" FontWeight="Bold">誕生日(yyyy/mm/dd)</TextBlock>
+            <TextBox x:Name="UserBirthDate" Width="200"></TextBox>
+            <TextBlock Foreground="Black" FontWeight="Bold">誕生時刻(hh:mm:ss)</TextBlock>
+            <TextBox x:Name="UserBirthTime" Width="200"></TextBox>
+            <TextBlock Foreground="Black" FontWeight="Bold">出生場所</TextBlock>
+            <TextBox x:Name="UserBirthPlace" Width="200"></TextBox>
+            <TextBlock Foreground="Black">タイムゾーン</TextBlock>
+            <ComboBox x:Name="TimeZone">
+                <ComboBoxItem Content="JST(日本標準)" Tag="1"></ComboBoxItem>
+                <ComboBoxItem Content="UTC(+0:00)" Tag="2"></ComboBoxItem>
+            </ComboBox>
             <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
                 <Button x:Name="Submit" Content="決定" Click="Submit_Click"></Button>
                 <Button x:Name="Cancel" Content="キャンセル" Margin="20,0,0,0" ></Button>

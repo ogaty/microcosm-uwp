@@ -103,6 +103,7 @@
     <Compile Include="Calc\SextileAspect.cs" />
     <Compile Include="Calc\TrineAspect.cs" />
     <Compile Include="Calc\OppositionAspect.cs" />
+    <Compile Include="Common\Address.cs" />
     <Compile Include="Common\CommonData.cs" />
     <Compile Include="Common\CommonInstance.cs" />
     <Compile Include="Common\Explanation.cs" />
@@ -327,6 +328,9 @@
     <Content Include="Assets\setting9.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\address.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="ephe\seas_18.se1">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -455,6 +459,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="CsvHelper">
+      <Version>15.0.5</Version>
+    </PackageReference>
     <PackageReference Include="FontAwesome.UWP">
       <Version>4.7.0.9</Version>
     </PackageReference>

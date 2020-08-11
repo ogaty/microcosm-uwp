@@ -31,7 +31,7 @@ namespace microcosm.User
                         uint numBytesLoaded = await dataReader.LoadAsync((uint)size);
                         string json = dataReader.ReadString(numBytesLoaded);
 
-                        Debug.WriteLine(json);
+                        //Debug.WriteLine(json);
                         user = JsonConvert.DeserializeObject<UserJson>(json);
                     }
                 }

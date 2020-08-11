@@ -30,6 +30,9 @@ using Windows.UI.Core;
 using System.Drawing;
 using System.Diagnostics;
 using Windows.UI.Text;
+using Windows.Storage;
+using CsvHelper;
+using System.Globalization;
 
 // 空白ページの項目テンプレートについては、https://go.microsoft.com/fwlink/?LinkId=234238 を参照してください
 
@@ -48,6 +51,7 @@ namespace microcosm.Views
         public MainWindowCuspListViewModel vm2 = new MainWindowCuspListViewModel();
         public CuspList cuspList;
         List<AspectInfo> aspectList;
+        List<Address> addressList;
 
         MainWindowUserDataViewModel userBox;
 
@@ -71,7 +75,7 @@ namespace microcosm.Views
             MainInit();
         }
 
-        private void MainInit()
+        private async void MainInit()
         {
             config = CommonInstance.getInstance().config;
             setting = CommonInstance.getInstance().settings;
@@ -115,6 +119,7 @@ namespace microcosm.Views
             TargetLat.Text = udata1.lat.ToString();
             TargetLng.Text = udata1.lng.ToString();
 
+            await GetAddressData();
 
             // 表示メイン部分
             CanvasRender(cuspList);
@@ -651,28 +656,28 @@ namespace microcosm.Views
 
         }
 
-        /// <summary>
-        /// newWindow(未使用)
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private async void abc_Click(object sender, RoutedEventArgs e)
-        {
-            /*
-            var currentViewId = ApplicationView.GetForCurrentView().Id;
-            await CoreApplication.CreateNewView().Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+        /*
+            /// <summary>
+            /// newWindow(未使用)
+            /// </summary>
+            /// <param name="sender"></param>
+            /// <param name="e"></param>
+            private async void abc_Click(object sender, RoutedEventArgs e)
             {
-                Window.Current.Content = new Frame();
-                ((Frame)Window.Current.Content).Navigate(typeof(BlankPage1));
-                Window.Current.Activate();
-                await ApplicationViewSwitcher.TryShowAsStandaloneAsync(
-                    ApplicationView.GetApplicationViewIdForWindow(Window.Current.CoreWindow),
-                    ViewSizePreference.Default,
-                    currentViewId,
-                    ViewSizePreference.Default);
-            });
-            */
-        }
+                var currentViewId = ApplicationView.GetForCurrentView().Id;
+                await CoreApplication.CreateNewView().Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+                {
+                    Window.Current.Content = new Frame();
+                    ((Frame)Window.Current.Content).Navigate(typeof(BlankPage1));
+                    Window.Current.Activate();
+                    await ApplicationViewSwitcher.TryShowAsStandaloneAsync(
+                        ApplicationView.GetApplicationViewIdForWindow(Window.Current.CoreWindow),
+                        ViewSizePreference.Default,
+                        currentViewId,
+                        ViewSizePreference.Default);
+                });
+            }
+        */
 
         public void UserBoxSet(int kind, UserData udata)
         {
@@ -725,6 +730,32 @@ namespace microcosm.Views
             Succedent.Text = reportCalc.succedentHouse.ToString();
             Cadent.Text = reportCalc.cadentHouse.ToString();
 
+        }
+
+        public async Task<bool> GetAddressData()
+        {
+            var root = ApplicationData.Current.LocalFolder;
+            StorageFolder systemFolder = await root.GetFolderAsync("system");
+            try
+            {
+                StorageFile addressFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/address.csv")).AsTask().ConfigureAwait(false);
+                var randomAccessStream = await addressFile.OpenReadAsync();
+                Stream stream = randomAccessStream.AsStreamForRead();
+                using (StreamReader sr = new StreamReader(stream))
+                {
+                    using (var csv = new CsvReader(sr, CultureInfo.CurrentCulture))
+                    {
+                        var records = csv.GetRecords<Address>();
+                        addressList = records.ToList();
+                    }
+                }
+
+            } catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+            }
+
+            return true;
         }
     }
 }

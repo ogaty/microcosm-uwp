@@ -148,56 +148,56 @@ namespace microcosm.Views
 
             if (await systemFolder.TryGetItemAsync("setting1.json") == null)
             {
-                var setting0File = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/setting1.json")).AsTask().ConfigureAwait(false);
-                await setting0File.CopyAsync(systemFolder, "setting1.json", NameCollisionOption.FailIfExists);
+                var setting1File = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/setting1.json")).AsTask().ConfigureAwait(false);
+                await setting1File.CopyAsync(systemFolder, "setting1.json", NameCollisionOption.FailIfExists);
             }
 
             if (await systemFolder.TryGetItemAsync("setting2.json") == null)
             {
-                var setting0File = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/setting2.json")).AsTask().ConfigureAwait(false);
-                await setting0File.CopyAsync(systemFolder, "setting2.json", NameCollisionOption.FailIfExists);
+                var setting2File = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/setting2.json")).AsTask().ConfigureAwait(false);
+                await setting2File.CopyAsync(systemFolder, "setting2.json", NameCollisionOption.FailIfExists);
             }
 
             if (await systemFolder.TryGetItemAsync("setting3.json") == null)
             {
-                var setting0File = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/setting3.json")).AsTask().ConfigureAwait(false);
-                await setting0File.CopyAsync(systemFolder, "setting3.json", NameCollisionOption.FailIfExists);
+                var setting3File = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/setting3.json")).AsTask().ConfigureAwait(false);
+                await setting3File.CopyAsync(systemFolder, "setting3.json", NameCollisionOption.FailIfExists);
             }
 
             if (await systemFolder.TryGetItemAsync("setting4.json") == null)
             {
-                var setting0File = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/setting4.json")).AsTask().ConfigureAwait(false);
-                await setting0File.CopyAsync(systemFolder, "setting4.json", NameCollisionOption.FailIfExists);
+                var setting4File = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/setting4.json")).AsTask().ConfigureAwait(false);
+                await setting4File.CopyAsync(systemFolder, "setting4.json", NameCollisionOption.FailIfExists);
             }
 
             if (await systemFolder.TryGetItemAsync("setting5.json") == null)
             {
-                var setting0File = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/setting5.json")).AsTask().ConfigureAwait(false);
-                await setting0File.CopyAsync(systemFolder, "setting5.json", NameCollisionOption.FailIfExists);
+                var setting5File = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/setting5.json")).AsTask().ConfigureAwait(false);
+                await setting5File.CopyAsync(systemFolder, "setting5.json", NameCollisionOption.FailIfExists);
             }
 
             if (await systemFolder.TryGetItemAsync("setting6.json") == null)
             {
-                var setting0File = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/setting6.json")).AsTask().ConfigureAwait(false);
-                await setting0File.CopyAsync(systemFolder, "setting6.json", NameCollisionOption.FailIfExists);
+                var setting6File = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/setting6.json")).AsTask().ConfigureAwait(false);
+                await setting6File.CopyAsync(systemFolder, "setting6.json", NameCollisionOption.FailIfExists);
             }
 
             if (await systemFolder.TryGetItemAsync("setting7.json") == null)
             {
-                var setting0File = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/setting7.json")).AsTask().ConfigureAwait(false);
-                await setting0File.CopyAsync(systemFolder, "setting7.json", NameCollisionOption.FailIfExists);
+                var setting7File = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/setting7.json")).AsTask().ConfigureAwait(false);
+                await setting7File.CopyAsync(systemFolder, "setting7.json", NameCollisionOption.FailIfExists);
             }
 
             if (await systemFolder.TryGetItemAsync("setting8.json") == null)
             {
-                var setting0File = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/setting8.json")).AsTask().ConfigureAwait(false);
-                await setting0File.CopyAsync(systemFolder, "setting8.json", NameCollisionOption.FailIfExists);
+                var setting8File = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/setting8.json")).AsTask().ConfigureAwait(false);
+                await setting8File.CopyAsync(systemFolder, "setting8.json", NameCollisionOption.FailIfExists);
             }
 
             if (await systemFolder.TryGetItemAsync("setting9.json") == null)
             {
-                var setting0File = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/setting9.json")).AsTask().ConfigureAwait(false);
-                await setting0File.CopyAsync(systemFolder, "setting9.json", NameCollisionOption.FailIfExists);
+                var setting9File = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/setting9.json")).AsTask().ConfigureAwait(false);
+                await setting9File.CopyAsync(systemFolder, "setting9.json", NameCollisionOption.FailIfExists);
             }
 
             /*
@@ -239,7 +239,6 @@ namespace microcosm.Views
             }
 
             CommonInstance.getInstance().config = config;
-
             return true;
         }
 
