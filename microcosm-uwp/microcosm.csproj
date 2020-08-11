@@ -130,19 +130,29 @@
     <Compile Include="Models\TreeViewItem2.cs" />
     <Compile Include="Models\UserDirTree.cs" />
     <Compile Include="Models\UserEventData.cs" />
+    <Compile Include="User\EventJson.cs" />
+    <Compile Include="User\UserFromJson.cs" />
+    <Compile Include="User\UserJson.cs" />
     <Compile Include="ViewModels\MainWindowCuspListViewModel.cs" />
     <Compile Include="ViewModels\MainWindowReportViewModel.cs" />
     <Compile Include="ViewModels\UserDbDirListViewModel.cs" />
     <Compile Include="ViewModels\UserDbViewModel.cs" />
     <Compile Include="ViewModels\UserDirGridViewModel.cs" />
+    <Compile Include="User\UserToJson.cs" />
     <Compile Include="Views\AddressSearchPage.xaml.cs">
       <DependentUpon>AddressSearchPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\BlankPage1.xaml.cs">
-      <DependentUpon>BlankPage1.xaml</DependentUpon>
+    <Compile Include="Views\DatabaseNewDirectory.xaml.cs">
+      <DependentUpon>DatabaseNewDirectory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DatabaseNewUser.xaml.cs">
+      <DependentUpon>DatabaseNewUser.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DatabasePage.xaml.cs">
       <DependentUpon>DatabasePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DatabaseUserData.xaml.cs">
+      <DependentUpon>DatabaseUserData.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DispositorPage.xaml.cs">
       <DependentUpon>DispositorPage.xaml</DependentUpon>
@@ -359,11 +369,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\BlankPage1.xaml">
+    <Page Include="Views\DatabaseNewDirectory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DatabaseNewUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DatabasePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DatabaseUserData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

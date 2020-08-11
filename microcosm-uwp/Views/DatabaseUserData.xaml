@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="microcosm.Views.DatabaseUserData"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:microcosm.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel>
+            <ListView x:Name="UserDataTable" Margin="40, 40, 0, 0" Width="700" Height="400" BorderBrush="Black">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Text="{Binding name}" Margin="0, 0, 20, 0" />
+                            <TextBlock Text="{Binding datestr}" Margin="0, 0, 20, 0" />
+                            <TextBlock Text="{Binding Place}" Margin="0, 0, 20, 0" />
+                            <TextBlock Text="{Binding LatLng}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <TextBox x:Name="UserMemo" IsReadOnly="True" />
+        </StackPanel>
+    </Grid>
+</Page>

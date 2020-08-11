@@ -1,9 +1,11 @@
 ﻿using microcosm.Models;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI;
 
 namespace microcosm.Common
 {
@@ -126,21 +128,28 @@ namespace microcosm.Common
                 case ZODIAC_NUMBER_PLUTO:
                     return "J";
                 case ZODIAC_NUMBER_DH_TRUENODE:
-                    return "K";
-                case ZODIAC_NUMBER_EARTH:
                     return "M";
+//                    return "K";
+                case ZODIAC_NUMBER_EARTH:
+                    return "♁";
+                    // return "M";
                 case ZODIAC_NUMBER_CHIRON:
-                    return "N";
+                    return "Q";
+                    // return "N";
                 case ZODIAC_NUMBER_LILITH:
                     return "L";
                 case ZODIAC_NUMBER_CERES:
-                    return "O";
+                    return "S";
+//                    return "O";
                 case ZODIAC_NUMBER_PALLAS:
-                    return "P";
+                    return "T";
+                    // return "P";
                 case ZODIAC_NUMBER_JUNO:
-                    return "Q";
+                    return "U";
+                    // return "Q";
                 case ZODIAC_NUMBER_VESTA:
-                    return "R";
+                    return "V";
+                    // return "R";
                 case ZODIAC_NUMBER_ERIS:
                     return "X";
                 case ZODIAC_NUMBER_SEDNA:
@@ -151,6 +160,59 @@ namespace microcosm.Common
                     return "U";
             }
             return "";
+        }
+
+        public static Windows.UI.Color getPlanetColor(int number)
+        {
+            switch (number)
+            {
+                case ZODIAC_NUMBER_SUN:
+                    return Colors.Olive;
+                case ZODIAC_NUMBER_MOON:
+                    return Colors.DarkGoldenrod;
+                case ZODIAC_NUMBER_MERCURY:
+                    return Colors.Purple;
+                case ZODIAC_NUMBER_VENUS:
+                    return Colors.Green;
+                case ZODIAC_NUMBER_MARS:
+                    return Colors.Red;
+                case ZODIAC_NUMBER_JUPITER:
+                    return Colors.Maroon;
+                case ZODIAC_NUMBER_SATURN:
+                    return Colors.DimGray;
+                case ZODIAC_NUMBER_URANUS:
+                    return Colors.DarkTurquoise;
+                case ZODIAC_NUMBER_NEPTUNE:
+                    return Colors.DodgerBlue;
+                case ZODIAC_NUMBER_PLUTO:
+                    return Colors.DeepPink;
+                case ZODIAC_NUMBER_DH_TRUENODE:
+                    return Colors.DarkCyan;
+                case ZODIAC_NUMBER_EARTH:
+                    return Colors.Red;
+                case ZODIAC_NUMBER_CHIRON:
+                    return Colors.Aqua;
+                case ZODIAC_NUMBER_LILITH:
+                    return Colors.MediumSeaGreen;
+                case ZODIAC_NUMBER_CERES:
+                    return Colors.OrangeRed;
+                case ZODIAC_NUMBER_PALLAS:
+                    return Colors.OrangeRed;
+                case ZODIAC_NUMBER_JUNO:
+                    return Colors.OrangeRed;
+                case ZODIAC_NUMBER_VESTA:
+                    return Colors.OrangeRed;
+                case ZODIAC_NUMBER_ERIS:
+                    return Colors.LawnGreen;
+                case ZODIAC_NUMBER_SEDNA:
+                    return Colors.LawnGreen;
+                case ZODIAC_NUMBER_HAUMEA:
+                    return Colors.LawnGreen;
+                case ZODIAC_NUMBER_MAKEMAKE:
+                    return Colors.LawnGreen;
+            }
+            return Colors.Black;
+
         }
 
         /// <summary>

@@ -29,6 +29,7 @@ using Windows.ApplicationModel.Core;
 using Windows.UI.Core;
 using System.Drawing;
 using System.Diagnostics;
+using Windows.UI.Text;
 
 // 空白ページの項目テンプレートについては、https://go.microsoft.com/fwlink/?LinkId=234238 を参照してください
 
@@ -182,7 +183,7 @@ namespace microcosm.Views
             circle.SetValue(Canvas.TopProperty, margin);
             ChartCanvas.Children.Add(circle);
 
-            // 中央円
+            // 獣帯内側
             Ellipse innerCircle = new Ellipse();
             innerCircle.Width = innerDiameter;
             innerCircle.Height = innerDiameter;
@@ -192,11 +193,15 @@ namespace microcosm.Views
             innerCircle.SetValue(Canvas.TopProperty, margin + zodiacWidth / 2);
             ChartCanvas.Children.Add(innerCircle);
 
-            // カスプ、獣帯上の天体
+            // カスプ、獣帯上のサイン
             DrawCusp((int)(innerDiameter / 2), margin2, cuspList);
             DrawSigns((int)(outerDiameter / 2), margin, margin2 - margin);
+
+            // 天体本体
+            // ここで天体の位置を決定しているからコメントアウトするとAspectも出せなくなる
             DrawPlanets((int)(outerDiameter / 2), margin, outerDiameter - centerDiameter);
 
+            // 中央円
             Ellipse centerCircle = new Ellipse();
             centerCircle.Width = centerDiameter;
             centerCircle.Height = centerDiameter;
@@ -382,10 +387,11 @@ namespace microcosm.Views
 
                 var newPtStart = Rotate(radius - 50, 0, 5 * index - ringsData[0].cusps[1]);
                 TextBlock symbol = new TextBlock();
-                symbol.FontFamily = new FontFamily("ms-appx:///Assets/astro.ttf#astro");
-                symbol.FontSize = 16;
+                symbol.FontFamily = new FontFamily("ms-appx:/Zodiac_S/ZODIAC_S.TTF#Zodiac S");
+                symbol.FontSize = 12;
                 symbol.Text = CommonData.getPlanetSymbol(planet.no);
-                symbol.Foreground = new SolidColorBrush(Colors.Black);
+                Windows.UI.Color c = CommonData.getPlanetColor(planet.no);
+                symbol.Foreground = new SolidColorBrush(c);
                 symbol.SetValue(Canvas.LeftProperty, newPtStart.X + radius + margin - 3);
                 symbol.SetValue(Canvas.TopProperty, -1 * newPtStart.Y + radius + margin - 5);
                 ChartCanvas.Children.Add(symbol);
@@ -394,7 +400,7 @@ namespace microcosm.Views
                 var newDegreePtStart = Rotate(radius - 80, 0, 5 * index - ringsData[0].cusps[1]);
                 TextBlock symbolDegree = new TextBlock();
                 symbolDegree.Text = ((int)(planet.absolute_position % 30)).ToString();
-                symbol.FontSize = 9;
+                symbolDegree.FontSize = 10;
                 symbolDegree.Foreground = new SolidColorBrush(Colors.Black);
                 symbolDegree.SetValue(Canvas.LeftProperty, newDegreePtStart.X + radius + margin - 3);
                 symbolDegree.SetValue(Canvas.TopProperty, -1 * newDegreePtStart.Y + radius + margin - 8);
@@ -652,6 +658,7 @@ namespace microcosm.Views
         /// <param name="e"></param>
         private async void abc_Click(object sender, RoutedEventArgs e)
         {
+            /*
             var currentViewId = ApplicationView.GetForCurrentView().Id;
             await CoreApplication.CreateNewView().Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
             {
@@ -664,6 +671,7 @@ namespace microcosm.Views
                     currentViewId,
                     ViewSizePreference.Default);
             });
+            */
         }
 
         public void UserBoxSet(int kind, UserData udata)

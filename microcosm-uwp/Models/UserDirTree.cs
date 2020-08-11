@@ -29,6 +29,10 @@ namespace microcosm.Models
                 };
                 directoryNode.Items.Add(item);
             }
+            if (directoryNode.Items.Count == 0)
+            {
+                Console.WriteLine("No Dirs");
+            }
 
             foreach (var file in directoryInfo.GetFiles())
             {

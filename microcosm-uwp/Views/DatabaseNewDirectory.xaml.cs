@@ -20,11 +20,24 @@ namespace microcosm.Views
     /// <summary>
     /// それ自体で使用できる空白ページまたはフレーム内に移動できる空白ページ。
     /// </summary>
-    public sealed partial class BlankPage1 : Page
+    public sealed partial class DatabaseNewDirectory : Page
     {
-        public BlankPage1()
+        private DatabasePage d;
+
+        public DatabaseNewDirectory()
         {
             this.InitializeComponent();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            d = (DatabasePage)e.Parameter;
+        }
+
+
+        private void Submit_Click(object sender, RoutedEventArgs e)
+        {
+            d.NewFolder(DirectoryName.Text);
         }
     }
 }

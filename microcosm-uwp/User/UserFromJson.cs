@@ -1,32 +1,23 @@
-﻿using microcosm.Common;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
 
-namespace microcosm.Config
+namespace microcosm.User
 {
-    class SettingFromJson
+    class UserFromJson
     {
-        SettingData[] settings;
-
-        public SettingFromJson()
+        public async Task<UserJson> GetUserDataFromJson(string jsonFile)
         {
-            settings = CommonInstance.getInstance().settings;
-        }
-
-
-        public async Task<bool> GetSettingDataFromJson(string jsonFile, int no)
-        {
+            UserJson user;
             try
             {
                 var root = Windows.Storage.ApplicationData.Current.LocalFolder;
-                StorageFolder systemFolder = await root.GetFolderAsync("system");
+                StorageFolder systemFolder = await root.GetFolderAsync("data");
                 StorageFile sampleFile = await systemFolder.GetFileAsync(jsonFile);
 
                 var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.Read);
@@ -40,18 +31,17 @@ namespace microcosm.Config
                         uint numBytesLoaded = await dataReader.LoadAsync((uint)size);
                         string json = dataReader.ReadString(numBytesLoaded);
 
-                        //Debug.WriteLine(json);
-                        SettingJson setting = JsonConvert.DeserializeObject<SettingJson>(json);
-                        settings[no] = new SettingData(no, setting);
+                        Debug.WriteLine(json);
+                        user = JsonConvert.DeserializeObject<UserJson>(json);
                     }
                 }
             }
             catch (Exception e)
             {
-                settings[no] = new SettingData(no, new SettingJson());
+                user = null;
             }
 
-            return true;
+            return user;
         }
     }
 }

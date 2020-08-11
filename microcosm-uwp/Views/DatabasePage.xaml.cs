@@ -156,11 +156,14 @@ namespace microcosm.Views
                 {
                     return;
                 }
-                StorageFile file = await AwaitGetStorageFile(item.FullPath);
+                UserFromJson userFromJson = new UserFromJson();
+                UserJson json = await userFromJson.GetUserDataFromJson("a.json");
 
-                UserData udata = await UserXml.GetUserDataFromXml(file);
+//                StorageFile file = await AwaitGetStorageFile(item.FullPath);
 
-                SetEventTable(udata);
+//                UserData udata = await UserXml.GetUserDataFromXml(file);
+
+                SetEventTable(new UserData(json));
             }
         }
 
@@ -253,11 +256,32 @@ namespace microcosm.Views
             }
         }
 
+        private void File_PointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            DatabaseUserFrame.Navigate(typeof(DatabaseNewUser), (object)this);
+        }
+
+        private void Folder_PointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            DatabaseUserFrame.Navigate(typeof(DatabaseNewDirectory), (object)this);
+        }
+
+        public void NewFolder(string name)
+        {
+            dataDir.CreateSubdirectory(name);
+        }
+
+        public void NewUser(string fileName, UserData udata)
+        {
+
+        }
+
         private void SetEventTable(UserData udata)
         {
-            TableVm = new UserDbViewModel(udata);
-            UserDataTable.DataContext = TableVm;
-            UserDataTable.ItemsSource = TableVm.userData;
+            DatabaseUserFrame.Navigate(typeof(DatabaseUserData), (object)udata);
+            //TableVm = new UserDbViewModel(udata);
+            //UserDataTable.DataContext = TableVm;
+            //UserDataTable.ItemsSource = TableVm.userData;
         }
     }
 }

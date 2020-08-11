@@ -12,6 +12,24 @@ namespace microcosm.User
     [XmlRoot("userdata")]
     public class UserData
     {
+        public string name;
+        public string furigana;
+        public int birth_year;
+        public int birth_month;
+        public int birth_day;
+        public int birth_hour;
+        public int birth_minute;
+        public int birth_second;
+        public DateTime birth_time;
+        public double lat;
+        public double lng;
+        public string birth_place;
+        public string memo;
+        public string timezone;
+        public double timezoneDouble;
+        public List<UserEvent> userevent;
+
+        /*
         [XmlElement("name")]
         public string name { get; set; }
         [XmlElement("furigana")]
@@ -43,6 +61,7 @@ namespace microcosm.User
         [XmlArray("eventlist")]
         [XmlArrayItem("event")]
         public List<UserEvent> userevent { get; set; }
+        */
 
         public UserData()
         {
@@ -93,6 +112,24 @@ namespace microcosm.User
             {
                 this.timezone = timezone;
             }
+        }
+
+        public UserData(UserJson json)
+        {
+            this.name = json.name;
+            this.furigana = json.furigana;
+            this.birth_year = json.birth_year;
+            this.birth_month = json.birth_month;
+            this.birth_day = json.birth_day;
+            this.birth_hour = json.birth_hour;
+            this.birth_minute = json.birth_minute;
+            this.birth_second = json.birth_second;
+            this.birth_place = json.birth_place;
+            this.lat = json.lat;
+            this.lng = json.lng;
+            this.memo = json.memo;
+            //this.userevent = json.events;
+            this.userevent = new List<UserEvent>();
         }
 
         public UserEventData ToUserEventData()
