@@ -394,7 +394,7 @@ namespace microcosm.Views
                 symbol.SetValue(Canvas.TopProperty, -1 * newPtStart.Y + radius + margin - 5);
                 symbol.PointerEntered += Symbol_PointerEntered;
                 symbol.PointerExited += Symbol_PointerExited;
-                symbol.Tag = String.Format("{0} {1}",  CommonData.getPlanetText(planet.no), Util.getPlanetDegree(planet.degree));
+                symbol.Tag = Util.getHelpMessage(planet.no);
                 ChartCanvas.Children.Add(symbol);
 
                 // 天体度数

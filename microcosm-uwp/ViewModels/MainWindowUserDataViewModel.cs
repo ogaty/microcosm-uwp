@@ -16,14 +16,14 @@ namespace microcosm.ViewModels
 
         public MainWindowUserDataViewModel()
         {
-            User1Name = "現在時刻";
-            User1DateStr = Util.DateTimeToString(DateTime.Now, "JST");
-            Event1Name = "現在時刻";
-            Event1DateStr = Util.DateTimeToString(DateTime.Now, "JST");
-            User2Name = "現在時刻";
-            User2DateStr = Util.DateTimeToString(DateTime.Now, "JST");
-            Event2Name = "現在時刻";
-            Event2DateStr = Util.DateTimeToString(DateTime.Now, "JST");
+            User1Name = CommonInstance.getInstance().udata1.name;
+            User1DateStr = Util.DateTimeToString(CommonInstance.getInstance().udata1.birth_time, CommonInstance.getInstance().udata1.timezone);
+            Event1Name = CommonInstance.getInstance().edata1.name;
+            Event1DateStr = Util.DateTimeToString(CommonInstance.getInstance().edata1.birth_time, CommonInstance.getInstance().edata1.timezone);
+            User2Name = CommonInstance.getInstance().udata2.name;
+            User2DateStr = Util.DateTimeToString(CommonInstance.getInstance().udata2.birth_time, CommonInstance.getInstance().udata2.timezone);
+            Event2Name = CommonInstance.getInstance().edata2.name;
+            Event2DateStr = Util.DateTimeToString(CommonInstance.getInstance().edata2.birth_time, CommonInstance.getInstance().edata2.timezone);
         }
 
         private string _User1Name;

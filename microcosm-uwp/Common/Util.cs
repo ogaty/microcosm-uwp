@@ -41,6 +41,27 @@ namespace microcosm.Common
             }
         }
 
+        /// <summary>
+        /// 太陽 牡羊座15.10みたいな感じで返す 
+        /// </summary>
+        /// <param name="absolute_position"></param>
+        /// <returns></returns>
+        public static string getHelpMessage(double absolute_position)
+        {
+            double degree = absolute_position % 30;
+            string sign = CommonData.getPlanetText((int)(absolute_position / 30));
+            string symbol = CommonData.getSignAlfabet((int)(absolute_position / 30));
+            EDecimalDisp decimalDisp = CommonInstance.getInstance().config.decimal_disp;
+            if (decimalDisp == EDecimalDisp.DECIMAL)
+            {
+                return sign + symbol + String.Format("{0:f2}", degree);
+            }
+            else
+            {
+                return sign + symbol + DecimalToHex(degree).ToString();
+            }
+        }
+
         public static double DecimalToHex(string decimalStr)
         {
             double tmp = double.Parse(decimalStr);
