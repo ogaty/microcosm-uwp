@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using microcosm.Config;
 using microcosm.Calc;
+using microcosm.User;
 
 namespace microcosm.Common
 {
@@ -14,6 +15,11 @@ namespace microcosm.Common
         public ConfigData config;
         public SettingData[] settings;
         public AstroCalc calc;
+
+        public UserData udata1 = new UserData();
+        public UserData udata2 = new UserData();
+        public UserData edata1 = new UserData();
+        public UserData edata2 = new UserData();
 
         private CommonInstance()
         {

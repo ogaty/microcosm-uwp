@@ -1,4 +1,5 @@
-﻿using microcosm.Models;
+﻿using microcosm.Common;
+using microcosm.Models;
 using microcosm.User;
 using microcosm.ViewModels;
 using System;
@@ -59,6 +60,10 @@ namespace microcosm.Views
             DirTree = new ObservableCollection<TreeViewItem2>();
             PathCrumbParent.Text = "data";
             SetVM();
+            User1Set(CommonInstance.getInstance().udata1);
+            User2Set(CommonInstance.getInstance().udata2);
+            Event1Set(CommonInstance.getInstance().edata1);
+            Event2Set(CommonInstance.getInstance().edata2);
         }
 
         /// <summary>
@@ -278,10 +283,52 @@ namespace microcosm.Views
 
         private void SetEventTable(UserData udata)
         {
-            DatabaseUserFrame.Navigate(typeof(DatabaseUserData), (object)udata);
+            DatabaseNavigateParam param = new DatabaseNavigateParam()
+            {
+                mainPage = this,
+                udata = udata
+            };
+            DatabaseUserFrame.Navigate(typeof(DatabaseUserData), (object)param);
             //TableVm = new UserDbViewModel(udata);
             //UserDataTable.DataContext = TableVm;
             //UserDataTable.ItemsSource = TableVm.userData;
         }
+
+        public void User1Set(UserData udata)
+        {
+            User1Name.Text = udata.name;
+            User1Birthday.Text = udata.birthdayFullStr;
+            User1Place.Text = udata.birth_place;
+
+            CommonInstance.getInstance().udata1 = udata;
+        }
+
+        public void User2Set(UserData udata)
+        {
+            User2Name.Text = udata.name;
+            User2Birthday.Text = udata.birthdayFullStr;
+            User2Place.Text = udata.birth_place;
+
+            CommonInstance.getInstance().udata2 = udata;
+        }
+
+        public void Event1Set(UserData udata)
+        {
+            Event1Name.Text = udata.name;
+            Event1Birthday.Text = udata.birthdayFullStr;
+            Event1Place.Text = udata.birth_place;
+
+            CommonInstance.getInstance().edata1 = udata;
+        }
+
+        public void Event2Set(UserData udata)
+        {
+            Event2Name.Text = udata.name;
+            Event2Birthday.Text = udata.birthdayFullStr;
+            Event2Place.Text = udata.birth_place;
+
+            CommonInstance.getInstance().edata2 = udata;
+        }
+
     }
 }

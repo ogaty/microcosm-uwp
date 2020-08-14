@@ -1,7 +1,9 @@
-﻿using microcosm.User;
+﻿using microcosm.Models;
+using microcosm.User;
 using microcosm.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -24,6 +26,7 @@ namespace microcosm.Views
     /// </summary>
     public sealed partial class DatabaseUserData : Page
     {
+        DatabasePage mainPage;
         private UserData udata;
         private UserDbViewModel TableVm;
 
@@ -35,12 +38,49 @@ namespace microcosm.Views
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            udata = (UserData)e.Parameter;
+            DatabaseNavigateParam param = (DatabaseNavigateParam)e.Parameter;
+            mainPage = param.mainPage;
+            udata = param.udata;
             TableVm = new UserDbViewModel(udata);
             UserDataTable.DataContext = TableVm;
-            UserDataTable.ItemsSource = TableVm.userData;
+            UserDataTable.ItemsSource = TableVm.userCollection;
 
         }
 
+        private void U1Set_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = (Button)sender;
+            int index = (int)b.Tag;
+            ObservableCollection<UserEventData> eventList = (ObservableCollection < UserEventData > )UserDataTable.ItemsSource;
+            UserData udata = new UserData(eventList[index]);
+            mainPage.User1Set(udata);
+        }
+
+        private void U2Set_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = (Button)sender;
+            int index = (int)b.Tag;
+            ObservableCollection<UserEventData> eventList = (ObservableCollection<UserEventData>)UserDataTable.ItemsSource;
+            UserData udata = new UserData(eventList[index]);
+            mainPage.User2Set(udata);
+        }
+
+        private void E1Set_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = (Button)sender;
+            int index = (int)b.Tag;
+            ObservableCollection<UserEventData> eventList = (ObservableCollection<UserEventData>)UserDataTable.ItemsSource;
+            UserData udata = new UserData(eventList[index]);
+            mainPage.Event1Set(udata);
+        }
+
+        private void E2Set_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = (Button)sender;
+            int index = (int)b.Tag;
+            ObservableCollection<UserEventData> eventList = (ObservableCollection<UserEventData>)UserDataTable.ItemsSource;
+            UserData udata = new UserData(eventList[index]);
+            mainPage.Event2Set(udata);
+        }
     }
 }

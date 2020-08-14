@@ -14,22 +14,23 @@ namespace microcosm.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public ObservableCollection<UserEventData> userData { get; set; }
+        public ObservableCollection<UserEventData> userCollection { get; set; }
 
         public UserDbViewModel(UserEventData edata)
         {
-            userData = new ObservableCollection<UserEventData>();
-            userData.Add(edata);
+            userCollection = new ObservableCollection<UserEventData>();
+            userCollection.Add(edata);
         }
 
         public UserDbViewModel(UserData data)
         {
-            userData = new ObservableCollection<UserEventData>();
-            userData.Add(new UserEventData(data));
+            int index = 0;
+            userCollection = new ObservableCollection<UserEventData>();
+            userCollection.Add(new UserEventData(data, index));
 
             foreach (UserEvent ev in data.userevent)
             {
-                userData.Add(new UserEventData(ev));
+                userCollection.Add(new UserEventData(ev, ++index));
             }
         }
 

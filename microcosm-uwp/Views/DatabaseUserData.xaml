@@ -13,16 +13,24 @@
             <ListView x:Name="UserDataTable" Margin="40, 40, 0, 0" Width="700" Height="400" BorderBrush="Black">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <TextBlock Text="{Binding name}" Margin="0, 0, 20, 0" />
-                            <TextBlock Text="{Binding datestr}" Margin="0, 0, 20, 0" />
-                            <TextBlock Text="{Binding Place}" Margin="0, 0, 20, 0" />
-                            <TextBlock Text="{Binding LatLng}" />
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding name}" Margin="0, 0, 20, 0" />
+                                <TextBlock Text="{Binding datestr}" Margin="0, 0, 20, 0" />
+                                <TextBlock Text="{Binding Place}" Margin="0, 0, 20, 0" />
+                                <TextBlock Text="{Binding LatLng}" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="U1Set" Content="ユーザー1" Click="U1Set_Click" Tag="{Binding index}"></Button>
+                                <Button x:Name="U2Set" Content="ユーザー2" Click="U2Set_Click" Tag="{Binding index}"></Button>
+                                <Button x:Name="E1Set" Content="イベント1" Click="E1Set_Click" Tag="{Binding index}"></Button>
+                                <Button x:Name="E2Set" Content="イベント2" Click="E2Set_Click" Tag="{Binding index}"></Button>
+                            </StackPanel>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <TextBox x:Name="UserMemo" IsReadOnly="True" />
+            <TextBox x:Name="UserMemo" IsReadOnly="True" Width="400" />
         </StackPanel>
     </Grid>
 </Page>

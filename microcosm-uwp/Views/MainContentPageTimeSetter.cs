@@ -1,4 +1,5 @@
 ﻿using microcosm.Calc;
+using microcosm.Common;
 using microcosm.Models;
 using System;
 using System.Collections.Generic;
@@ -21,13 +22,13 @@ namespace microcosm.Views
             switch (ChangeTarget.SelectedItem)
             {
                 case "ユーザー1":
-                    udata1.birth_year = TargetDate.Date.Year;
-                    udata1.birth_month = TargetDate.Date.Month;
-                    udata1.birth_day = TargetDate.Date.Day;
-                    udata1.birth_hour = Int32.Parse(TargetHour.SelectedItem.ToString());
-                    udata1.birth_minute = Int32.Parse(TargetMinute.SelectedItem.ToString());
-                    udata1.birth_second = Int32.Parse(TargetSecond.SelectedItem.ToString());
-                    udata1.birth_time = new DateTime(
+                    CommonInstance.getInstance().udata1.birth_year = TargetDate.Date.Year;
+                    CommonInstance.getInstance().udata1.birth_month = TargetDate.Date.Month;
+                    CommonInstance.getInstance().udata1.birth_day = TargetDate.Date.Day;
+                    CommonInstance.getInstance().udata1.birth_hour = Int32.Parse(TargetHour.SelectedItem.ToString());
+                    CommonInstance.getInstance().udata1.birth_minute = Int32.Parse(TargetMinute.SelectedItem.ToString());
+                    CommonInstance.getInstance().udata1.birth_second = Int32.Parse(TargetSecond.SelectedItem.ToString());
+                    CommonInstance.getInstance().udata1.birth_time = new DateTime(
                         TargetDate.Date.Year,
                         TargetDate.Date.Month,
                         TargetDate.Date.Day,
@@ -36,17 +37,17 @@ namespace microcosm.Views
                         Int32.Parse(TargetSecond.SelectedItem.ToString())
                     );
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, udata1);
-                    UserBoxSet(1, udata1);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().udata1);
+                    UserBoxSet(1, CommonInstance.getInstance().udata1);
                     break;
                 case "ユーザー2":
-                    udata2.birth_year = TargetDate.Date.Year;
-                    udata2.birth_month = TargetDate.Date.Month;
-                    udata2.birth_day = TargetDate.Date.Day;
-                    udata2.birth_hour = Int32.Parse(TargetHour.SelectedItem.ToString());
-                    udata2.birth_minute = Int32.Parse(TargetMinute.SelectedItem.ToString());
-                    udata2.birth_second = Int32.Parse(TargetSecond.SelectedItem.ToString());
-                    udata2.birth_time = new DateTime(
+                    CommonInstance.getInstance().udata2.birth_year = TargetDate.Date.Year;
+                    CommonInstance.getInstance().udata2.birth_month = TargetDate.Date.Month;
+                    CommonInstance.getInstance().udata2.birth_day = TargetDate.Date.Day;
+                    CommonInstance.getInstance().udata2.birth_hour = Int32.Parse(TargetHour.SelectedItem.ToString());
+                    CommonInstance.getInstance().udata2.birth_minute = Int32.Parse(TargetMinute.SelectedItem.ToString());
+                    CommonInstance.getInstance().udata2.birth_second = Int32.Parse(TargetSecond.SelectedItem.ToString());
+                    CommonInstance.getInstance().udata2.birth_time = new DateTime(
                         TargetDate.Date.Year,
                         TargetDate.Date.Month,
                         TargetDate.Date.Day,
@@ -55,17 +56,17 @@ namespace microcosm.Views
                         Int32.Parse(TargetSecond.SelectedItem.ToString())
                     );
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, udata2);
-                    UserBoxSet(2, udata2);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().udata2);
+                    UserBoxSet(2, CommonInstance.getInstance().udata2);
                     break;
                 case "イベント1":
-                    edata1.birth_year = TargetDate.Date.Year;
-                    edata1.birth_month = TargetDate.Date.Month;
-                    edata1.birth_day = TargetDate.Date.Day;
-                    edata1.birth_hour = Int32.Parse(TargetHour.SelectedItem.ToString());
-                    edata1.birth_minute = Int32.Parse(TargetMinute.SelectedItem.ToString());
-                    edata1.birth_second = Int32.Parse(TargetSecond.SelectedItem.ToString());
-                    edata1.birth_time = new DateTime(
+                    CommonInstance.getInstance().edata1.birth_year = TargetDate.Date.Year;
+                    CommonInstance.getInstance().edata1.birth_month = TargetDate.Date.Month;
+                    CommonInstance.getInstance().edata1.birth_day = TargetDate.Date.Day;
+                    CommonInstance.getInstance().edata1.birth_hour = Int32.Parse(TargetHour.SelectedItem.ToString());
+                    CommonInstance.getInstance().edata1.birth_minute = Int32.Parse(TargetMinute.SelectedItem.ToString());
+                    CommonInstance.getInstance().edata1.birth_second = Int32.Parse(TargetSecond.SelectedItem.ToString());
+                    CommonInstance.getInstance().edata1.birth_time = new DateTime(
                         TargetDate.Date.Year,
                         TargetDate.Date.Month,
                         TargetDate.Date.Day,
@@ -74,17 +75,17 @@ namespace microcosm.Views
                         Int32.Parse(TargetSecond.SelectedItem.ToString())
                     );
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, edata1);
-                    UserBoxSet(3, edata1);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().edata1);
+                    UserBoxSet(3, CommonInstance.getInstance().edata1);
                     break;
                 case "イベント2":
-                    edata2.birth_year = TargetDate.Date.Year;
-                    edata2.birth_month = TargetDate.Date.Month;
-                    edata2.birth_day = TargetDate.Date.Day;
-                    edata2.birth_hour = Int32.Parse(TargetHour.SelectedItem.ToString());
-                    edata2.birth_minute = Int32.Parse(TargetMinute.SelectedItem.ToString());
-                    edata2.birth_second = Int32.Parse(TargetSecond.SelectedItem.ToString());
-                    edata2.birth_time = new DateTime(
+                    CommonInstance.getInstance().edata2.birth_year = TargetDate.Date.Year;
+                    CommonInstance.getInstance().edata2.birth_month = TargetDate.Date.Month;
+                    CommonInstance.getInstance().edata2.birth_day = TargetDate.Date.Day;
+                    CommonInstance.getInstance().edata2.birth_hour = Int32.Parse(TargetHour.SelectedItem.ToString());
+                    CommonInstance.getInstance().edata2.birth_minute = Int32.Parse(TargetMinute.SelectedItem.ToString());
+                    CommonInstance.getInstance().edata2.birth_second = Int32.Parse(TargetSecond.SelectedItem.ToString());
+                    CommonInstance.getInstance().edata2.birth_time = new DateTime(
                         TargetDate.Date.Year,
                         TargetDate.Date.Month,
                         TargetDate.Date.Day,
@@ -93,8 +94,8 @@ namespace microcosm.Views
                         Int32.Parse(TargetSecond.SelectedItem.ToString())
                     );
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, edata2);
-                    UserBoxSet(4, edata2);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().edata2);
+                    UserBoxSet(4, CommonInstance.getInstance().edata2);
                     break;
                 default:
                     return;
@@ -124,54 +125,54 @@ namespace microcosm.Views
             {
                 case "ユーザー1":
                     SetUdata1(
-                        udata1.birth_time.AddDays(Int32.Parse(MoveDate.Text)),
-                        udata1.birth_time.Year,
-                        udata1.birth_time.Month,
-                        udata1.birth_time.Day
+                        CommonInstance.getInstance().udata1.birth_time.AddDays(Int32.Parse(MoveDate.Text)),
+                        CommonInstance.getInstance().udata1.birth_time.Year,
+                        CommonInstance.getInstance().udata1.birth_time.Month,
+                        CommonInstance.getInstance().udata1.birth_time.Day
                         );
 
-                    udata1.birth_hour = udata1.birth_time.Hour;
-                    udata1.birth_minute = udata1.birth_time.Minute;
-                    udata1.birth_second = udata1.birth_time.Second;
+                    CommonInstance.getInstance().udata1.birth_hour = CommonInstance.getInstance().udata1.birth_time.Hour;
+                    CommonInstance.getInstance().udata1.birth_minute = CommonInstance.getInstance().udata1.birth_time.Minute;
+                    CommonInstance.getInstance().udata1.birth_second = CommonInstance.getInstance().udata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, udata1);
-                    UserBoxSet(1, udata1);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().udata1);
+                    UserBoxSet(1, CommonInstance.getInstance().udata1);
                     break;
                 case "ユーザー2":
-                    udata2.birth_time = udata2.birth_time.AddDays(Int32.Parse(MoveDate.Text));
-                    udata2.birth_year = udata2.birth_time.Year;
-                    udata2.birth_month = udata2.birth_time.Month;
-                    udata2.birth_day = udata2.birth_time.Day;
-                    udata2.birth_hour = udata2.birth_time.Hour;
-                    udata2.birth_minute = udata2.birth_time.Minute;
-                    udata2.birth_second = udata2.birth_time.Second;
+                    CommonInstance.getInstance().udata2.birth_time = CommonInstance.getInstance().udata2.birth_time.AddDays(Int32.Parse(MoveDate.Text));
+                    CommonInstance.getInstance().udata2.birth_year = CommonInstance.getInstance().udata2.birth_time.Year;
+                    CommonInstance.getInstance().udata2.birth_month = CommonInstance.getInstance().udata2.birth_time.Month;
+                    CommonInstance.getInstance().udata2.birth_day = CommonInstance.getInstance().udata2.birth_time.Day;
+                    CommonInstance.getInstance().udata2.birth_hour = CommonInstance.getInstance().udata2.birth_time.Hour;
+                    CommonInstance.getInstance().udata2.birth_minute = CommonInstance.getInstance().udata2.birth_time.Minute;
+                    CommonInstance.getInstance().udata2.birth_second = CommonInstance.getInstance().udata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, udata2);
-                    UserBoxSet(2, udata2);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().udata2);
+                    UserBoxSet(2, CommonInstance.getInstance().udata2);
                     break;
                 case "イベント1":
-                    edata1.birth_time = edata1.birth_time.AddDays(Int32.Parse(MoveDate.Text));
-                    edata1.birth_year = edata1.birth_time.Year;
-                    edata1.birth_month = edata1.birth_time.Month;
-                    edata1.birth_day = edata1.birth_time.Day;
-                    edata1.birth_hour = edata1.birth_time.Hour;
-                    edata1.birth_minute = edata1.birth_time.Minute;
-                    edata1.birth_second = edata1.birth_time.Second;
+                    CommonInstance.getInstance().edata1.birth_time = CommonInstance.getInstance().edata1.birth_time.AddDays(Int32.Parse(MoveDate.Text));
+                    CommonInstance.getInstance().edata1.birth_year = CommonInstance.getInstance().edata1.birth_time.Year;
+                    CommonInstance.getInstance().edata1.birth_month = CommonInstance.getInstance().edata1.birth_time.Month;
+                    CommonInstance.getInstance().edata1.birth_day = CommonInstance.getInstance().edata1.birth_time.Day;
+                    CommonInstance.getInstance().edata1.birth_hour = CommonInstance.getInstance().edata1.birth_time.Hour;
+                    CommonInstance.getInstance().edata1.birth_minute = CommonInstance.getInstance().edata1.birth_time.Minute;
+                    CommonInstance.getInstance().edata1.birth_second = CommonInstance.getInstance().edata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, edata1);
-                    UserBoxSet(3, edata1);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().edata1);
+                    UserBoxSet(3, CommonInstance.getInstance().edata1);
                     break;
                 case "イベント2":
-                    edata2.birth_time = edata2.birth_time.AddDays(Int32.Parse(MoveDate.Text));
-                    edata2.birth_year = edata2.birth_time.Year;
-                    edata2.birth_month = edata2.birth_time.Month;
-                    edata2.birth_day = edata2.birth_time.Day;
-                    edata2.birth_hour = edata2.birth_time.Hour;
-                    edata2.birth_minute = edata2.birth_time.Minute;
-                    edata2.birth_second = edata2.birth_time.Second;
+                    CommonInstance.getInstance().edata2.birth_time = CommonInstance.getInstance().edata2.birth_time.AddDays(Int32.Parse(MoveDate.Text));
+                    CommonInstance.getInstance().edata2.birth_year = CommonInstance.getInstance().edata2.birth_time.Year;
+                    CommonInstance.getInstance().edata2.birth_month = CommonInstance.getInstance().edata2.birth_time.Month;
+                    CommonInstance.getInstance().edata2.birth_day = CommonInstance.getInstance().edata2.birth_time.Day;
+                    CommonInstance.getInstance().edata2.birth_hour = CommonInstance.getInstance().edata2.birth_time.Hour;
+                    CommonInstance.getInstance().edata2.birth_minute = CommonInstance.getInstance().edata2.birth_time.Minute;
+                    CommonInstance.getInstance().edata2.birth_second = CommonInstance.getInstance().edata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, edata2);
-                    UserBoxSet(4, edata2);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().edata2);
+                    UserBoxSet(4, CommonInstance.getInstance().edata2);
                     break;
                 default:
                     return;
@@ -200,53 +201,53 @@ namespace microcosm.Views
             {
                 case "ユーザー1":
                     SetUdata1(
-                        udata1.birth_time.AddDays(-1 * Int32.Parse(MoveDate.Text)),
-                        udata1.birth_time.Year,
-                        udata1.birth_time.Month,
-                        udata1.birth_time.Day
+                        CommonInstance.getInstance().udata1.birth_time.AddDays(-1 * Int32.Parse(MoveDate.Text)),
+                        CommonInstance.getInstance().udata1.birth_time.Year,
+                        CommonInstance.getInstance().udata1.birth_time.Month,
+                        CommonInstance.getInstance().udata1.birth_time.Day
                         );
-                    udata1.birth_hour = udata1.birth_time.Hour;
-                    udata1.birth_minute = udata1.birth_time.Minute;
-                    udata1.birth_second = udata1.birth_time.Second;
+                    CommonInstance.getInstance().udata1.birth_hour = CommonInstance.getInstance().udata1.birth_time.Hour;
+                    CommonInstance.getInstance().udata1.birth_minute = CommonInstance.getInstance().udata1.birth_time.Minute;
+                    CommonInstance.getInstance().udata1.birth_second = CommonInstance.getInstance().udata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, udata1);
-                    UserBoxSet(1, udata1);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().udata1);
+                    UserBoxSet(1, CommonInstance.getInstance().udata1);
                     break;
                 case "ユーザー2":
-                    udata2.birth_time = udata2.birth_time.AddDays(-1 * Int32.Parse(MoveDate.Text));
-                    udata2.birth_year = udata2.birth_time.Year;
-                    udata2.birth_month = udata2.birth_time.Month;
-                    udata2.birth_day = udata2.birth_time.Day;
-                    udata2.birth_hour = udata2.birth_time.Hour;
-                    udata2.birth_minute = udata2.birth_time.Minute;
-                    udata2.birth_second = udata2.birth_time.Second;
+                    CommonInstance.getInstance().udata2.birth_time = CommonInstance.getInstance().udata2.birth_time.AddDays(-1 * Int32.Parse(MoveDate.Text));
+                    CommonInstance.getInstance().udata2.birth_year = CommonInstance.getInstance().udata2.birth_time.Year;
+                    CommonInstance.getInstance().udata2.birth_month = CommonInstance.getInstance().udata2.birth_time.Month;
+                    CommonInstance.getInstance().udata2.birth_day = CommonInstance.getInstance().udata2.birth_time.Day;
+                    CommonInstance.getInstance().udata2.birth_hour = CommonInstance.getInstance().udata2.birth_time.Hour;
+                    CommonInstance.getInstance().udata2.birth_minute = CommonInstance.getInstance().udata2.birth_time.Minute;
+                    CommonInstance.getInstance().udata2.birth_second = CommonInstance.getInstance().udata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, udata2);
-                    UserBoxSet(2, udata2);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().udata2);
+                    UserBoxSet(2, CommonInstance.getInstance().udata2);
                     break;
                 case "イベント1":
-                    edata1.birth_time = edata1.birth_time.AddDays(-1 * Int32.Parse(MoveDate.Text));
-                    edata1.birth_year = edata1.birth_time.Year;
-                    edata1.birth_month = edata1.birth_time.Month;
-                    edata1.birth_day = edata1.birth_time.Day;
-                    edata1.birth_hour = edata1.birth_time.Hour;
-                    edata1.birth_minute = edata1.birth_time.Minute;
-                    edata1.birth_second = edata1.birth_time.Second;
+                    CommonInstance.getInstance().edata1.birth_time = CommonInstance.getInstance().edata1.birth_time.AddDays(-1 * Int32.Parse(MoveDate.Text));
+                    CommonInstance.getInstance().edata1.birth_year = CommonInstance.getInstance().edata1.birth_time.Year;
+                    CommonInstance.getInstance().edata1.birth_month = CommonInstance.getInstance().edata1.birth_time.Month;
+                    CommonInstance.getInstance().edata1.birth_day = CommonInstance.getInstance().edata1.birth_time.Day;
+                    CommonInstance.getInstance().edata1.birth_hour = CommonInstance.getInstance().edata1.birth_time.Hour;
+                    CommonInstance.getInstance().edata1.birth_minute = CommonInstance.getInstance().edata1.birth_time.Minute;
+                    CommonInstance.getInstance().edata1.birth_second = CommonInstance.getInstance().edata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, edata1);
-                    UserBoxSet(3, edata1);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().edata1);
+                    UserBoxSet(3, CommonInstance.getInstance().edata1);
                     break;
                 case "イベント2":
-                    edata2.birth_time = edata2.birth_time.AddDays(-1 * Int32.Parse(MoveDate.Text));
-                    edata2.birth_year = edata2.birth_time.Year;
-                    edata2.birth_month = edata2.birth_time.Month;
-                    edata2.birth_day = edata2.birth_time.Day;
-                    edata2.birth_hour = edata2.birth_time.Hour;
-                    edata2.birth_minute = edata2.birth_time.Minute;
-                    edata2.birth_second = edata2.birth_time.Second;
+                    CommonInstance.getInstance().edata2.birth_time = CommonInstance.getInstance().edata2.birth_time.AddDays(-1 * Int32.Parse(MoveDate.Text));
+                    CommonInstance.getInstance().edata2.birth_year = CommonInstance.getInstance().edata2.birth_time.Year;
+                    CommonInstance.getInstance().edata2.birth_month = CommonInstance.getInstance().edata2.birth_time.Month;
+                    CommonInstance.getInstance().edata2.birth_day = CommonInstance.getInstance().edata2.birth_time.Day;
+                    CommonInstance.getInstance().edata2.birth_hour = CommonInstance.getInstance().edata2.birth_time.Hour;
+                    CommonInstance.getInstance().edata2.birth_minute = CommonInstance.getInstance().edata2.birth_time.Minute;
+                    CommonInstance.getInstance().edata2.birth_second = CommonInstance.getInstance().edata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, edata2);
-                    UserBoxSet(4, edata2);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().edata2);
+                    UserBoxSet(4, CommonInstance.getInstance().edata2);
                     break;
                 default:
                     return;
@@ -275,54 +276,54 @@ namespace microcosm.Views
             {
                 case "ユーザー1":
                     SetUdata1(
-                        udata1.birth_time.AddHours(-1 * Int32.Parse(MoveHour.Text)),
-                        udata1.birth_time.Year,
-                        udata1.birth_time.Month,
-                        udata1.birth_time.Day
+                        CommonInstance.getInstance().udata1.birth_time.AddHours(-1 * Int32.Parse(MoveHour.Text)),
+                        CommonInstance.getInstance().udata1.birth_time.Year,
+                        CommonInstance.getInstance().udata1.birth_time.Month,
+                        CommonInstance.getInstance().udata1.birth_time.Day
                         );
 
-                    udata1.birth_hour = udata1.birth_time.Hour;
-                    udata1.birth_minute = udata1.birth_time.Minute;
-                    udata1.birth_second = udata1.birth_time.Second;
+                    CommonInstance.getInstance().udata1.birth_hour = CommonInstance.getInstance().udata1.birth_time.Hour;
+                    CommonInstance.getInstance().udata1.birth_minute = CommonInstance.getInstance().udata1.birth_time.Minute;
+                    CommonInstance.getInstance().udata1.birth_second = CommonInstance.getInstance().udata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, udata1);
-                    UserBoxSet(1, udata1);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().udata1);
+                    UserBoxSet(1, CommonInstance.getInstance().udata1);
                     break;
                 case "ユーザー2":
-                    udata2.birth_time = udata2.birth_time.AddHours(-1 * Int32.Parse(MoveHour.Text));
-                    udata2.birth_year = udata2.birth_time.Year;
-                    udata2.birth_month = udata2.birth_time.Month;
-                    udata2.birth_day = udata2.birth_time.Day;
-                    udata2.birth_hour = udata2.birth_time.Hour;
-                    udata2.birth_minute = udata2.birth_time.Minute;
-                    udata2.birth_second = udata2.birth_time.Second;
+                    CommonInstance.getInstance().udata2.birth_time = CommonInstance.getInstance().udata2.birth_time.AddHours(-1 * Int32.Parse(MoveHour.Text));
+                    CommonInstance.getInstance().udata2.birth_year = CommonInstance.getInstance().udata2.birth_time.Year;
+                    CommonInstance.getInstance().udata2.birth_month = CommonInstance.getInstance().udata2.birth_time.Month;
+                    CommonInstance.getInstance().udata2.birth_day = CommonInstance.getInstance().udata2.birth_time.Day;
+                    CommonInstance.getInstance().udata2.birth_hour = CommonInstance.getInstance().udata2.birth_time.Hour;
+                    CommonInstance.getInstance().udata2.birth_minute = CommonInstance.getInstance().udata2.birth_time.Minute;
+                    CommonInstance.getInstance().udata2.birth_second = CommonInstance.getInstance().udata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, udata2);
-                    UserBoxSet(2, udata2);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().udata2);
+                    UserBoxSet(2, CommonInstance.getInstance().udata2);
                     break;
                 case "イベント1":
-                    edata1.birth_time = edata1.birth_time.AddHours(-1 * Int32.Parse(MoveHour.Text));
-                    edata1.birth_year = edata1.birth_time.Year;
-                    edata1.birth_month = edata1.birth_time.Month;
-                    edata1.birth_day = edata1.birth_time.Day;
-                    edata1.birth_hour = edata1.birth_time.Hour;
-                    edata1.birth_minute = edata1.birth_time.Minute;
-                    edata1.birth_second = edata1.birth_time.Second;
+                    CommonInstance.getInstance().edata1.birth_time = CommonInstance.getInstance().edata1.birth_time.AddHours(-1 * Int32.Parse(MoveHour.Text));
+                    CommonInstance.getInstance().edata1.birth_year = CommonInstance.getInstance().edata1.birth_time.Year;
+                    CommonInstance.getInstance().edata1.birth_month = CommonInstance.getInstance().edata1.birth_time.Month;
+                    CommonInstance.getInstance().edata1.birth_day = CommonInstance.getInstance().edata1.birth_time.Day;
+                    CommonInstance.getInstance().edata1.birth_hour = CommonInstance.getInstance().edata1.birth_time.Hour;
+                    CommonInstance.getInstance().edata1.birth_minute = CommonInstance.getInstance().edata1.birth_time.Minute;
+                    CommonInstance.getInstance().edata1.birth_second = CommonInstance.getInstance().edata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, edata1);
-                    UserBoxSet(3, edata1);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().edata1);
+                    UserBoxSet(3, CommonInstance.getInstance().edata1);
                     break;
                 case "イベント2":
-                    edata2.birth_time = edata2.birth_time.AddHours(-1 * Int32.Parse(MoveHour.Text));
-                    edata2.birth_year = edata2.birth_time.Year;
-                    edata2.birth_month = edata2.birth_time.Month;
-                    edata2.birth_day = edata2.birth_time.Day;
-                    edata2.birth_hour = edata2.birth_time.Hour;
-                    edata2.birth_minute = edata2.birth_time.Minute;
-                    edata2.birth_second = edata2.birth_time.Second;
+                    CommonInstance.getInstance().edata2.birth_time = CommonInstance.getInstance().edata2.birth_time.AddHours(-1 * Int32.Parse(MoveHour.Text));
+                    CommonInstance.getInstance().edata2.birth_year = CommonInstance.getInstance().edata2.birth_time.Year;
+                    CommonInstance.getInstance().edata2.birth_month = CommonInstance.getInstance().edata2.birth_time.Month;
+                    CommonInstance.getInstance().edata2.birth_day = CommonInstance.getInstance().edata2.birth_time.Day;
+                    CommonInstance.getInstance().edata2.birth_hour = CommonInstance.getInstance().edata2.birth_time.Hour;
+                    CommonInstance.getInstance().edata2.birth_minute = CommonInstance.getInstance().edata2.birth_time.Minute;
+                    CommonInstance.getInstance().edata2.birth_second = CommonInstance.getInstance().edata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, edata2);
-                    UserBoxSet(4, edata2);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().edata2);
+                    UserBoxSet(4, CommonInstance.getInstance().edata2);
                     break;
                 default:
                     return;
@@ -349,54 +350,54 @@ namespace microcosm.Views
             {
                 case "ユーザー1":
                     SetUdata1(
-                        udata1.birth_time.AddHours(Int32.Parse(MoveHour.Text)),
-                        udata1.birth_time.Year,
-                        udata1.birth_time.Month,
-                        udata1.birth_time.Day
+                        CommonInstance.getInstance().udata1.birth_time.AddHours(Int32.Parse(MoveHour.Text)),
+                        CommonInstance.getInstance().udata1.birth_time.Year,
+                        CommonInstance.getInstance().udata1.birth_time.Month,
+                        CommonInstance.getInstance().udata1.birth_time.Day
                         );
 
-                    udata1.birth_hour = udata1.birth_time.Hour;
-                    udata1.birth_minute = udata1.birth_time.Minute;
-                    udata1.birth_second = udata1.birth_time.Second;
+                    CommonInstance.getInstance().udata1.birth_hour = CommonInstance.getInstance().udata1.birth_time.Hour;
+                    CommonInstance.getInstance().udata1.birth_minute = CommonInstance.getInstance().udata1.birth_time.Minute;
+                    CommonInstance.getInstance().udata1.birth_second = CommonInstance.getInstance().udata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, udata1);
-                    UserBoxSet(1, udata1);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().udata1);
+                    UserBoxSet(1, CommonInstance.getInstance().udata1);
                     break;
                 case "ユーザー2":
-                    udata2.birth_time = udata2.birth_time.AddHours(Int32.Parse(MoveHour.Text));
-                    udata2.birth_year = udata2.birth_time.Year;
-                    udata2.birth_month = udata2.birth_time.Month;
-                    udata2.birth_day = udata2.birth_time.Day;
-                    udata2.birth_hour = udata2.birth_time.Hour;
-                    udata2.birth_minute = udata2.birth_time.Minute;
-                    udata2.birth_second = udata2.birth_time.Second;
+                    CommonInstance.getInstance().udata2.birth_time = CommonInstance.getInstance().udata2.birth_time.AddHours(Int32.Parse(MoveHour.Text));
+                    CommonInstance.getInstance().udata2.birth_year = CommonInstance.getInstance().udata2.birth_time.Year;
+                    CommonInstance.getInstance().udata2.birth_month = CommonInstance.getInstance().udata2.birth_time.Month;
+                    CommonInstance.getInstance().udata2.birth_day = CommonInstance.getInstance().udata2.birth_time.Day;
+                    CommonInstance.getInstance().udata2.birth_hour = CommonInstance.getInstance().udata2.birth_time.Hour;
+                    CommonInstance.getInstance().udata2.birth_minute = CommonInstance.getInstance().udata2.birth_time.Minute;
+                    CommonInstance.getInstance().udata2.birth_second = CommonInstance.getInstance().udata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, udata2);
-                    UserBoxSet(2, udata2);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().udata2);
+                    UserBoxSet(2, CommonInstance.getInstance().udata2);
                     break;
                 case "イベント1":
-                    edata1.birth_time = edata1.birth_time.AddHours(Int32.Parse(MoveHour.Text));
-                    edata1.birth_year = edata1.birth_time.Year;
-                    edata1.birth_month = edata1.birth_time.Month;
-                    edata1.birth_day = edata1.birth_time.Day;
-                    edata1.birth_hour = edata1.birth_time.Hour;
-                    edata1.birth_minute = edata1.birth_time.Minute;
-                    edata1.birth_second = edata1.birth_time.Second;
+                    CommonInstance.getInstance().edata1.birth_time = CommonInstance.getInstance().edata1.birth_time.AddHours(Int32.Parse(MoveHour.Text));
+                    CommonInstance.getInstance().edata1.birth_year = CommonInstance.getInstance().edata1.birth_time.Year;
+                    CommonInstance.getInstance().edata1.birth_month = CommonInstance.getInstance().edata1.birth_time.Month;
+                    CommonInstance.getInstance().edata1.birth_day = CommonInstance.getInstance().edata1.birth_time.Day;
+                    CommonInstance.getInstance().edata1.birth_hour = CommonInstance.getInstance().edata1.birth_time.Hour;
+                    CommonInstance.getInstance().edata1.birth_minute = CommonInstance.getInstance().edata1.birth_time.Minute;
+                    CommonInstance.getInstance().edata1.birth_second = CommonInstance.getInstance().edata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, edata1);
-                    UserBoxSet(3, edata1);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().edata1);
+                    UserBoxSet(3, CommonInstance.getInstance().edata1);
                     break;
                 case "イベント2":
-                    edata2.birth_time = edata2.birth_time.AddHours(Int32.Parse(MoveHour.Text));
-                    edata2.birth_year = edata2.birth_time.Year;
-                    edata2.birth_month = edata2.birth_time.Month;
-                    edata2.birth_day = edata2.birth_time.Day;
-                    edata2.birth_hour = edata2.birth_time.Hour;
-                    edata2.birth_minute = edata2.birth_time.Minute;
-                    edata2.birth_second = edata2.birth_time.Second;
+                    CommonInstance.getInstance().edata2.birth_time = CommonInstance.getInstance().edata2.birth_time.AddHours(Int32.Parse(MoveHour.Text));
+                    CommonInstance.getInstance().edata2.birth_year = CommonInstance.getInstance().edata2.birth_time.Year;
+                    CommonInstance.getInstance().edata2.birth_month = CommonInstance.getInstance().edata2.birth_time.Month;
+                    CommonInstance.getInstance().edata2.birth_day = CommonInstance.getInstance().edata2.birth_time.Day;
+                    CommonInstance.getInstance().edata2.birth_hour = CommonInstance.getInstance().edata2.birth_time.Hour;
+                    CommonInstance.getInstance().edata2.birth_minute = CommonInstance.getInstance().edata2.birth_time.Minute;
+                    CommonInstance.getInstance().edata2.birth_second = CommonInstance.getInstance().edata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, edata2);
-                    UserBoxSet(4, edata2);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().edata2);
+                    UserBoxSet(4, CommonInstance.getInstance().edata2);
                     break;
                 default:
                     return;
@@ -423,53 +424,53 @@ namespace microcosm.Views
             {
                 case "ユーザー1":
                     SetUdata1(
-                        udata1.birth_time.AddMinutes(-1 * Int32.Parse(MoveMinute.Text)),
-                        udata1.birth_time.Year,
-                        udata1.birth_time.Month,
-                        udata1.birth_time.Day
+                        CommonInstance.getInstance().udata1.birth_time.AddMinutes(-1 * Int32.Parse(MoveMinute.Text)),
+                        CommonInstance.getInstance().udata1.birth_time.Year,
+                        CommonInstance.getInstance().udata1.birth_time.Month,
+                        CommonInstance.getInstance().udata1.birth_time.Day
                         );
-                    udata1.birth_hour = udata1.birth_time.Hour;
-                    udata1.birth_minute = udata1.birth_time.Minute;
-                    udata1.birth_second = udata1.birth_time.Second;
+                    CommonInstance.getInstance().udata1.birth_hour = CommonInstance.getInstance().udata1.birth_time.Hour;
+                    CommonInstance.getInstance().udata1.birth_minute = CommonInstance.getInstance().udata1.birth_time.Minute;
+                    CommonInstance.getInstance().udata1.birth_second = CommonInstance.getInstance().udata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, udata1);
-                    UserBoxSet(1, udata1);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().udata1);
+                    UserBoxSet(1, CommonInstance.getInstance().udata1);
                     break;
                 case "ユーザー2":
-                    udata2.birth_time = udata2.birth_time.AddMinutes(-1 * Int32.Parse(MoveMinute.Text));
-                    udata2.birth_year = udata2.birth_time.Year;
-                    udata2.birth_month = udata2.birth_time.Month;
-                    udata2.birth_day = udata2.birth_time.Day;
-                    udata2.birth_hour = udata2.birth_time.Hour;
-                    udata2.birth_minute = udata2.birth_time.Minute;
-                    udata2.birth_second = udata2.birth_time.Second;
+                    CommonInstance.getInstance().udata2.birth_time = CommonInstance.getInstance().udata2.birth_time.AddMinutes(-1 * Int32.Parse(MoveMinute.Text));
+                    CommonInstance.getInstance().udata2.birth_year = CommonInstance.getInstance().udata2.birth_time.Year;
+                    CommonInstance.getInstance().udata2.birth_month = CommonInstance.getInstance().udata2.birth_time.Month;
+                    CommonInstance.getInstance().udata2.birth_day = CommonInstance.getInstance().udata2.birth_time.Day;
+                    CommonInstance.getInstance().udata2.birth_hour = CommonInstance.getInstance().udata2.birth_time.Hour;
+                    CommonInstance.getInstance().udata2.birth_minute = CommonInstance.getInstance().udata2.birth_time.Minute;
+                    CommonInstance.getInstance().udata2.birth_second = CommonInstance.getInstance().udata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, udata2);
-                    UserBoxSet(2, udata2);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().udata2);
+                    UserBoxSet(2, CommonInstance.getInstance().udata2);
                     break;
                 case "イベント1":
-                    edata1.birth_time = edata1.birth_time.AddMinutes(-1 * Int32.Parse(MoveMinute.Text));
-                    edata1.birth_year = edata1.birth_time.Year;
-                    edata1.birth_month = edata1.birth_time.Month;
-                    edata1.birth_day = edata1.birth_time.Day;
-                    edata1.birth_hour = edata1.birth_time.Hour;
-                    edata1.birth_minute = edata1.birth_time.Minute;
-                    edata1.birth_second = edata1.birth_time.Second;
+                    CommonInstance.getInstance().edata1.birth_time = CommonInstance.getInstance().edata1.birth_time.AddMinutes(-1 * Int32.Parse(MoveMinute.Text));
+                    CommonInstance.getInstance().edata1.birth_year = CommonInstance.getInstance().edata1.birth_time.Year;
+                    CommonInstance.getInstance().edata1.birth_month = CommonInstance.getInstance().edata1.birth_time.Month;
+                    CommonInstance.getInstance().edata1.birth_day = CommonInstance.getInstance().edata1.birth_time.Day;
+                    CommonInstance.getInstance().edata1.birth_hour = CommonInstance.getInstance().edata1.birth_time.Hour;
+                    CommonInstance.getInstance().edata1.birth_minute = CommonInstance.getInstance().edata1.birth_time.Minute;
+                    CommonInstance.getInstance().edata1.birth_second = CommonInstance.getInstance().edata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, edata1);
-                    UserBoxSet(3, edata1);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().edata1);
+                    UserBoxSet(3, CommonInstance.getInstance().edata1);
                     break;
                 case "イベント2":
-                    edata2.birth_time = edata2.birth_time.AddMinutes(-1 * Int32.Parse(MoveMinute.Text));
-                    edata2.birth_year = edata2.birth_time.Year;
-                    edata2.birth_month = edata2.birth_time.Month;
-                    edata2.birth_day = edata2.birth_time.Day;
-                    edata2.birth_hour = edata2.birth_time.Hour;
-                    edata2.birth_minute = edata2.birth_time.Minute;
-                    edata2.birth_second = edata2.birth_time.Second;
+                    CommonInstance.getInstance().edata2.birth_time = CommonInstance.getInstance().edata2.birth_time.AddMinutes(-1 * Int32.Parse(MoveMinute.Text));
+                    CommonInstance.getInstance().edata2.birth_year = CommonInstance.getInstance().edata2.birth_time.Year;
+                    CommonInstance.getInstance().edata2.birth_month = CommonInstance.getInstance().edata2.birth_time.Month;
+                    CommonInstance.getInstance().edata2.birth_day = CommonInstance.getInstance().edata2.birth_time.Day;
+                    CommonInstance.getInstance().edata2.birth_hour = CommonInstance.getInstance().edata2.birth_time.Hour;
+                    CommonInstance.getInstance().edata2.birth_minute = CommonInstance.getInstance().edata2.birth_time.Minute;
+                    CommonInstance.getInstance().edata2.birth_second = CommonInstance.getInstance().edata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, edata2);
-                    UserBoxSet(4, edata2);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().edata2);
+                    UserBoxSet(4, CommonInstance.getInstance().edata2);
                     break;
                 default:
                     return;
@@ -496,53 +497,53 @@ namespace microcosm.Views
             {
                 case "ユーザー1":
                     SetUdata1(
-                        udata1.birth_time.AddMinutes(Int32.Parse(MoveMinute.Text)),
-                        udata1.birth_time.Year,
-                        udata1.birth_time.Month,
-                        udata1.birth_time.Day
+                        CommonInstance.getInstance().udata1.birth_time.AddMinutes(Int32.Parse(MoveMinute.Text)),
+                        CommonInstance.getInstance().udata1.birth_time.Year,
+                        CommonInstance.getInstance().udata1.birth_time.Month,
+                        CommonInstance.getInstance().udata1.birth_time.Day
                         );
-                    udata1.birth_hour = udata1.birth_time.Hour;
-                    udata1.birth_minute = udata1.birth_time.Minute;
-                    udata1.birth_second = udata1.birth_time.Second;
+                    CommonInstance.getInstance().udata1.birth_hour = CommonInstance.getInstance().udata1.birth_time.Hour;
+                    CommonInstance.getInstance().udata1.birth_minute = CommonInstance.getInstance().udata1.birth_time.Minute;
+                    CommonInstance.getInstance().udata1.birth_second = CommonInstance.getInstance().udata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, udata1);
-                    UserBoxSet(1, udata1);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().udata1);
+                    UserBoxSet(1, CommonInstance.getInstance().udata1);
                     break;
                 case "ユーザー2":
-                    udata2.birth_time = udata2.birth_time.AddMinutes(Int32.Parse(MoveMinute.Text));
-                    udata2.birth_year = udata2.birth_time.Year;
-                    udata2.birth_month = udata2.birth_time.Month;
-                    udata2.birth_day = udata2.birth_time.Day;
-                    udata2.birth_hour = udata2.birth_time.Hour;
-                    udata2.birth_minute = udata2.birth_time.Minute;
-                    udata2.birth_second = udata2.birth_time.Second;
+                    CommonInstance.getInstance().udata2.birth_time = CommonInstance.getInstance().udata2.birth_time.AddMinutes(Int32.Parse(MoveMinute.Text));
+                    CommonInstance.getInstance().udata2.birth_year = CommonInstance.getInstance().udata2.birth_time.Year;
+                    CommonInstance.getInstance().udata2.birth_month = CommonInstance.getInstance().udata2.birth_time.Month;
+                    CommonInstance.getInstance().udata2.birth_day = CommonInstance.getInstance().udata2.birth_time.Day;
+                    CommonInstance.getInstance().udata2.birth_hour = CommonInstance.getInstance().udata2.birth_time.Hour;
+                    CommonInstance.getInstance().udata2.birth_minute = CommonInstance.getInstance().udata2.birth_time.Minute;
+                    CommonInstance.getInstance().udata2.birth_second = CommonInstance.getInstance().udata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, udata2);
-                    UserBoxSet(2, udata2);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().udata2);
+                    UserBoxSet(2, CommonInstance.getInstance().udata2);
                     break;
                 case "イベント1":
-                    edata1.birth_time = edata1.birth_time.AddMinutes(Int32.Parse(MoveMinute.Text));
-                    edata1.birth_year = edata1.birth_time.Year;
-                    edata1.birth_month = edata1.birth_time.Month;
-                    edata1.birth_day = edata1.birth_time.Day;
-                    edata1.birth_hour = edata1.birth_time.Hour;
-                    edata1.birth_minute = edata1.birth_time.Minute;
-                    edata1.birth_second = edata1.birth_time.Second;
+                    CommonInstance.getInstance().edata1.birth_time = CommonInstance.getInstance().edata1.birth_time.AddMinutes(Int32.Parse(MoveMinute.Text));
+                    CommonInstance.getInstance().edata1.birth_year = CommonInstance.getInstance().edata1.birth_time.Year;
+                    CommonInstance.getInstance().edata1.birth_month = CommonInstance.getInstance().edata1.birth_time.Month;
+                    CommonInstance.getInstance().edata1.birth_day = CommonInstance.getInstance().edata1.birth_time.Day;
+                    CommonInstance.getInstance().edata1.birth_hour = CommonInstance.getInstance().edata1.birth_time.Hour;
+                    CommonInstance.getInstance().edata1.birth_minute = CommonInstance.getInstance().edata1.birth_time.Minute;
+                    CommonInstance.getInstance().edata1.birth_second = CommonInstance.getInstance().edata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, edata1);
-                    UserBoxSet(3, edata1);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().edata1);
+                    UserBoxSet(3, CommonInstance.getInstance().edata1);
                     break;
                 case "イベント2":
-                    edata2.birth_time = edata2.birth_time.AddMinutes(Int32.Parse(MoveMinute.Text));
-                    edata2.birth_year = edata2.birth_time.Year;
-                    edata2.birth_month = edata2.birth_time.Month;
-                    edata2.birth_day = edata2.birth_time.Day;
-                    edata2.birth_hour = edata2.birth_time.Hour;
-                    edata2.birth_minute = edata2.birth_time.Minute;
-                    edata2.birth_second = edata2.birth_time.Second;
+                    CommonInstance.getInstance().edata2.birth_time = CommonInstance.getInstance().edata2.birth_time.AddMinutes(Int32.Parse(MoveMinute.Text));
+                    CommonInstance.getInstance().edata2.birth_year = CommonInstance.getInstance().edata2.birth_time.Year;
+                    CommonInstance.getInstance().edata2.birth_month = CommonInstance.getInstance().edata2.birth_time.Month;
+                    CommonInstance.getInstance().edata2.birth_day = CommonInstance.getInstance().edata2.birth_time.Day;
+                    CommonInstance.getInstance().edata2.birth_hour = CommonInstance.getInstance().edata2.birth_time.Hour;
+                    CommonInstance.getInstance().edata2.birth_minute = CommonInstance.getInstance().edata2.birth_time.Minute;
+                    CommonInstance.getInstance().edata2.birth_second = CommonInstance.getInstance().edata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, edata2);
-                    UserBoxSet(4, edata2);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().edata2);
+                    UserBoxSet(4, CommonInstance.getInstance().edata2);
                     break;
                 default:
                     return;
@@ -569,53 +570,53 @@ namespace microcosm.Views
             {
                 case "ユーザー1":
                     SetUdata1(
-                        udata1.birth_time.AddSeconds(-1 * Int32.Parse(MoveSecond.Text)),
-                        udata1.birth_time.Year,
-                        udata1.birth_time.Month,
-                        udata1.birth_time.Day
+                        CommonInstance.getInstance().udata1.birth_time.AddSeconds(-1 * Int32.Parse(MoveSecond.Text)),
+                        CommonInstance.getInstance().udata1.birth_time.Year,
+                        CommonInstance.getInstance().udata1.birth_time.Month,
+                        CommonInstance.getInstance().udata1.birth_time.Day
                         );
-                    udata1.birth_hour = udata1.birth_time.Hour;
-                    udata1.birth_minute = udata1.birth_time.Minute;
-                    udata1.birth_second = udata1.birth_time.Second;
+                    CommonInstance.getInstance().udata1.birth_hour = CommonInstance.getInstance().udata1.birth_time.Hour;
+                    CommonInstance.getInstance().udata1.birth_minute = CommonInstance.getInstance().udata1.birth_time.Minute;
+                    CommonInstance.getInstance().udata1.birth_second = CommonInstance.getInstance().udata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, udata1);
-                    UserBoxSet(1, udata1);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().udata1);
+                    UserBoxSet(1, CommonInstance.getInstance().udata1);
                     break;
                 case "ユーザー2":
-                    udata2.birth_time = udata2.birth_time.AddSeconds(-1 * Int32.Parse(MoveSecond.Text));
-                    udata2.birth_year = udata2.birth_time.Year;
-                    udata2.birth_month = udata2.birth_time.Month;
-                    udata2.birth_day = udata2.birth_time.Day;
-                    udata2.birth_hour = udata2.birth_time.Hour;
-                    udata2.birth_minute = udata2.birth_time.Minute;
-                    udata2.birth_second = udata2.birth_time.Second;
+                    CommonInstance.getInstance().udata2.birth_time = CommonInstance.getInstance().udata2.birth_time.AddSeconds(-1 * Int32.Parse(MoveSecond.Text));
+                    CommonInstance.getInstance().udata2.birth_year = CommonInstance.getInstance().udata2.birth_time.Year;
+                    CommonInstance.getInstance().udata2.birth_month = CommonInstance.getInstance().udata2.birth_time.Month;
+                    CommonInstance.getInstance().udata2.birth_day = CommonInstance.getInstance().udata2.birth_time.Day;
+                    CommonInstance.getInstance().udata2.birth_hour = CommonInstance.getInstance().udata2.birth_time.Hour;
+                    CommonInstance.getInstance().udata2.birth_minute = CommonInstance.getInstance().udata2.birth_time.Minute;
+                    CommonInstance.getInstance().udata2.birth_second = CommonInstance.getInstance().udata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, udata2);
-                    UserBoxSet(2, udata2);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().udata2);
+                    UserBoxSet(2, CommonInstance.getInstance().udata2);
                     break;
                 case "イベント1":
-                    edata1.birth_time = edata1.birth_time.AddSeconds(-1 * Int32.Parse(MoveSecond.Text));
-                    edata1.birth_year = edata1.birth_time.Year;
-                    edata1.birth_month = edata1.birth_time.Month;
-                    edata1.birth_day = edata1.birth_time.Day;
-                    edata1.birth_hour = edata1.birth_time.Hour;
-                    edata1.birth_minute = edata1.birth_time.Minute;
-                    edata1.birth_second = edata1.birth_time.Second;
+                    CommonInstance.getInstance().edata1.birth_time = CommonInstance.getInstance().edata1.birth_time.AddSeconds(-1 * Int32.Parse(MoveSecond.Text));
+                    CommonInstance.getInstance().edata1.birth_year = CommonInstance.getInstance().edata1.birth_time.Year;
+                    CommonInstance.getInstance().edata1.birth_month = CommonInstance.getInstance().edata1.birth_time.Month;
+                    CommonInstance.getInstance().edata1.birth_day = CommonInstance.getInstance().edata1.birth_time.Day;
+                    CommonInstance.getInstance().edata1.birth_hour = CommonInstance.getInstance().edata1.birth_time.Hour;
+                    CommonInstance.getInstance().edata1.birth_minute = CommonInstance.getInstance().edata1.birth_time.Minute;
+                    CommonInstance.getInstance().edata1.birth_second = CommonInstance.getInstance().edata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, edata1);
-                    UserBoxSet(3, edata1);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().edata1);
+                    UserBoxSet(3, CommonInstance.getInstance().edata1);
                     break;
                 case "イベント2":
-                    edata2.birth_time = edata2.birth_time.AddSeconds(-1 * Int32.Parse(MoveSecond.Text));
-                    edata2.birth_year = edata2.birth_time.Year;
-                    edata2.birth_month = edata2.birth_time.Month;
-                    edata2.birth_day = edata2.birth_time.Day;
-                    edata2.birth_hour = edata2.birth_time.Hour;
-                    edata2.birth_minute = edata2.birth_time.Minute;
-                    edata2.birth_second = edata2.birth_time.Second;
+                    CommonInstance.getInstance().edata2.birth_time = CommonInstance.getInstance().edata2.birth_time.AddSeconds(-1 * Int32.Parse(MoveSecond.Text));
+                    CommonInstance.getInstance().edata2.birth_year = CommonInstance.getInstance().edata2.birth_time.Year;
+                    CommonInstance.getInstance().edata2.birth_month = CommonInstance.getInstance().edata2.birth_time.Month;
+                    CommonInstance.getInstance().edata2.birth_day = CommonInstance.getInstance().edata2.birth_time.Day;
+                    CommonInstance.getInstance().edata2.birth_hour = CommonInstance.getInstance().edata2.birth_time.Hour;
+                    CommonInstance.getInstance().edata2.birth_minute = CommonInstance.getInstance().edata2.birth_time.Minute;
+                    CommonInstance.getInstance().edata2.birth_second = CommonInstance.getInstance().edata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, edata2);
-                    UserBoxSet(4, edata2);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().edata2);
+                    UserBoxSet(4, CommonInstance.getInstance().edata2);
                     break;
                 default:
                     return;
@@ -642,53 +643,53 @@ namespace microcosm.Views
             {
                 case "ユーザー1":
                     SetUdata1(
-                        udata1.birth_time.AddSeconds(Int32.Parse(MoveSecond.Text)),
-                        udata1.birth_time.Year,
-                        udata1.birth_time.Month,
-                        udata1.birth_time.Day
+                        CommonInstance.getInstance().udata1.birth_time.AddSeconds(Int32.Parse(MoveSecond.Text)),
+                        CommonInstance.getInstance().udata1.birth_time.Year,
+                        CommonInstance.getInstance().udata1.birth_time.Month,
+                        CommonInstance.getInstance().udata1.birth_time.Day
                         );
-                    udata1.birth_hour = udata1.birth_time.Hour;
-                    udata1.birth_minute = udata1.birth_time.Minute;
-                    udata1.birth_second = udata1.birth_time.Second;
+                    CommonInstance.getInstance().udata1.birth_hour = CommonInstance.getInstance().udata1.birth_time.Hour;
+                    CommonInstance.getInstance().udata1.birth_minute = CommonInstance.getInstance().udata1.birth_time.Minute;
+                    CommonInstance.getInstance().udata1.birth_second = CommonInstance.getInstance().udata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, udata1);
-                    UserBoxSet(1, udata1);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().udata1);
+                    UserBoxSet(1, CommonInstance.getInstance().udata1);
                     break;
                 case "ユーザー2":
-                    udata2.birth_time = udata2.birth_time.AddSeconds(Int32.Parse(MoveSecond.Text));
-                    udata2.birth_year = udata2.birth_time.Year;
-                    udata2.birth_month = udata2.birth_time.Month;
-                    udata2.birth_day = udata2.birth_time.Day;
-                    udata2.birth_hour = udata2.birth_time.Hour;
-                    udata2.birth_minute = udata2.birth_time.Minute;
-                    udata2.birth_second = udata2.birth_time.Second;
+                    CommonInstance.getInstance().udata2.birth_time = CommonInstance.getInstance().udata2.birth_time.AddSeconds(Int32.Parse(MoveSecond.Text));
+                    CommonInstance.getInstance().udata2.birth_year = CommonInstance.getInstance().udata2.birth_time.Year;
+                    CommonInstance.getInstance().udata2.birth_month = CommonInstance.getInstance().udata2.birth_time.Month;
+                    CommonInstance.getInstance().udata2.birth_day = CommonInstance.getInstance().udata2.birth_time.Day;
+                    CommonInstance.getInstance().udata2.birth_hour = CommonInstance.getInstance().udata2.birth_time.Hour;
+                    CommonInstance.getInstance().udata2.birth_minute = CommonInstance.getInstance().udata2.birth_time.Minute;
+                    CommonInstance.getInstance().udata2.birth_second = CommonInstance.getInstance().udata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, udata2);
-                    UserBoxSet(2, udata2);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().udata2);
+                    UserBoxSet(2, CommonInstance.getInstance().udata2);
                     break;
                 case "イベント1":
-                    edata1.birth_time = edata1.birth_time.AddSeconds(Int32.Parse(MoveSecond.Text));
-                    edata1.birth_year = edata1.birth_time.Year;
-                    edata1.birth_month = edata1.birth_time.Month;
-                    edata1.birth_day = edata1.birth_time.Day;
-                    edata1.birth_hour = edata1.birth_time.Hour;
-                    edata1.birth_minute = edata1.birth_time.Minute;
-                    edata1.birth_second = edata1.birth_time.Second;
+                    CommonInstance.getInstance().edata1.birth_time = CommonInstance.getInstance().edata1.birth_time.AddSeconds(Int32.Parse(MoveSecond.Text));
+                    CommonInstance.getInstance().edata1.birth_year = CommonInstance.getInstance().edata1.birth_time.Year;
+                    CommonInstance.getInstance().edata1.birth_month = CommonInstance.getInstance().edata1.birth_time.Month;
+                    CommonInstance.getInstance().edata1.birth_day = CommonInstance.getInstance().edata1.birth_time.Day;
+                    CommonInstance.getInstance().edata1.birth_hour = CommonInstance.getInstance().edata1.birth_time.Hour;
+                    CommonInstance.getInstance().edata1.birth_minute = CommonInstance.getInstance().edata1.birth_time.Minute;
+                    CommonInstance.getInstance().edata1.birth_second = CommonInstance.getInstance().edata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, edata1);
-                    UserBoxSet(3, edata1);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().edata1);
+                    UserBoxSet(3, CommonInstance.getInstance().edata1);
                     break;
                 case "イベント2":
-                    edata2.birth_time = edata2.birth_time.AddSeconds(Int32.Parse(MoveSecond.Text));
-                    edata2.birth_year = edata2.birth_time.Year;
-                    edata2.birth_month = edata2.birth_time.Month;
-                    edata2.birth_day = edata2.birth_time.Day;
-                    edata2.birth_hour = edata2.birth_time.Hour;
-                    edata2.birth_minute = edata2.birth_time.Minute;
-                    edata2.birth_second = edata2.birth_time.Second;
+                    CommonInstance.getInstance().edata2.birth_time = CommonInstance.getInstance().edata2.birth_time.AddSeconds(Int32.Parse(MoveSecond.Text));
+                    CommonInstance.getInstance().edata2.birth_year = CommonInstance.getInstance().edata2.birth_time.Year;
+                    CommonInstance.getInstance().edata2.birth_month = CommonInstance.getInstance().edata2.birth_time.Month;
+                    CommonInstance.getInstance().edata2.birth_day = CommonInstance.getInstance().edata2.birth_time.Day;
+                    CommonInstance.getInstance().edata2.birth_hour = CommonInstance.getInstance().edata2.birth_time.Hour;
+                    CommonInstance.getInstance().edata2.birth_minute = CommonInstance.getInstance().edata2.birth_time.Minute;
+                    CommonInstance.getInstance().edata2.birth_second = CommonInstance.getInstance().edata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(config, currentSetting, edata2);
-                    UserBoxSet(4, edata2);
+                        = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().edata2);
+                    UserBoxSet(4, CommonInstance.getInstance().edata2);
                     break;
                 default:
                     return;
@@ -714,10 +715,10 @@ namespace microcosm.Views
             int birth_month,
             int birth_day)
         {
-            udata1.birth_time = birth_time;
-            udata1.birth_year = birth_year;
-            udata1.birth_month = birth_month;
-            udata1.birth_day = birth_day;
+            CommonInstance.getInstance().udata1.birth_time = birth_time;
+            CommonInstance.getInstance().udata1.birth_year = birth_year;
+            CommonInstance.getInstance().udata1.birth_month = birth_month;
+            CommonInstance.getInstance().udata1.birth_day = birth_day;
         }
 
     }

@@ -21,6 +21,7 @@ namespace microcosm.Models
         public string Place { get; set; }
         public string timezone { get; set; }
         public string memo { get; set; }
+        public int index { get; set; }
         public string datestr
         {
             get
@@ -41,7 +42,7 @@ namespace microcosm.Models
 
         }
 
-        public UserEventData(UserData udata)
+        public UserEventData(UserData udata, int index)
         {
             name = udata.name;
             year = udata.birth_year;
@@ -55,9 +56,10 @@ namespace microcosm.Models
             lng = udata.lng;
             memo = udata.memo;
             timezone = udata.timezone;
+            this.index = index;
         }
 
-        public UserEventData(UserEvent ev)
+        public UserEventData(UserEvent ev, int index)
         {
             name = ev.event_name;
             year = ev.event_year;
@@ -71,6 +73,7 @@ namespace microcosm.Models
             lng = ev.event_lng;
             memo = ev.event_memo;
             timezone = ev.event_timezone;
+            this.index = index;
         }
     }
 }

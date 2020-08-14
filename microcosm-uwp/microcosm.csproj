@@ -143,6 +143,7 @@
     <Compile Include="Views\AddressSearchPage.xaml.cs">
       <DependentUpon>AddressSearchPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\DatabaseNavigateParam.cs" />
     <Compile Include="Views\DatabaseNewDirectory.xaml.cs">
       <DependentUpon>DatabaseNewDirectory.xaml</DependentUpon>
     </Compile>

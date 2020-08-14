@@ -14,7 +14,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel>
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" Height="400">
                 <StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="20, 0, 0, 10">
                         <TextBlock x:Name="PathCrumbParent" Foreground="Black" />
@@ -41,28 +41,37 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
+
                 </StackPanel>
                 <Frame x:Name="DatabaseUserFrame">
-                    
                 </Frame>
 
-                <!--
-                <StackPanel>
-                    <ListView x:Name="UserDataTable" Margin="40, 40, 0, 0" Width="700" Height="400" BorderBrush="Black">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                    <TextBlock Text="{Binding name}" Margin="0, 0, 20, 0" />
-                                    <TextBlock Text="{Binding datestr}" Margin="0, 0, 20, 0" />
-                                    <TextBlock Text="{Binding Place}" Margin="0, 0, 20, 0" />
-                                    <TextBlock Text="{Binding LatLng}" />
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                    <TextBox x:Name="UserMemo" IsReadOnly="True" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Padding="10,10,10,10">
+                <StackPanel Width="200" BorderBrush="Black" BorderThickness="1">
+                    <TextBlock Text="ユーザー1" Foreground="Black"></TextBlock>
+                    <TextBlock x:Name="User1Name" Foreground="Black"></TextBlock>
+                    <TextBlock x:Name="User1Birthday" Foreground="Black"></TextBlock>
+                    <TextBlock x:Name="User1Place" Foreground="Black"></TextBlock>
                 </StackPanel>
-                -->
+                <StackPanel Width="200" BorderBrush="Black" BorderThickness="1" Margin="10,0,0,0">
+                    <TextBlock Text="ユーザー2" Foreground="Black"></TextBlock>
+                    <TextBlock x:Name="User2Name" Foreground="Black"></TextBlock>
+                    <TextBlock x:Name="User2Birthday" Foreground="Black"></TextBlock>
+                    <TextBlock x:Name="User2Place" Foreground="Black"></TextBlock>
+                </StackPanel>
+                <StackPanel Width="200" BorderBrush="Black" BorderThickness="1" Margin="14,0,0,0">
+                    <TextBlock Text="イベント1" Foreground="Black"></TextBlock>
+                    <TextBlock x:Name="Event1Name" Foreground="Black"></TextBlock>
+                    <TextBlock x:Name="Event1Birthday" Foreground="Black"></TextBlock>
+                    <TextBlock x:Name="Event1Place" Foreground="Black"></TextBlock>
+                </StackPanel>
+                <StackPanel Width="200" BorderBrush="Black" BorderThickness="1" Margin="10,0,0,0">
+                    <TextBlock Text="イベント2" Foreground="Black"></TextBlock>
+                    <TextBlock x:Name="Event2Name" Foreground="Black"></TextBlock>
+                    <TextBlock x:Name="Event2Birthday" Foreground="Black"></TextBlock>
+                    <TextBlock x:Name="Event2Place" Foreground="Black"></TextBlock>
+                </StackPanel>
             </StackPanel>
         </StackPanel>
 

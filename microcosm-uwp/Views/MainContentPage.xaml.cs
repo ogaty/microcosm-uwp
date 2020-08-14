@@ -55,11 +55,6 @@ namespace microcosm.Views
 
         MainWindowUserDataViewModel userBox;
 
-        public UserData udata1 = new UserData();
-        public UserData udata2 = new UserData();
-        public UserData edata1 = new UserData();
-        public UserData edata2 = new UserData();
-
         public Calcuration[] ringsData = new Calcuration[7];
 
         public Dictionary<int, PointF> planetPt;
@@ -84,7 +79,7 @@ namespace microcosm.Views
 
             // 天体情報
             ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-            = calc.ReCalc(config, currentSetting, udata1);
+            = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().udata1);
 
 
             userBox = new MainWindowUserDataViewModel();
@@ -116,8 +111,8 @@ namespace microcosm.Views
             TargetHour.SelectedItem = now.Hour.ToString();
             TargetMinute.SelectedItem = now.Minute.ToString();
             TargetSecond.SelectedItem = now.Second.ToString();
-            TargetLat.Text = udata1.lat.ToString();
-            TargetLng.Text = udata1.lng.ToString();
+            TargetLat.Text = CommonInstance.getInstance().udata1.lat.ToString();
+            TargetLng.Text = CommonInstance.getInstance().udata1.lng.ToString();
 
             await GetAddressData();
 
