@@ -47,6 +47,50 @@ namespace microcosm.Common
         SIGN_PISCES = 11
     }
 
+    public enum ECentric
+    {
+        GEO_CENTRIC = 0,
+        HELIO_CENTRIC = 1
+    }
+    public enum ESidereal
+    {
+        TROPICAL = 0,
+        SIDEREAL = 1
+    }
+    public enum EProgression
+    {
+        PRIMARY = 0,
+        SECONDARY = 1,
+        CPS = 2
+    }
+    public enum EHouseCalc
+    {
+        PLACIDUS = 0,
+        KOCH = 1,
+        CAMPANUS = 2,
+        EQUAL = 3,
+        PORPHYRY = 4,
+        REGIOMONTANUS = 5,
+        SOLAR = 6,
+        SOLARSIGN = 7
+    }
+    public enum EDecimalDisp
+    {
+        DECIMAL = 0,
+        DEGREE = 1
+    }
+    public enum EDispPetern
+    {
+        FULL = 0,
+        MINI = 1
+    }
+    public enum EColor29
+    {
+        NOCHANGE = 0,
+        CHANGE = 1
+    }
+
+
     public static class CommonData
     {
         public static int[] target_numbers = {
@@ -162,6 +206,75 @@ namespace microcosm.Common
             return "";
         }
 
+        /// <summary>
+        /// 番号を引数に天体のシンボルを返す
+        /// </summary>
+        /// <param name="number">天体番号</param>
+        /// <returns></returns>
+        public static string getPlanetSymbolUTF(int number)
+        {
+            switch (number)
+            {
+                case CommonData.ZODIAC_NUMBER_SUN:
+                    return "\u2609";
+                case CommonData.ZODIAC_NUMBER_MOON:
+                    return "\u263d";
+                case CommonData.ZODIAC_NUMBER_MERCURY:
+                    return "\u263f";
+                case CommonData.ZODIAC_NUMBER_VENUS:
+                    return "\u2640";
+                case CommonData.ZODIAC_NUMBER_MARS:
+                    return "\u2642";
+                case CommonData.ZODIAC_NUMBER_JUPITER:
+                    return "\u2643";
+                case CommonData.ZODIAC_NUMBER_SATURN:
+                    return "\u2644";
+                case CommonData.ZODIAC_NUMBER_URANUS:
+                    return "\u2645";
+                case CommonData.ZODIAC_NUMBER_NEPTUNE:
+                    return "\u2646";
+                case CommonData.ZODIAC_NUMBER_PLUTO:
+                    return "\u2647";
+                // 外部フォントだと天文学用のPLUTOになっているのが困りどころ
+                case CommonData.ZODIAC_NUMBER_DH_TRUENODE:
+                    return "\u260a";
+                case CommonData.ZODIAC_NUMBER_EARTH:
+                    return "\u2641";
+                case CommonData.ZODIAC_NUMBER_CHIRON:
+                    return "\u26b7";
+                case CommonData.ZODIAC_NUMBER_LILITH:
+                    return "\u26b8";
+                case CommonData.ZODIAC_NUMBER_CERES:
+                    return "\u26B3";
+                case CommonData.ZODIAC_NUMBER_PALLAS:
+                    return "\u26B4";
+                case CommonData.ZODIAC_NUMBER_JUNO:
+                    return "\u26B5";
+                case CommonData.ZODIAC_NUMBER_VESTA:
+                    return "\u26B6";
+                case CommonData.ZODIAC_NUMBER_VT:
+                    return "Vt";
+                case CommonData.ZODIAC_NUMBER_POF:
+                    return "Pof";
+                case CommonData.ZODIAC_NUMBER_SEDNA:
+                    return "Se";
+                case CommonData.ZODIAC_NUMBER_ERIS:
+                    return "Er";
+                case CommonData.ZODIAC_NUMBER_HAUMEA:
+                    return "Ha";
+                case CommonData.ZODIAC_NUMBER_MAKEMAKE:
+                    return "Ma";
+            }
+            return number.ToString();
+        }
+
+
+
+        /// <summary>
+        /// 番号を引数に天体の色を返す
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
         public static Windows.UI.Color getPlanetColor(int number)
         {
             switch (number)
@@ -213,6 +326,162 @@ namespace microcosm.Common
             }
             return Colors.Black;
 
+        }
+
+        /// <summary>
+        /// 天体名をテキストで返す
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public static string getPlanetText(int number)
+        {
+            switch (number)
+            {
+                case ZODIAC_NUMBER_SUN:
+                    return "太陽";
+                case ZODIAC_NUMBER_MOON:
+                    return "月";
+                case ZODIAC_NUMBER_MERCURY:
+                    return "水星";
+                case ZODIAC_NUMBER_VENUS:
+                    return "金星";
+                case ZODIAC_NUMBER_MARS:
+                    return "火星";
+                case ZODIAC_NUMBER_JUPITER:
+                    return "木星";
+                case ZODIAC_NUMBER_SATURN:
+                    return "土星";
+                case ZODIAC_NUMBER_URANUS:
+                    return "天王星";
+                case ZODIAC_NUMBER_NEPTUNE:
+                    return "海王星";
+                case ZODIAC_NUMBER_PLUTO:
+                    return "冥王星";
+                case ZODIAC_NUMBER_DH_TRUENODE:
+                    return "D.H.";
+                case ZODIAC_NUMBER_EARTH:
+                    return "地球";
+                case ZODIAC_NUMBER_CHIRON:
+                    return "キロン";
+                case ZODIAC_NUMBER_LILITH:
+                    return "リリス";
+                case ZODIAC_NUMBER_CERES:
+                    return "セレス";
+                case ZODIAC_NUMBER_PALLAS:
+                    return "パラス";
+                case ZODIAC_NUMBER_JUNO:
+                    return "ジュノー";
+                case ZODIAC_NUMBER_VESTA:
+                    return "ベスタ";
+                case ZODIAC_NUMBER_ERIS:
+                    return "エリス";
+                case ZODIAC_NUMBER_SEDNA:
+                    return "セドナ";
+                case ZODIAC_NUMBER_HAUMEA:
+                    return "ハウメア";
+                case ZODIAC_NUMBER_MAKEMAKE:
+                    return "マケマケ";
+            }
+            return "";
+        }
+
+        /// <summary>
+        /// 天体をアルファベットで返す
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public static string getPlanetAlfabet(int number)
+        {
+            switch (number)
+            {
+                case CommonData.ZODIAC_NUMBER_SUN:
+                    return "A";
+                case CommonData.ZODIAC_NUMBER_MOON:
+                    return "B";
+                case CommonData.ZODIAC_NUMBER_MERCURY:
+                    return "C";
+                case CommonData.ZODIAC_NUMBER_VENUS:
+                    return "D";
+                case CommonData.ZODIAC_NUMBER_MARS:
+                    return "E";
+                case CommonData.ZODIAC_NUMBER_JUPITER:
+                    return "F";
+                case CommonData.ZODIAC_NUMBER_SATURN:
+                    return "G";
+                case CommonData.ZODIAC_NUMBER_URANUS:
+                    return "H";
+                case CommonData.ZODIAC_NUMBER_NEPTUNE:
+                    return "I";
+                case CommonData.ZODIAC_NUMBER_PLUTO:
+                    // 外部フォントだと天文学用のPLUTOになっているのが困りどころ
+                    return "J";
+                case CommonData.ZODIAC_NUMBER_DH_TRUENODE:
+                    return "\u260a";
+                case CommonData.ZODIAC_NUMBER_EARTH:
+                    return "\u2641";
+                case CommonData.ZODIAC_NUMBER_CHIRON:
+                    return "\u26b7";
+                case CommonData.ZODIAC_NUMBER_LILITH:
+                    return "\u26b8";
+                case CommonData.ZODIAC_NUMBER_CERES:
+                    return "\u26B3";
+                case CommonData.ZODIAC_NUMBER_PALLAS:
+                    return "\u26B4";
+                case CommonData.ZODIAC_NUMBER_JUNO:
+                    return "\u26B5";
+                case CommonData.ZODIAC_NUMBER_VESTA:
+                    return "\u26B6";
+                case CommonData.ZODIAC_NUMBER_VT:
+                    return "Vt";
+                case CommonData.ZODIAC_NUMBER_POF:
+                    return "Pof";
+                case CommonData.ZODIAC_NUMBER_SEDNA:
+                    return "Se";
+                case CommonData.ZODIAC_NUMBER_ERIS:
+                    return "Er";
+                case CommonData.ZODIAC_NUMBER_HAUMEA:
+                    return "Ha";
+                case CommonData.ZODIAC_NUMBER_MAKEMAKE:
+                    return "Ma";
+            }
+            return number.ToString();
+        }
+
+        /// <summary>
+        /// サインをアルファベットで返す
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public static string getSignAlfabet(int number)
+        {
+            switch ((Signs)number)
+            {
+                case Signs.SIGN_ARIES:
+                    return "a";
+                case Signs.SIGN_TAURUS:
+                    return "b";
+                case Signs.SIGN_GEMINI:
+                    return "c";
+                case Signs.SIGN_CANCER:
+                    return "d";
+                case Signs.SIGN_LEO:
+                    return "e";
+                case Signs.SIGN_VIRGO:
+                    return "f";
+                case Signs.SIGN_LIBRA:
+                    return "g";
+                case Signs.SIGN_SCORPIO:
+                    return "h";
+                case Signs.SIGN_SAGITTARIUS:
+                    return "i";
+                case Signs.SIGN_CAPRICORN:
+                    return "j";
+                case Signs.SIGN_AQUARIUS:
+                    return "k";
+                case Signs.SIGN_PISCES:
+                    return "l";
+            }
+            return "";
         }
 
         /// <summary>
@@ -286,6 +555,8 @@ namespace microcosm.Common
             return "";
 
         }
+
+
 
     }
 }

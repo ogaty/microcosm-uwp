@@ -2,8 +2,6 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,15 +9,9 @@ using Windows.Storage;
 
 namespace microcosm.Config
 {
-    class SettingFromJson
+    class ConfigFromJson
     {
-        public SettingFromJson()
-        {
-            CommonInstance.getInstance().settings = new SettingData[10];
-        }
-
-
-        public async Task<bool> GetSettingDataFromJson(string jsonFile, int no)
+        public async Task<bool> GetConfigDataFromJson(string jsonFile)
         {
             try
             {
@@ -39,17 +31,18 @@ namespace microcosm.Config
                         string json = dataReader.ReadString(numBytesLoaded);
 
                         //Debug.WriteLine(json);
-                        SettingJson setting = JsonConvert.DeserializeObject<SettingJson>(json);
-                        CommonInstance.getInstance().settings[no] = new SettingData(no, setting);
+                        ConfigJson config = JsonConvert.DeserializeObject<ConfigJson>(json);
+                        CommonInstance.getInstance().config = new ConfigData(config);
                     }
                 }
             }
             catch (Exception e)
             {
-                CommonInstance.getInstance().settings[no] = new SettingData(no, new SettingJson());
+                CommonInstance.getInstance().config = new ConfigData();
             }
 
             return true;
         }
+
     }
 }

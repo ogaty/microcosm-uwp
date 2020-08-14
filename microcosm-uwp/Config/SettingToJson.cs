@@ -19,8 +19,8 @@ namespace microcosm.Config
         /// <param name="settingData"></param>
         public static async void SaveJson(int settingIndex, SettingData settingData)
         {
-                var root = Windows.Storage.ApplicationData.Current.LocalFolder;
-                StorageFolder systemFolder = await root.GetFolderAsync("system");
+            var root = Windows.Storage.ApplicationData.Current.LocalFolder;
+            StorageFolder systemFolder = await root.GetFolderAsync("system");
             //StorageFile sampleFile = await systemFolder.GetFileAsync(String.Format("setting{0}.json", settingIndex));
             //                var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.Read);
             //                ulong size = stream.Size;

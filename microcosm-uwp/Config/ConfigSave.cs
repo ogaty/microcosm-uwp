@@ -11,9 +11,9 @@ namespace microcosm.Config
 {
     public class ConfigSave
     {
-        public async static void SaveXml(ConfigData config)
+        public async static void SaveXml(ConfigXml config)
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(ConfigData));
+            XmlSerializer serializer = new XmlSerializer(typeof(ConfigXml));
             var root = Windows.Storage.ApplicationData.Current.LocalFolder;
             StorageFolder systemFolder = await root.GetFolderAsync("system");
 

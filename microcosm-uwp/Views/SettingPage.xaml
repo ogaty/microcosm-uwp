@@ -13,7 +13,7 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0">
-            <TextBlock Margin="5, 10, 5, 20" FontSize="32">設定</TextBlock>
+            <TextBlock Margin="5, 10, 5, 20" FontSize="32" Foreground="Black">設定</TextBlock>
             <StackPanel x:Name="CommonSettingMenuBar" Background="LightGoldenrodYellow">
                 <HyperlinkButton Margin="5, 10, 5, 10" x:Name="CommonSettingMenuItem" Content="共通設定" Click="CommonSettingMenuItem_Click" />
             </StackPanel>
@@ -25,10 +25,6 @@
             </StackPanel>
         </StackPanel>
 
-        <Frame x:Name="SettingFrame" Grid.Column="1" Margin="0, 100, 0, 0"></Frame>
-
-        <StackPanel Grid.Column="1">
-            <TextBlock x:Name="MenuName" Text="{Binding MenuItem}"></TextBlock>
-        </StackPanel>
+        <Frame x:Name="SettingFrame" Grid.Column="1" Margin="0, 0, 0, 0"></Frame>
     </Grid>
 </Page>

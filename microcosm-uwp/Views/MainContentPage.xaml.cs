@@ -44,8 +44,6 @@ namespace microcosm.Views
     public sealed partial class MainContentPage : Page
     {
         public AstroCalc calc;
-        public ConfigData config;
-        public SettingData[] setting;
         public SettingData currentSetting;
         public MainWindowCuspListViewModel vm1 = new MainWindowCuspListViewModel();
         public MainWindowCuspListViewModel vm2 = new MainWindowCuspListViewModel();
@@ -72,14 +70,12 @@ namespace microcosm.Views
 
         private async void MainInit()
         {
-            config = CommonInstance.getInstance().config;
-            setting = CommonInstance.getInstance().settings;
-            currentSetting = setting[0];
+            currentSetting = CommonInstance.getInstance().settings[0];
             calc = CommonInstance.getInstance().calc;
 
             // 天体情報
             ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-            = calc.ReCalc(config, currentSetting, CommonInstance.getInstance().udata1);
+            = calc.ReCalc(currentSetting, CommonInstance.getInstance().udata1);
 
 
             userBox = new MainWindowUserDataViewModel();
@@ -163,10 +159,12 @@ namespace microcosm.Views
             int margin = 30;
             int margin2 = 60;
             double outerDiameter = 500;
+            /*
             if (config.size < 3)
             {
                 outerDiameter = 480;
             }
+            */
             double zodiacWidth = 60;
             double innerDiameter = outerDiameter - zodiacWidth;
             double centerDiameter = 300;
@@ -219,6 +217,7 @@ namespace microcosm.Views
         /// </summary>
         private void ListRender()
         {
+            // サイン一覧
             vm1.planetCuspList = new ObservableCollection<PlanetCuspListData>();
             string[] signs = new string[] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l" };
 
@@ -232,22 +231,23 @@ namespace microcosm.Views
                 PlanetCuspListData pcusp = new PlanetCuspListData()
                 {
 //                    name = Util.getPlanetSymbol(p.no)
-                    name = Util.getPlanetAlpha(p.no),
-                    degree1 = Util.getPlanetDegree(p.absolute_position, CommonInstance.getInstance().config.decimalDisp)
+                    name = CommonData.getPlanetAlfabet(p.no),
+                    degree1 = Util.getPlanetDegree(p.absolute_position)
                 };
                 vm1.planetCuspList.Add(pcusp);
             }
             PlanetCusp.ItemsSource = vm1.planetCuspList;
 
 
+            // ハウス一覧
             vm2.houseCuspList = new ObservableCollection<HouseCuspListData>();
             for (int i = 1; i < 13; i++)
             {
                 HouseCuspListData hcusp = new HouseCuspListData();
                 hcusp.name = i.ToString();
-                if (CommonInstance.getInstance().config.decimalDisp == EDecimalDisp.DECIMAL)
+                if (CommonInstance.getInstance().config.decimal_disp == EDecimalDisp.DECIMAL)
                 {
-                    hcusp.degree1 = Util.getPlanetDegree(cuspList.cusps[i], EDecimalDisp.DECIMAL);
+                    hcusp.degree1 = Util.getPlanetDegree(cuspList.cusps[i]);
                 }
                 else
                 {
@@ -383,8 +383,6 @@ namespace microcosm.Views
                 }
 
                 // 天体そのもの
-                //planetOffset = 120;
-
                 var newPtStart = Rotate(radius - 50, 0, 5 * index - ringsData[0].cusps[1]);
                 TextBlock symbol = new TextBlock();
                 symbol.FontFamily = new FontFamily("ms-appx:/Zodiac_S/ZODIAC_S.TTF#Zodiac S");
@@ -394,6 +392,9 @@ namespace microcosm.Views
                 symbol.Foreground = new SolidColorBrush(c);
                 symbol.SetValue(Canvas.LeftProperty, newPtStart.X + radius + margin - 3);
                 symbol.SetValue(Canvas.TopProperty, -1 * newPtStart.Y + radius + margin - 5);
+                symbol.PointerEntered += Symbol_PointerEntered;
+                symbol.PointerExited += Symbol_PointerExited;
+                symbol.Tag = String.Format("{0} {1}",  CommonData.getPlanetText(planet.no), Util.getPlanetDegree(planet.degree));
                 ChartCanvas.Children.Add(symbol);
 
                 // 天体度数
@@ -408,6 +409,17 @@ namespace microcosm.Views
 
                 planetPt[planet.no] = Rotate(centerRing - 50, 0, 5 * index - ringsData[0].cusps[1]);
             }
+        }
+
+        private void Symbol_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            TextBlock t = (TextBlock)sender;
+            Help.Text = t.Tag.ToString();
+        }
+
+        private void Symbol_PointerExited(object sender, PointerRoutedEventArgs e)
+        {
+            Help.Text = "";
         }
 
         /// <summary>

@@ -8,6 +8,9 @@ using System.Xml.Serialization;
 namespace microcosm.Config
 {
     // ２次元配列がシリアライズできないのでコンバーターを用意
+    /// <summary>
+    /// XML系、もう使わない
+    /// </summary>
     public class SettingXml
     {
         [XmlElement("dispname")]

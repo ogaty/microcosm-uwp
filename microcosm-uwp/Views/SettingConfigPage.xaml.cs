@@ -37,34 +37,35 @@ namespace microcosm.Views
             config = CommonInstance.getInstance().config;
             base.OnNavigatedTo(e);
 
-            SettingInit();
+            ConfigInit();
         }
 
-        private void SettingInit()
+        private void ConfigInit()
         {
-            if (config.houseCalc == EHouseCalc.PLACIDUS)
+            if (config.house == EHouseCalc.PLACIDUS)
             {
                 PlacidusRadio.IsChecked = true;
-            } else if (config.houseCalc == EHouseCalc.KOCH)
+            } else if (config.house == EHouseCalc.KOCH)
             {
                 KochRadio.IsChecked = true;
             }
-            else if (config.houseCalc == EHouseCalc.CAMPANUS)
+            else if (config.house == EHouseCalc.CAMPANUS)
             {
                 CampanusRadio.IsChecked = true;
             }
-            else if (config.houseCalc == EHouseCalc.EQUAL)
+            else if (config.house == EHouseCalc.EQUAL)
             {
                 EqualRadio.IsChecked = true;
             }
-            else if (config.houseCalc == EHouseCalc.PORPHYRY)
+            else if (config.house == EHouseCalc.PORPHYRY)
             {
                 PorphyryRadio.IsChecked = true;
             }
-            else if (config.houseCalc == EHouseCalc.REGIOMONTANUS)
+            else if (config.house == EHouseCalc.REGIOMONTANUS)
             {
                 RegiomontanusRadio.IsChecked = true;
             }
+
             if (config.progression == EProgression.PRIMARY)
             {
                 PrimaryRadio.IsChecked = true;
@@ -77,6 +78,8 @@ namespace microcosm.Views
             {
                 CompositRadio.IsChecked = true;
             }
+
+            /*
             if (config.decimalDisp == EDecimalDisp.DECIMAL)
             {
                 HandredRadio.IsChecked = true;
@@ -85,6 +88,7 @@ namespace microcosm.Views
             {
                 SixtyRadio.IsChecked = true;
             }
+
             if (config.dispPattern2 == EDispPetern.MINI)
             {
                 SimpleRadio.IsChecked = true;
@@ -93,6 +97,8 @@ namespace microcosm.Views
             {
                 FullRadio.IsChecked = true;
             }
+            */
+
             if (config.centric == ECentric.GEO_CENTRIC)
             {
                 GeoRadio.IsChecked = true;
@@ -101,6 +107,7 @@ namespace microcosm.Views
             {
                 HelioRadio.IsChecked = true;
             }
+
             if (config.sidereal == ESidereal.TROPICAL)
             {
                 TropicalRadio.IsChecked = true;
@@ -109,15 +116,19 @@ namespace microcosm.Views
             {
                 SideRealRadio.IsChecked = true;
             }
+
+            /*
             if (config.colorChange >= 0)
             {
                 DegreeCheck.IsChecked = true;
                 DegreeText.Text = config.colorChange.ToString();
             }
+            */
         }
 
         private void HouseDivideChanged(object sender, RoutedEventArgs e)
         {
+            /*
             if (config == null) return;
 
             if (PlacidusRadio.IsChecked == true)
@@ -145,10 +156,12 @@ namespace microcosm.Views
                 config.houseCalc = EHouseCalc.REGIOMONTANUS;
             }
             FileSave();
+            */
         }
 
         private void ProgressionsChanged(object sender, RoutedEventArgs e)
         {
+            /*
             if (config == null) return;
 
             if (PrimaryRadio.IsChecked == true)
@@ -164,10 +177,12 @@ namespace microcosm.Views
                 config.progression = EProgression.CPS;
             }
             FileSave();
+            */
         }
 
         private void DoubleLetterChanged(object sender, RoutedEventArgs e)
         {
+            /*
             if (config == null) return;
 
             if (SixtyRadio.IsChecked == true)
@@ -179,10 +194,12 @@ namespace microcosm.Views
                 config.decimalDisp = EDecimalDisp.DECIMAL;
             }
             FileSave();
+            */
         }
 
         private void SimpleChartsChanged(object sender, RoutedEventArgs e)
         {
+            /*
             if (config == null) return;
 
             if (SimpleRadio.IsChecked == true)
@@ -194,10 +211,12 @@ namespace microcosm.Views
                 config.dispPattern2 = EDispPetern.FULL;
             }
             FileSave();
+            */
         }
 
         private void CentricsChanged(object sender, RoutedEventArgs e)
         {
+            /*
             if (config == null) return;
 
             if (GeoRadio.IsChecked == true)
@@ -209,10 +228,12 @@ namespace microcosm.Views
                 config.centric = ECentric.HELIO_CENTRIC;
             }
             FileSave();
+            */
         }
 
         private void TropicalChanged(object sender, RoutedEventArgs e)
         {
+            /*
             if (config == null) return;
 
             if (TropicalRadio.IsChecked == true)
@@ -224,10 +245,12 @@ namespace microcosm.Views
                 config.sidereal = ESidereal.TROPICAL;
             }
             FileSave();
+            */
         }
 
         private void DegreeCheck_Checked(object sender, RoutedEventArgs e)
         {
+            /*
             if (config == null) return;
 
             if (DegreeCheck.IsChecked == true)
@@ -252,10 +275,12 @@ namespace microcosm.Views
                 DegreeText.Text = "-1";
             }
             FileSave();
+            */
         }
 
         private void TextBox_LostFocus(object sender, RoutedEventArgs e)
         {
+            /*
             if (config == null) return;
 
             if (DegreeCheck.IsChecked == true)
@@ -282,18 +307,21 @@ namespace microcosm.Views
             }
 
             FileSave();
+            */
         }
 
         private void DegreeCheck_Unchecked(object sender, RoutedEventArgs e)
         {
+            /*
             config.colorChange = -1;
             DegreeText.Text = "-1";
             FileSave();
+            */
         }
 
         private void FileSave()
         {
-            ConfigSave.SaveXml(config);
+            //ConfigSave.SaveXml(config);
         }
 
     }

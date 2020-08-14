@@ -39,6 +39,7 @@ namespace microcosm.Views
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            /*
             cuspList = (CuspList)e.Parameter;
 
             PlanetCusp.DataContext = vm1;
@@ -60,7 +61,7 @@ namespace microcosm.Views
             {
                 HouseCuspListData hcusp = new HouseCuspListData();
                 hcusp.name = i.ToString();
-                if (CommonInstance.getInstance().config.decimalDisp == EDecimalDisp.DECIMAL)
+                if (CommonInstance.getInstance().config.decimal_disp == EDecimalDisp.DECIMAL)
                 {
                     hcusp.degree1 = String.Format("{0:f2}", cuspList.cusps[i]);
                 }
@@ -72,6 +73,7 @@ namespace microcosm.Views
                 vm2.houseCuspList.Add(hcusp);
             }
             HouseCusp.ItemsSource = vm2.houseCuspList;
+            */
 
         }
 

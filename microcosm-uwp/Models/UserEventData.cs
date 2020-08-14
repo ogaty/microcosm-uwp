@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace microcosm.Models
 {
+    /// <summary>
+    /// Databaseページに載せる用
+    /// userDataと統一できないものか
+    /// </summary>
     public class UserEventData
     {
         public string name { get; set; }

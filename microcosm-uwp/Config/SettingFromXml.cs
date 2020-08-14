@@ -8,6 +8,9 @@ using System.Xml.Serialization;
 
 namespace microcosm.Config
 {
+    /// <summary>
+    /// XML系、もう使わない
+    /// </summary>
     public static class SettingFromXml
     {
         public static SettingData GetSettingFromXml(string xmlFile, int no)

@@ -12,6 +12,9 @@ namespace microcosm.Config
     // splitして1重～7重まで入れる
     // xml2で旧新両方動かせるのが理想
     // どっちにしろコンバーターは必要
+    /// <summary>
+    /// XML系、もう使わない
+    /// </summary>
     public class SettingXml2
     {
         [XmlElement("dispname")]

@@ -109,8 +109,12 @@
     <Compile Include="Common\Explanation.cs" />
     <Compile Include="Common\Util.cs" />
     <Compile Include="Config\ConfigData.cs" />
+    <Compile Include="Config\ConfigFromJson.cs" />
+    <Compile Include="Config\ConfigXml.cs" />
+    <Compile Include="Config\ConfigJson.cs" />
     <Compile Include="Config\ConfigPass.cs" />
     <Compile Include="Config\ConfigSave.cs" />
+    <Compile Include="Config\ConfigToJson.cs" />
     <Compile Include="Config\SettingFromJson.cs" />
     <Compile Include="Config\SettingJson.cs" />
     <Compile Include="Config\SettingToJson.cs" />
@@ -330,6 +334,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\address.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\config.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="ephe\seas_18.se1">

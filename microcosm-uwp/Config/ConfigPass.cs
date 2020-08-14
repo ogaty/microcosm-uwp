@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace microcosm.Config
 {
-    public class ConfigPass
+    class ConfigPass
     {
         public ConfigData config;
         public SettingData[] settings;

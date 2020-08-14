@@ -1,0 +1,12 @@
+{
+    "ephepath": "ephe",
+	"centric": "GEO_CENTRIC",
+	"sidereal": "TROPICAL",
+	"default_place": "東京都中央区",
+	"default_lat": 35.670587,
+	"default_lng": 139.772003,
+	"default_timezone": "JST",
+	"progression": "PRIMARY",
+	"house": "PLACIDUS",
+	"decimal_disp": "DECIMAL"
+}

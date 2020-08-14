@@ -38,9 +38,6 @@ namespace microcosm.Views
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public ConfigData config;
-        public SettingData[] setting = new SettingData[10];
-
         public ObservableCollection<MenuItems> MenuList = new ObservableCollection<MenuItems>();
 
         public MainPage()
@@ -134,10 +131,10 @@ namespace microcosm.Views
 
             StorageFolder systemFolder = await root.GetFolderAsync("system");
 
-            if (await systemFolder.TryGetItemAsync("config.csm") == null)
+            if (await systemFolder.TryGetItemAsync("config.json") == null)
             {
-                var configFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/config.csm")).AsTask().ConfigureAwait(false);
-                await configFile.CopyAsync(systemFolder, "config.csm", NameCollisionOption.FailIfExists);
+                var configFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/config.json")).AsTask().ConfigureAwait(false);
+                await configFile.CopyAsync(systemFolder, "config.json", NameCollisionOption.FailIfExists);
             }
 
             if (await systemFolder.TryGetItemAsync("setting0.json") == null)
@@ -223,14 +220,15 @@ namespace microcosm.Views
             }
 
             // config読み込み
-            var cfg = await systemFolder.GetFileAsync("config.csm");
+            ConfigFromJson configGetter = new ConfigFromJson();
+            await configGetter.GetConfigDataFromJson("config.json");
 
-            config = ConfigFromXml.GetConfigFromXml(cfg.Path);
+
+            //config = ConfigFromXml.GetConfigFromXml(cfg.Path);
 
             //            UserData udata = UserXml.GetUserDataFromXml(cfg.Path);
 
             // setting読み込み
-            CommonInstance.getInstance().settings = setting;
             SettingFromJson settingGetter = new SettingFromJson();
 
             for (int i = 0; i < 10; i++)
@@ -238,7 +236,6 @@ namespace microcosm.Views
                 await settingGetter.GetSettingDataFromJson(String.Format("setting{0}.json", i), i);
             }
 
-            CommonInstance.getInstance().config = config;
             return true;
         }
 

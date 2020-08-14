@@ -130,7 +130,7 @@ namespace microcosm.Calc
         /// 
         /// </param>
         /// 
-        public double[] CuspCalc(DateTime d, double lat, double lng, double timezone, EHouseCalc houseKind)
+        public double[] CuspCalc(DateTime d, double lat, double lng, double timezone)
         {
             s.swe_set_ephe_path(Windows.Storage.ApplicationData.Current.LocalFolder.Path + "/ephe");
             s.OnLoadFile += (sender, e) => {
@@ -157,6 +157,7 @@ namespace microcosm.Calc
             double[] cusps = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
             double[] ascmc = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
+            EHouseCalc houseKind = CommonInstance.getInstance().config.house;
             if (houseKind == EHouseCalc.PLACIDUS)
             {
                 // Placidas
@@ -203,10 +204,10 @@ namespace microcosm.Calc
         }
 
 
-        public Calcuration ReCalc(ConfigData config, SettingData setting, UserData udata)
+        public Calcuration ReCalc(SettingData setting, UserData udata)
         {
             List<PlanetData> p = PositionCalc(udata.birth_time, udata.timezoneDouble);
-            double[] cusps = CuspCalc(udata.birth_time, udata.lat, udata.lng, udata.timezoneDouble, config.houseCalc);
+            double[] cusps = CuspCalc(udata.birth_time, udata.lat, udata.lng, udata.timezoneDouble);
             Calcuration calcurate = new Calcuration(p, cusps);
 
             return calcurate;
