@@ -10,7 +10,7 @@
 
     <Grid>
         <StackPanel>
-            <ListView x:Name="UserDataTable" Margin="40, 40, 0, 0" Width="700" Height="400" BorderBrush="Black">
+            <ListView x:Name="UserDataTable" Margin="40, 40, 0, 0" Width="700" Height="350" BorderBrush="Black" HorizontalAlignment="Left">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
@@ -30,7 +30,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <TextBox x:Name="UserMemo" IsReadOnly="True" Width="400" />
+            <TextBox x:Name="UserMemo" IsReadOnly="True" Width="400" HorizontalAlignment="Left" Margin="40,0,0,0" />
         </StackPanel>
     </Grid>
 </Page>

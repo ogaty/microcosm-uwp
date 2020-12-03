@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -25,6 +26,15 @@ namespace microcosm.Views
         public SettingVersion()
         {
             this.InitializeComponent();
+
+            var copyright =
+                (System.Reflection.AssemblyCopyrightAttribute)
+                Attribute.GetCustomAttribute(
+                    System.Reflection.Assembly.GetExecutingAssembly(),
+                    typeof(System.Reflection.AssemblyCopyrightAttribute));
+            CopyRightBlock.Text = copyright.Copyright;
+
+            VersionBlock.Text = Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
     }
 }

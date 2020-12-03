@@ -133,6 +133,11 @@ namespace microcosm.Config
             Init(no, json);
         }
 
+        public SettingData()
+        {
+
+        }
+
         public void Init(int no, SettingXml xml)
         {
 

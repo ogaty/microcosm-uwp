@@ -42,8 +42,8 @@
                     <StackPanel Orientation="Vertical">
                         <ComboBox x:Name="ChangeTarget" Margin="0,0,0,10">
                             <x:String>ユーザー1</x:String>
-                            <x:String>ユーザー2</x:String>
                             <x:String>イベント1</x:String>
+                            <x:String>ユーザー2</x:String>
                             <x:String>イベント2</x:String>
                         </ComboBox>
                         <DatePicker x:Name="TargetDate"></DatePicker>

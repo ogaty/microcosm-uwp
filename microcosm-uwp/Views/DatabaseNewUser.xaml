@@ -9,30 +9,89 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <StackPanel HorizontalAlignment="Left">
-            <TextBlock Foreground="Black" FontWeight="Bold">ファイル名</TextBlock>
-            <TextBox x:Name="FileName" Width="200"></TextBox>
-            <TextBlock Foreground="Black" FontWeight="Bold">ユーザー名</TextBlock>
-            <TextBox x:Name="UserName" Width="200"></TextBox>
-            <TextBlock Foreground="Black" FontWeight="Bold">かな</TextBlock>
-            <TextBox x:Name="UserKana" Width="200"></TextBox>
-            <TextBlock Foreground="Black" FontWeight="Bold">誕生日(yyyy/mm/dd)</TextBlock>
-            <TextBox x:Name="UserBirthDate" Width="200"></TextBox>
-            <TextBlock Foreground="Black" FontWeight="Bold">誕生時刻(hh:mm:ss)</TextBlock>
-            <TextBox x:Name="UserBirthTime" Width="200"></TextBox>
-            <TextBlock Foreground="Black" FontWeight="Bold">出生場所</TextBlock>
-            <TextBox x:Name="UserBirthPlace" Width="200"></TextBox>
-            <TextBlock Foreground="Black">タイムゾーン</TextBlock>
-            <ComboBox x:Name="TimeZone">
-                <ComboBoxItem Content="JST(日本標準)" Tag="1"></ComboBoxItem>
-                <ComboBoxItem Content="UTC(+0:00)" Tag="2"></ComboBoxItem>
-            </ComboBox>
-            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
-                <Button x:Name="Submit" Content="決定" Click="Submit_Click"></Button>
-                <Button x:Name="Cancel" Content="キャンセル" Margin="20,0,0,0" ></Button>
-            </StackPanel>
-            
-        </StackPanel>
+        <ScrollViewer Height="400" Width="400" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <StackPanel HorizontalAlignment="Left" Width="360">
+                <TextBlock Foreground="Black" FontWeight="Bold">ファイル名</TextBlock>
+                <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                    <TextBox x:Name="FileName" Width="200" HorizontalAlignment="Left"></TextBox>
+                    <TextBlock>.json</TextBlock>
+                </StackPanel>
+                <TextBlock Foreground="Black" FontWeight="Bold">ユーザー名</TextBlock>
+                <TextBox x:Name="UserName" Width="200" Margin="20,0,0,0" HorizontalAlignment="Left"></TextBox>
+                <TextBlock Foreground="Black" FontWeight="Bold">かな</TextBlock>
+                <TextBox x:Name="UserKana" Width="200" Margin="20,0,0,0" HorizontalAlignment="Left"></TextBox>
+                <TextBlock Foreground="Black" FontWeight="Bold">誕生日(yyyy/mm/dd)</TextBlock>
+                <TextBox x:Name="UserBirthDate" Width="200" Margin="20,0,0,0" HorizontalAlignment="Left"></TextBox>
+                <TextBlock Foreground="Black" FontWeight="Bold">誕生時刻(hh:mm:ss)</TextBlock>
+                <TextBox x:Name="UserBirthTime" Width="200" Margin="20,0,0,0" HorizontalAlignment="Left"></TextBox>
+                <TextBlock Foreground="Black" FontWeight="Bold">出生場所</TextBlock>
+                <ComboBox x:Name="UserBirthCombo" Width="200" Margin="20,0,0,0" HorizontalAlignment="Left" SelectionChanged="UserBirthCombo_SelectionChanged">
+                    <ComboBoxItem Content="北海道" Tag="1"></ComboBoxItem>
+                    <ComboBoxItem Content="青森県" Tag="2"></ComboBoxItem>
+                    <ComboBoxItem Content="岩手県" Tag="3"></ComboBoxItem>
+                    <ComboBoxItem Content="宮城県" Tag="4"></ComboBoxItem>
+                    <ComboBoxItem Content="秋田県" Tag="5"></ComboBoxItem>
+                    <ComboBoxItem Content="山形県" Tag="6"></ComboBoxItem>
+                    <ComboBoxItem Content="福島県" Tag="7"></ComboBoxItem>
+                    <ComboBoxItem Content="茨城県" Tag="8"></ComboBoxItem>
+                    <ComboBoxItem Content="栃木県" Tag="9"></ComboBoxItem>
+                    <ComboBoxItem Content="群馬県" Tag="10"></ComboBoxItem>
+                    <ComboBoxItem Content="埼玉県" Tag="11"></ComboBoxItem>
+                    <ComboBoxItem Content="千葉県" Tag="12"></ComboBoxItem>
+                    <ComboBoxItem Content="東京都" Tag="13"></ComboBoxItem>
+                    <ComboBoxItem Content="神奈川県" Tag="14"></ComboBoxItem>
+                    <ComboBoxItem Content="新潟県" Tag="15"></ComboBoxItem>
+                    <ComboBoxItem Content="富山県" Tag="16"></ComboBoxItem>
+                    <ComboBoxItem Content="石川県" Tag="17"></ComboBoxItem>
+                    <ComboBoxItem Content="福井県" Tag="18"></ComboBoxItem>
+                    <ComboBoxItem Content="山梨県" Tag="19"></ComboBoxItem>
+                    <ComboBoxItem Content="長野県" Tag="20"></ComboBoxItem>
+                    <ComboBoxItem Content="岐阜県" Tag="21"></ComboBoxItem>
+                    <ComboBoxItem Content="静岡県" Tag="22"></ComboBoxItem>
+                    <ComboBoxItem Content="愛知県" Tag="23"></ComboBoxItem>
+                    <ComboBoxItem Content="三重県" Tag="24"></ComboBoxItem>
+                    <ComboBoxItem Content="滋賀県" Tag="25"></ComboBoxItem>
+                    <ComboBoxItem Content="京都府" Tag="26"></ComboBoxItem>
+                    <ComboBoxItem Content="大阪府" Tag="27"></ComboBoxItem>
+                    <ComboBoxItem Content="兵庫県" Tag="28"></ComboBoxItem>
+                    <ComboBoxItem Content="奈良県" Tag="29"></ComboBoxItem>
+                    <ComboBoxItem Content="和歌山県" Tag="30"></ComboBoxItem>
+                    <ComboBoxItem Content="鳥取県" Tag="31"></ComboBoxItem>
+                    <ComboBoxItem Content="島根県" Tag="32"></ComboBoxItem>
+                    <ComboBoxItem Content="岡山県" Tag="33"></ComboBoxItem>
+                    <ComboBoxItem Content="広島県" Tag="34"></ComboBoxItem>
+                    <ComboBoxItem Content="山口県" Tag="35"></ComboBoxItem>
+                    <ComboBoxItem Content="徳島県" Tag="36"></ComboBoxItem>
+                    <ComboBoxItem Content="香川県" Tag="37"></ComboBoxItem>
+                    <ComboBoxItem Content="愛媛県" Tag="38"></ComboBoxItem>
+                    <ComboBoxItem Content="高知県" Tag="39"></ComboBoxItem>
+                    <ComboBoxItem Content="福岡県" Tag="40"></ComboBoxItem>
+                    <ComboBoxItem Content="佐賀県" Tag="41"></ComboBoxItem>
+                    <ComboBoxItem Content="長崎県" Tag="42"></ComboBoxItem>
+                    <ComboBoxItem Content="熊本県" Tag="43"></ComboBoxItem>
+                    <ComboBoxItem Content="大分県" Tag="44"></ComboBoxItem>
+                    <ComboBoxItem Content="宮崎県" Tag="45"></ComboBoxItem>
+                    <ComboBoxItem Content="鹿児島県" Tag="46"></ComboBoxItem>
+                    <ComboBoxItem Content="沖縄県" Tag="47"></ComboBoxItem>
+                </ComboBox>
+                <TextBlock Foreground="Black" FontWeight="Bold">緯度・経度</TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="Userlat" Width="100" Margin="20,0,0,0" HorizontalAlignment="Left"></TextBox>
+                    <TextBox x:Name="Userlng" Width="100" Margin="20,0,0,0" HorizontalAlignment="Left"></TextBox>
+                </StackPanel>
+                <TextBlock Foreground="Black">タイムゾーン</TextBlock>
+                <ComboBox x:Name="TimeZone" Margin="20,0,0,0">
+                    <ComboBoxItem Content="JST(日本標準)" Tag="1" IsSelected="True"></ComboBoxItem>
+                    <ComboBoxItem Content="UTC(+0:00)" Tag="2"></ComboBoxItem>
+                </ComboBox>
+                <TextBlock Foreground="Black">メモ</TextBlock>
+                <TextBox x:Name="Memo" AcceptsReturn="True" TextWrapping="Wrap" VerticalContentAlignment="Top" Height="60"></TextBox>
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                    <Button x:Name="Submit" Content="決定" Click="Submit_Click"></Button>
+                    <Button x:Name="Cancel" Content="キャンセル" Margin="20,0,0,0" ></Button>
+                </StackPanel>
 
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

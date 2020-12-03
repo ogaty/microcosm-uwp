@@ -32,6 +32,14 @@
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <NavigationView x:Name="navi" PaneDisplayMode="Left" ItemInvoked="navi_ItemInvoked" IsPaneOpen="False" IsBackButtonVisible="Collapsed">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Icon="Target" Content="chart" Tag="chart"></NavigationViewItem>
+                <NavigationViewItem Icon="Library" Content="database" Tag="database"></NavigationViewItem>
+            </NavigationView.MenuItems>
+            <Frame x:Name="ContentFrame" />
+        </NavigationView>
+        <!--
         <controls:HamburgerMenu x:Name="hamburgerMenuControl"
                                 PaneBackground="Black"
                                 Foreground="White"
@@ -42,6 +50,7 @@
                                 Grid.RowSpan="2" OptionsItemClick="hamburgerMenuControl_OptionsItemClick" ItemClick="hamburgerMenuControl_ItemClick">
             <Frame x:Name="ContentFrame" />
         </controls:HamburgerMenu>
+        -->
 
     </Grid>
 </Page>

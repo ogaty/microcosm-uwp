@@ -15,6 +15,7 @@ namespace microcosm.Common
         public ConfigData config;
         public SettingData[] settings;
         public AstroCalc calc;
+        public Db db;
 
         public UserData udata1 = new UserData();
         public UserData udata2 = new UserData();

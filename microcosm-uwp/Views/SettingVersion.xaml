@@ -8,6 +8,14 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Margin="20, 0, 0, 0">
+            <TextBlock Margin="0,10,5,20" FontSize="32" Foreground="Black">microcosm</TextBlock>
+            <TextBlock FontSize="24" Foreground="Black">Version</TextBlock>
+            <TextBlock FontSize="24" Foreground="Black" x:Name="VersionBlock"></TextBlock>
+            <TextBlock FontSize="24" Foreground="Black"></TextBlock>
+            <TextBlock FontSize="24" Foreground="Black" x:Name="CopyRightBlock"></TextBlock>
+            <TextBlock FontSize="20" Foreground="Black">https://ogatism.jp</TextBlock>
+        </StackPanel>
 
     </Grid>
 </Page>

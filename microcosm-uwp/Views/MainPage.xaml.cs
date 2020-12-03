@@ -28,6 +28,7 @@ using microcosm.Models;
 using microcosm.Common;
 using System.Collections.ObjectModel;
 using Windows.UI.ViewManagement;
+using Microsoft.Data.Sqlite;
 
 // 空白ページの項目テンプレートについては、https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x411 を参照してください
 
@@ -244,21 +245,31 @@ namespace microcosm.Views
         /// </summary>
         private async void MainInit()
         {
+            CommonInstance.getInstance().db = new Db();
+            //CommonInstance.getInstance().db.init();
+            CommonInstance.getInstance().db.selectConfig();
+            CommonInstance.getInstance().db.selectSettings();
+
             List<Task<bool>> arrayTask = new List<Task<bool>>();
             Task<bool> swissTask = Task<bool>.Run(CreateSwiss);
             arrayTask.Add(swissTask);
-            Task<bool> configTask = Task<bool>.Run(CreateConfig);
-            arrayTask.Add(configTask);
+            //Task<bool> configTask = Task<bool>.Run(CreateConfig);
+            //arrayTask.Add(configTask);
 
             await Task.WhenAll(arrayTask);
+
+            navi.IsPaneOpen = false;
 
             MenuList.Add(new MenuItems { text = "Home", icon = FontAwesome.UWP.FontAwesomeIcon.Circle, PageType = typeof(MainContentPage) });
             MenuList.Add(new MenuItems { text = "データベース", icon = FontAwesome.UWP.FontAwesomeIcon.Database, PageType = typeof(DatabasePage) });
             MenuList.Add(new MenuItems { text = "設定", icon = FontAwesome.UWP.FontAwesomeIcon.Gear, PageType = typeof(SettingPage) });
+            ContentFrame.Navigate(typeof(MainContentPage));
+            /*
             hamburgerMenuControl.DataContext = MenuList;
 
 
             ContentFrame.Navigate(typeof(MainContentPage));
+            */
         }
 
         /*
@@ -291,8 +302,39 @@ namespace microcosm.Views
         private void hamburgerMenuControl_ItemClick(object sender, ItemClickEventArgs e)
         {
             var menuItem = e.ClickedItem as MenuItems;
-            ContentFrame.Navigate(menuItem.PageType);
+//            ContentFrame.Navigate(menuItem.PageType);
+        }
+
+        private void NavView_Navigate(NavigationViewItem item)
+        {
+            switch (item.Tag)
+            {
+                case "chart":
+                    ContentFrame.Navigate(typeof(MainContentPage));
+                    break;
+
+                case "database":
+                    ContentFrame.Navigate(typeof(DatabasePage));
+                    break;
+
+                case "version":
+                    ContentFrame.Navigate(typeof(SettingVersion));
+                    break;
+            }
+        }
+
+        private void navi_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
+        {
+            if (args.IsSettingsInvoked)
+            {
+                ContentFrame.Navigate(typeof(SettingPage));
+            }
+            else
+            {
+                // find NavigationViewItem with Content that equals InvokedItem
+                var item = sender.MenuItems.OfType<NavigationViewItem>().First(x => (string)x.Content == (string)args.InvokedItem);
+                NavView_Navigate(item as NavigationViewItem);
+            }
         }
     }
-
 }

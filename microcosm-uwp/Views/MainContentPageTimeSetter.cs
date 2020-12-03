@@ -114,6 +114,7 @@ namespace microcosm.Views
 
             // 表示メイン部分
             CanvasRender(cuspList);
+            ListRender();
 
             ReportRender();
         }

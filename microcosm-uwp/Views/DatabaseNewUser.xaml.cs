@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using microcosm.Common;
 
 // 空白ページの項目テンプレートについては、https://go.microsoft.com/fwlink/?LinkId=234238 を参照してください
 
@@ -40,9 +41,18 @@ namespace microcosm.Views
             UserData uData = new UserData()
             {
                 name = UserName.Text,
-                furigana = UserKana.Text
+                furigana = UserKana.Text,
+                userevent = new List<UserEvent>(),
             };
             d.NewUser(FileName.Text, uData);
+        }
+
+        private void UserBirthCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox c = (ComboBox)sender;
+
+            Userlat.Text = CommonData.latitudeMap[((ComboBoxItem)c.SelectedValue).Content.ToString()].ToString();
+            Userlng.Text = CommonData.longitudeMap[((ComboBoxItem)c.SelectedValue).Content.ToString()].ToString();
         }
     }
 }

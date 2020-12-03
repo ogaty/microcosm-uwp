@@ -51,5 +51,12 @@ namespace microcosm.User
 
         [JsonProperty("memo")]
         public string memo;
+
+        public UserJson(UserData udata)
+        {
+            name = udata.name;
+            furigana = udata.furigana;
+            
+        }
     }
 }

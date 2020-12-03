@@ -276,9 +276,29 @@ namespace microcosm.Views
             dataDir.CreateSubdirectory(name);
         }
 
+        public void NewFile(string name, UserData udata)
+        {
+            //SaveJson("a", name, udata);
+            var file = new FileInfo(Path.Combine(dataDir.FullName, "file.txt"));
+            if (!file.Exists) // you may not want to overwrite existing files
+            {
+                using (Stream stream = file.OpenWrite())
+                using (StreamWriter writer = new StreamWriter(stream))
+                {
+                    writer.Write("some text");
+                }
+            }
+        }
+
         public void NewUser(string fileName, UserData udata)
         {
-
+            DatabaseNavigateParam param = new DatabaseNavigateParam()
+            {
+                mainPage = this,
+                udata = udata
+            };
+            //NewFile(, fileName, udata);
+            DatabaseUserFrame.Navigate(typeof(DatabaseUserData), (object)param);
         }
 
         private void SetEventTable(UserData udata)
