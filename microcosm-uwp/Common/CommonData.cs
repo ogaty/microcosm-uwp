@@ -657,5 +657,162 @@ namespace microcosm.Common
             {"沖縄県", 127.68111111111 }
         };
 
+        public static void GeAspectCombination(int combination, out int from, out int to)
+        {
+            from = 0;
+            to = 0;
+            switch (combination)
+            {
+                case 0:
+                    from = 0;
+                    to = 0;
+                    break;
+                case 1:
+                    from = 0;
+                    to = 1;
+                    break;
+                case 2:
+                    from = 0;
+                    to = 2;
+                    break;
+                case 3:
+                    from = 0;
+                    to = 3;
+                    break;
+                case 4:
+                    from = 0;
+                    to = 4;
+                    break;
+                case 5:
+                    from = 0;
+                    to = 5;
+                    break;
+                case 6:
+                    from = 0;
+                    to = 6;
+                    break;
+                case 7:
+                    from = 1;
+                    to = 1;
+                    break;
+                case 8:
+                    from = 1;
+                    to = 2;
+                    break;
+                case 9:
+                    from = 1;
+                    to = 3;
+                    break;
+                case 10:
+                    from = 1;
+                    to = 4;
+                    break;
+                case 11:
+                    from = 1;
+                    to = 5;
+                    break;
+                case 12:
+                    from = 1;
+                    to = 6;
+                    break;
+                case 13:
+                    from = 2;
+                    to = 2;
+                    break;
+                case 14:
+                    from = 2;
+                    to = 3;
+                    break;
+                case 15:
+                    from = 2;
+                    to = 4;
+                    break;
+                case 16:
+                    from = 2;
+                    to = 5;
+                    break;
+                case 17:
+                    from = 2;
+                    to = 6;
+                    break;
+                case 18:
+                    from = 3;
+                    to = 3;
+                    break;
+                case 19:
+                    from = 3;
+                    to = 4;
+                    break;
+                case 20:
+                    from = 3;
+                    to = 5;
+                    break;
+                case 21:
+                    from = 3;
+                    to = 6;
+                    break;
+                case 22:
+                    from = 4;
+                    to = 4;
+                    break;
+                case 23:
+                    from = 4;
+                    to = 5;
+                    break;
+                case 24:
+                    from = 4;
+                    to = 6;
+                    break;
+                case 25:
+                    from = 5;
+                    to = 5;
+                    break;
+                case 26:
+                    from = 5;
+                    to = 6;
+                    break;
+                case 27:
+                    from = 6;
+                    to = 6;
+                    break;
+            }
+        }
+
+        public static Models.AspectKind GetEnumAspectKind(string kind)
+        {
+            switch (kind)
+            {
+                case "1":
+                    return AspectKind.CONJUNCTION;
+                case "2":
+                    return AspectKind.OPPOSITION;
+                case "3":
+                    return AspectKind.INCONJUNCT;
+                case "4":
+                    return AspectKind.SESQUIQUADRATE;
+                case "5":
+                    return AspectKind.TRINE;
+                case "6":
+                    return AspectKind.SQUARE;
+                case "7":
+                    return AspectKind.SEXTILE;
+                case "8":
+                    return AspectKind.SEMISEXTILE;
+                case "9":
+                    return AspectKind.SEMIQINTILE;
+                case "10":
+                    return AspectKind.NOVILE;
+                case "11":
+                    return AspectKind.SEMISQUARE;
+                case "12":
+                    return AspectKind.SEPTILE;
+                case "13":
+                    return AspectKind.QUINTILE;
+                case "14":
+                    return AspectKind.BIQUINTILE;
+                default:
+                    return AspectKind.CONJUNCTION;
+            }
+        }
     }
 }

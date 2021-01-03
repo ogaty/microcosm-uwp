@@ -204,7 +204,7 @@ namespace microcosm.Calc
         }
 
 
-        public Calcuration ReCalc(SettingData setting, UserData udata)
+        public Calcuration ReCalc(UserData udata)
         {
             List<PlanetData> p = PositionCalc(udata.birth_time, udata.timezoneDouble);
             double[] cusps = CuspCalc(udata.birth_time, udata.lat, udata.lng, udata.timezoneDouble);

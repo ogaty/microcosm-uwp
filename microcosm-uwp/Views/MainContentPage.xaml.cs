@@ -75,7 +75,7 @@ namespace microcosm.Views
 
             // 天体情報
             ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-            = calc.ReCalc(currentSetting, CommonInstance.getInstance().udata1);
+            = calc.ReCalc(CommonInstance.getInstance().udata1);
 
 
             userBox = new MainWindowUserDataViewModel();

@@ -39,7 +39,7 @@ namespace microcosm.Views
                         Int32.Parse(TargetSecond.SelectedItem.ToString())
                     );
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().udata1);
+                        = calc.ReCalc(CommonInstance.getInstance().udata1);
                     UserBoxSet(1, CommonInstance.getInstance().udata1);
                     break;
                 case "ユーザー2":
@@ -58,7 +58,7 @@ namespace microcosm.Views
                         Int32.Parse(TargetSecond.SelectedItem.ToString())
                     );
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().udata2);
+                        = calc.ReCalc(CommonInstance.getInstance().udata2);
                     UserBoxSet(2, CommonInstance.getInstance().udata2);
                     break;
                 case "イベント1":
@@ -77,7 +77,7 @@ namespace microcosm.Views
                         Int32.Parse(TargetSecond.SelectedItem.ToString())
                     );
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().edata1);
+                        = calc.ReCalc(CommonInstance.getInstance().edata1);
                     UserBoxSet(3, CommonInstance.getInstance().edata1);
                     break;
                 case "イベント2":
@@ -96,7 +96,7 @@ namespace microcosm.Views
                         Int32.Parse(TargetSecond.SelectedItem.ToString())
                     );
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().edata2);
+                        = calc.ReCalc(CommonInstance.getInstance().edata2);
                     UserBoxSet(4, CommonInstance.getInstance().edata2);
                     break;
                 default:
@@ -139,7 +139,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().udata1.birth_minute = CommonInstance.getInstance().udata1.birth_time.Minute;
                     CommonInstance.getInstance().udata1.birth_second = CommonInstance.getInstance().udata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().udata1);
+                        = calc.ReCalc(CommonInstance.getInstance().udata1);
                     UserBoxSet(1, CommonInstance.getInstance().udata1);
                     break;
                 case "ユーザー2":
@@ -151,7 +151,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().udata2.birth_minute = CommonInstance.getInstance().udata2.birth_time.Minute;
                     CommonInstance.getInstance().udata2.birth_second = CommonInstance.getInstance().udata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().udata2);
+                        = calc.ReCalc(CommonInstance.getInstance().udata2);
                     UserBoxSet(2, CommonInstance.getInstance().udata2);
                     break;
                 case "イベント1":
@@ -163,7 +163,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().edata1.birth_minute = CommonInstance.getInstance().edata1.birth_time.Minute;
                     CommonInstance.getInstance().edata1.birth_second = CommonInstance.getInstance().edata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().edata1);
+                        = calc.ReCalc(CommonInstance.getInstance().edata1);
                     UserBoxSet(3, CommonInstance.getInstance().edata1);
                     break;
                 case "イベント2":
@@ -175,7 +175,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().edata2.birth_minute = CommonInstance.getInstance().edata2.birth_time.Minute;
                     CommonInstance.getInstance().edata2.birth_second = CommonInstance.getInstance().edata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().edata2);
+                        = calc.ReCalc(CommonInstance.getInstance().edata2);
                     UserBoxSet(4, CommonInstance.getInstance().edata2);
                     break;
                 default:
@@ -215,7 +215,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().udata1.birth_minute = CommonInstance.getInstance().udata1.birth_time.Minute;
                     CommonInstance.getInstance().udata1.birth_second = CommonInstance.getInstance().udata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().udata1);
+                        = calc.ReCalc(CommonInstance.getInstance().udata1);
                     UserBoxSet(1, CommonInstance.getInstance().udata1);
                     break;
                 case "ユーザー2":
@@ -227,7 +227,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().udata2.birth_minute = CommonInstance.getInstance().udata2.birth_time.Minute;
                     CommonInstance.getInstance().udata2.birth_second = CommonInstance.getInstance().udata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().udata2);
+                        = calc.ReCalc(CommonInstance.getInstance().udata2);
                     UserBoxSet(2, CommonInstance.getInstance().udata2);
                     break;
                 case "イベント1":
@@ -239,7 +239,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().edata1.birth_minute = CommonInstance.getInstance().edata1.birth_time.Minute;
                     CommonInstance.getInstance().edata1.birth_second = CommonInstance.getInstance().edata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().edata1);
+                        = calc.ReCalc(CommonInstance.getInstance().edata1);
                     UserBoxSet(3, CommonInstance.getInstance().edata1);
                     break;
                 case "イベント2":
@@ -251,7 +251,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().edata2.birth_minute = CommonInstance.getInstance().edata2.birth_time.Minute;
                     CommonInstance.getInstance().edata2.birth_second = CommonInstance.getInstance().edata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().edata2);
+                        = calc.ReCalc(CommonInstance.getInstance().edata2);
                     UserBoxSet(4, CommonInstance.getInstance().edata2);
                     break;
                 default:
@@ -292,7 +292,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().udata1.birth_minute = CommonInstance.getInstance().udata1.birth_time.Minute;
                     CommonInstance.getInstance().udata1.birth_second = CommonInstance.getInstance().udata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().udata1);
+                        = calc.ReCalc(CommonInstance.getInstance().udata1);
                     UserBoxSet(1, CommonInstance.getInstance().udata1);
                     break;
                 case "ユーザー2":
@@ -304,7 +304,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().udata2.birth_minute = CommonInstance.getInstance().udata2.birth_time.Minute;
                     CommonInstance.getInstance().udata2.birth_second = CommonInstance.getInstance().udata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().udata2);
+                        = calc.ReCalc(CommonInstance.getInstance().udata2);
                     UserBoxSet(2, CommonInstance.getInstance().udata2);
                     break;
                 case "イベント1":
@@ -316,7 +316,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().edata1.birth_minute = CommonInstance.getInstance().edata1.birth_time.Minute;
                     CommonInstance.getInstance().edata1.birth_second = CommonInstance.getInstance().edata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().edata1);
+                        = calc.ReCalc(CommonInstance.getInstance().edata1);
                     UserBoxSet(3, CommonInstance.getInstance().edata1);
                     break;
                 case "イベント2":
@@ -328,7 +328,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().edata2.birth_minute = CommonInstance.getInstance().edata2.birth_time.Minute;
                     CommonInstance.getInstance().edata2.birth_second = CommonInstance.getInstance().edata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().edata2);
+                        = calc.ReCalc(CommonInstance.getInstance().edata2);
                     UserBoxSet(4, CommonInstance.getInstance().edata2);
                     break;
                 default:
@@ -367,7 +367,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().udata1.birth_minute = CommonInstance.getInstance().udata1.birth_time.Minute;
                     CommonInstance.getInstance().udata1.birth_second = CommonInstance.getInstance().udata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().udata1);
+                        = calc.ReCalc(CommonInstance.getInstance().udata1);
                     UserBoxSet(1, CommonInstance.getInstance().udata1);
                     break;
                 case "ユーザー2":
@@ -379,7 +379,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().udata2.birth_minute = CommonInstance.getInstance().udata2.birth_time.Minute;
                     CommonInstance.getInstance().udata2.birth_second = CommonInstance.getInstance().udata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().udata2);
+                        = calc.ReCalc(CommonInstance.getInstance().udata2);
                     UserBoxSet(2, CommonInstance.getInstance().udata2);
                     break;
                 case "イベント1":
@@ -391,7 +391,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().edata1.birth_minute = CommonInstance.getInstance().edata1.birth_time.Minute;
                     CommonInstance.getInstance().edata1.birth_second = CommonInstance.getInstance().edata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().edata1);
+                        = calc.ReCalc(CommonInstance.getInstance().edata1);
                     UserBoxSet(3, CommonInstance.getInstance().edata1);
                     break;
                 case "イベント2":
@@ -403,7 +403,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().edata2.birth_minute = CommonInstance.getInstance().edata2.birth_time.Minute;
                     CommonInstance.getInstance().edata2.birth_second = CommonInstance.getInstance().edata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().edata2);
+                        = calc.ReCalc(CommonInstance.getInstance().edata2);
                     UserBoxSet(4, CommonInstance.getInstance().edata2);
                     break;
                 default:
@@ -441,7 +441,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().udata1.birth_minute = CommonInstance.getInstance().udata1.birth_time.Minute;
                     CommonInstance.getInstance().udata1.birth_second = CommonInstance.getInstance().udata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().udata1);
+                        = calc.ReCalc(CommonInstance.getInstance().udata1);
                     UserBoxSet(1, CommonInstance.getInstance().udata1);
                     break;
                 case "ユーザー2":
@@ -453,7 +453,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().udata2.birth_minute = CommonInstance.getInstance().udata2.birth_time.Minute;
                     CommonInstance.getInstance().udata2.birth_second = CommonInstance.getInstance().udata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().udata2);
+                        = calc.ReCalc(CommonInstance.getInstance().udata2);
                     UserBoxSet(2, CommonInstance.getInstance().udata2);
                     break;
                 case "イベント1":
@@ -465,7 +465,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().edata1.birth_minute = CommonInstance.getInstance().edata1.birth_time.Minute;
                     CommonInstance.getInstance().edata1.birth_second = CommonInstance.getInstance().edata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().edata1);
+                        = calc.ReCalc(CommonInstance.getInstance().edata1);
                     UserBoxSet(3, CommonInstance.getInstance().edata1);
                     break;
                 case "イベント2":
@@ -477,7 +477,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().edata2.birth_minute = CommonInstance.getInstance().edata2.birth_time.Minute;
                     CommonInstance.getInstance().edata2.birth_second = CommonInstance.getInstance().edata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().edata2);
+                        = calc.ReCalc(CommonInstance.getInstance().edata2);
                     UserBoxSet(4, CommonInstance.getInstance().edata2);
                     break;
                 default:
@@ -515,7 +515,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().udata1.birth_minute = CommonInstance.getInstance().udata1.birth_time.Minute;
                     CommonInstance.getInstance().udata1.birth_second = CommonInstance.getInstance().udata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().udata1);
+                        = calc.ReCalc(CommonInstance.getInstance().udata1);
                     UserBoxSet(1, CommonInstance.getInstance().udata1);
                     break;
                 case "ユーザー2":
@@ -527,7 +527,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().udata2.birth_minute = CommonInstance.getInstance().udata2.birth_time.Minute;
                     CommonInstance.getInstance().udata2.birth_second = CommonInstance.getInstance().udata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().udata2);
+                        = calc.ReCalc(CommonInstance.getInstance().udata2);
                     UserBoxSet(2, CommonInstance.getInstance().udata2);
                     break;
                 case "イベント1":
@@ -539,7 +539,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().edata1.birth_minute = CommonInstance.getInstance().edata1.birth_time.Minute;
                     CommonInstance.getInstance().edata1.birth_second = CommonInstance.getInstance().edata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().edata1);
+                        = calc.ReCalc(CommonInstance.getInstance().edata1);
                     UserBoxSet(3, CommonInstance.getInstance().edata1);
                     break;
                 case "イベント2":
@@ -551,7 +551,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().edata2.birth_minute = CommonInstance.getInstance().edata2.birth_time.Minute;
                     CommonInstance.getInstance().edata2.birth_second = CommonInstance.getInstance().edata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().edata2);
+                        = calc.ReCalc(CommonInstance.getInstance().edata2);
                     UserBoxSet(4, CommonInstance.getInstance().edata2);
                     break;
                 default:
@@ -589,7 +589,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().udata1.birth_minute = CommonInstance.getInstance().udata1.birth_time.Minute;
                     CommonInstance.getInstance().udata1.birth_second = CommonInstance.getInstance().udata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().udata1);
+                        = calc.ReCalc(CommonInstance.getInstance().udata1);
                     UserBoxSet(1, CommonInstance.getInstance().udata1);
                     break;
                 case "ユーザー2":
@@ -601,7 +601,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().udata2.birth_minute = CommonInstance.getInstance().udata2.birth_time.Minute;
                     CommonInstance.getInstance().udata2.birth_second = CommonInstance.getInstance().udata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().udata2);
+                        = calc.ReCalc(CommonInstance.getInstance().udata2);
                     UserBoxSet(2, CommonInstance.getInstance().udata2);
                     break;
                 case "イベント1":
@@ -613,7 +613,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().edata1.birth_minute = CommonInstance.getInstance().edata1.birth_time.Minute;
                     CommonInstance.getInstance().edata1.birth_second = CommonInstance.getInstance().edata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().edata1);
+                        = calc.ReCalc(CommonInstance.getInstance().edata1);
                     UserBoxSet(3, CommonInstance.getInstance().edata1);
                     break;
                 case "イベント2":
@@ -625,7 +625,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().edata2.birth_minute = CommonInstance.getInstance().edata2.birth_time.Minute;
                     CommonInstance.getInstance().edata2.birth_second = CommonInstance.getInstance().edata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().edata2);
+                        = calc.ReCalc(CommonInstance.getInstance().edata2);
                     UserBoxSet(4, CommonInstance.getInstance().edata2);
                     break;
                 default:
@@ -663,7 +663,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().udata1.birth_minute = CommonInstance.getInstance().udata1.birth_time.Minute;
                     CommonInstance.getInstance().udata1.birth_second = CommonInstance.getInstance().udata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().udata1);
+                        = calc.ReCalc(CommonInstance.getInstance().udata1);
                     UserBoxSet(1, CommonInstance.getInstance().udata1);
                     break;
                 case "ユーザー2":
@@ -675,7 +675,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().udata2.birth_minute = CommonInstance.getInstance().udata2.birth_time.Minute;
                     CommonInstance.getInstance().udata2.birth_second = CommonInstance.getInstance().udata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().udata2);
+                        = calc.ReCalc(CommonInstance.getInstance().udata2);
                     UserBoxSet(2, CommonInstance.getInstance().udata2);
                     break;
                 case "イベント1":
@@ -687,7 +687,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().edata1.birth_minute = CommonInstance.getInstance().edata1.birth_time.Minute;
                     CommonInstance.getInstance().edata1.birth_second = CommonInstance.getInstance().edata1.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().edata1);
+                        = calc.ReCalc(CommonInstance.getInstance().edata1);
                     UserBoxSet(3, CommonInstance.getInstance().edata1);
                     break;
                 case "イベント2":
@@ -699,7 +699,7 @@ namespace microcosm.Views
                     CommonInstance.getInstance().edata2.birth_minute = CommonInstance.getInstance().edata2.birth_time.Minute;
                     CommonInstance.getInstance().edata2.birth_second = CommonInstance.getInstance().edata2.birth_time.Second;
                     ringsData[0] = ringsData[1] = ringsData[2] = ringsData[3] = ringsData[4] = ringsData[5] = ringsData[6]
-                        = calc.ReCalc(currentSetting, CommonInstance.getInstance().edata2);
+                        = calc.ReCalc(CommonInstance.getInstance().edata2);
                     UserBoxSet(4, CommonInstance.getInstance().edata2);
                     break;
                 default:

@@ -123,6 +123,13 @@ namespace microcosm.Views
         private async Task<bool> CreateConfig()
         {
             var root = Windows.Storage.ApplicationData.Current.LocalFolder;
+
+            if (await root.TryGetItemAsync("microcosm.db") == null)
+            {
+                var configFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/microcosm.db")).AsTask().ConfigureAwait(false);
+                await configFile.CopyAsync(root, "microcosm.db", NameCollisionOption.FailIfExists);
+            }
+
             var system = await root.TryGetItemAsync("system");
 
             if (system == null)
@@ -246,17 +253,19 @@ namespace microcosm.Views
         private async void MainInit()
         {
             CommonInstance.getInstance().db = new Db();
-            //CommonInstance.getInstance().db.init();
-            CommonInstance.getInstance().db.selectConfig();
-            CommonInstance.getInstance().db.selectSettings();
+            CommonInstance.getInstance().db.init();
+            //CommonInstance.getInstance().db.selectConfig();
 
             List<Task<bool>> arrayTask = new List<Task<bool>>();
             Task<bool> swissTask = Task<bool>.Run(CreateSwiss);
             arrayTask.Add(swissTask);
-            //Task<bool> configTask = Task<bool>.Run(CreateConfig);
-            //arrayTask.Add(configTask);
+            Task<bool> configTask = Task<bool>.Run(CreateConfig);
+            arrayTask.Add(configTask);
 
             await Task.WhenAll(arrayTask);
+
+
+            CommonInstance.getInstance().db.selectSettings();
 
             navi.IsPaneOpen = false;
 
