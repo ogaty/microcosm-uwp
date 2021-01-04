@@ -71,9 +71,15 @@ namespace microcosm.Views
         /// </summary>
         private void SetVM()
         {
-//            UserDirTree treeDir = new UserDirTree();
-//            DirTree3.Add(new TreeViewItem2() { Name = "data", IsDir = true, Header = "data", Icon = "D", FullPath = dataDir.FullName });
+            //            UserDirTree treeDir = new UserDirTree();
+            //            DirTree3.Add(new TreeViewItem2() { Name = "data", IsDir = true, Header = "data", Icon = "D", FullPath = dataDir.FullName });
 
+            foreach (var record in CommonInstance.getInstance().db.selectUserList())
+            {
+                DirTree.Add(record);
+            }
+
+            /*
             foreach (var directory in dataDir.GetDirectories())
             {
                 DirTree.Add(new TreeViewItem2()
@@ -86,7 +92,9 @@ namespace microcosm.Views
                     NoFile = false
                 });
             }
+            */
 
+            /*
             foreach (var file in dataDir.GetFiles())
             {
                 // ファイル
@@ -101,14 +109,15 @@ namespace microcosm.Views
                     NoFile = false
                 });
             }
+            */
 
             if (DirTree.Count == 0)
             {
                 DirTree.Add(new TreeViewItem2()
                 {
-                    Name = "ファイルがありません",
+                    Name = "データがありません",
                     IsDir = false,
-                    Header = "ファイルがありません",
+                    Header = "データがありません",
                     Icon = FontAwesome.UWP.FontAwesomeIcon.File,
                     FullPath = dataDir.FullName,
                     NoFile = true
@@ -147,10 +156,12 @@ namespace microcosm.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void UserDirTree_ItemClick(object sender, ItemClickEventArgs e)
+        private void UserDirTree_ItemClick(object sender, ItemClickEventArgs e)
         {
             TreeViewItem2 item = (TreeViewItem2)e.ClickedItem;
+            SetEventTable(new UserData(item.userData));
 
+            /*
             if (item.IsDir)
             {
                 ReSet(item);
@@ -170,6 +181,7 @@ namespace microcosm.Views
 
                 SetEventTable(new UserData(json));
             }
+            */
         }
 
         private async Task<StorageFile> AwaitGetStorageFile(string path)
@@ -301,6 +313,10 @@ namespace microcosm.Views
             DatabaseUserFrame.Navigate(typeof(DatabaseUserData), (object)param);
         }
 
+        /// <summary>
+        /// 右側ページにデータを設定
+        /// </summary>
+        /// <param name="udata"></param>
         private void SetEventTable(UserData udata)
         {
             DatabaseNavigateParam param = new DatabaseNavigateParam()

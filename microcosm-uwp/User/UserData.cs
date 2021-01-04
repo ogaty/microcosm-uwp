@@ -13,6 +13,7 @@ namespace microcosm.User
     [XmlRoot("userdata")]
     public class UserData
     {
+        public int id;
         public string name;
         public string furigana;
         public int birth_year;
@@ -173,6 +174,7 @@ namespace microcosm.User
             {
                 this.timezone = edata.event_timezone;
             }
+            this.userevent = new List<UserEvent>();
         }
 
         /// <summary>
@@ -209,6 +211,7 @@ namespace microcosm.User
             {
                 this.timezone = edata.timezone;
             }
+            this.userevent = new List<UserEvent>();
         }
 
         public UserData(UserJson json)

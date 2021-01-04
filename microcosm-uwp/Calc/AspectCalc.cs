@@ -25,7 +25,6 @@ namespace microcosm.Calc
             int j = 0;
             int aspectIndex = ringIndex;
             int categoryIndex = 7 * ringIndex;
-            return aspects;
 
             for (int i = 0; i < planetList.Count - 1; i++)
             {

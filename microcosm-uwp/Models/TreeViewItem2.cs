@@ -14,5 +14,7 @@ namespace microcosm.Models
         public bool IsDir { get; set; }
         public string FullPath { get; set; }
         public bool NoFile { get; set; }
+
+        public UserEventData userData { get; set; }
     }
 }

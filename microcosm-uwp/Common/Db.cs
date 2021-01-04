@@ -1,4 +1,6 @@
 ﻿using microcosm.Config;
+using microcosm.Models;
+using microcosm.User;
 using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
@@ -157,8 +159,6 @@ namespace microcosm.Common
             {
                 CommonInstance.getInstance().settings[i] = new SettingData();
             }
-
-            //return;
 
             using (SqliteConnection db = new SqliteConnection($"Filename={dbPath}"))
             {
@@ -341,6 +341,49 @@ namespace microcosm.Common
 
                 CommonInstance.getInstance().settings = setting;
             }
+        }
+
+        public List<TreeViewItem2> selectUserList()
+        {
+            List<TreeViewItem2> udataList = new List<TreeViewItem2>();
+
+            using (SqliteConnection db = new SqliteConnection($"Filename={dbPath}"))
+            {
+                db.Open();
+
+                string tableCommand = "select * from user_data";
+                SqliteCommand getUserData = new SqliteCommand(tableCommand, db);
+
+                SqliteDataReader query = getUserData.ExecuteReader();
+
+                while (query.Read())
+                {
+                    UserEventData udata = new UserEventData()
+                    {
+                        name = query["name"].ToString(),
+                        furigana = query["furigana"].ToString(),
+                        year = int.Parse(query["birth_year"].ToString()),
+                        month = int.Parse(query["birth_month"].ToString()),
+                        day = int.Parse(query["birth_day"].ToString()),
+                        hour = int.Parse(query["birth_hour"].ToString()),
+                        minute = int.Parse(query["birth_minute"].ToString()),
+                        second = int.Parse(query["birth_second"].ToString()),
+                        lat = double.Parse(query["lat"].ToString()),
+                        lng = double.Parse(query["lng"].ToString()),
+                        Place = query["birth_place"].ToString(),
+                        timezone = query["time_zone"].ToString(),
+                        memo = query["memo"].ToString(),
+                    };
+                    TreeViewItem2 tree = new TreeViewItem2()
+                    {
+                        Name = udata.name,
+                        userData = udata
+                    };
+                    udataList.Add(tree);
+                }
+            }
+
+            return udataList;
         }
     }
 }

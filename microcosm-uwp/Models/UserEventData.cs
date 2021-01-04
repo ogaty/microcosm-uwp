@@ -14,6 +14,7 @@ namespace microcosm.Models
     public class UserEventData
     {
         public string name { get; set; }
+        public string furigana { get; set; }
         public int year { get; set; }
         public int month { get; set; }
         public int day { get; set; }
