@@ -4,6 +4,7 @@ using microcosm.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -81,6 +82,18 @@ namespace microcosm.Views
             ObservableCollection<UserEventData> eventList = (ObservableCollection<UserEventData>)UserDataTable.ItemsSource;
             UserData udata = new UserData(eventList[index]);
             mainPage.Event2Set(udata);
+        }
+
+        private void UserDataTable_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UserEventData eData = (UserEventData)e.ClickedItem;
+
+            UserMemo.Text = eData.memo;
+        }
+
+        private void UpIcon_PointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            //mainPage.NavigateEditEvent((UserEventData)e.ClickedItem);
         }
     }
 }

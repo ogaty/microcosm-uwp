@@ -6,11 +6,12 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+    xmlns:fa="using:FontAwesome.UWP"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
         <StackPanel>
-            <ListView x:Name="UserDataTable" Margin="40, 40, 0, 0" Width="700" Height="350" BorderBrush="Black" HorizontalAlignment="Left">
+            <ListView x:Name="UserDataTable" Margin="40, 40, 0, 0" Width="700" Height="350" BorderBrush="Black" HorizontalAlignment="Left" IsItemClickEnabled="True" ItemClick="UserDataTable_ItemClick">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
@@ -21,10 +22,11 @@
                                 <TextBlock Text="{Binding LatLng}" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <Button x:Name="U1Set" Content="ユーザー1" Click="U1Set_Click" Tag="{Binding index}"></Button>
-                                <Button x:Name="U2Set" Content="ユーザー2" Click="U2Set_Click" Tag="{Binding index}"></Button>
-                                <Button x:Name="E1Set" Content="イベント1" Click="E1Set_Click" Tag="{Binding index}"></Button>
-                                <Button x:Name="E2Set" Content="イベント2" Click="E2Set_Click" Tag="{Binding index}"></Button>
+                                <fa:FontAwesome x:Name="UpIcon" Icon="Edit" FontSize="24" HorizontalAlignment="Left" Foreground="Black" PointerPressed="UpIcon_PointerPressed" Margin="0,0,10,0" />
+                                <Button x:Name="U1Set" Content="> ユーザー1" Click="U1Set_Click" Tag="{Binding index}" Margin="0,0,5,0"></Button>
+                                <Button x:Name="U2Set" Content="> ユーザー2" Click="U2Set_Click" Tag="{Binding index}" Margin="0,0,5,0"></Button>
+                                <Button x:Name="E1Set" Content="> イベント1" Click="E1Set_Click" Tag="{Binding index}" Margin="0,0,5,0"></Button>
+                                <Button x:Name="E2Set" Content="> イベント2" Click="E2Set_Click" Tag="{Binding index}"></Button>
                             </StackPanel>
                         </StackPanel>
                     </DataTemplate>

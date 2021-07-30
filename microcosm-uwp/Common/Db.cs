@@ -358,32 +358,74 @@ namespace microcosm.Common
 
                 while (query.Read())
                 {
-                    UserEventData udata = new UserEventData()
+                    try
                     {
-                        name = query["name"].ToString(),
-                        furigana = query["furigana"].ToString(),
-                        year = int.Parse(query["birth_year"].ToString()),
-                        month = int.Parse(query["birth_month"].ToString()),
-                        day = int.Parse(query["birth_day"].ToString()),
-                        hour = int.Parse(query["birth_hour"].ToString()),
-                        minute = int.Parse(query["birth_minute"].ToString()),
-                        second = int.Parse(query["birth_second"].ToString()),
-                        lat = double.Parse(query["lat"].ToString()),
-                        lng = double.Parse(query["lng"].ToString()),
-                        Place = query["birth_place"].ToString(),
-                        timezone = query["time_zone"].ToString(),
-                        memo = query["memo"].ToString(),
-                    };
-                    TreeViewItem2 tree = new TreeViewItem2()
+                        UserEventData udata = new UserEventData()
+                        {
+                            name = query["name"].ToString(),
+                            furigana = query["furigana"].ToString(),
+                            year = int.Parse(query["birth_year"].ToString()),
+                            month = int.Parse(query["birth_month"].ToString()),
+                            day = int.Parse(query["birth_day"].ToString()),
+                            hour = int.Parse(query["birth_hour"].ToString()),
+                            minute = int.Parse(query["birth_minute"].ToString()),
+                            second = int.Parse(query["birth_second"].ToString()),
+                            lat = double.Parse(query["lat"].ToString()),
+                            lng = double.Parse(query["lng"].ToString()),
+                            Place = query["birth_place"].ToString(),
+                            timezone = query["time_zone"].ToString(),
+                            memo = query["memo"].ToString(),
+                        };
+                        TreeViewItem2 tree = new TreeViewItem2()
+                        {
+                            Name = udata.name,
+                            userData = udata
+                        };
+                        udataList.Add(tree);
+                    } catch
                     {
-                        Name = udata.name,
-                        userData = udata
-                    };
-                    udataList.Add(tree);
+                        Debug.WriteLine("user skip");
+                    }
                 }
             }
 
             return udataList;
         }
+
+
+        public void CreateUser(UserData uData)
+        {
+
+            using (SqliteConnection db = new SqliteConnection($"Filename={dbPath}"))
+            {
+                db.Open();
+                // 0 1 name
+                // 2 3 4 birthday
+                // 5 6 7 birthtime
+                // 8 9 latlng
+                // 10 11 birth_place,timezone
+                // 12 memo
+                string insert = string.Format(@"insert into user_data (name, furigana, birth_year, birth_month, birth_day, birth_hour, birth_minute, birth_second, lat, lng, birth_place, time_zone, memo) 
+                    values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}')", 
+                    uData.name, 
+                    uData.furigana, 
+                    uData.birth_year.ToString(), 
+                    uData.birth_month.ToString(), 
+                    uData.birth_day.ToString(),
+                    uData.birth_hour.ToString(),
+                    uData.birth_minute.ToString(),
+                    uData.birth_second.ToString(),
+                    uData.lat.ToString(),
+                    uData.lng.ToString(),
+                    uData.birth_place,
+                    uData.timezone,
+                    uData.memo
+                    );
+                SqliteCommand com = new SqliteCommand(insert, db);
+                com.ExecuteNonQuery();
+            }
+        }
+
+
     }
 }

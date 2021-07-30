@@ -67,7 +67,7 @@ namespace microcosm.Views
         }
 
         /// <summary>
-        /// dataDirをもとにディレクトリを読み込み
+        /// 左ウィンドウにユーザー一覧を並べる
         /// </summary>
         private void SetVM()
         {
@@ -192,6 +192,7 @@ namespace microcosm.Views
 
         /// <summary>
         /// TreeViewItemを元にディレクトリを再読み込み
+        /// もう不要
         /// </summary>
         /// <param name="item"></param>
         private void ReSet(TreeViewItem2 item)
@@ -262,6 +263,41 @@ namespace microcosm.Views
             dataDir = new DirectoryInfo(item.FullPath);
         }
 
+        /// <summary>
+        /// 左側ペーン更新
+        /// </summary>
+        private void ReSet()
+        {
+            DirTree.Clear();
+            foreach (var record in CommonInstance.getInstance().db.selectUserList())
+            {
+                DirTree.Add(record);
+            }
+
+            if (DirTree.Count == 0)
+            {
+                DirTree.Add(new TreeViewItem2()
+                {
+                    Name = "データがありません",
+                    IsDir = false,
+                    Header = "データがありません",
+                    Icon = FontAwesome.UWP.FontAwesomeIcon.File,
+                    FullPath = dataDir.FullName,
+                    NoFile = true
+                });
+            }
+
+            vm = new UserDirGridViewModel();
+            vm.DirTrees = DirTree;
+            UserDirTree.ItemsSource = vm.DirTrees;
+            UserDirTree.DataContext = vm;
+        }
+
+        /// <summary>
+        /// 上ボタン
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UpIcon_PointerPressed(object sender, PointerRoutedEventArgs e)
         {
             if (dataDir.FullName != dataStoragePath)
@@ -273,6 +309,11 @@ namespace microcosm.Views
             }
         }
 
+        /// <summary>
+        /// 新規ユーザーボタン
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void File_PointerPressed(object sender, PointerRoutedEventArgs e)
         {
             DatabaseUserFrame.Navigate(typeof(DatabaseNewUser), (object)this);
@@ -281,6 +322,11 @@ namespace microcosm.Views
         private void Folder_PointerPressed(object sender, PointerRoutedEventArgs e)
         {
             DatabaseUserFrame.Navigate(typeof(DatabaseNewDirectory), (object)this);
+        }
+
+        private void NavigateEditEvent(UserEventData eData)
+        {
+            DatabaseUserFrame.Navigate(typeof(EventEditPage), (object)this);
         }
 
         public void NewFolder(string name)
@@ -302,7 +348,11 @@ namespace microcosm.Views
             }
         }
 
-        public void NewUser(string fileName, UserData udata)
+        /// <summary>
+        /// 新規ユーザー作成(DatabaseNewUserから呼ばれる)
+        /// </summary>
+        /// <param name="udata"></param>
+        public void NewUser(UserData udata)
         {
             DatabaseNavigateParam param = new DatabaseNavigateParam()
             {
@@ -310,6 +360,10 @@ namespace microcosm.Views
                 udata = udata
             };
             //NewFile(, fileName, udata);
+
+            ReSet();
+
+            // 右側ページ更新
             DatabaseUserFrame.Navigate(typeof(DatabaseUserData), (object)param);
         }
 

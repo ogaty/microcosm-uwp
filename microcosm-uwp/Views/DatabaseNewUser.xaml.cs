@@ -44,7 +44,9 @@ namespace microcosm.Views
                 furigana = UserKana.Text,
                 userevent = new List<UserEvent>(),
             };
-            d.NewUser(FileName.Text, uData);
+            CommonInstance.getInstance().db.CreateUser(uData);
+            
+            d.NewUser(uData);
         }
 
         private void UserBirthCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)

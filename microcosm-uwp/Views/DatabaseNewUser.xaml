@@ -11,11 +11,6 @@
     <Grid>
         <ScrollViewer Height="400" Width="400" VerticalAlignment="Top" HorizontalAlignment="Left">
             <StackPanel HorizontalAlignment="Left" Width="360">
-                <TextBlock Foreground="Black" FontWeight="Bold">ファイル名</TextBlock>
-                <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
-                    <TextBox x:Name="FileName" Width="200" HorizontalAlignment="Left"></TextBox>
-                    <TextBlock>.json</TextBlock>
-                </StackPanel>
                 <TextBlock Foreground="Black" FontWeight="Bold">ユーザー名</TextBlock>
                 <TextBox x:Name="UserName" Width="200" Margin="20,0,0,0" HorizontalAlignment="Left"></TextBox>
                 <TextBlock Foreground="Black" FontWeight="Bold">かな</TextBlock>
